@@ -25,6 +25,7 @@ import libSBAnnotation.config
 import semanticSBML.annotate
 from . import Model
 from . import sbmlmisc
+from . import libsbml_compat
 from .merge_datamodel import OriginElement, OriginModel, MergedModel, MergeError, MergeBioQuantityLocationError
 from .merge_logic import BioRelations 
 
@@ -118,7 +119,7 @@ class MergedElement(OriginElement):
 
     def setId(self,id):
         '''set the local id and the id of the libsbml_element'''
-        self.libsbml_element.setId(id)
+        libsbml_compat.set_id(self.libsbml_element, id)
         self.id=id
 
     def getId(self):
@@ -239,7 +240,7 @@ class MergedElement(OriginElement):
 
                 math=self._granny.updateMathElementIDs(e.getStatement(),e.merge_model)
                 if e.type!='reaction':#let rule point to merged element
-                    math.setId(self.getId())
+                    libsbml_compat.set_id(math, self.getId())
                     #TODO whats wrong now?
                     pass
                 if not statements:
@@ -250,7 +251,7 @@ class MergedElement(OriginElement):
             if e.getInitialAssignment():
                 math=self._granny.updateMathElementIDs(e.getInitialAssignment(),e.merge_model)
                 if e.type!='reaction':#let initialAssigment point to merged element
-                    math.setId(self.getId())
+                    libsbml_compat.set_id(math, self.getId())
                 if not initialAssignments:
                     initialAssignments.append(math)
                 elif math.getFormula() not in [x.getFormula() for x in initialAssignments]:
@@ -484,7 +485,9 @@ class MergeTuple:
                 return all L{MergedElement}s of this tuple
                 @rtype: [L{OriginElement}]
                 '''
-                return list(self.elements.values())
+                # ordered by model (Python 2 returned them in this order; the choice of
+                # the element that a merged element is built from depends on it)
+                return [self.elements[mid] for mid in sorted(self.elements)]
 
         def getElement(self,model):
                 '''
@@ -555,14 +558,20 @@ class MergeTuple:
                         if self.pair_location_score[frozenset([self.elements[new_element.merge_model.mid].mid,old_element.mid])]==location_score and self.pair_score[frozenset([self.elements[new_element.merge_model.mid].mid,old_element.mid])]<score:#if same location score and #if higher pair score
                                 #print 'same location score, but higher similarity found'
                                 #remove old element from same model
-                                self.remElement(self.elements[new_element.merge_model.mid])
+                                #(force=True: the tuple continues to exist, since the better element is added
+                                # right away. Without it a tuple of two elements was dissolved here and the
+                                # better match was lost, e.g. ADP was then paired with a pool "ATP+ADP" instead of ADP)
+                                self.remElement(self.elements[new_element.merge_model.mid],True)
                                 #add new element
                                 addNewElement(old_element,new_element)
 
                         elif self.pair_location_score[frozenset([self.elements[new_element.merge_model.mid].mid,old_element.mid])]<location_score:
                                 #print 'higher location score found'
                                 #remove old element from same model
-                                self.remElement(self.elements[new_element.merge_model.mid])
+                                #(force=True: the tuple continues to exist, since the better element is added
+                                # right away. Without it a tuple of two elements was dissolved here and the
+                                # better match was lost, e.g. ADP was then paired with a pool "ATP+ADP" instead of ADP)
+                                self.remElement(self.elements[new_element.merge_model.mid],True)
                                 #add new element
                                 addNewElement(old_element,new_element)
                         else:
@@ -621,17 +630,13 @@ class Merger:
         global setStatusMessage     #get gobal var to manipulate it, calling does not require this
         setStatusMessage = callback_statusbar_fkt
         #init BioRelations since it is a single class and if the init with the L{Merger} is not done here L{Merger} will miss later on
+        BioRelations.reset()    # BioRelations is a singleton that keeps state (ids in use); start fresh for every merge
         self._granny = BioRelations(self)
         self.libsbml_documents=[]
         warnings=''
         for doc in documents:
             doc.setLevelAndVersion(2,4,False)
-            try:
-                codecs.open("doc_file.xml",'w', encoding='utf-8').write(str('<?xml version="1.0" encoding="UTF-8"?>\n%s'%doc.toSBML()))
-            except:
-                raise MergeError('Could not write temporary SBML file. %s %s'%(sys.exc_info()[0],sys.exc_info()[1]))
-            ld = _reader.readSBML("doc_file.xml")
-            os.remove("doc_file.xml")
+            ld = _reader.readSBMLFromString(libsbml.writeSBMLToString(doc))
             model = ld.getModel()
             lm = ld.getModel()
             #////////////////////////////////////////////////////////////
@@ -677,7 +682,7 @@ class Merger:
                     #======================
                     newId = '%s_%s'%(e.getId(),mid)
                     oldId_newId[mid].append((e.getId(),newId))
-                    e.setId(newId)
+                    libsbml_compat.set_id(e, newId)
         #set all pointers to new ids
         elements_w_id=['Species', 'Compartments', 'Reactions', 'Parameters', 'FunctionDefinitions', 'InitialAssignments', 'Rules']
         for mid,document in enumerate(self.libsbml_documents):
@@ -816,8 +821,27 @@ class Merger:
         first model has the highest priority
         @type merge_models: [L{OriginModel}]
         '''
+        # 1. create all merged elements, so that their final ids are known ...
         for t in self.getTuples():
-            t.setMergedElement(self.merged_model,True,merge_models)
+            old_element = t.getMergedElement()
+            if old_element is not None:
+                if old_element.getId() in self._granny.idlist:
+                    self._granny.idlist.remove(old_element.getId())
+                try:
+                    self.merged_model.remElement(old_element)
+                except KeyError:
+                    pass
+            t._merged_element = MergedElement(t,self.merged_model,merge_models)
+            self.merged_model.addElement(t._merged_element)
+            self._granny.setNewId(t._merged_element,self.merged_model)
+            self.merged_model.addElement(t._merged_element)
+        # 2. ... then translate the formulas, which refer to these ids
+        # (the original did both steps tuple by tuple, so that formulas could
+        #  point to ids of merged elements that were replaced afterwards)
+        for t in self.getTuples():
+            t.getMergedElement().prepare(False)
+            if t.sig_MergedElement_created:
+                t.sig_MergedElement_created()
 
     def createSBMLmodel(self,merged_model_name=''):
         '''
@@ -883,7 +907,7 @@ class Merger:
                 pass
         #now go into each model and check if there is this unit we need TODO this is a hack
         for xmodel in self.merge_models:
-            for uid in unit_ids:
+            for uid in sorted(unit_ids):
                 try:
                     units_used += getLibsbmlUnitDefinition(xmodel.global_unit_defs[uid])
                 except KeyError:
@@ -892,9 +916,19 @@ class Merger:
         units_used = [ud for ud in units_used if not ud==None]    
 
         #removing duplicates
-        units_used = list(dict(zip([str(ud) for ud in units_used],[ud.libsbml_ud for ud in units_used])).values())
-        for u in units_used:
-            model.addUnitDefinition(u)
+        # (the original removed duplicates by the content of the definitions; two
+        #  definitions with the same content but different ids were then reduced to
+        #  one, and references to the other id became invalid. Now every id is kept.)
+        units_by_id = {}
+        self.warnings = getattr(self,'warnings',[])
+        for ud in units_used:
+            if ud.id not in units_by_id:
+                units_by_id[ud.id] = ud
+            elif str(units_by_id[ud.id]) != str(ud):
+                self.warnings.append('The unit "%s" is defined differently in the merged models (%s / %s); the first definition is used.'%(ud.id,units_by_id[ud.id],ud))
+        for uid in sorted(units_by_id):
+            ud = units_by_id[uid]
+            model.addUnitDefinition(ud.libsbml_ud)
         #--------------------------------
         #add attached elements (rules,initialAssignments) to model
         #in tuple all formulas have been translated
@@ -943,12 +977,12 @@ class Merger:
         for e in self.getNonTupleElements():
             if e.getInitialAssignment():
                 self._granny.updateMathElementIDs(e.getInitialAssignment(),e.merge_model,False)
-                e.getInitialAssignment().setId(e.getId())
+                libsbml_compat.set_id(e.getInitialAssignment(), e.getId())
                 model.addInitialAssignment(e.getInitialAssignment())
             if e.getStatement(): 
                 self._granny.updateMathElementIDs(e.getStatement(),e.merge_model,False)
                 if not e.type == 'reaction':
-                    e.getStatement().setId(e.getId())
+                    libsbml_compat.set_id(e.getStatement(), e.getId())
                     model.addRule(e.getStatement())#insert rule into the new model
                 #else:
                 #   e.setStatement(e.getStatement())
@@ -995,7 +1029,41 @@ class Merger:
         #------------------------------------------------------
         #TODO add normal annotations
         #------------------------------------------------------
+        self._addMissingFunctionDefinitions(model)
         return document
+
+    def _addMissingFunctionDefinitions(self,model):
+        '''
+        make sure that every function used in a formula of the merged model is defined in it.
+        (Added in the Python 3 port: the function definitions used by the kinetic law of a
+        merged reaction were not carried over to the merged model.)
+        '''
+        available = {}
+        for merge_model in self.merge_models:
+            available.update(merge_model.id2function_definition)
+
+        def function_names(math,names):
+            if math is None:
+                return
+            if math.getType() == libsbml.AST_FUNCTION and math.getName():
+                names.add(math.getName())
+            for i in range(math.getNumChildren()):
+                function_names(math.getChild(i),names)
+
+        while True:
+            used = set()
+            for reaction in model.getListOfReactions():
+                if reaction.isSetKineticLaw():
+                    function_names(reaction.getKineticLaw().getMath(),used)
+            for listname in ('Rules','InitialAssignments','FunctionDefinitions'):
+                for element in getattr(model,'getListOf'+listname)():
+                    function_names(element.getMath(),used)
+            defined = set(fd.getId() for fd in model.getListOfFunctionDefinitions())
+            missing = [name for name in sorted(used - defined) if name in available]
+            if not missing:
+                break
+            for name in missing:
+                model.addFunctionDefinition(available[name])
 
     def getTuples(self):
         '''
@@ -1007,8 +1075,12 @@ class Merger:
         elements=[]
         for model in self.merge_models:
             elements+=model.getElements()
-        tuples=set([e.getTuple() for e in elements])
-        tuples.remove(None)
+        # in the order of the elements in the models (a set, as used originally,
+        # gives a different order - and a differently ordered output file - in every run)
+        tuples=[]
+        for e in elements:
+            if e.getTuple() is not None and not any(e.getTuple() is t for t in tuples):
+                tuples.append(e.getTuple())
         for type in ['compartment', 'species', 'reaction', 'parameter']:
             ret+=[x for x in tuples if x.type==type]
         return ret

@@ -124,7 +124,6 @@ class SubBioquantitySpecies(SubBioquantity):
                 return self.merge_model.global_unit_defs['substance']
     ####################################
     def getLocation(self):
-        print(list(self.merge_model.id2merge_element.keys()))
         return self.merge_model.id2merge_element[self.libsbml_element.getCompartment()]
             
 #-----------------------------------------------

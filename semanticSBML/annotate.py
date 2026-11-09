@@ -318,9 +318,9 @@ class ElementAnnotations:
         elif annotation.qualifier_type=='model': 
             new_cvt.setModelQualifierType(modelqual_name2type[annotation.qualifier])
         elif annotation.qualifier_type=='unknown':
-            print('moeoeoep')
+            pass
         else: 
-            print('unacceptable, crashing now %s'%annotation) 
+            raise AnnotationCreationError('Unknown qualifier type in annotation %s'%annotation)
 
         new_cvt.addResource(str(annotation))
         self.libsbml_element.addCVTerm(new_cvt)

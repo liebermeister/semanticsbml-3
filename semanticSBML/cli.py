@@ -314,6 +314,118 @@ def cmd_annotate(args):
 
 
 # ---------------------------------------------------------------------------
+# merge
+# ---------------------------------------------------------------------------
+
+def validation_errors(document):
+    """error messages of the libSBML consistency check"""
+    import libsbml
+    document.checkConsistency()
+    messages = []
+    for i in range(document.getNumErrors()):
+        e = document.getError(i)
+        if e.getSeverity() >= libsbml.LIBSBML_SEV_ERROR:
+            messages.append(e.getMessage().strip().split('\n')[-1].strip())
+    return messages
+
+
+def merge_documents(documents, status=None, name=''):
+    """
+    merge libSBML documents; if elements are in conflict the earlier model wins.
+    @return: (merged libsbml document, report dictionary)
+    """
+    from . import merge
+
+    warnings = []
+    merger = merge.Merger(documents, status or (lambda *a: None),
+                          lambda title, text='': warnings.append(text or title))
+    matches = []
+    for t in merger.getTuples():
+        me = t.getMergedElement()
+        conflicts = [label for label, flag in (('annotation', me.bioEntity_inConflict),
+                                               ('quantity/unit/participants', me.bioQuantity_inConflict),
+                                               ('location', me.bioQLocation_inConflict),
+                                               ('values/formula', me.modelStatement_inConflict)) if flag]
+        matches.append({'type': t.type,
+                        'elements': [(e.merge_model.mid, e.id, e.name) for e in t.getElements()],
+                        'conflicts': conflicts})
+    merger.resolveUsingModel(merger.merge_models)
+    for match, t in zip(matches, merger.getTuples()):
+        match['merged_id'] = t.getMergedElement().getId()
+    document = merger.createSBMLmodel(name)
+    unmatched = [(e.merge_model.mid, e.type, e.id, e.name) for e in merger.getNonTupleElements()]
+    report = {'matches': matches, 'unmatched': unmatched,
+              'warnings': warnings + list(getattr(merger, 'warnings', []))}
+    return document, report
+
+
+def cmd_merge(args):
+    import io
+    import contextlib
+    import libsbml
+
+    if len(args.files) < 2:
+        raise CliError('merge needs at least two models')
+    documents = [read_document(f) for f in args.files]
+    log = sys.stderr.write
+    status = (lambda message, *a: log(message + '\n')) if args.verbose else None
+    with contextlib.redirect_stdout(io.StringIO()):       # the merge code prints debugging output
+        name = args.name or ' - '.join(d.getModel().getName() or d.getModel().getId() or 'model' for d in documents)
+        merged, report = merge_documents(documents, status, name)
+        if not merged.getModel().isSetId():
+            merged.getModel().setId('merged_model')
+
+    def origin_id(new_id, mid):                            # ids got the suffix _<model number> for merging
+        suffix = '_%s' % mid
+        return new_id[:-len(suffix)] if new_id.endswith(suffix) else new_id
+
+    out = sys.stderr if not args.outfile else sys.stdout
+    out.write('Models:\n')
+    for i, f in enumerate(args.files):
+        out.write('  [%d] %s\n' % (i + 1, f))
+    out.write('\nMatched elements (%d):\n' % len(report['matches']))
+    rows = []
+    for match in sorted(report['matches'], key=lambda x: (x['type'], x['merged_id'])):
+        elements = ' = '.join('[%d] %s%s' % (mid + 1, origin_id(i, mid), (' "%s"' % n) if n else '')
+                              for mid, i, n in match['elements'])
+        rows.append((match['type'], match['merged_id'], elements,
+                     ('CONFLICT: ' + ', '.join(match['conflicts'])) if match['conflicts'] else ''))
+    print_table(rows, out)
+    conflicts = [m for m in report['matches'] if m['conflicts']]
+    if conflicts:
+        out.write('\n%d matched elements differ between the models; the values of the first model in the list were used.\n' % len(conflicts))
+    if args.unmatched:
+        out.write('\nElements without partner (%d), taken over unchanged:\n' % len(report['unmatched']))
+        print_table([(t, '[%d] %s' % (mid + 1, origin_id(i, mid)), n) for mid, t, i, n in report['unmatched']], out)
+    else:
+        out.write('\n%d elements without partner were taken over unchanged (list them with --unmatched).\n' % len(report['unmatched']))
+    for w in report['warnings']:
+        out.write('\nWarning: %s\n' % w)
+
+    text = libsbml.writeSBMLToString(merged)
+    errors = validation_errors(libsbml.readSBMLFromString(text))
+    model = merged.getModel()
+    out.write('\nMerged model: %d compartments, %d species, %d reactions, %d parameters, %d rules.\n' % (
+        model.getNumCompartments(), model.getNumSpecies(), model.getNumReactions(),
+        model.getNumParameters(), model.getNumRules()))
+    if errors:
+        out.write('\nThe merged model is NOT valid SBML (%d problems). They usually arise where the models\n'
+                  'describe the same element in contradicting ways and need to be repaired by hand:\n' % len(errors))
+        for message in sorted(set(errors)):
+            out.write('  - %s\n' % message)
+    else:
+        out.write('The merged model is valid SBML.\n')
+
+    if args.outfile:
+        with open(args.outfile, 'w', encoding='utf-8') as f:
+            f.write(text)
+        out.write('Written to %s\n' % args.outfile)
+    else:
+        sys.stdout.write(text)
+    return 1 if errors else 0
+
+
+# ---------------------------------------------------------------------------
 # argument parser
 # ---------------------------------------------------------------------------
 
@@ -375,6 +487,17 @@ def build_parser():
     p.add_argument('--overwrite', action='store_true', help='with --copy-from: replace existing annotations')
     p.add_argument('-v', '--verbose', action='store_true')
     p.set_defaults(func=cmd_annotate)
+
+    p = sub.add_parser('merge', help='merge annotated models',
+                       description='Merge two or more models. Elements with matching annotations are joined. '
+                                   'Where joined elements differ (values, formulas, units), the model that comes '
+                                   'first in the list wins. A report is printed.')
+    p.add_argument('files', nargs='+', metavar='MODEL.xml')
+    p.add_argument('-o', '--outfile', help='file for the merged model (default: print to screen)')
+    p.add_argument('--name', help='name of the merged model')
+    p.add_argument('--unmatched', action='store_true', help='also list the elements that were not matched')
+    p.add_argument('-v', '--verbose', action='store_true')
+    p.set_defaults(func=cmd_merge)
 
     return parser
 

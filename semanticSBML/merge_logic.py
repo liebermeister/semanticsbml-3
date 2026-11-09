@@ -37,6 +37,11 @@ class BioRelations(object):
                 cls.__instance = BioRelations.Local(*args, **kargs)
         return cls.__instance        
 
+    @classmethod
+    def reset(cls):
+        '''forget the state of the last merge'''
+        cls.__instance = None
+
     class Local:
 
         def __init__(self,merger=None):
@@ -59,7 +64,7 @@ class BioRelations(object):
             #----------------------------------------------------
             try:
                 if element.newidset:
-                    print('double id set',element)#DEBUG
+                    pass
             except AttributeError:
                 element.newidset=True
             #----------------------------------------------------
@@ -119,7 +124,7 @@ class BioRelations(object):
                         if merge_model.id2merge_element[math.getName()].getTuple():#check if tuple is available
                             math.setName(merge_model.id2merge_element[math.getName()].getTuple().getMergedElement().getId())
                         elif self.model2id2newid[merge_model][math.getName()]!=math.getName():#check if id was updated
-                            math.setName = self.model2id2newid[merge_model][math.getName()]
+                            math.setName(self.model2id2newid[merge_model][math.getName()])   # the original assigned to math.setName instead of calling it
                     except KeyError:#no!? internal parameter!
                         #print 'HUH internal param ',math.getName(),merge_model.repr
                         pass
@@ -304,10 +309,8 @@ class BioRelations(object):
             return score_matrix
 
         def updateId(self,libsbml_element,oldId,newId):
-            print(oldId,newId)
 
             if isinstance(libsbml_element,libsbml.Model):
-                print('update whole model')
                 elements_w_id=['Species', 'Compartments', 'Reactions', 'Parameters', 'FunctionDefinitions', 'InitialAssignments', 'Rules']
                 for etype in elements_w_id:
                     for e in list(getattr(self._merged_element.libsbml_model,'getListOf'+etype)()):
