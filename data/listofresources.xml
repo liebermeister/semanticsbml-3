@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listOfResources>
+
+<resource name="3DMET"
+	  uri="http://www.3dmet.dna.affrc.go.jp/"
+	  urn="3dmet"
+	  location="http://www.3dmet.dna.affrc.go.jp/"
+          elements="species parameter"
+	  idPattern="^B\d{5}$"
+	  />
+
+<!-- resource name="PubChem"
+	  uri="http://pubchem.ncbi.nlm.nih.gov/"
+	  urn="pubchem.substance"
+	  location="http://pubchem.ncbi.nlm.nih.gov/"
+	  action="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?sid="
+          elements="species parameter"
+	  idPattern="^\d{4,8}$"
+	  /-->
+
+<resource name="PubChem-compound"
+	  uri="http://www.pubchem.gov/compound/"
+	  urn="pubchem.compound"
+	  location="http://pubchem.ncbi.nlm.nih.gov/"
+	  action="http://pubchem.ncbi.nlm.nih.gov/summary/summary.cgi?db=pccompound&amp;term="
+          elements="species parameter"
+	  idPattern="^\d+$"
+	  />
+
+<resource name="HMDB"
+          uri="http://www.hmdb.ca/"
+	  urn="hmdb"
+	  action="http://www.hmdb.ca/metabolites/"
+          elements="species parameter"
+	  idPattern="^HMDB\d{5}$"
+	  />
+
+<!--resource name="CAS"
+	  uri="http://www.cas.org/"
+	  location="http://www.cas.org/"
+          elements="species parameter"
+	  idPattern="^\d{1,6}-\d{2}-\d$"
+	  /-->
+
+<resource name="BIND"
+          uri="http://www.bind.ca/"
+	  urn="bind"
+          location="http://www.bind.ca/"
+          action="http://www.bind.ca/Action?identifier=bindid&amp;idsearch="
+          elements="species parameter assignmentRule rateRule algebraicRule rule reaction event"
+          idPattern="^\d+$"
+          />
+
+<resource name="ChEBI"
+          uri="http://www.ebi.ac.uk/chebi/"
+	  urn="obo.chebi"
+          location="http://www.ebi.ac.uk/chebi/"
+          action="http://www.ebi.ac.uk/chebi/searchFreeText.do?searchString="
+          elements="species parameter"
+          idInputHelper="CHEBI:"
+          idPattern="^CHEBI:\d{4,5}$"
+	  />
+
+<resource name="DOI"
+          uri="http://www.doi.org/"
+	  urn="doi"
+          location="http://www.doi.org/"
+          action="http://dx.doi.org/"
+          elements="model"
+	  idPattern="^\d{2}\.\d{4}\/.+$"
+          />
+  <!--Fake entry since our database is not up to date yet-->
+<!-- resource name="EC"
+          uri="http://www.ebi.ac.uk/IntEnz/"
+	  urn="ec-code"
+          location="http://www.ebi.ac.uk/IntEnz/"
+          action="http://www.ebi.ac.uk/intenz/query?cmd=SearchEC&amp;ec="
+          elements="assignmentRule rateRule algebraicRule reaction event"
+          idPattern="^(\d+|\d+\.(-|\d+)|\d+\.\d+\.(-|\d+)|\d+\.\d+\.\d+\.(-|\d+))$"
+          idInputHelper=""
+          /-->
+
+<resource name="Enzyme Nomenclature"
+	  uri="http://www.ebi.ac.uk/IntEnz/"
+	  urn="ec-code"
+	  alternateUris="http://www.ec-code.org/"
+          location="http://www.ebi.ac.uk/IntEnz/"
+          action="http://www.ebi.ac.uk/intenz/query?cmd=SearchEC&amp;ec="
+          elements="assignmentRule rateRule algebraicRule reaction event"
+          idInputHelper=""
+          idPattern="^(\d+|\d+\.(-|\d+)|\d+\.\d+\.(-|\d+)|\d+\.\d+\.\d+\.(-|\d+))$"
+          />
+
+<resource name="Ensembl"
+          uri="http://www.ensembl.org/"
+	  urn="ensembl"
+          location="http://www.ensembl.org/"
+          elements="species parameter"
+          idInputHelper="ENS"
+          idPattern="^ENS\w{3}[FPTG]\d{11}$"
+          />
+
+  <!--Fake entry since our database is not up to date yet-->
+  <!--resource name="GO"
+          uri="http://www.geneontology.org/"
+	  urn="obo.go"
+          location="http://www.ebi.ac.uk/ego/"
+          action="http://www.ebi.ac.uk/ego/GTerm?id="
+          elements="model compartment species parameter assignmentRule rateRule algebraicRule reaction event"
+          idPattern="^GO:\d{7}$"
+	  /-->
+<resource name="Gene Ontology"
+          uri="http://www.geneontology.org/"
+	  urn="obo.go"
+          location="http://www.ebi.ac.uk/ego/"
+          action="http://www.ebi.ac.uk/ego/DisplayGoTerm?selected="
+          elements="model compartment species parameter assignmentRule rateRule algebraicRule reaction event"
+          idPattern="^GO:\d{7}$"
+          />
+
+<resource name="ICD"
+          uri="http://www.who.int/classifications/icd/"
+	  urn="icd"
+          location="http://www3.who.int/icd/vol1htm2003/fr-icd.htm"
+          elements="model"
+          idPattern="^[A-Z]\d+(\.[-\d+])?$"
+          />
+
+<resource name="IntAct"
+	  uri="http://www.ebi.ac.uk/intact/"
+	  urn="intact"
+	  location="http://www.ebi.ac.uk/intact"
+          action="http://www.ebi.ac.uk/intact/search/do/search?searchString="
+          elements="assignmentRule rateRule algebraicRule reaction event"
+          idInputHelper="EBI-"
+          idPattern="^EBI\-[0-9]+$"
+          />
+
+<resource name="InterPro"
+          uri="http://www.ebi.ac.uk/interpro/"
+	  urn="interpro"
+          location="http://www.ebi.ac.uk/interpro/"
+          action="http://www.ebi.ac.uk/interpro/DisplayIproEntry?ac="
+          elements="species parameter"
+          idInputHelper="IPR"
+          idPattern="^IPR\d{6}$"
+          />
+
+  <!--Fake entry since our database is not up to date yet-->
+  <!--resource name="KEGG"
+          uri="http://www.genome.jp/kegg/"
+	  urn="kegg"
+          location="http://www.genome.jp/kegg/index.html"
+	  action="http://www.genome.jp/dbget-bin/www_bfind_sub?mode=bfind&amp;max_hit=1000&amp;dbkey=kegg&amp;keywords="
+          elements="species parameter reaction assignmentRule event"
+          idPattern="^\w{2,3}\d{5}$"
+	  / -->
+
+<resource name="KEGG Pathway"
+          uri="http://www.genome.jp/kegg/pathway/"
+	  urn="kegg.pathway"
+          location="http://www.genome.jp/kegg/pathway.html"
+          action="http://www.genome.jp/dbget-bin/show_pathway?"
+          elements="model assignmentRule rateRule algebraicRule reaction event"
+          idPattern="^\w{2,3}\d{5}$"
+          />
+
+<resource name="KEGG Compound"
+          uri="http://www.genome.jp/kegg/compound/"
+	  urn="kegg.compound"
+          location="http://www.genome.jp/kegg/ligand.html"
+          action="http://www.genome.jp/dbget-bin/www_bget?cpd:"
+          elements="species parameter"
+          idInputHelper="C"
+          idPattern="^C\d+$"
+          />
+
+<resource name="KEGG Reaction"
+          uri="http://www.genome.jp/kegg/reaction/"
+	  urn="kegg.reaction"
+          location="http://www.genome.jp/kegg/ligand.html"
+          action="http://www.genome.jp/dbget-bin/www_bget?rn:"
+          elements="assignmentRule rateRule algebraicRule reaction event"
+          idInputHelper="R"
+          idPattern="^R\d+$"
+          />
+
+<resource name="PubMed"
+	  uri="http://www.ncbi.nlm.nih.gov/PubMed/"
+	  urn="pubmed"
+	  alternateUris="http://www.pubmed.gov/"
+          location="http://www.ncbi.nlm.nih.gov/PubMed/"
+          action="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids="
+          elements="model"
+          idPattern="^\d+$"
+          />
+
+<resource name="OMIM"
+          uri="http://www.ncbi.nlm.nih.gov/OMIM/"
+	  urn="omim"
+          location="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=OMIM"
+          action="http://www.ncbi.nih.gov/entrez/dispomim.cgi?id="
+          elements="model species parameter"
+          idPattern="^[*#+%^]?\d{6}$"
+          />
+
+<resource name="PIRSF"
+          uri="http://pir.georgetown.edu/pirsf/"
+	  urn="pirsf"
+          location="http://pir.georgetown.edu/pirsf/"
+          action="http://pir.georgetown.edu/cgi-bin/ipcSF?id="
+          elements="species parameter"
+          idInputHelper="SF"
+          idPattern="^SF\d{6}$"
+          />
+
+<resource name="Taxonomy"
+	  uri="http://www.ncbi.nlm.nih.gov/Taxonomy/"
+	  urn="taxonomy"
+	  alternateUris="http://www.taxonomy.org/"
+          location="http://www.ebi.ac.uk/newt/display"
+          action="http://www.ebi.ac.uk/newt/display?search="
+          database="uk.ac.ebi.biomodels.TaxonomyDatabase"
+          elements="model species parameter"
+          idPattern="^\d+$"
+	  />
+
+  <!--action="http://www.ebi.ac.uk/compneur-srv/biomodels-main/search-models.do?cmd=ADVANCED:SEARCH&prs=&els=&rn0=Publication&rt0=&rn1=Publication&rt1=&rn2=Publication&rt2=&rn3=BIND&rt3=&rn4=BIND&rt4=&rn5=BIND&rt5=&lgc=and&bid="-->
+<resource name="BioModels"
+	  uri="http://www.ebi.ac.uk/biomodels/"
+	  urn="biomodels.db"
+          location="http://www.ebi.ac.uk/biomodels/"
+          elements="model"
+	  action="http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid="
+	  idPattern="^(BIOMD)|(MODEL)\d{10}$"
+	  />
+
+<resource name="UniProt"
+          uri="http://www.uniprot.org/"
+	  urn="uniprot"
+          location="http://www.uniprot.org/"
+          action="http://www.ebi.uniprot.org/entry/"
+          database="uk.ac.ebi.biomodels.UniProtDatabase"
+          elements="species parameter"
+          idPattern="^([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](_[\dA-Z]{1,5})?)$"
+          />
+  <!-- idPattern is very unclear MIRIAM database vs. found somewhere vs. already annotated vs probably correct whats going on here-->
+<resource name="Reactome"
+          uri="http://www.reactome.org/"
+	  urn="reactome"
+          location="http://www.reactome.org/"
+	  action="http://www.reactome.org/cgi-bin/link?SOURCE=Reactome&amp;ID="
+          elements="species parameter model assignmentRule rateRule algebraicRule reaction event"
+	  idPattern="^(REACT_\d+\.\d)|(\d+)|(REACT_\d+)|(REACT_\d+)$"
+          />
+<resource name="Saccharomyces genome database"
+          uri="http://www.yeastgenome.org/"
+	  urn="sgd"
+          location="http://www.yeastgenome.org/"
+          action="http://db.yeastgenome.org/cgi-bin/locus.pl?dbid="
+          elements="species parameter"
+          idPattern="^S\d{9}$"
+	  />
+
+</listOfResources>

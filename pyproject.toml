@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semanticsbml"
+version = "3.0.0a1"
+description = "Check, annotate, merge and compare SBML models using semantic (MIRIAM) annotations"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.10"
+authors = [
+  { name = "Falko Krause" }, { name = "Marvin Schulz" }, { name = "Jannis Uhlendorf" },
+  { name = "Wolfram Liebermeister" }, { name = "Anselm Helbig" }, { name = "Timo Lubitz" },
+  { name = "Stefan Stiller" },
+]
+dependencies = ["python-libsbml>=5.19", "numpy", "scipy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+semanticsbml = "semanticSBML.cli:main"
+
+[tool.setuptools]
+packages = ["semanticSBML", "libSBAnnotation", "libModelSimilarity"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listOfResources>
+	<DefaultUnitDefinitions>
+		<unit 	id='substance'
+			kind='mole'
+			/>       
+		<unit 	id='volume'
+			kind='litre'
+			/>       
+		<unit 	id='area'
+			kind='metre'
+			exponent='2.0'
+			/>       
+		<unit 	id='length'
+			kind='metre'
+			/>       
+		<unit 	id='time'
+			kind='second'
+			/>       
+	</DefaultUnitDefinitions>
+	<knownUnits kinds='ampere gram katal metre second watt becquerel gray kelvin mole siemens weber candela henry kilogram newton sievert coulomb hertz litre ohm steradian dimensionless item lumen pascal tesla farad joule lux radian volt'/>
+	<ModelQualifier>
+		<qualifier name='is' 
+			
+			var='BQM_IS'
+			description='The modelling object represented by the model component is the subject of the referenced resource. For instance, this qualifier might be used to link the encoded model to a database of models.'
+			/>
+		<qualifier name='isDerivedFrom'
+			
+			var='BQM_IS_DERIVED_FROM'
+			description= 'The modelling object represented by the component of the encoded model is derived from the modelling object represented by the referenced resource. For instance, they can be the fruit of a refinement or their adaptation for usage in a different context.'
+			/>
+		<qualifier name='isDescribedBy'
+			
+			var='BQM_IS_DESCRIBED_BY'
+			description= 'The modelling object represented by the component of the encoded model is described by the referenced resource. This relation might be used to link a model or a kinetic law to the literature that describes this model or this kinetic law.'
+			/>
+		<qualifier name='isInstanceOf'
+			var='BQM_IS_INSTANCE_OF'
+			description='The modelling object represented by the model element is an instance of the subject of the referenced resource.'
+			/>
+		<qualifier name='hasInstance'
+			var='BQM_HAS_INSTANCE'
+			description='The modelling object represented by the model element has instance (is a class of) the subject of the referenced resource.'
+			/>
+		<qualifier name='unknown'
+			var='BQM_UNKNOWN'
+			description=''
+			/>
+	</ModelQualifier>
+
+	<BioQualifier>
+		<qualifier name='is'
+			
+			var='BQB_IS'
+			description= 'The biological entity represented by the model component is the subject of the referenced resource. This relation might be used to link a reaction to its exact counterpart in KEGG or Reactome for instance.'
+			/>
+
+		<qualifier name='hasPart'
+			
+			var='BQB_HAS_PART'
+			description= 'The biological entity represented by the model component includes the subject of the referenced resource, either physically or logically. This relation might be used to link a complex to the description of its components.'
+			/>
+
+		<qualifier name='hasProperty'
+			
+			var='BQB_HAS_PROPERTY'
+			description= 'The subject of the referenced resource is a property of the biological entity represented by the model component. This relation might be used when a biological entity has a given activity or exerts a specific function.'
+			/>
+
+		<qualifier name='isPartOf'
+			
+			var='BQB_IS_PART_OF'
+			description= 'The biological entity represented by the model component is a physical or logical part of the subject of the referenced resource. This relation might be used to link a component to the description of the complex is belongs to.'
+			/>
+
+		<qualifier name='isPropertyOf'
+			
+			var='BQB_IS_PROPERTY_OF'
+			description= 'The biological entity represented by the model component is a property of the referenced resource.'
+			/>
+
+		<qualifier name='isVersionOf'
+			
+			var='BQB_IS_VERSION_OF'
+			description= 'The biological entity represented by the model component is a version or an instance of the subject of the referenced resource.'
+			/>
+
+		<qualifier name='hasVersion'
+			
+			var='BQB_HAS_VERSION'
+			description= 'The subject of the referenced resource is a version or an instance of the biological entity represented by the model component.'
+			/>
+
+		<qualifier name='isHomologTo'
+			
+			var='BQB_IS_HOMOLOG_TO'
+			description= 'The biological entity represented by the model component is homolog, to the subject of the referenced resource, i.e. they share a common ancestor.'
+			/>
+
+		<qualifier name='isDescribedBy'
+			
+			var='BQB_IS_DESCRIBED_BY'
+			description= 'The biological entity represented by the model component is described by the referenced resource. This relation should be used for instance to link a species or a parameter to the literature that describes the concentration of the species or the value of the parameter.'
+			/>
+		<qualifier name='isEncodedBy'
+                        
+			var='BQB_IS_ENCODED_BY'
+                        description= 'The biological entity represented by the model component is encoded, directly, or by transitivity, by the subject of the referenced resource.'
+                        />
+		<qualifier name='encodes'
+                        
+			var='BQB_ENCODES'
+                        description= 'The biological entity represented by the model component encodes, directly or by transitivity the subject of the referenced resource.'
+                        />
+		<qualifier name='occursIn'
+                        
+			var='BQB_OCCURS_IN'
+                        description= 'The biological entity represented by the model component takes place in the subject of the reference resource.'
+
+                        />
+		<qualifier name='unknown'
+			
+			var='BQB_UNKNOWN'
+			description=''
+			/>
+		<qualifier name='hasTaxon'
+			var='BQB_HAS_TAXON'
+			description='The biological entity represented by the model element is taxonomically restricted, where the restriction is the subject of the referenced resource.'
+			/>
+	</BioQualifier>
+</listOfResources>

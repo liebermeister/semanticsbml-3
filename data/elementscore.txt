@@ -1,0 +1,15 @@
+              is            hasPart       isPartOf      isVersionOf   hasVersion    isHomologTo   isDescribedBy isEncodedBy   encodes       hasProperty   isPropertyOf   occursIn      unknown       hasTaxon
+is            10            1             1             1             1             1             1             1             1		    1		  1		 1             1             1
+hasPart                     1             1             1             1             1             1             1             1		    1		  1		 1             1             1
+isPartOf                                  1             1             1             1             1             1             1		    1		  1		 1             1             1
+isVersionOf                                             2             1             1             1             1             1		    1		  1		 1             1             1
+hasVersion                                                            1             1             1             1             1		    1		  1		 1             1             1
+isHomologTo                                                                         1             1             1             1		    1		  1		 1             1             1
+isDescribedBy                                                                                     9             1             1		    1		  1		 1             1             1
+isEncodedBy                                                                                                     9             1		    1		  1		 1             1             1
+encodes                                                                                                                       9		    1		  1		 1             1             1
+hasProperty																    5		  1		 1	       1             1
+isPropertyOf																		  9		 1	       1             1
+occursIn																				 1             1             1
+unknown																						       1             1
+hasTaxon																							1

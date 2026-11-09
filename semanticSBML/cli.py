@@ -1,0 +1,408 @@
+"""
+Command line interface of semanticSBML.
+
+    semanticsbml check        MODEL.xml ...
+    semanticsbml view         MODEL.xml -o picture.svg
+    semanticsbml annotations  MODEL.xml
+    semanticsbml search       "glucose"
+    semanticsbml annotate     MODEL.xml -o OUT.xml --auto
+    semanticsbml merge        A.xml B.xml -o MERGED.xml
+    semanticsbml similar      A.xml B.xml
+
+Run "semanticsbml COMMAND --help" for the options of each command.
+"""
+
+import argparse
+import os
+import sys
+
+
+class CliError(Exception):
+    pass
+
+
+# ---------------------------------------------------------------------------
+# helpers
+# ---------------------------------------------------------------------------
+
+def read_document(path):
+    """read an SBML file, stop with a readable message if it is broken"""
+    import libsbml
+    if not os.path.isfile(path):
+        raise CliError('File not found: %s' % path)
+    document = libsbml.readSBML(path)
+    fatal = [document.getError(i) for i in range(document.getNumErrors())
+             if document.getError(i).getSeverity() >= libsbml.LIBSBML_SEV_ERROR]
+    if fatal or document.getModel() is None:
+        messages = '\n'.join('  line %s: %s' % (e.getLine(), e.getMessage().strip()) for e in fatal[:10])
+        raise CliError('Could not read %s as SBML\n%s' % (path, messages))
+    return document
+
+
+def write_document(document, path):
+    import libsbml
+    if not libsbml.writeSBMLToFile(document, path):
+        raise CliError('Could not write %s' % path)
+
+
+def make_box(string):
+    line = '+' + '-' * (len(string) + 2) + '+'
+    return '%s\n| %s |\n%s' % (line, string, line)
+
+
+def element_annotations(document):
+    """list of ElementAnnotations of all annotatable elements, in file order (model first)"""
+    from . import annotate
+    elements = annotate.ModelElementsAnnotations(document.getModel(), True).getElementAnnotations()
+    return list(reversed(elements))
+
+
+def find_element(elements, element_id):
+    """find an element by its id (or 'model' for the model itself)"""
+    hits = [e for e in elements if e.id == element_id]
+    if not hits and element_id == 'model':
+        hits = [e for e in elements if e.type == 'model']
+    if not hits:
+        hits = [e for e in elements if e.metaid == element_id]
+    if not hits:
+        raise CliError('No element with id "%s" in the model' % element_id)
+    if len(hits) > 1:
+        raise CliError('Id "%s" is ambiguous (%s)' % (element_id, ', '.join(e.type for e in hits)))
+    return hits[0]
+
+
+def print_table(rows, out=sys.stdout):
+    if not rows:
+        return
+    widths = [max(len(str(row[i])) for row in rows) for i in range(len(rows[0]) - 1)]
+    for row in rows:
+        cells = [str(c).ljust(w) for c, w in zip(row, widths)] + [str(row[-1])]
+        out.write('  '.join(cells).rstrip() + '\n')
+
+
+# ---------------------------------------------------------------------------
+# check
+# ---------------------------------------------------------------------------
+
+def cmd_check(args):
+    from .Model import Model
+    from .sbmlcheck import Checker
+
+    total_errors = total_warnings = 0
+    for f in args.files:
+        read_document(f)        # readable error message for broken files
+        file_errors = file_warnings = 0
+        if not args.quiet:
+            print(make_box('CHECKING FILE %s' % f))
+        for r in Checker(Model(f)).run():
+            file_errors += r.errors
+            file_warnings += r.warnings
+            if not args.quiet and (r.errors or r.warnings or args.verbose):
+                print('%s returned %d errors and %d warnings.' % (r.name, r.errors, r.warnings))
+                for m in r.error_messages:
+                    print(' - ERROR: ' + m)
+                for m in r.warning_messages:
+                    print(' - WARNING: ' + m)
+                print()
+        if not args.quiet:
+            print('%d errors have been found in this file, %d warnings have been issued.\n' % (file_errors, file_warnings))
+        total_errors += file_errors
+        total_warnings += file_warnings
+    if not args.quiet and len(args.files) > 1:
+        print('A total of %d errors and %d warnings have been found in all files.' % (total_errors, total_warnings))
+    return (1 if total_warnings else 0) + (2 if total_errors else 0)
+
+
+# ---------------------------------------------------------------------------
+# view
+# ---------------------------------------------------------------------------
+
+def cmd_view(args):
+    import libSBAnnotation.config
+    from . import sbml2dot
+
+    document = read_document(args.file)
+    config = libSBAnnotation.config.Config()
+    config.set('sbml2dot', 'colors', '0' if args.black_and_white else '2')
+    config.set('sbml2dot', 'view_names', '1' if args.ids else '0')
+    config.set('sbml2dot', 'max_number', str(args.max_species))
+
+    out = args.outfile
+    fmt = (os.path.splitext(out)[1][1:].lower() if out else '') or 'dot'
+    if fmt == 'dot':
+        data = sbml2dot.sbml2dot_string(document, args.max_participations)
+    else:
+        data = sbml2dot.sbml2image(document, fmt, args.max_participations)
+    if not out:
+        sys.stdout.write(data)
+    elif isinstance(data, bytes):
+        with open(out, 'wb') as f:
+            f.write(data)
+    else:
+        with open(out, 'w', encoding='utf-8') as f:
+            f.write(data)
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# annotations (list)
+# ---------------------------------------------------------------------------
+
+def cmd_annotations(args):
+    document = read_document(args.file)
+    elements = element_annotations(document)
+    rows = []
+    missing = 0
+    for e in elements:
+        annotations = e.getAnnotations()
+        if not annotations:
+            missing += 1
+            if not args.annotated:
+                rows.append((e.type, e.id, e.name, '-', '-', '-', ''))
+            continue
+        if args.missing:
+            continue
+        for a in annotations:
+            rows.append((e.type, e.id, e.name, a.qualifier, a.db, a.id, a.getName()))
+    if args.tsv:
+        print('\t'.join(('type', 'id', 'name', 'qualifier', 'database', 'identifier', 'identifier_name')))
+        for row in rows:
+            print('\t'.join(str(c) for c in row))
+    else:
+        print_table([('TYPE', 'ID', 'NAME', 'QUALIFIER', 'DATABASE', 'IDENTIFIER', 'MEANING')] + rows)
+        print('\n%d of %d elements have no annotation.' % (missing, len(elements)))
+    for e in elements:
+        if e.getReadErrors():
+            sys.stderr.write('Problem in %s %s: %s\n' % (e.type, e.id, e.getReadErrors()))
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# search the annotation database
+# ---------------------------------------------------------------------------
+
+def cmd_search(args):
+    import libSBAnnotation.database_new
+    import libSBAnnotation.annotate
+    import libSBAnnotation.config
+
+    db = libSBAnnotation.database_new.Meta_DB()
+    query = args.query.lower()
+    if args.exact:
+        groups = db.searchEntries(query)
+    else:
+        groups = db.searchEntries(query, args.precision)
+    allowed = None
+    if args.type:
+        allowed = libSBAnnotation.config.Config().get('annotate', 'annotate_%s_with' % args.type).split(',')
+    rows = []
+    for number, group in enumerate(groups):
+        for database, identifier in sorted(group.items()):
+            if allowed is not None and database not in allowed:
+                continue
+            try:
+                a = libSBAnnotation.annotate.Annotation(database, identifier, qualifier='is')
+                rows.append((number + 1, a.getName(), database, identifier, str(a)))
+            except libSBAnnotation.annotate.AnnotationError:
+                pass
+    if not rows:
+        print('Nothing found for "%s".' % args.query)
+        return 1
+    print_table([('#', 'NAME', 'DATABASE', 'IDENTIFIER', 'URI')] + rows)
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# annotate (modify)
+# ---------------------------------------------------------------------------
+
+def _copy_annotations(document, source_document, overwrite):
+    """copy annotations from elements of another model that have the same id"""
+    from . import annotate
+    source = dict(((e.type, e.id), e) for e in element_annotations(source_document))
+    copied = 0
+    for e in element_annotations(document):
+        other = source.get((e.type, e.id))
+        if e.type == 'model' and other is None:
+            others = [x for (t, i), x in source.items() if t == 'model']
+            other = others[0] if others else None
+        if other is None or not other.getAnnotations():
+            continue
+        if e.isAnnotated():
+            if not overwrite:
+                continue
+            e.unsetAnnotations()
+        for a in other.getAnnotations():
+            e.addAnnotation(annotate.Annotation(a.db, a.id, a.qualifier_type, a.qualifier))
+        copied += 1
+    return copied
+
+
+def cmd_annotate(args):
+    from . import annotate
+
+    document = read_document(args.file)
+    elements = element_annotations(document)
+    log = sys.stderr.write
+
+    for element_id in args.clear or []:
+        find_element(elements, element_id).unsetAnnotations()
+        log('cleared annotations of %s\n' % element_id)
+    if args.clear_all:
+        for e in elements:
+            e.unsetAnnotations()
+        log('cleared all annotations\n')
+
+    for element_id, database, identifier in args.remove or []:
+        e = find_element(elements, element_id)
+        wanted = annotate.Annotation(database, identifier, qualifier='is')
+        hits = [a for a in e.getAnnotations() if a.db == wanted.db and a.id == wanted.id]
+        if not hits:
+            raise CliError('%s has no annotation %s %s' % (element_id, database, identifier))
+        for a in hits:
+            e.remAnnotation(a)
+        log('removed %s %s from %s\n' % (wanted.db, wanted.id, element_id))
+
+    if args.copy_from:
+        n = _copy_annotations(document, read_document(args.copy_from), args.overwrite)
+        elements = element_annotations(document)
+        log('copied annotations to %d elements from %s\n' % (n, args.copy_from))
+
+    for item in args.add or []:
+        if len(item) not in (3, 4):
+            raise CliError('--add needs ELEMENT DATABASE IDENTIFIER [QUALIFIER]')
+        element_id, database, identifier = item[:3]
+        qualifier = item[3] if len(item) == 4 else 'is'
+        e = find_element(elements, element_id)
+        qualifier_type = 'bio'
+        if qualifier not in annotate.bio_qualifiers:
+            if qualifier in annotate.model_qualifiers:
+                qualifier_type = 'model'
+            else:
+                raise CliError('Unknown qualifier "%s". Known: %s' % (qualifier, ', '.join(annotate.bio_qualifiers)))
+        a = annotate.Annotation(database, identifier, qualifier_type, qualifier)
+        if any(x.db == a.db and x.id == a.id and x.qualifier == a.qualifier for x in e.getAnnotations()):
+            log('%s already has %s %s\n' % (element_id, a.db, a.id))
+            continue
+        e.addAnnotation(a)
+        log('added %s %s (%s) to %s  [%s]\n' % (a.db, a.id, qualifier, element_id, a.getName()))
+
+    if args.auto:
+        done = failed = 0
+        for e in elements:
+            if e.isAnnotated() or e.type == 'model':
+                continue
+            try:
+                e.addAnnotationAutomatic()
+            except annotate.AnnotationError:
+                failed += 1
+                if args.verbose:
+                    log('  no unique database entry for %s "%s"\n' % (e.type, e.name or e.id))
+                continue
+            done += 1
+            log('  %s %s "%s" -> %s\n' % (e.type, e.id, e.name,
+                                           ', '.join('%s %s' % (a.db, a.id) for a in e.getAnnotations())))
+        log('automatic annotation: %d elements annotated, %d left without annotation\n' % (done, failed))
+
+    if args.outfile:
+        write_document(document, args.outfile)
+        log('written %s\n' % args.outfile)
+    else:
+        import libsbml
+        sys.stdout.write(libsbml.writeSBMLToString(document))
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# argument parser
+# ---------------------------------------------------------------------------
+
+def build_parser():
+    parser = argparse.ArgumentParser(
+        prog='semanticsbml',
+        description='Check, annotate, merge and compare SBML models using their semantic (MIRIAM) annotations.')
+    parser.add_argument('--data', metavar='DIR',
+                        help='directory with the annotation database (default: the "data" folder of the installation, '
+                             'or the environment variable SEMANTICSBML_DATA)')
+    parser.add_argument('--progress', action='store_true', help='show progress messages while loading the database')
+    sub = parser.add_subparsers(dest='command', metavar='COMMAND')
+
+    p = sub.add_parser('check', help='check annotated models for completeness and consistency')
+    p.add_argument('files', nargs='+', metavar='MODEL.xml')
+    p.add_argument('-v', '--verbose', action='store_true', help='also list the checks that found nothing')
+    p.add_argument('-q', '--quiet', action='store_true', help='no output, only the exit code (1: warnings, 2: errors)')
+    p.set_defaults(func=cmd_check)
+
+    p = sub.add_parser('view', help='draw the reaction network of a model (needs graphviz)')
+    p.add_argument('file', metavar='MODEL.xml')
+    p.add_argument('-o', '--outfile', help='output file; the ending decides the format (.svg .png .pdf .dot). '
+                                           'Without -o the graphviz dot code is printed')
+    p.add_argument('--ids', action='store_true', help='label nodes with the ids of the model instead of the names of the annotations')
+    p.add_argument('--black-and-white', action='store_true')
+    p.add_argument('--max-participations', type=int, default=1000, metavar='N',
+                   help='leave out species that take part in more than N reactions (e.g. ATP, water)')
+    p.add_argument('--max-species', type=int, default=500, metavar='N', help='refuse to draw models with more species (default 500)')
+    p.set_defaults(func=cmd_view)
+
+    p = sub.add_parser('annotations', help='list the annotations of a model')
+    p.add_argument('file', metavar='MODEL.xml')
+    p.add_argument('--missing', action='store_true', help='show only elements without annotation')
+    p.add_argument('--annotated', action='store_true', help='show only elements with annotation')
+    p.add_argument('--tsv', action='store_true', help='tab separated output')
+    p.set_defaults(func=cmd_annotations)
+
+    p = sub.add_parser('search', help='search the annotation database for a name')
+    p.add_argument('query')
+    p.add_argument('--exact', action='store_true', help='only exact matches of the name')
+    p.add_argument('--precision', type=float, default=0.8, help='similarity of names, between 0 and 1 (default 0.8)')
+    p.add_argument('--type', choices=['species', 'reaction', 'compartment', 'parameter', 'rule', 'event', 'model'],
+                   help='only databases that are appropriate for this kind of SBML element')
+    p.set_defaults(func=cmd_search)
+
+    p = sub.add_parser('annotate', help='add or remove annotations',
+                       description='Add or remove annotations. The steps are carried out in this order: '
+                                   'clear, remove, copy-from, add, auto.')
+    p.add_argument('file', metavar='MODEL.xml')
+    p.add_argument('-o', '--outfile', help='file for the annotated model (default: print to screen)')
+    p.add_argument('--auto', action='store_true',
+                   help='annotate all elements without annotation whose name is found exactly once in the database')
+    p.add_argument('--add', nargs='+', action='append', metavar='X',
+                   help='--add ELEMENT DATABASE IDENTIFIER [QUALIFIER]   e.g. --add GLCi ChEBI CHEBI:17234 is')
+    p.add_argument('--remove', nargs=3, action='append', metavar=('ELEMENT', 'DATABASE', 'IDENTIFIER'))
+    p.add_argument('--clear', action='append', metavar='ELEMENT', help='remove all annotations of this element')
+    p.add_argument('--clear-all', action='store_true', help='remove all annotations of the model')
+    p.add_argument('--copy-from', metavar='OTHER.xml', help='copy annotations from elements with the same id in another model')
+    p.add_argument('--overwrite', action='store_true', help='with --copy-from: replace existing annotations')
+    p.add_argument('-v', '--verbose', action='store_true')
+    p.set_defaults(func=cmd_annotate)
+
+    return parser
+
+
+def main(argv=None):
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if not args.command:
+        parser.print_help()
+        return 0
+    if args.data:
+        os.environ['SEMANTICSBML_DATA'] = args.data
+    if not args.progress:
+        os.environ.setdefault('SEMANTICSBML_QUIET', '1')
+    try:
+        return args.func(args) or 0
+    except CliError as e:
+        sys.stderr.write('Error: %s\n' % e)
+        return 2
+    except BrokenPipeError:
+        return 0
+    except Exception as e:
+        # errors of the library (AnnotationError, MergeError, DatabaseError ...)
+        if os.environ.get('SEMANTICSBML_DEBUG'):
+            raise
+        sys.stderr.write('Error: %s\n(set the environment variable SEMANTICSBML_DEBUG=1 for details)\n' % e)
+        return 2
+
+
+if __name__ == '__main__':
+    sys.exit(main())

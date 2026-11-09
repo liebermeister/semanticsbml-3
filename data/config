@@ -1,0 +1,51 @@
+[resources]
+graphvizdot = dot
+libsbml_resources = ~/.semanticSBML/libsbmlresources.xml
+brenda_log = ~/.semanticSBML/brenda_log.txt
+listofresources = ~/.semanticSBML/listofresources.xml
+element_score_matrix = ~/.semanticSBML/elementscore.txt
+miriam_resources = ~/.semanticSBML/MIRIAM_resources.xml
+qualifiers = ~/.semanticSBML/qualifiers.csv
+sbo_resources = ~/.semanticSBML/db/SBO_OBO.obo
+balancing_information = ~/.semanticSBML/information.tsv
+
+[database]
+database_dir = ~/.semanticSBML/db/
+
+[annotate]
+search_precision = 0.8
+search_precision2 = 0.8
+annotate_species_with = Brenda Tissue Ontology,Gene Ontology,ChEMBL target,ChemIDplus,NCIt,Saccharomyces genome database,MACiE,OMIM,Entrez Gene,T3DB,LIPID MAPS,Pfam,Ligand Expo,BioGRID,PeptideAtlas,TAIR Protein,Reactome,InterPro,Taxonomy,IPI,GlycomeDB,HGNC,KEGG Glycan,PIRSF,HOVERGEN,miRBase Sequence,ChEMBL compound,SubtiWiki,PubChem-compound,SPRINT,PubChem-substance,Database of Interacting Proteins,KEGG Compound,HMDB,Microbial Protein Interaction Database,NeuronDB,Ensembl,Wormpep,Nucleotide Sequence Database,Ligand-Gated Ion Channel database,TTD Target,iRefWeb,RESID,KEGG Drug,PANTHER,WormBase,TAIR Gene,NeuroMorpho,Rat Genome Database,RefSeq,Anatomical Therapeutic Chemical,DrugBank,UniProt,Mouse Genome Database,Chemical Component Dictionary,GeneDB,ChEBI,CTD Gene,UniParc,MEROPS,Sequence Ontology,3DMET,BIND,TAIR Locus,BioSystems,KEGG Orthology,Conserved Domain Database,Aclame,LipidBank,Protein Data Bank,KEGG Genes,ChemSpider,TTD Drug,NeuroLex,MatrixDB,PATO,ZFIN Gene,PhosphoSite Protein,FlyBase,SGD,PubChem-bioassay,PROSITE,ProDom,SMART,Transport Classification Database,Protein Modification Ontology,IMEx,Systems Biology Ontology,Molecular Modeling Database,Melanoma Molecular Map Project Biomaps,CluSTr
+annotate_reaction_with = Gene Ontology,BRENDA,Pathway Commons,KEGG Pathway,Rhea,Saccharomyces genome database pathways,IntAct,Unipathway,MACiE,SABIO-RK Kinetic Record,KEGG Reaction,WikiPathways,Small Molecule Pathway Database,Reactome,SABIO-RK EC Record,SABIO-RK Reaction,Protein Modification Ontology,BIND,Systems Biology Ontology,Melanoma Molecular Map Project Biomaps,Enzyme Nomenclature,BioSystems
+annotate_rule_with = Gene Ontology,BIND,Systems Biology Ontology,Enzyme Nomenclature,KEGG Pathway,Reactome,IntAct,KEGG Reaction
+annotate_parameter_with = Gene Ontology,BRENDA,ChEMBL target,ChEMBL compound,ChemIDplus,PubChem-compound,PubChem-substance,Saccharomyces genome database,DrugBank,SABIO-RK Kinetic Record,OMIM,KEGG Compound,PATO,UniProt,HMDB,BioNumbers,SGD,PubChem-bioassay,PeptideAtlas,Ensembl,Reactome,ChEBI,InterPro,Taxonomy,PIRSF,Systems Biology Ontology,T3DB,3DMET,BIND,Ontology of Physics for Biology
+annotate_event_with = Gene Ontology,SABIO-RK EC Record,BIND,Systems Biology Ontology,Molecular Interactions Ontology,Enzyme Nomenclature,KEGG Pathway,Reactome,IntAct,KEGG Reaction
+annotate_model_with = Brenda Tissue Ontology,Gene Ontology,ISBN,arXiv,BioModels Database,DOI,KEGG Pathway,PRIDE,PATO,Saccharomyces genome database pathways,Unipathway,PharmGKB Disease,OMIM,JWS Online,WikiPathways,Database of Quantitative Cellular Signaling: Model,Database of Quantitative Cellular Signaling: Pathway,NeuronDB,Small Molecule Pathway Database,ModelDB,ICD,PubMed,BioModels,Reactome,NCIt,Taxonomy,Systems Biology Ontology,CTD Disease,BioSystems
+annotate_compartment_with = Gene Ontology,Brenda Tissue Ontology,NeuronDB,NCIt,Systems Biology Ontology,NeuroMorpho,FMA
+annotate_kineticlaw_with = 
+
+[sbml2dot]
+max_number = 50
+view_names = 0
+colors = 2
+
+[fill]
+arithmeticgeometric = 0
+balancing = 0
+
+[gui]
+firststart = 0
+firststart1.9 = 0
+maximized = 0
+app_x = 138
+app_y = 70
+app_w = 1262
+app_h = 816
+i2soutfileopenpath = /home/wolfram
+i2sinfileopenpath = /home/wolfram
+copyannofileopenpath = /home/wolfram
+fileopenpath = /home/wolfram/kopien_von_isis/model_playground
+diropenpath = /home/wolfram
+k2sdiropenpath = /home/wolfram
+fileopenerrorpopup = 0
+
