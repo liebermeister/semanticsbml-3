@@ -1,3 +1,5 @@
+<img src="docs/semanticsbml-logo.png" alt="semanticSBML logo" width="240" align="right">
+
 # semanticSBML 3
 
 Check, annotate, merge and compare SBML models using their semantic

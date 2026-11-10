@@ -16,8 +16,8 @@ our knowledge; check them at the source.
 | identifiers.org registry | `https://registry.api.identifiers.org/resolutionApi/getResolverDataset` | CC0 |
 
 KEGG identifiers occur in the database only as cross references published by ChEBI
-and the Gene Ontology. Nothing is downloaded from KEGG unless `--with-kegg` is given;
-KEGG data are free for academic use only and may not be redistributed.
+and the Gene Ontology. Nothing is downloaded from KEGG, and the repository contains
+no KEGG data.
 
 ## In the repository
 
@@ -28,4 +28,5 @@ KEGG data are free for academic use only and may not be redistributed.
 | `data/listofresources.xml`, `libsbmlresources.xml`, `elementscore.txt`, `qualifiers.csv`, `config` | original semanticSBML project | GPL 3, like the code |
 | `data/bimatrix.csv`, `simmatrix.csv`, `biomodels_probabilities`: statistics of the annotations in BioModels (2010–2011), used only by library functions not reachable from the command line | original semanticSBML project | GPL 3 |
 | Test models `tests/models/*.xml` | BioModels | CC0 |
+| `docs/semanticsbml-logo.png` | logo of the original semanticSBML project | |
 | `tests/reference_py2/`: outputs of the original program, kept for comparison | this port | GPL 3 |

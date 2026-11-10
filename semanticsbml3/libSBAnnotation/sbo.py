@@ -18,23 +18,11 @@ def checkSBO(section,option):
     @param option: the config entry
     @type option: str
     '''
-    #--------------------------------
-    def redownload(message):
-        try:
-            db = database_new.Meta_DB()
-            db.buildDB(option)
-            checkSBO(section,option)
-        except Exception as e:
-            raise annotate.AnnotationDatabaseError( "%s\nSomething Went Wrong:\n %s \n"%(message,e))
-            #import sys
-            #sys.exit(1)
-    #--------------------------------
     filepath = config.Config().getpath(section,option)
     if not os.path.exists(filepath):
-        msg = "CMissing %s \nTrying to get it ...\n"%(filepath)
-        sys.stderr.write(msg)
-        #trigger download
-        redownload(msg)
+        raise annotate.AnnotationDatabaseError(
+            'No annotation database found (%s is missing). Build it with the command\n'
+            '    semanticsbml build-database' % filepath)
 
 checkSBO('resources','SBO_resources')
 

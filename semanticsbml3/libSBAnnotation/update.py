@@ -11,9 +11,8 @@ The original program built its database from files that are no longer offered
 - a small extract of the NCBI taxonomy that comes with the program (data/ncbi_taxonomy_small_*.dmp,
   made by the original semanticSBML project in 2009).
 
-KEGG identifiers appear only as cross references given by ChEBI and the Gene Ontology;
-no data are taken from KEGG unless asked for with with_kegg=True (KEGG is free for
-academic use only).
+No data are taken from KEGG. KEGG identifiers appear only as cross references given
+by ChEBI and the Gene Ontology.
 
     from libSBAnnotation import update
     update.build()              # downloads into <data>/downloads and writes <data>/db
@@ -39,14 +38,10 @@ SOURCES = {
     'go': 'https://purl.obolibrary.org/obo/go/go-basic.obo',
     'sbo': 'https://raw.githubusercontent.com/EBI-BioModels/SBO/master/SBO_OBO.obo',
     'registry': 'https://registry.api.identifiers.org/resolutionApi/getResolverDataset',
-    # only with with_kegg=True
-    'kegg_compound': 'https://rest.kegg.jp/list/compound',
-    'kegg_reaction': 'https://rest.kegg.jp/list/reaction',
 }
 FILENAMES = {
     'chebi': 'chebi.obo.gz', 'go': 'go-basic.obo', 'sbo': 'SBO_OBO.obo',
     'registry': 'identifiers_org_registry.json',
-    'kegg_compound': 'kegg_compound_list.txt', 'kegg_reaction': 'kegg_reaction_list.txt',
 }
 TAXONOMY_FILES = ('ncbi_taxonomy_small_nodes.dmp', 'ncbi_taxonomy_small_names.dmp')
 # files written into the database folder besides the tables
@@ -446,101 +441,6 @@ class Updater:
         self.report.append('NCBI Taxonomy: small extract of 2009 made by the original semanticSBML project, '
                            '%d entries' % (len(self.db.abstract_item.rows) - before))
 
-    # -- KEGG (only on request) ------------------------------------------------
-    _stoichiometry = re.compile(r'^(\d+|\d*n|\d*m|\((?:\d*[nm])?[+-]?\d*[nm]?\))\s+(.+)$')
-
-    def update_kegg(self, compound_path, reaction_path):
-        db = self.db
-        compounds = []
-        with open_text(compound_path) as f:
-            for line in f:
-                if '\t' in line:
-                    ident, names = line.rstrip('\n').split('\t', 1)
-                    ident = ident.replace('cpd:', '')
-                    if re.match(r'^C\d{5}$', ident):
-                        compounds.append((ident, [n.strip() for n in names.split('; ') if n.strip()]))
-        if len(compounds) < 10000:
-            raise UpdateError('%s does not look like the KEGG compound list' % compound_path)
-        n_new = 0
-        first_name, any_name = {}, {}
-        for ident, names in compounds:
-            if names:
-                first_name.setdefault(names[0], []).append(ident)
-            for name in names:
-                any_name.setdefault(name, []).append(ident)
-            aid = self._aid('kegg_compound', ident)
-            if aid is None:
-                self._add({'kegg_compound': ident}, list(names), 'species', 'kegg_compound')
-                n_new += 1
-            elif names:
-                has_name = any(db.string_repr.rows[i][2] for i in db.string_repr.global_index['abstract_item'].get(aid, []))
-                if has_name:
-                    db.addName(aid, names)
-                else:                       # compound known only as a link from ChEBI so far
-                    self._add({'kegg_compound': ident}, list(names), 'species', 'kegg_compound')
-        self.report.append('KEGG Compound: %d entries in the list, %d new (names only)' % (len(compounds), n_new))
-
-        def compound(name):
-            for index in (first_name, any_name):
-                found = index.get(name, [])
-                if len(found) == 1:
-                    return found[0]
-            return None
-
-        def side(text):
-            participants = []
-            for part in text.split(' + '):
-                part = part.strip()
-                stoich = 1
-                ident = compound(part)
-                if ident is None:
-                    m = self._stoichiometry.match(part)
-                    if m:
-                        ident = compound(m.group(2).strip())
-                        try:
-                            stoich = int(m.group(1))
-                        except ValueError:
-                            stoich = 1          # n, (n+1) ... are treated as 1, as in the original
-                if ident is None:
-                    return None
-                participants.append([{'kegg_compound': ident}, [], stoich])
-            return participants
-
-        n_reactions = n_new = n_equation = 0
-        with open_text(reaction_path) as f:
-            for line in f:
-                if '\t' not in line:
-                    continue
-                ident, text = line.rstrip('\n').split('\t', 1)
-                ident = ident.replace('rn:', '')
-                if not re.match(r'^R\d{5}$', ident):
-                    continue
-                n_reactions += 1
-                if self._aid('kegg_reaction', ident) is not None:
-                    continue
-                parts = [p.strip() for p in text.split('; ')]
-                equation = parts[-1] if '<=>' in parts[-1] else None
-                names = parts[:-1] if equation else parts
-                substrates = products = None
-                if equation:
-                    left, right = equation.split('<=>', 1)
-                    substrates, products = side(left), side(right)
-                if substrates is None or products is None:
-                    substrates, products = [], []
-                    names = names or [equation or ident]
-                    if equation and equation not in names:
-                        names = names + [equation]
-                else:
-                    n_equation += 1
-                db.addReaction({'kegg_reaction': ident}, substrates, products, [],
-                               [[{}, names]] if names else [], 'kegg_reaction')
-                db.abstract_id_to_annotation_object.clear()
-                n_new += 1
-        if n_reactions < 5000:
-            raise UpdateError('%s does not look like the KEGG reaction list' % reaction_path)
-        self.report.append('KEGG Reaction: %d entries in the list, %d new, %d of them with all participants '
-                           'recognised by name' % (n_reactions, n_new, n_equation))
-
     # -- identifiers.org ----------------------------------------------------
     def update_registry(self, path):
         with open_text(path) as f:
@@ -575,13 +475,12 @@ def _fetch(keys, download_dir, use_existing, status):
     return files
 
 
-def build(download_dir=None, use_existing=False, with_kegg=False, all_chebi=False, update_existing=False,
+def build(download_dir=None, use_existing=False, all_chebi=False, update_existing=False,
           status=print):
     """
     build the annotation database in <data>/db from the online resources
     @param download_dir: where the source files are kept (default: <data>/downloads)
     @param use_existing: do not download files that are in download_dir already
-    @param with_kegg: also fetch the KEGG name lists (KEGG is free for academic use only)
     @param all_chebi: take all ChEBI entries, not only the curated ones and those linked to KEGG compounds
     @param update_existing: apply the sources to the existing database instead of building a new one
     @return: list of report lines
@@ -590,7 +489,7 @@ def build(download_dir=None, use_existing=False, with_kegg=False, all_chebi=Fals
     data = config.data_dir()
     download_dir = download_dir or os.path.join(data, 'downloads')
     os.makedirs(download_dir, exist_ok=True)
-    keys = ['chebi', 'go', 'sbo', 'registry'] + (['kegg_compound', 'kegg_reaction'] if with_kegg else [])
+    keys = ['chebi', 'go', 'sbo', 'registry']
     files = _fetch(keys, download_dir, use_existing, status)
 
     cfg = config.Config()
@@ -612,8 +511,6 @@ def build(download_dir=None, use_existing=False, with_kegg=False, all_chebi=Fals
         updater.update_sbo(files['sbo'])
         updater.update_chebi(files['chebi'], all_chebi)
         updater.update_go(files['go'])
-        if with_kegg:
-            updater.update_kegg(files['kegg_compound'], files['kegg_reaction'])
         updater.update_registry(files['registry'])
         updater.save()
         with open(os.path.join(workdir, INFO_FILE), 'a' if update_existing else 'w', encoding='utf-8') as out:

@@ -47,7 +47,7 @@ def test_merge_and_similarity_with_current_database(tmp_path):
 
 @built
 def test_no_kegg_data():
-    """without --with-kegg nothing comes from KEGG: KEGG identifiers only as links of ChEBI and GO entries"""
+    """nothing comes from KEGG: KEGG identifiers only as links of ChEBI and GO entries"""
     from libSBAnnotation import update
     with open(update.info_path(), encoding='utf-8') as f:
         assert 'KEGG Compound: ' not in f.read()

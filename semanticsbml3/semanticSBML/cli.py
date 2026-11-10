@@ -561,7 +561,7 @@ def cmd_build_database(args):
     from libSBAnnotation import update
     try:
         report = update.build(download_dir=args.download_dir, use_existing=args.use_existing,
-                              with_kegg=args.with_kegg, all_chebi=args.all_chebi, update_existing=args.update)
+                              all_chebi=args.all_chebi, update_existing=args.update)
     except update.UpdateError as e:
         raise CliError(str(e))
     print()
@@ -710,8 +710,6 @@ def build_parser():
     p.add_argument('--all-chebi', action='store_true',
                    help='take all ChEBI entries (about 220000) instead of the manually curated ones, those linked to '
                         'KEGG compounds and their parents (about 75000); makes every command slower to start')
-    p.add_argument('--with-kegg', action='store_true',
-                   help='also fetch the lists of KEGG compound and reaction names (KEGG is free for academic use only)')
     p.add_argument('--update', action='store_true',
                    help='apply the current files to the existing database instead of building a new one')
     p.add_argument('--download-dir', metavar='DIR', help='folder for the downloaded files (default: data/downloads)')

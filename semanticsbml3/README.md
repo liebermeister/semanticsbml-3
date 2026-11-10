@@ -1,3 +1,5 @@
+<img src="../docs/semanticsbml-logo.png" alt="semanticSBML logo" width="200" align="right">
+
 # semanticSBML 3
 
 Check, annotate, merge and compare SBML models using their semantic
@@ -103,12 +105,12 @@ Run it again to get newer versions. Sources:
 
 Nothing is taken from KEGG. Annotations with KEGG identifiers are understood through
 the links that ChEBI and the Gene Ontology give (C00293 is CHEBI:17234, glucose);
-KEGG reaction equations are not known. `--with-kegg` additionally fetches the
-lists of KEGG compound and reaction names (KEGG is free for academic use only).
+KEGG reaction equations are not known.
 
 The original program used a database built in 2011 from KEGG, ChEBI, Gene Ontology,
-InterPro, SGD and others; it can still be used with `semanticsbml --data FOLDER ...`,
-but is not distributed with this repository. Another data folder can also be chosen
+InterPro, SGD and others. It is not distributed with this repository, and the code
+for importing KEGG, InterPro and SGD was removed; a database of that kind can still
+be used with `semanticsbml --data FOLDER ...`. Another data folder can also be chosen
 with the environment variable `SEMANTICSBML_DATA`.
 
 ## Tests

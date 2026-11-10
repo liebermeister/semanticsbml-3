@@ -10,9 +10,8 @@ everything that is not a pure translation to Python 3.
 - building models from KEGG (`kegg2sbml`): the KEGG web service it used was shut down
 - libTI / libTI2 / libPyless (simulation, identifiability)
 - the original way of building the annotation database: most download addresses
-  no longer exist. The code (`libSBAnnotation/buildDB.py`) is kept (its taxonomy
-  readers are used); the database is now built by `semanticsbml build-database`, see below.
-  A missing database gives an error message instead of an attempt to download.
+  no longer exist. The database is now built by `semanticsbml build-database`, see
+  below. A missing database gives an error message instead of an attempt to download.
 
 ## New
 
@@ -40,12 +39,15 @@ everything that is not a pure translation to Python 3.
   - KEGG compound and reaction identifiers are known only as links given by ChEBI and
     the Gene Ontology; there are no KEGG names, formulas or reaction equations.
     InterPro and SGD, part of the 2011 database, are not included.
+  - The importers of the original (`buildDB.py`: KEGG, InterPro, SGD, UniProt, Entrez
+    Gene, PubChem and others, and the download addresses in `database_new.py`) were
+    removed; only the readers of the taxonomy extract are kept. Annotations pointing to
+    any of these databases are still read and compared.
   - Former identifiers (`alt_id`, `replaced_by`) are linked to their successor the way the
     original did for ChEBI ("successor is_a former entry"); now also for GO.
   - `--update` applies the same files to an existing database instead (names and
     relations of ChEBI, GO and SBO are replaced, new entries added, links made earlier
-    are never rearranged); `--with-kegg` additionally takes the KEGG name lists.
-    This is how the database of 2011 was brought up to date in November 2026.
+    are never rearranged).
   - The database is no longer distributed with the program.
   - Formulas from ChEBI are kept in a new table (`formula`); KEGG formulas of old
     databases (`kegg_formula`) are still used.
