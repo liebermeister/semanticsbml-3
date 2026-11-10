@@ -14,6 +14,18 @@ DATABASE_2011 = HAVE_DATABASE and not os.path.exists(os.path.join(DATA, 'db', 'd
     and not os.path.exists(os.path.join(DATA, 'database_sources.txt'))
 
 
+# without a database, the test files that load it on import are not collected at all
+if not HAVE_DATABASE:
+    collect_ignore = [name for name in os.listdir(os.path.dirname(__file__))
+                      if name.startswith('test_') and name.endswith('.py') and name != 'test_database_build.py']
+
+
+def pytest_report_header(config):
+    if not HAVE_DATABASE:
+        return ('No annotation database in %s: only the tests that do not need it are run. '
+                'Build it with: semanticsbml build-database' % DATA)
+
+
 def pytest_configure(config):
     config.addinivalue_line('markers', 'nodb: test does not need the annotation database')
 
