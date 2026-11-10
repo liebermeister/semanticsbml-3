@@ -66,8 +66,9 @@ Similarity
   Python 2 (result 0 or 1); it is now a true division, as the formula intends.
   **Element similarities for related (not identical) database entries therefore
   differ from values computed with the original program.**
+  Set `semanticSBML.similarity.HEIGHT_INTEGER_DIVISION = True` to get the old numbers.
 - The height of a database entry is computed breadth first instead of following
-  every path (same values, seconds instead of many minutes).
+  every path (same values; the recursive version was very slow under Python 3).
 - The walk through the "is_a" hierarchy for the information content did not
   terminate when the hierarchy contained circles (the 2011 database does); guarded.
 - removed SciPy functions replaced by their NumPy equivalents.
@@ -79,6 +80,31 @@ Similarity
 - `match` with similarity propagation (`GlobalSigmaSimProp`) is still in the code
   but too slow for use (dense matrices of size (n·m)²); the command line uses
   annotation propagation, the default of the original.
-- The correctness of the port could not be checked against the original program,
-  since Python 2 and the old libraries are not available any more; it was checked
-  against the expected behaviour on BioModels 61, 64 and 239 (see `tests/`).
+
+## Comparison with the original program
+
+In November 2026 the original code (trunk r3402) was run under Python 2.7.18 with
+libSBML 5.18.0 and the same 2011 database, on BioModels 61, 64 and 239. (libSBML
+5.18 is from 2019, not the version of 2011, so this is the original code but not
+exactly the original installation.) The results are stored in
+`tests/reference_py2/` and compared by `tests/test_against_original.py`.
+
+- Reading annotations: identical (213 + 116 annotations). Where an entry has several
+  names or a reaction several products, the name shown can differ in order or choice
+  (e.g. "ATPase activity, coupled" / "…, uncoupled"); the original picked arbitrarily.
+- Check: identical numbers of errors and warnings in every test.
+- Merge of 61 and 64: both find 27 groups; 24 are the same. The three that differ:
+  ATP and ADP were paired with the pooled species "sum of AXP" and "High energy
+  phosphates" in the original (correction listed above), and extracellular glucose
+  of model 64 was paired with "GlcX0" instead of "GlcX" of model 61 (both carry the
+  same annotation; a tie). The merged file of the original was not valid SBML
+  (kinetic laws referring to replaced identifiers such as `ATP_0`; 7 instead of 9
+  unit definitions); the file of the port is valid.
+- Element matching (`match`): identical matches and scores when the integer division
+  is restored. With the true division one weak match (vinGlc/vGLT, 0.53) falls below
+  0.5 and F6P/F6P changes from 0.71 to 0.64.
+- Model similarity: identical to six digits without the information content update.
+  With it (what `semanticsbml similarity` does) values differ by less than 0.001.
+  The original could do this update only when loading a folder of BioModels files,
+  and there it stops with "maximum recursion depth exceeded" on the 2011 database
+  (circles in the hierarchy), so this path cannot be compared.

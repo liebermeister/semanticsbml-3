@@ -1,0 +1,91 @@
+{
+ "BIOMD0000000061.xml": [
+  [
+   "Annotations", 
+   0, 
+   5, 
+   [], 
+   [
+    "reaction Acetaldehyde flow: no annotation recognized ", 
+    "reaction Acetaldehyde out: no annotation recognized ", 
+    "reaction Cyanide flow: no annotation recognized ", 
+    "reaction Cyanide-Acetaldehyde flow: no annotation recognized ", 
+    "species P: no annotation recognized "
+   ]
+  ], 
+  [
+   "Atom number balance", 
+   0, 
+   2, 
+   [], 
+   [
+    "22 reactions could not be checked for conservation relations due to missing annotations", 
+    "Reaction [vdifGlyc] violates atom number conservation\nSubstrate side: H atoms: 472, C atoms: 177, O atoms: 177,  \nProduct side: H atoms: 8, C atoms: 3, O atoms: 3, "
+   ]
+  ], 
+  [
+   "Duplicate elements", 
+   0, 
+   10, 
+   [], 
+   [
+    "1 species could not be checked due to missing annotations", 
+    "4 reactions could not be checked due to missing annotations", 
+    "The reactions Ethanol flow and Glycerol flow contain identical annotations", 
+    "The reactions Ethanol flow and Glycerol out contain identical annotations", 
+    "The reactions Ethanol out and Ethanol flow contain identical annotations", 
+    "The reactions Ethanol out and Glycerol flow contain identical annotations", 
+    "The reactions Ethanol out and Glycerol out contain identical annotations", 
+    "The reactions Glycerol out and Glycerol flow contain identical annotations", 
+    "The species Extracellular cyanide and Mixed flow cyanide contain identical annotations", 
+    "The species Extracellular glucose and Mixed flow glucose contain identical annotations"
+   ]
+  ]
+ ], 
+ "BIOMD0000000064.xml": [
+  [
+   "Annotations", 
+   0, 
+   18, 
+   [], 
+   [
+    "assignmentRule ADP [Assignment Rule]: no annotation recognized ", 
+    "assignmentRule AMP [Assignment Rule]: no annotation recognized ", 
+    "assignmentRule ATP [Assignment Rule]: no annotation recognized ", 
+    "parameter AK eq constant: no annotation recognized ", 
+    "parameter CPFKAMP: no annotation recognized ", 
+    "parameter CPFKATP: no annotation recognized ", 
+    "parameter CPFKF16BP: no annotation recognized ", 
+    "parameter CPFKF26BP: no annotation recognized ", 
+    "parameter CiPFKATP: no annotation recognized ", 
+    "parameter KPFKAMP: no annotation recognized ", 
+    "parameter KPFKF16BP: no annotation recognized ", 
+    "parameter KPFKF26BP: no annotation recognized ", 
+    "parameter KiPFKATP: no annotation recognized ", 
+    "parameter KmPFKATP: no annotation recognized ", 
+    "parameter KmPFKF6P: no annotation recognized ", 
+    "parameter Lzero: no annotation recognized ", 
+    "parameter TPI eq constant: no annotation recognized ", 
+    "parameter gR: no annotation recognized "
+   ]
+  ], 
+  [
+   "Atom number balance", 
+   0, 
+   1, 
+   [], 
+   [
+    "17 reactions could not be checked for conservation relations due to missing annotations"
+   ]
+  ], 
+  [
+   "Duplicate elements", 
+   0, 
+   1, 
+   [], 
+   [
+    "The species High energy phosphates and sum of AXP conc contain identical annotations"
+   ]
+  ]
+ ]
+}

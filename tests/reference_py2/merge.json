@@ -1,0 +1,443 @@
+{
+ "counts": {
+  "compartments": 2, 
+  "functions": 0, 
+  "parameters": 15, 
+  "reactions": 31, 
+  "rules": 0, 
+  "species": 36, 
+  "units": 7
+ }, 
+ "matches": [
+  [
+   [
+    "0", 
+    "ACA_0", 
+    "Acetaldehyde"
+   ], 
+   [
+    "1", 
+    "ACE_1", 
+    "Acetaldehyde"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "ADP_0", 
+    "ADP"
+   ], 
+   [
+    "1", 
+    "P_1", 
+    "High energy phosphates"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "AMP_0", 
+    "AMP"
+   ], 
+   [
+    "1", 
+    "AMP_1", 
+    "AMP concentration"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "ATP_0", 
+    "ATP"
+   ], 
+   [
+    "1", 
+    "SUM_P_1", 
+    "sum of AXP conc"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "BPG_0", 
+    "1,3-Bisphosphoglycerate"
+   ], 
+   [
+    "1", 
+    "BPG_1", 
+    "1,3-bisphosphoglycerate"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "EtOH_0", 
+    ""
+   ], 
+   [
+    "1", 
+    "ETOH_1", 
+    "Ethanol"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "FBP_0", 
+    "Fructose 1,6-bisphosphate"
+   ], 
+   [
+    "1", 
+    "F16P_1", 
+    "Fructose-1,6 bisphosphate"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "GAP_0", 
+    "Glyceraldehyde 3-phosphate"
+   ], 
+   [
+    "1", 
+    "TRIO_1", 
+    "Triose-phosphate"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "GlcX0_0", 
+    "Mixed flow glucose"
+   ], 
+   [
+    "1", 
+    "GLCo_1", 
+    "Extracellular Glucose"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "Glc_0", 
+    "Cytosolic glucose"
+   ], 
+   [
+    "1", 
+    "GLCi_1", 
+    "Glucose in Cytosol"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "Glyc_0", 
+    "Glycerol"
+   ], 
+   [
+    "1", 
+    "GLY_1", 
+    "Glycerol"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "NADH_0", 
+    "NADH"
+   ], 
+   [
+    "1", 
+    "NADH_1", 
+    "NADH"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "NAD_0", 
+    "NAD"
+   ], 
+   [
+    "1", 
+    "NAD_1", 
+    "NAD"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "PEP_0", 
+    "Phosphoenolpyruvate"
+   ], 
+   [
+    "1", 
+    "PEP_1", 
+    "Phosphoenolpyruvate"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "Pyr_0", 
+    "Pyruvate"
+   ], 
+   [
+    "1", 
+    "PYR_1", 
+    "Pyruvate"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "cytosol_0", 
+    ""
+   ], 
+   [
+    "1", 
+    "cytosol_1", 
+    ""
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "extracellular_0", 
+    ""
+   ], 
+   [
+    "1", 
+    "extracellular_1", 
+    ""
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vADH_0", 
+    "Alcohol dehydrogenase"
+   ], 
+   [
+    "1", 
+    "vADH_1", 
+    "Alcohol dehydrogenase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vALD_0", 
+    "Aldolase"
+   ], 
+   [
+    "1", 
+    "vALD_1", 
+    "Aldolase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vGAPDH_0", 
+    "Glyceraldehyde 3-phosphate dehydrogenase"
+   ], 
+   [
+    "1", 
+    "vGAPDH_1", 
+    "Glyceraldehyde 3-phosphate dehydrogenase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vGlcTrans_0", 
+    "Glucose uptake"
+   ], 
+   [
+    "1", 
+    "vGLT_1", 
+    "Glucose transport"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vHK_0", 
+    "Hexokinase"
+   ], 
+   [
+    "1", 
+    "vGLK_1", 
+    "Hexokinase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vPDC_0", 
+    "Pyruvate decarboxylase"
+   ], 
+   [
+    "1", 
+    "vPDC_1", 
+    "Pyruvate decarboxylase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vPFK_0", 
+    "Phosphofructokinase"
+   ], 
+   [
+    "1", 
+    "vPFK_1", 
+    "Phosphofructokinase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vPGI_0", 
+    "Phosphoglucoisomerase"
+   ], 
+   [
+    "1", 
+    "vPGI_1", 
+    "Glucose-6-phosphate isomerase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vPK_0", 
+    "Pyruvate kinase"
+   ], 
+   [
+    "1", 
+    "vPYK_1", 
+    "Pyruvate kinase"
+   ]
+  ], 
+  [
+   [
+    "0", 
+    "vlpPEP_0", 
+    "Phosphoenolpyruvate synthesis"
+   ], 
+   [
+    "1", 
+    "vPGK_1", 
+    "Phosphoglycerate kinase"
+   ]
+  ]
+ ], 
+ "species": [
+  "1,3-Bisphosphoglycerate", 
+  "2-phosphoglycerate", 
+  "3-phosphoglycerate", 
+  "ADP", 
+  "ADP concentration", 
+  "AMP", 
+  "ATP", 
+  "ATP concentration", 
+  "Acetaldehyde", 
+  "CO2", 
+  "Cytosolic glucose", 
+  "Dihydroxyacetone phosphate", 
+  "EtOH_0_M", 
+  "Extracellular acetaldehyde", 
+  "Extracellular cyanide", 
+  "Extracellular ethanol", 
+  "Extracellular glucose", 
+  "Extracellular glycerol", 
+  "F2,6P", 
+  "Fructose 1,6-bisphosphate", 
+  "Fructose 6 Phosphate", 
+  "Fructose-6-Phosphate", 
+  "Glucose 6 Phosphate", 
+  "Glucose-6-Phosphate", 
+  "Glyceraldehyde 3-phosphate", 
+  "Glycerol", 
+  "Glycogen", 
+  "Mixed flow cyanide", 
+  "Mixed flow glucose", 
+  "NAD", 
+  "NADH", 
+  "P_0", 
+  "Phosphoenolpyruvate", 
+  "Pyruvate", 
+  "Succinate", 
+  "Trehalose"
+ ], 
+ "validation_errors": [
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ACA_0' in the math element of the <kineticLaw> uses 'ACA_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NADH_0' in the math element of the <kineticLaw> uses 'NADH_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NADH_0' in the math element of the <kineticLaw> uses 'NADH_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ACA_0' in the math element of the <kineticLaw> uses 'ACA_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'FBP_0' in the math element of the <kineticLaw> uses 'FBP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'FBP_0' in the math element of the <kineticLaw> uses 'FBP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'FBP_0' in the math element of the <kineticLaw> uses 'FBP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'FBP_0' in the math element of the <kineticLaw> uses 'FBP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'FBP_0' in the math element of the <kineticLaw> uses 'FBP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'AMP_0' in the math element of the <kineticLaw> uses 'AMP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'AMP_0' in the math element of the <kineticLaw> uses 'AMP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ADP_0' in the math element of the <kineticLaw> uses 'ADP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'PEP_0' in the math element of the <kineticLaw> uses 'PEP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'PEP_0' in the math element of the <kineticLaw> uses 'PEP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ADP_0' in the math element of the <kineticLaw> uses 'ADP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'extracellular_0' in the math element of the <kineticLaw> uses 'extracellular_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Glc_0' in the math element of the <kineticLaw> uses 'Glc_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NAD_0' in the math element of the <kineticLaw> uses 'NAD_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'BPG_0' in the math element of the <kineticLaw> uses 'BPG_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NAD_0' in the math element of the <kineticLaw> uses 'NAD_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NADH_0' in the math element of the <kineticLaw> uses 'NADH_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'BPG_0' in the math element of the <kineticLaw> uses 'BPG_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NADH_0' in the math element of the <kineticLaw> uses 'NADH_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'GAP_0' in the math element of the <kineticLaw> uses 'GAP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'BPG_0' in the math element of the <kineticLaw> uses 'BPG_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NAD_0' in the math element of the <kineticLaw> uses 'NAD_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'NADH_0' in the math element of the <kineticLaw> uses 'NADH_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Pyr_0' in the math element of the <kineticLaw> uses 'Pyr_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'Pyr_0' in the math element of the <kineticLaw> uses 'Pyr_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'cytosol_0' in the math element of the <kineticLaw> uses 'cytosol_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'BPG_0' in the math element of the <kineticLaw> uses 'BPG_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ADP_0' in the math element of the <kineticLaw> uses 'ADP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'PEP_0' in the math element of the <kineticLaw> uses 'PEP_0' that is not the id of a species/compartment/parameter/reaction.", 
+  "The formula 'ATP_0' in the math element of the <kineticLaw> uses 'ATP_0' that is not the id of a species/compartment/parameter/reaction."
+ ]
+}

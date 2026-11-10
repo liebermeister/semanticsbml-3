@@ -40,6 +40,9 @@ def logit(x):
 def logistic(x):
     return 1. / (1. + numpy.exp(-x))
 
+# True reproduces the original program (Python 2 integer division in SigmaMatrix), see CHANGES.md
+HEIGHT_INTEGER_DIVISION = False
+
 class SigmaMatrix:
     def __init__(self, SBMLDocuments, model_ids, max_distance_neighbours = 3, use_full_database=False):
         start = datetime.datetime.now()
@@ -162,7 +165,8 @@ class SigmaMatrix:
         for i in range(len(self.sigma.rows)):
             for k in range(len(self.sigma.rows[i])):
                 j = self.sigma.rows[i][k]
-                height = 2 / (self.heights[self.keys[i]] + self.heights[self.keys[j]])
+                height_sum = self.heights[self.keys[i]] + self.heights[self.keys[j]]
+                height = 2 // height_sum if HEIGHT_INTEGER_DIVISION else 2 / height_sum
                 self.sigma[i, j] = self.sigma[i, j] ** height
         self.sigma = self.sigma.tocsr()
     def _element_annotation_to_vector(self, ea):
