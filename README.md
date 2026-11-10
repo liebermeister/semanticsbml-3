@@ -41,6 +41,20 @@ semanticsbml similarity   --query A.xml --dir FOLDER   # rank the models of a fo
 
 `semanticsbml COMMAND --help` lists the options of each command.
 
+## Browser interface
+
+```
+semanticsbml gui                    # or: semanticsbml gui MODEL1.xml MODEL2.xml
+```
+
+opens a page in the web browser (address `http://127.0.0.1:8765/`). Load models by
+dropping the files onto the page; the tabs do the same things as the commands:
+**Annotations** (list, search the database, add, remove, annotate automatically, copy
+from another model), **Check**, **Network** (picture), **Merge**, **Match**,
+**Similarity**, **Database** (name search). Models live in the memory of the program
+while it runs: use "Download SBML" to keep a changed or merged model. The program
+serves this computer only and sends nothing elsewhere; stop it with Ctrl-C in the terminal.
+
 **Annotate.** `--auto` annotates every element without annotation whose name
 occurs exactly once in the database. `search` shows what the database offers for a
 name; `--add ELEMENT DATABASE IDENTIFIER [QUALIFIER]` adds one annotation by hand.
@@ -94,7 +108,7 @@ Another data folder can also be chosen with the environment variable `SEMANTICSB
 
 | folder | content |
 |---|---|
-| `semanticSBML/` | check, annotate, merge, view, similarity of elements; `cli.py` is the command line tool |
+| `semanticSBML/` | check, annotate, merge, view, similarity of elements; `cli.py` is the command line tool, `webgui.py` + `webgui.html` the browser interface |
 | `libSBAnnotation/` | annotation database, MIRIAM resources, SBO |
 | `libModelSimilarity/` | similarity and clustering of whole models |
 | `data/` | annotation database (updated) and resource files |

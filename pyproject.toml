@@ -25,5 +25,8 @@ semanticsbml = "semanticSBML.cli:main"
 [tool.setuptools]
 packages = ["semanticSBML", "libSBAnnotation", "libModelSimilarity"]
 
+[tool.setuptools.package-data]
+semanticSBML = ["webgui.html"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

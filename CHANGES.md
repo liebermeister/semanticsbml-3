@@ -5,7 +5,7 @@ everything that is not a pure translation to Python 3.
 
 ## Not ported
 
-- the graphical interface (PyQt4) and the web interface (web2py)
+- the graphical interface (PyQt4) and the web interface (web2py); replaced by a new browser interface
 - parameter balancing, kineticizer, SBtab (developed further elsewhere)
 - building models from KEGG (`kegg2sbml`): the KEGG web service it used was shut down
 - libTI / libTI2 / libPyless (simulation, identifiability)
@@ -17,6 +17,9 @@ everything that is not a pure translation to Python 3.
 ## New
 
 - one command `semanticsbml` with sub-commands (`semanticSBML/cli.py`)
+- browser interface `semanticsbml gui` (`semanticSBML/webgui.py`, `webgui.html`): a new
+  page, not a port of the PyQt or web2py interfaces; it needs no additional software.
+  The server listens on 127.0.0.1 only and refuses requests from other web pages.
 - annotations in the identifiers.org form (`http://identifiers.org/chebi/CHEBI:17234`,
   `https://identifiers.org/CHEBI:17234`) are read; new annotations are written
   in this form (set `uri_style = urn` in section `[annotate]` of `data/config`

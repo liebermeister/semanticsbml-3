@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>semanticSBML</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --ink: #1c2330; --muted: #5d6878; --line: #d9dee6;
+  --accent: #1f6f8b; --accent-ink: #ffffff; --accent-soft: #e3f0f4;
+  --warn: #9a5b00; --warn-soft: #fff3da; --bad: #a32a2a; --bad-soft: #fde8e8; --good: #20673a; --good-soft: #e3f4e8;
+  --chip: #eef1f5; --heat: 31, 111, 139;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181f; --panel: #1c222b; --ink: #e6eaf0; --muted: #9aa5b5; --line: #323b48;
+    --accent: #5fb4d1; --accent-ink: #0d1318; --accent-soft: #1f3640;
+    --warn: #f0b860; --warn-soft: #3a2e14; --bad: #f08c8c; --bad-soft: #3d1f1f; --good: #7fd09a; --good-soft: #1b3524;
+    --chip: #28303b; --heat: 95, 180, 209;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { display: flex; align-items: baseline; gap: 16px; padding: 10px 18px; background: var(--panel); border-bottom: 1px solid var(--line); }
+header h1 { font-size: 18px; margin: 0; letter-spacing: .2px; }
+header .db { color: var(--muted); font-size: 12px; }
+.layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); min-height: calc(100% - 46px); }
+aside { background: var(--panel); border-right: 1px solid var(--line); padding: 14px; }
+main { padding: 14px 18px 40px; min-width: 0; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 8px; }
+h3 { font-size: 15px; margin: 18px 0 8px; }
+button, select, input[type=text], input[type=number] {
+  font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; }
+button { cursor: pointer; white-space: nowrap; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button.link { border: 0; background: none; color: var(--accent); padding: 0 4px; }
+button:disabled { opacity: .5; cursor: default; }
+input[type=text] { min-width: 0; }
+a { color: var(--accent); }
+.drop { border: 1.5px dashed var(--line); border-radius: 8px; padding: 14px 10px; text-align: center; color: var(--muted); margin-bottom: 12px; }
+.drop.over { border-color: var(--accent); background: var(--accent-soft); }
+.model { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; cursor: pointer; }
+.model.selected { border-color: var(--accent); background: var(--accent-soft); }
+.model .name { font-weight: 600; overflow-wrap: anywhere; }
+.model .meta { color: var(--muted); font-size: 12px; }
+.model .actions { margin-top: 4px; display: flex; gap: 10px; font-size: 12px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.tabs button { border: 0; border-bottom: 3px solid transparent; border-radius: 0; background: none; padding: 8px 12px; color: var(--muted); }
+.tabs button.active { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; }
+.bar label { display: inline-flex; align-items: center; gap: 5px; }
+.note { color: var(--muted); }
+.msg { padding: 8px 12px; border-radius: 6px; margin: 0 0 12px; }
+.msg.bad { background: var(--bad-soft); color: var(--bad); }
+.msg.good { background: var(--good-soft); color: var(--good); }
+.msg.warn { background: var(--warn-soft); color: var(--warn); }
+.tablewrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.type { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.chip { display: inline-flex; align-items: baseline; gap: 6px; background: var(--chip); border-radius: 6px; padding: 2px 4px 2px 8px; margin: 0 6px 4px 0; }
+.chip .q { color: var(--muted); font-size: 12px; }
+.chip .x { border: 0; background: none; color: var(--muted); padding: 0 4px; font-size: 14px; line-height: 1; }
+.chip .x:hover { color: var(--bad); }
+.none { color: var(--warn); }
+.conflict { color: var(--warn); font-size: 12px; }
+.addpanel { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-top: 6px; }
+.addpanel .results { max-height: 260px; overflow: auto; margin-top: 8px; }
+.addpanel .results div.r { display: flex; gap: 8px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid var(--line); }
+.addpanel .results div.r span.n { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.picture { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: auto; padding: 8px; max-height: 78vh; }
+.heat td, .heat th { text-align: center; border: 1px solid var(--line); min-width: 54px; font-variant-numeric: tabular-nums; }
+.heat th.row { text-align: left; white-space: nowrap; }
+.checks label { display: block; margin: 2px 0; }
+.busy { color: var(--muted); font-style: italic; }
+@media (max-width: 820px) { .layout { grid-template-columns: 1fr; } aside { border-right: 0; border-bottom: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+<header>
+  <h1>semanticSBML</h1>
+  <span class="db" id="dbinfo"></span>
+</header>
+<div class="layout">
+  <aside>
+    <h2>Models</h2>
+    <div class="drop" id="drop">
+      Drop SBML files here<br>or <button id="choose">choose files</button>
+      <input type="file" id="files" multiple accept=".xml,.sbml" hidden>
+    </div>
+    <div id="models"></div>
+    <p class="note" id="nomodels">No model loaded yet. Models stay in this program's memory only; download them to keep changes.</p>
+  </aside>
+  <main>
+    <div class="tabs" id="tabs"></div>
+    <div id="message"></div>
+    <div id="view"></div>
+  </main>
+</div>
+<script>
+"use strict";
+const TABS = [["annotate", "Annotations"], ["check", "Check"], ["picture", "Network"], ["merge", "Merge"],
+              ["match", "Match"], ["similarity", "Similarity"], ["search", "Database"]];
+const S = { models: [], selected: null, tab: "annotate", qualifiers: { bio: ["is"], model: [] }, cache: {} };
+const $ = id => document.getElementById(id);
+
+function h(tag, attrs, ...children) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (k === "class") e.className = v;
+    else if (k in e && k !== "list") e[k] = v;
+    else e.setAttribute(k, v);
+  }
+  for (const c of children.flat()) if (c !== null && c !== undefined && c !== false) e.append(c.nodeType ? c : String(c));
+  return e;
+}
+async function api(path, body) {
+  const options = body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) };
+  let response;
+  try { response = await fetch(path, options); }
+  catch (e) { throw new Error("The semanticSBML program is not running any more. Start it again with: semanticsbml gui"); }
+  let data = {};
+  try { data = await response.json(); } catch (e) { /* no JSON */ }
+  if (!response.ok) throw new Error(data.error || ("Error " + response.status));
+  return data.result;
+}
+function message(text, kind) {
+  const box = $("message"); box.replaceChildren();
+  if (text) box.append(h("div", { class: "msg " + (kind || "bad") }, text));
+}
+function busy(text) { $("view").replaceChildren(h("p", { class: "busy" }, text || "Working …")); }
+function model(key) { return S.models.find(m => m.key === key); }
+function label(e) { return e.name ? e.id + " — " + e.name : e.id; }
+
+// ---------------------------------------------------------------- models
+async function refresh(keepView) {
+  const state = await api("/api/state");
+  S.models = state.models;
+  $("dbinfo").textContent = state.database;
+  if (!model(S.selected)) S.selected = S.models.length ? S.models[0].key : null;
+  drawModels();
+  if (!keepView) show();
+}
+function drawModels() {
+  const box = $("models"); box.replaceChildren();
+  $("nomodels").hidden = S.models.length > 0;
+  for (const m of S.models) {
+    box.append(h("div", { class: "model" + (m.key === S.selected ? " selected" : ""), onclick: () => { S.selected = m.key; drawModels(); show(); } },
+      h("div", { class: "name" }, m.name),
+      h("div", { class: "meta" }, (m.title ? m.title + " · " : "") + m.species + " species, " + m.reactions + " reactions · " +
+        (m.unannotated ? m.unannotated + " of " + m.elements + " elements without annotation" : "all elements annotated")),
+      h("div", { class: "actions" },
+        h("a", { href: "/api/models/" + m.key + "/download", onclick: ev => ev.stopPropagation() }, "Download SBML"),
+        h("button", { class: "link", onclick: async ev => { ev.stopPropagation(); await api("/api/models/" + m.key + "/remove", {}); delete S.cache[m.key]; message(""); refresh(); } }, "Remove"))));
+  }
+}
+async function upload(files) {
+  message("");
+  const problems = [];
+  for (const file of files) {
+    try {
+      const key = await api("/api/models", { name: file.name, content: await file.text() });
+      S.selected = key;
+    } catch (e) { problems.push(e.message); }
+  }
+  if (problems.length) message(problems.join(" "));
+  refresh();
+}
+$("choose").onclick = () => $("files").click();
+$("files").onchange = ev => { upload([...ev.target.files]); ev.target.value = ""; };
+const drop = $("drop");
+["dragenter", "dragover"].forEach(n => drop.addEventListener(n, ev => { ev.preventDefault(); drop.classList.add("over"); }));
+["dragleave", "drop"].forEach(n => drop.addEventListener(n, ev => { ev.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", ev => upload([...ev.dataTransfer.files]));
+
+// ---------------------------------------------------------------- tabs
+function drawTabs() {
+  $("tabs").replaceChildren(...TABS.map(([key, text]) =>
+    h("button", { class: key === S.tab ? "active" : "", onclick: () => { S.tab = key; message(""); drawTabs(); show(); } }, text)));
+}
+function needModel(n) {
+  if (S.models.length >= n) return false;
+  $("view").replaceChildren(h("p", { class: "note" }, n === 1 ? "Load a model first (left)." : "Load at least " + n + " models first (left)."));
+  return true;
+}
+function show() {
+  const views = { annotate: viewAnnotate, check: viewCheck, picture: viewPicture, merge: viewMerge, match: viewMatch, similarity: viewSimilarity, search: viewSearch };
+  views[S.tab]().catch(e => { $("view").replaceChildren(); message(e.message); });
+}
+
+// ---------------------------------------------------------------- annotations
+const A = { filter: "", missing: false, open: null };
+async function viewAnnotate() {
+  if (needModel(1)) return;
+  const key = S.selected, m = model(key);
+  const rows = await api("/api/models/" + key + "/elements");
+  if (key !== S.selected || S.tab !== "annotate") return;
+  const others = S.models.filter(x => x.key !== key);
+  const copy = h("select", {}, others.map(o => h("option", { value: o.key }, o.name)));
+  const body = h("tbody");
+  const count = h("span", { class: "note" });
+  function draw() {
+    body.replaceChildren();
+    const f = A.filter.toLowerCase();
+    let shown = 0;
+    for (const e of rows) {
+      if (A.missing && e.annotations.length) continue;
+      if (f && !(e.id + " " + e.name + " " + e.type + " " + e.annotations.map(a => a.db + " " + a.id + " " + a.name).join(" ")).toLowerCase().includes(f)) continue;
+      shown++;
+      const cell = h("td", {},
+        e.annotations.length ? e.annotations.map(a => h("span", { class: "chip" },
+          h("span", { class: "q" }, a.qualifier), h("span", {}, a.db + " "),
+          a.url ? h("a", { href: a.url, target: "_blank", rel: "noopener" }, a.id) : h("span", {}, a.id),
+          a.name ? h("span", { class: "q" }, a.name) : null,
+          h("button", { class: "x", title: "Remove this annotation", onclick: () => change(key, "remove-annotation", { element: e.n, db: a.db, id: a.id, qualifier: a.qualifier }) }, "×")))
+          : h("span", { class: "none" }, "no annotation"),
+        e.problem ? h("div", { class: "conflict" }, e.problem) : null);
+      if (A.open === e.n) cell.append(addPanel(key, e));
+      body.append(h("tr", {},
+        h("td", { class: "type" }, e.type), h("td", {}, e.id), h("td", {}, e.name), cell,
+        h("td", {}, h("button", { onclick: () => { A.open = A.open === e.n ? null : e.n; draw(); } }, A.open === e.n ? "Close" : "Add …"))));
+    }
+    count.textContent = shown + " of " + rows.length + " elements shown";
+  }
+  $("view").replaceChildren(
+    h("div", { class: "bar" },
+      h("input", { type: "text", placeholder: "Filter by id, name, annotation", value: A.filter, oninput: ev => { A.filter = ev.target.value; draw(); } }),
+      h("label", {}, h("input", { type: "checkbox", checked: A.missing, onchange: ev => { A.missing = ev.target.checked; draw(); } }), "only without annotation"),
+      count),
+    h("div", { class: "bar" },
+      h("button", { class: "primary", title: "Annotate every element without annotation whose name occurs exactly once in the database",
+        onclick: async () => {
+          busy("Searching the database for the names of the elements …");
+          try {
+            const r = await api("/api/models/" + key + "/auto-annotate", {});
+            message(r.annotated.length + " elements annotated by their names, " + r.left + " left without annotation." +
+              (r.annotated.length ? " Please check the new annotations: " + r.annotated.map(x => x.id).join(", ") : ""), r.annotated.length ? "good" : "warn");
+          } catch (e) { message(e.message); }
+          refresh();
+        } }, "Annotate automatically"),
+      others.length ? h("span", {}, "Copy annotations of elements with the same id from ", copy, " ",
+        h("button", { onclick: async () => {
+          try { const r = await api("/api/models/" + key + "/copy-annotations", { source: copy.value }); message("Annotations copied to " + r.copied + " elements.", "good"); }
+          catch (e) { message(e.message); }
+          refresh();
+        } }, "Copy")) : null),
+    h("div", { class: "tablewrap" }, h("table", {},
+      h("thead", {}, h("tr", {}, h("th", {}, "Type"), h("th", {}, "Id"), h("th", {}, "Name"), h("th", {}, "Annotations"), h("th", {}, ""))), body)));
+  draw();
+}
+async function change(key, action, body) {
+  try { await api("/api/models/" + key + "/" + action, body); message(""); }
+  catch (e) { message(e.message); }
+  refresh();
+}
+function addPanel(key, e) {
+  const all = S.qualifiers.bio.concat(e.type === "model" ? S.qualifiers.model : []);
+  const qualifier = h("select", { title: "Relation between the element and the database entry" }, all.map(q => h("option", { value: q, selected: q === "is" }, q)));
+  const query = h("input", { type: "text", value: e.name || e.id, size: 30 });
+  const exact = h("input", { type: "checkbox" });
+  const results = h("div", { class: "results" });
+  const manualDb = h("input", { type: "text", placeholder: "Database, e.g. ChEBI", size: 18 });
+  const manualId = h("input", { type: "text", placeholder: "Identifier, e.g. CHEBI:17234", size: 22 });
+  const add = (db, id) => { A.open = null; change(key, "add-annotation", { element: e.n, db: db, id: id, qualifier: qualifier.value }); };
+  async function search() {
+    results.replaceChildren(h("span", { class: "busy" }, "Searching …"));
+    try {
+      const rows = await api("/api/search?q=" + encodeURIComponent(query.value) + "&type=" + encodeURIComponent(e.type) + (exact.checked ? "&exact=1" : ""));
+      results.replaceChildren(...(rows.length ? rows.map(r => h("div", { class: "r" },
+        h("span", { class: "n" }, r.name || "(no name)"), h("span", { class: "q note" }, r.db),
+        r.url ? h("a", { href: r.url, target: "_blank", rel: "noopener" }, r.id) : h("span", {}, r.id),
+        h("button", { onclick: () => add(r.db, r.id) }, "Add"))) : [h("span", { class: "note" }, "Nothing found in the databases suitable for a " + e.type + ".")]));
+    } catch (err) { results.replaceChildren(h("span", { class: "none" }, err.message)); }
+  }
+  query.addEventListener("keydown", ev => { if (ev.key === "Enter") search(); });
+  return h("div", { class: "addpanel" },
+    h("div", { class: "bar" }, "Element ", qualifier, " …  ", query, h("label", {}, exact, "exact name"), h("button", { class: "primary", onclick: search }, "Search database")),
+    results,
+    h("div", { class: "bar", style: "margin: 10px 0 0" }, h("span", { class: "note" }, "or enter directly:"), manualDb, manualId,
+      h("button", { onclick: () => add(manualDb.value.trim(), manualId.value.trim()) }, "Add"),
+      e.annotations.length ? h("button", { onclick: () => { A.open = null; change(key, "clear-annotations", { element: e.n }); } }, "Remove all annotations of this element") : null));
+}
+
+// ---------------------------------------------------------------- check
+async function viewCheck() {
+  if (needModel(1)) return;
+  const key = S.selected;
+  busy("Checking " + model(key).name + " …");
+  const results = await api("/api/models/" + key + "/check");
+  if (key !== S.selected || S.tab !== "check") return;
+  const errors = results.reduce((n, r) => n + r.errors.length, 0), warnings = results.reduce((n, r) => n + r.warnings.length, 0);
+  const view = [h("div", { class: "msg " + (errors ? "bad" : warnings ? "warn" : "good") },
+    model(key).name + ": " + errors + " errors, " + warnings + " warnings.")];
+  for (const r of results) {
+    view.push(h("h3", {}, r.name + " — " + (r.errors.length + r.warnings.length ? r.errors.length + " errors, " + r.warnings.length + " warnings" : "nothing found")));
+    if (r.errors.length + r.warnings.length) view.push(h("div", { class: "tablewrap" }, h("table", {}, h("tbody", {},
+      r.errors.map(t => h("tr", {}, h("td", { class: "type", style: "color: var(--bad)" }, "error"), h("td", { style: "white-space: pre-wrap" }, t))),
+      r.warnings.map(t => h("tr", {}, h("td", { class: "type" }, "warning"), h("td", { style: "white-space: pre-wrap" }, t)))))));
+  }
+  $("view").replaceChildren(...view);
+}
+
+// ---------------------------------------------------------------- picture
+const P = { ids: false, max: 1000 };
+async function viewPicture() {
+  if (needModel(1)) return;
+  const key = S.selected;
+  const holder = h("div", { class: "picture" }, h("span", { class: "busy" }, "Drawing …"));
+  const link = h("a", { hidden: true, download: model(key).name + ".svg" }, "Download picture (SVG)");
+  $("view").replaceChildren(
+    h("div", { class: "bar" },
+      h("label", {}, h("input", { type: "checkbox", checked: P.ids, onchange: ev => { P.ids = ev.target.checked; viewPicture(); } }), "label with ids of the model instead of database names"),
+      h("label", {}, "leave out species in more than ",
+        h("input", { type: "number", min: 1, value: P.max, style: "width: 80px", onchange: ev => { P.max = Math.max(1, parseInt(ev.target.value) || 1000); viewPicture(); } }), " reactions (e.g. ATP)"),
+      link),
+    holder);
+  try {
+    const svg = await api("/api/models/" + key + "/picture?ids=" + (P.ids ? 1 : 0) + "&max=" + P.max);
+    if (key !== S.selected || S.tab !== "picture") return;
+    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+    holder.replaceChildren(h("img", { src: url, alt: "Reaction network of " + model(key).name }));
+    link.href = url; link.hidden = false;
+  } catch (e) { holder.replaceChildren(h("span", { class: "none" }, e.message)); }
+}
+
+// ---------------------------------------------------------------- merge
+const M = { order: [], report: null };
+async function viewMerge() {
+  if (needModel(2)) return;
+  M.order = M.order.filter(k => model(k));
+  const list = h("div", { class: "checks" });
+  function draw() {
+    list.replaceChildren(...S.models.map(m => {
+      const pos = M.order.indexOf(m.key);
+      return h("label", {}, h("input", { type: "checkbox", checked: pos >= 0, onchange: ev => {
+        if (ev.target.checked) M.order.push(m.key); else M.order = M.order.filter(k => k !== m.key); draw(); } }),
+        " " + m.name + (pos >= 0 ? "  [" + (pos + 1) + "]" : ""));
+    }));
+  }
+  draw();
+  const out = h("div");
+  $("view").replaceChildren(
+    h("p", { class: "note" }, "Tick the models in the order in which they should be merged. Elements with the same annotations are joined; where they differ, the model ticked first wins."),
+    list,
+    h("div", { class: "bar", style: "margin-top: 10px" }, h("button", { class: "primary", onclick: async () => {
+      out.replaceChildren(h("p", { class: "busy" }, "Merging …")); message("");
+      try { M.report = await api("/api/merge", { models: M.order }); await refresh(true); drawMergeReport(out); }
+      catch (e) { out.replaceChildren(); message(e.message); }
+    } }, "Merge")),
+    out);
+  if (M.report && model(M.report.key)) drawMergeReport(out);
+}
+function drawMergeReport(out) {
+  const r = M.report, c = r.counts;
+  const conflicts = r.matches.filter(m => m.conflicts.length).length;
+  const parts = [
+    h("div", { class: "msg " + (r.errors.length ? "bad" : "good") },
+      (r.errors.length ? "The merged model is not valid SBML (" + r.errors.length + " problems, listed below). " : "The merged model is valid SBML. ") +
+      c.species + " species, " + c.reactions + " reactions, " + c.compartments + " compartments, " + c.parameters + " parameters, " + c.rules + " rules. " +
+      "It was added to the models on the left as “" + (model(r.key) || {}).name + "”. ",
+      h("a", { href: "/api/models/" + r.key + "/download" }, "Download SBML")),
+    r.warnings.map(w => h("div", { class: "msg warn" }, w)),
+    h("h3", {}, "Joined elements (" + r.matches.length + ")" + (conflicts ? " — " + conflicts + " differ between the models; the first model was used" : "")),
+    h("div", { class: "tablewrap" }, h("table", {},
+      h("thead", {}, h("tr", {}, h("th", {}, "Type"), h("th", {}, "Id in merged model"), r.models.map((n, i) => h("th", {}, "[" + (i + 1) + "] " + n)), h("th", {}, "Differences"))),
+      h("tbody", {}, r.matches.map(m => h("tr", {}, h("td", { class: "type" }, m.type), h("td", {}, m.merged_id),
+        r.models.map((n, i) => h("td", {}, m.elements.filter(e => e.model === i + 1).map(label).join(", "))),
+        h("td", { class: "conflict" }, m.conflicts.join(", "))))))),
+  ];
+  if (r.errors.length) parts.push(h("h3", {}, "Problems in the merged model"),
+    h("p", { class: "note" }, "They usually arise where the models describe the same element in contradicting ways, and have to be repaired by hand. Changing the order of the models often helps."),
+    h("div", { class: "tablewrap" }, h("table", {}, h("tbody", {}, r.errors.map(t => h("tr", {}, h("td", {}, t)))))));
+  parts.push(h("h3", {}, "Elements without partner, taken over unchanged (" + r.unmatched.length + ")"),
+    h("div", { class: "tablewrap" }, h("table", {},
+      h("thead", {}, h("tr", {}, h("th", {}, "Model"), h("th", {}, "Type"), h("th", {}, "Id"), h("th", {}, "Name"))),
+      h("tbody", {}, r.unmatched.map(e => h("tr", {}, h("td", {}, "[" + e.model + "] " + r.models[e.model - 1]), h("td", { class: "type" }, e.type), h("td", {}, e.id), h("td", {}, e.name)))))));
+  out.replaceChildren(...parts.flat());
+}
+
+// ---------------------------------------------------------------- match
+const X = { a: null, b: null, min: 0.5, local: false };
+async function viewMatch() {
+  if (needModel(2)) return;
+  if (!model(X.a)) X.a = S.models[0].key;
+  if (!model(X.b) || X.b === X.a) X.b = S.models.find(m => m.key !== X.a).key;
+  const pick = (value, set) => h("select", { onchange: ev => set(ev.target.value) }, S.models.map(m => h("option", { value: m.key, selected: m.key === value }, m.name)));
+  const out = h("div");
+  $("view").replaceChildren(
+    h("p", { class: "note" }, "Finds corresponding elements of two models more tolerantly than merging: it also uses relations between database entries (D-glucose is a glucose) and the neighbours of an element in the network. Nothing is changed."),
+    h("div", { class: "bar" }, pick(X.a, v => X.a = v), " and ", pick(X.b, v => X.b = v),
+      h("label", {}, "similarity at least ", h("input", { type: "number", min: 0, max: 1, step: 0.05, value: X.min, style: "width: 70px", onchange: ev => X.min = Math.min(1, Math.max(0, parseFloat(ev.target.value) || 0.5)) })),
+      h("label", {}, h("input", { type: "checkbox", checked: X.local, onchange: ev => X.local = ev.target.checked }), "annotations only, ignore neighbours"),
+      h("button", { class: "primary", onclick: async () => {
+        out.replaceChildren(h("p", { class: "busy" }, "Comparing the elements of the two models …")); message("");
+        try {
+          const r = await api("/api/match", { models: [X.a, X.b], minimum: X.min, propagation: !X.local });
+          out.replaceChildren(h("h3", {}, r.matches.length + " corresponding elements"),
+            h("div", { class: "tablewrap" }, h("table", {},
+              h("thead", {}, h("tr", {}, h("th", { class: "num" }, "Similarity"), h("th", {}, "Type"), r.models.map(n => h("th", {}, n)))),
+              h("tbody", {}, r.matches.map(m => h("tr", {}, h("td", { class: "num" }, m.score.toFixed(3)), h("td", { class: "type" }, m.type),
+                [1, 2].map(i => h("td", {}, m.elements.filter(e => e.model === i).map(label).join(", "))))))))); }
+        catch (e) { out.replaceChildren(); message(e.message); }
+      } }, "Compare")),
+    out);
+}
+
+// ---------------------------------------------------------------- similarity
+const Y = { off: new Set() };
+async function viewSimilarity() {
+  if (needModel(2)) return;
+  const out = h("div");
+  $("view").replaceChildren(
+    h("p", { class: "note" }, "Compares whole models by their annotations: 0 = nothing in common, 1 = same annotations. With more than two models, similar models are placed next to each other."),
+    h("div", { class: "checks" }, S.models.map(m => h("label", {}, h("input", { type: "checkbox", checked: !Y.off.has(m.key), onchange: ev => { if (ev.target.checked) Y.off.delete(m.key); else Y.off.add(m.key); } }), " " + m.name))),
+    h("div", { class: "bar", style: "margin-top: 10px" }, h("button", { class: "primary", onclick: async () => {
+      out.replaceChildren(h("p", { class: "busy" }, "Comparing …")); message("");
+      try {
+        const r = await api("/api/similarity", { models: S.models.filter(m => !Y.off.has(m.key)).map(m => m.key) });
+        out.replaceChildren(h("div", { class: "tablewrap" }, h("table", { class: "heat" },
+          h("thead", {}, h("tr", {}, h("th", {}, ""), r.names.map((n, i) => h("th", { title: n }, "[" + (i + 1) + "]")))),
+          h("tbody", {}, r.matrix.map((row, i) => h("tr", {}, h("th", { class: "row" }, "[" + (i + 1) + "] " + r.names[i]),
+            row.map(v => h("td", { style: "background: rgba(var(--heat), " + (0.05 + 0.8 * v).toFixed(2) + ")" + (v > 0.6 ? "; color: var(--accent-ink)" : "") }, v.toFixed(3)))))))));
+      } catch (e) { out.replaceChildren(); message(e.message); }
+    } }, "Compare")),
+    out);
+}
+
+// ---------------------------------------------------------------- database search
+const D = { q: "", exact: false };
+async function viewSearch() {
+  const out = h("div");
+  const query = h("input", { type: "text", value: D.q, size: 36, placeholder: "Name, e.g. glucose" });
+  const exact = h("input", { type: "checkbox", checked: D.exact });
+  async function search() {
+    D.q = query.value; D.exact = exact.checked;
+    if (!D.q.trim()) return;
+    out.replaceChildren(h("p", { class: "busy" }, "Searching …")); message("");
+    try {
+      const rows = await api("/api/search?q=" + encodeURIComponent(D.q) + (D.exact ? "&exact=1" : ""));
+      out.replaceChildren(rows.length ? h("div", { class: "tablewrap" }, h("table", {},
+        h("thead", {}, h("tr", {}, h("th", { class: "num" }, "Entry"), h("th", {}, "Name"), h("th", {}, "Database"), h("th", {}, "Identifier"))),
+        h("tbody", {}, rows.map(r => h("tr", {}, h("td", { class: "num" }, r.group), h("td", {}, r.name), h("td", {}, r.db),
+          h("td", {}, r.url ? h("a", { href: r.url, target: "_blank", rel: "noopener" }, r.id) : r.id))))))
+        : h("p", { class: "note" }, "Nothing found for “" + D.q + "”."));
+    } catch (e) { out.replaceChildren(); message(e.message); }
+  }
+  query.addEventListener("keydown", ev => { if (ev.key === "Enter") search(); });
+  $("view").replaceChildren(
+    h("p", { class: "note" }, "Looks up a name in the annotation database (" + $("dbinfo").textContent + "). Rows with the same entry number are the same thing in different databases."),
+    h("div", { class: "bar" }, query, h("label", {}, exact, "exact name"), h("button", { class: "primary", onclick: search }, "Search")),
+    out);
+  if (D.q) search();
+}
+
+drawTabs();
+api("/api/qualifiers").then(q => { S.qualifiers = q; }).catch(() => {});
+refresh().catch(e => message(e.message));
+</script>
+</body>
+</html>

@@ -570,6 +570,16 @@ def cmd_update_database(args):
     return 0
 
 
+def cmd_gui(args):
+    from . import webgui
+    for f in args.files:
+        read_document(f)
+    try:
+        return webgui.serve(args.port, not args.no_browser, args.files)
+    except webgui.GuiError as e:
+        raise CliError(str(e))
+
+
 def cmd_database(args):
     from libSBAnnotation import config, update
     data = config.data_dir()
@@ -679,6 +689,14 @@ def build_parser():
                    help='number of relation steps between database entries that are followed (default 1)')
     p.add_argument('--tsv', action='store_true', help='tab separated output')
     p.set_defaults(func=cmd_match)
+
+    p = sub.add_parser('gui', help='open the browser interface (annotate, check, merge, compare models)',
+                       description='Starts the browser interface. It runs on this computer only; '
+                                   'stop it with Ctrl-C in the terminal.')
+    p.add_argument('files', nargs='*', metavar='MODEL.xml', help='models to load at the start')
+    p.add_argument('--port', type=int, default=8765, help='port of the local web server (default 8765)')
+    p.add_argument('--no-browser', action='store_true', help='do not open the browser, only print the address')
+    p.set_defaults(func=cmd_gui)
 
     p = sub.add_parser('database', help='show which version of the annotation database is in use')
     p.set_defaults(func=cmd_database)
