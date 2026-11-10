@@ -2,6 +2,11 @@ import os
 import pytest
 
 os.environ.setdefault('SEMANTICSBML_QUIET', '1')
+# The tests were written for the annotation database of February 2011 (folder data_2011),
+# which is also what the reference results of the original program were computed with.
+# tests/test_current_database.py runs the command line tool with the updated database (data).
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.environ['SEMANTICSBML_DATA'] = os.path.join(ROOT, 'data_2011')
 
 MODELS = os.path.join(os.path.dirname(__file__), 'models')
 

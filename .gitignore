@@ -7,3 +7,4 @@ dist/
 .pytest_cache/
 doc_file.xml
 test.dot
+data/downloads/

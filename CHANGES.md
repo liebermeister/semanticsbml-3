@@ -9,10 +9,10 @@ everything that is not a pure translation to Python 3.
 - parameter balancing, kineticizer, SBtab (developed further elsewhere)
 - building models from KEGG (`kegg2sbml`): the KEGG web service it used was shut down
 - libTI / libTI2 / libPyless (simulation, identifiability)
-- downloading and rebuilding the annotation database: most download addresses
-  no longer exist. The code (`libSBAnnotation/buildDB.py`) is kept but is not
-  reachable from the command line; a missing database now gives an error
-  message instead of an attempt to download.
+- building the annotation database from nothing: most download addresses no
+  longer exist. The code (`libSBAnnotation/buildDB.py`) is kept but is not
+  reachable from the command line; a missing database gives an error message
+  instead of an attempt to download. (Updating the existing database is new, see below.)
 
 ## New
 
@@ -28,6 +28,27 @@ everything that is not a pure translation to Python 3.
 - data are read from `./data` (or `$SEMANTICSBML_DATA`), not from `~/.semanticSBML`;
   nothing is written to the home directory
 - `libModelSimilarity/api.py`: simple functions for model similarity
+- `semanticsbml update-database` (`libSBAnnotation/update.py`) brings the database
+  up to date without rebuilding it:
+  - ChEBI, Gene Ontology, SBO: all relations and main names from these sources are
+    replaced by those of the current ontology files; new entries are added; old
+    names stay searchable. Of ChEBI the manually curated entries ("3 star"), those
+    with a KEGG identifier and those known before are taken (`--all-chebi`: all).
+  - Entries that have disappeared from a source stay, with their name, without relations.
+    Former identifiers (`alt_id`, `replaced_by`) are linked to their successor the
+    way the original did for ChEBI ("successor is_a former entry"); now also for GO.
+  - Links between databases made in 2011 (ChEBI–KEGG, GO–EC) are never rearranged.
+    A new ChEBI entry is joined with the KEGG compound it names only if that compound
+    had no ChEBI partner yet; likewise new GO terms and EC numbers.
+  - Formulas (for the atom balance check) are added from ChEBI where none was known.
+  - KEGG: new compounds get their names; new reactions get their participants when all
+    names in the reaction definition are names of KEGG compounds (about 93 %), otherwise only a name.
+  - The identifiers.org registry is stored as `data/identifiers_org_namespaces.tsv`;
+    namespaces unknown in 2011 get their proper names. Their identifiers are not
+    checked against the registry patterns.
+  - `data_2011/` keeps the database of February 2011.
+- database tables build their indexes when first needed (start-up 4 s instead of 15 s
+  with the updated database)
 - tests (`tests/`)
 
 ## Changes needed for current libSBML
@@ -56,6 +77,15 @@ Merge
 - The order of elements in the output is the same in every run.
 - The command line merge script of the original (`semanticsbml-automerge`) passed
   the wrong kind of object to the merger and could not run; `semanticsbml merge` replaces it.
+
+Search
+- The search for a name answered from a cache of names displayed before, so the
+  result depended on what had been looked up earlier in the same run (e.g. a name
+  with two database entries was reported with one). The cache is no longer used.
+  The merge code relied on this cache when comparing two annotations by name; the
+  decision it took in effect (same identifier) is now written out and unchanged.
+- An error in the database code that only showed when entries are added
+  (`AnnotationObject.items`) was fixed.
 
 View
 - `semanticsbml-view` used an undefined variable and wrong arguments; fixed.

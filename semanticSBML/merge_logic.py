@@ -261,19 +261,10 @@ class BioRelations(object):
                 #print 'compartment, comparing directly'
             #   return str(an1)==str(an2)
             elif an1.getName() and an2.getName():
-                res = self._ldb.searchEntries(an1.getName(),1.)
-                #res=self._ldb.get_id_exact(an1.getName(),type)
-                #print 'here:',an2.db+an2.id,an1.getName(),res[0]
-                if len(res)>1:
-                    WRONG#DEBUG 
-                for k,v in res[0].items():
-                    #print k+v+'=='+an2.db+an2.id
-                    if k+v == an1.db+an2.id:
-                        #jefunden,unglaublich_es_gibt_doch_wunder,_unsere_datenbank_war_soeben_das_erste_mal_nuetzlich
-                        return True
-                else:
-                    #falsch
-                    return False
+                # The original looked up the name of an1 with searchEntries(), which answered
+                # from a cache that at this point always held an1 itself, and then compared
+                # an1.db+an1.id with an1.db+an2.id. The same decision, written out:
+                return an1.id == an2.id
             #elif an2.getName():#this should make not difference since if one is not known we can only do string matching
             #   print an2.getName(),self._ldb.get_id_exact(an2.getName(),type)
             else:#FALLBACK ids not in database comparing directly

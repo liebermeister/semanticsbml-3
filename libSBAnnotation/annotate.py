@@ -184,6 +184,37 @@ namespace_aliases = {
     'pubchem.cid': 'pubchem.compound', 'pubchem.sid': 'pubchem.substance',
 }
 _known_namespaces = set(u[len('urn:miriam:'):] for u in uri2name if u.startswith('urn:miriam:'))
+
+def _read_identifiers_org_namespaces():
+    """
+    namespaces of the identifiers.org registry that the 2011 MIRIAM table does not have
+    (file written by 'semanticsbml update-database'); they get name, identifier pattern and link
+    """
+    path = os.path.join(os.path.dirname(config.Config().getpath('resources', 'MIRIAM_resources')),
+                        'identifiers_org_namespaces.tsv')
+    if not os.path.exists(path):
+        return
+    with open(path, encoding='utf-8') as f:
+        for line in f:
+            fields = line.rstrip('\n').split('\t')
+            if line.startswith('#') or len(fields) < 3:
+                continue
+            prefix, name, pattern = fields[0], fields[1], fields[2]
+            if prefix in _known_namespaces or prefix in namespace_aliases or not prefix:
+                continue
+            if not name or name in name2uri:
+                name = prefix
+                if name in name2uri:
+                    continue
+            uri = 'urn:miriam:' + prefix
+            uri2name[uri] = name
+            name2uri[name] = uri
+            name2altURIs[name] = []
+            database2regex[name] = None     # identifiers are not checked against the pattern: nothing is rejected
+            name2www[name] = 'https://identifiers.org/' + prefix + ':%s'
+            _known_namespaces.add(prefix)
+
+_read_identifiers_org_namespaces()
 namespace_aliases = dict((k, v) for k, v in namespace_aliases.items()
                          if k not in _known_namespaces and v in _known_namespaces)
 # 2011 namespace -> preferred identifiers.org namespace (for writing)

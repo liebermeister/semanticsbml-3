@@ -554,6 +554,36 @@ def cmd_match(args):
 # ---------------------------------------------------------------------------
 # argument parser
 # ---------------------------------------------------------------------------
+# database
+# ---------------------------------------------------------------------------
+
+def cmd_update_database(args):
+    from libSBAnnotation import update
+    try:
+        report = update.run(download_dir=args.download_dir, use_existing=args.use_existing,
+                            kegg=not args.no_kegg, all_chebi=args.all_chebi, only=args.only)
+    except update.UpdateError as e:
+        raise CliError(str(e))
+    print()
+    for line in report:
+        print(line)
+    return 0
+
+
+def cmd_database(args):
+    from libSBAnnotation import config, update
+    data = config.data_dir()
+    print('data folder: %s' % data)
+    info = os.path.join(data, update.INFO_FILE)
+    if os.path.exists(info):
+        with open(info, encoding='utf-8') as f:
+            print(f.read().rstrip())
+    else:
+        print('annotation database of February 2011 (never updated)')
+    return 0
+
+
+# ---------------------------------------------------------------------------
 
 def build_parser():
     parser = argparse.ArgumentParser(
@@ -649,6 +679,26 @@ def build_parser():
                    help='number of relation steps between database entries that are followed (default 1)')
     p.add_argument('--tsv', action='store_true', help='tab separated output')
     p.set_defaults(func=cmd_match)
+
+    p = sub.add_parser('database', help='show which version of the annotation database is in use')
+    p.set_defaults(func=cmd_database)
+
+    p = sub.add_parser('update-database', help='download current ChEBI, Gene Ontology, SBO, KEGG names and '
+                                               'identifiers.org namespaces and update the annotation database',
+                       description='Updates the annotation database in the data folder (about 100 MB of downloads, '
+                                   'several minutes). Names and relations of ChEBI, Gene Ontology and SBO are '
+                                   'replaced by the current ones and new entries are added. From KEGG only the '
+                                   'lists of compound and reaction names are fetched (two requests); KEGG is free '
+                                   'for academic use only, use --no-kegg otherwise.')
+    p.add_argument('--no-kegg', action='store_true', help='do not contact the KEGG web service')
+    p.add_argument('--all-chebi', action='store_true',
+                   help='take over all ChEBI entries (about 220000) instead of the manually curated ones and those '
+                        'with a KEGG identifier; makes every command slower to start')
+    p.add_argument('--only', nargs='+', metavar='PART', choices=['chebi', 'go', 'sbo', 'kegg', 'registry'],
+                   help='update only these parts: chebi go sbo kegg registry')
+    p.add_argument('--download-dir', metavar='DIR', help='folder for the downloaded files (default: data/downloads)')
+    p.add_argument('--use-existing', action='store_true', help='use files in the download folder instead of downloading again')
+    p.set_defaults(func=cmd_update_database)
 
     return parser
 

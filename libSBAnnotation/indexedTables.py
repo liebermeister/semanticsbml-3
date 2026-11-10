@@ -13,6 +13,25 @@ class ColumnNotFoundException(Exception):
         return repr(self.value)
         
 
+class _LazyIndex(dict):
+    """index of a table: column name -> {value: [row numbers]}, built when a column is first asked for
+    (added in the Python 3 port; building all indexes on loading took most of the start-up time)"""
+    def __init__(self, table):
+        dict.__init__(self)
+        self.table = table
+    def __missing__(self, column):
+        column_index = self.table.column_descriptions.index(column)
+        index = {}
+        for row_number, row in enumerate(self.table.rows):
+            value = row[column_index]
+            if value in index:
+                index[value].append(row_number)
+            else:
+                index[value] = [row_number]
+        self[column] = index
+        return index
+
+
 class BasicTable:
     """Class implementing the basic functionality of the six central tables of the database."""
     def __init__(self,column_descriptions,column_types):
@@ -20,14 +39,20 @@ class BasicTable:
         self.column_types = column_types
         self.column_index_range = list(range(len(self.column_descriptions)))
         self.rows = []
-        self.row_hashes = {}
+        self._row_hashes = None
         self.row_number = 0
-        self.global_index={}
+        self.global_index = _LazyIndex(self)
         self.config = config.Config()
-        for column_description in self.column_descriptions:
-            self.global_index[column_description] = {}
+    @property
+    def row_hashes(self):
+        if self._row_hashes is None:
+            hashes = {}
+            for row_number, row in enumerate(self.rows):
+                hashes.setdefault(self.__hash_row__(row), []).append(row_number)
+            self._row_hashes = hashes
+        return self._row_hashes
     def dump(self):
-        f=open(self.config.getpath("database","database_dir")+"internal_db.version_"+__version__+self.filename,"w")
+        f=open(self.config.getpath("database","database_dir")+"internal_db.version_"+__version__+self.filename,"w",encoding="utf-8")
         try:
             f.write( '\n'.join(["\t".join([(y if typ=="str" else str(y)) for y,typ in zip(row,self.column_types)]) for row in self.rows]) )
         except TypeError:
@@ -61,12 +86,17 @@ class BasicTable:
         import os
         if not os.path.exists(fn): return
         f=open(fn,"r",encoding="utf-8",errors="replace")
+        rows = self.rows
+        conversions = list(entry2type_func.items())
         for line in f:
             entries = line.strip('\n').split('\t')
-            for index in entry2type_func:
-                entries[index] = entry2type_func[index](entries[index])
-            self.insertRow(entries)
+            for index, func in conversions:
+                entries[index] = func(entries[index])
+            rows.append(entries)
         f.close()
+        self.row_number = len(rows)
+        self._row_hashes = None
+        self.global_index.clear()
     def __hash_row__(self,row):
         return str(row)
     def insertRow(self,row):
@@ -88,25 +118,16 @@ class BasicTable:
         #        raise Hell()
         ## END OF TESTS for quality of insertion
 
-        # adding the hash
-        row_hash = self.__hash_row__(row)
-        if row_hash not in self.row_hashes:
-            self.row_hashes[row_hash] = []
-        #else:
-        #    if str(self.__class__).split(".")[-1] not in "AbstractItem TakesPart".split():
-        #        print self.__class__
-        #        print row,"already present"
-        #        raise Hell()
-                
-        self.row_hashes[row_hash].append(len(self.rows))
+        if self._row_hashes is not None:
+            self._row_hashes.setdefault(self.__hash_row__(row), []).append(len(self.rows))
         # adding the row
         self.rows.append(row)
-        # adding it to the index
-        for column_index in self.column_index_range:
-            current_dict = self.global_index[self.column_descriptions[column_index]]
-            if row[column_index] not in current_dict:
-                current_dict[row[column_index]] = []
-            current_dict[row[column_index]].append(self.row_number)
+        # adding it to the indexes that have been built
+        for column, current_dict in self.global_index.items():
+            value = row[self.column_descriptions.index(column)]
+            if value not in current_dict:
+                current_dict[value] = []
+            current_dict[value].append(self.row_number)
         self.row_number = self.row_number + 1
     def deleteRow(self,rowIndex):
         raise NotImplementedError
@@ -118,6 +139,13 @@ class BasicTable:
                 if new_row[column_index] not in current_dict:
                     current_dict[new_row[column_index]] = []
                 current_dict[new_row[column_index]].append(rowIndex)
+        if self._row_hashes is not None:
+            old_hash = self.__hash_row__(self.rows[rowIndex])
+            if rowIndex in self._row_hashes.get(old_hash, []):
+                self._row_hashes[old_hash].remove(rowIndex)
+                if not self._row_hashes[old_hash]:
+                    del self._row_hashes[old_hash]
+            self._row_hashes.setdefault(self.__hash_row__(new_row), []).append(rowIndex)
         self.rows[rowIndex] = new_row
     def __getRowSet__(self,column_description,value):
         if value not in self.global_index[column_description]:

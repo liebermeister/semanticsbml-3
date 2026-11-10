@@ -536,8 +536,8 @@ This process will take some time, so please be patient.""" % ('\n  '.join(downlo
             @rtype: [{db:id}]
             '''
             if fuzziness == 1.:
-                if query in self.name_to_dblinks:
-                    return [self.name_to_dblinks[query]]
+                # (the original answered from a cache of names shown earlier, which made the
+                #  result of a search depend on what had been looked up before; removed)
                 annotation_object_list = self.database_instance.getAnnotationObjectListByName(query)
                 if annotation_object_list == None:
                     return []

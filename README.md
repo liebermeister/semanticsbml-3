@@ -61,15 +61,27 @@ neighbourhood of an element in the network. It only reports, it does not merge.
 
 ## The annotation database
 
-The folder `data/` holds the last annotation database of the original tool
-(February 2011): names and relations from ChEBI, KEGG Compound, KEGG Reaction,
-Gene Ontology, NCBI Taxonomy (small), SBO, InterPro and SGD, and the MIRIAM
-registry of that time. It is needed for names, for `search`, `--auto`, `check`
-(atom balance), `match` and `similarity`. Entries added to these databases after
-2011 are not known; annotations pointing to them are kept and compared literally.
+The folder `data/` holds the annotation database: names and relations from ChEBI,
+KEGG Compound, KEGG Reaction, Gene Ontology, NCBI Taxonomy (small), SBO, InterPro
+and SGD, and the list of databases known to MIRIAM / identifiers.org. It is needed
+for names, for `search`, `--auto`, `check` (atom balance), `match` and `similarity`.
 
-Another data folder can be chosen with `semanticsbml --data FOLDER ...` or the
-environment variable `SEMANTICSBML_DATA`.
+```
+semanticsbml database           # which versions are in use
+semanticsbml update-database    # fetch current ChEBI, Gene Ontology, SBO, KEGG names, identifiers.org
+```
+
+`update-database` downloads about 100 MB into `data/downloads` and takes a few
+minutes. It keeps the existing tables and replaces the names and relations of
+ChEBI, Gene Ontology and SBO by the current ones; new entries are added. From
+KEGG only the two lists of names are fetched (KEGG is free for academic use only;
+`--no-kegg` leaves it out). Taxonomy, InterPro and SGD stay as they were in 2011.
+What an update cannot bring back: chemical formulas and reaction equations of KEGG
+entries added after 2011 are taken from ChEBI and from the reaction names where possible.
+
+`data_2011/` is the last database of the original tool (February 2011), untouched.
+The tests use it, and `semanticsbml --data data_2011 ...` works with it.
+Another data folder can also be chosen with the environment variable `SEMANTICSBML_DATA`.
 
 ## Tests
 
@@ -85,7 +97,8 @@ environment variable `SEMANTICSBML_DATA`.
 | `semanticSBML/` | check, annotate, merge, view, similarity of elements; `cli.py` is the command line tool |
 | `libSBAnnotation/` | annotation database, MIRIAM resources, SBO |
 | `libModelSimilarity/` | similarity and clustering of whole models |
-| `data/` | annotation database and resource files |
+| `data/` | annotation database (updated) and resource files |
+| `data_2011/` | annotation database as of February 2011 |
 | `tests/` | tests and example models (BioModels 61, 64, 239) |
 
 See `CHANGES.md` for what differs from the original program.

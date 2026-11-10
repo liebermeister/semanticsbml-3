@@ -98,6 +98,8 @@ class AnnotationObject:
         return "Annotation Object "+repr(self.dictionary)
     def iteritems(self):
         return iter(self.dictionary.items())
+    def items(self):
+        return self.dictionary.items()
     
 class RelationObject:
     """Fake relation object for current programming purposes."""
@@ -154,7 +156,7 @@ class Database(object):
         self.list_of_internal_names_for_external_resources = [x[1] for x in ext_db_names]
         self.list_of_all_names = None
         self.abstract_id_to_annotation_object = {}
-        self.relation_cache = {}
+        self._relation_cache = None
 
         try:
             # get the information on which databases are already loaded before the database content is loaded
@@ -164,6 +166,25 @@ class Database(object):
             f.close()
         except IOError:
             pass
+
+    @property
+    def relation_cache(self):
+        """abstract id -> relation type -> direction -> {abstract id: None}; built on first use"""
+        if self._relation_cache is None:
+            cache = {}
+            for row in self.abstract_item_relation.rows:
+                for (from_aid,to_aid,direction) in [(row[0],row[1],'from'),(row[1],row[0],'to')]:
+                    if from_aid not in cache:
+                        cache[from_aid] = {}
+                    rcf = cache[from_aid]
+                    if row[2] not in rcf:
+                        rcf[row[2]] = {}
+                    rcfr = rcf[row[2]]
+                    if direction not in rcfr:
+                        rcfr[direction] = {}
+                    rcfr[direction][to_aid] = None
+            self._relation_cache = cache
+        return self._relation_cache
 
     def getListOfImportedDatabases(self):
         return [internal_to_miriam_names[x] if x in internal_to_miriam_names else x for x in self.list_of_imported_databases]
@@ -210,18 +231,7 @@ class Database(object):
         #        self.air_cache[from_aid].append(to_aid)
         # end of explicit caching og abstract item relations
 
-        # trying out a second cache for the relations
-        for row in self.abstract_item_relation.rows:
-            for (from_aid,to_aid,direction) in [(row[0],row[1],'from'),(row[1],row[0],'to')]:
-                if from_aid not in self.relation_cache:
-                    self.relation_cache[from_aid] = {}
-                rcf = self.relation_cache[from_aid]
-                if row[2] not in rcf:
-                    rcf[row[2]] = {}
-                rcfr = rcf[row[2]]
-                if direction not in rcfr:
-                    rcfr[direction] = {}
-                rcfr[direction][to_aid] = None
+        self._relation_cache = None     # built when first needed, see relation_cache
         # end of second cache for relations
         return self
     
