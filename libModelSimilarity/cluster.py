@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import numpy
 import libsbml, semanticSBML.annotate, os, libSBAnnotation.database_new, libSBAnnotation.database, datetime, sys, math, scipy, libSBAnnotation.stderr
 from . import html, qualifiers
 
@@ -135,7 +136,7 @@ class SingleAnnotation:
         tangens_height_correction_factor = 1.
         if similarity_measure_version >=4 and self.height != 0 and other.height != 0:
             height_correction_factor = 2./float(self.height+other.height)
-            tangens_height_correction_factor = scipy.tanh(height_correction_factor*.1)
+            tangens_height_correction_factor = numpy.tanh(height_correction_factor*.1)
         if similarity_measure_version >=3 and self.abstract_id != None and other.abstract_id != None:
             # compare the two elements based on their abstract_id
             qsfs = qualifier_similarity_factor[self.qualifier][other.qualifier]
@@ -275,7 +276,7 @@ class Cluster:
 class DatabaseAnnotation(object):
     _shared_state = {}
     def __new__(cls, *p, **k):
-        self = object.__new__(cls, *p, **k)
+        self = object.__new__(cls)
         self.__dict__ = cls._shared_state
         if 'model_annotations' not in self.__dict__:
             self.model_annotations = []
@@ -286,7 +287,6 @@ class DatabaseAnnotation(object):
         # create single clusters
         cluster_list = [Cluster([ma],[]) for ma in self.model_annotations]
         while len(cluster_list) > 1:
-            print(len(cluster_list),"clusters left")
             # determine the distances
             distances = {}
             for index1 in range(len(cluster_list)):
@@ -294,7 +294,6 @@ class DatabaseAnnotation(object):
                 for index2 in range(index1+1, len(cluster_list)):
                     cluster2 = cluster_list[index2]
                     distances[cluster1.similarity(cluster2)] = [index1, index2]
-                    print("\t",(index1,index2))
             # choose clusters to be merged
             minimal_distance = max(distances.keys())
             [index1, index2] = distances[minimal_distance]
@@ -376,27 +375,43 @@ class DatabaseAnnotation(object):
             doc = libsbml.readSBML(filename)
             #self.doc_list.append(doc)
             self.model_annotations.append( ModelAnnotation( semanticSBML.annotate.ModelElementsAnnotations(doc.getModel(), True), "BM"+modelnumber ) )
+        self.update_information_content()
+    def update_information_content(self):
+        '''
+        count how often each database entry is used in the loaded models, where the use of
+        an entry also counts for all its more general entries ("is_a" hierarchy).
+        Frequent (general) entries then contribute less to the similarity of models.
+        Call this after all models have been added to self.model_annotations.
+        '''
         # updating the height cache for ways up
         if similarity_measure_version >=6:
             global done_aid
-            done_aid = []
+            done_aid = set()
             for aid in range(len(database_new_instance.database_instance.abstract_item.rows)):
                 parents = list(database_new_instance.database_instance.__getRelatedAbstractIdsByAbstractId__(aid, "is_a", 1, "from"))
                 if len(parents)==0:
                     self._update_step_down(aid,0)
-    def _update_step_down(self, aid, step):
+    def _update_step_down(self, aid, step, in_progress=None):
         global hash_count_dict, done_aid
+        if in_progress is None:
+            in_progress = set()
         this_count = 0
         if aid in hash_count_dict:
             this_count = hash_count_dict[aid]
             if aid in done_aid:
                 return this_count
+        in_progress.add(aid)
         children = list(database_new_instance.database_instance.__getRelatedAbstractIdsByAbstractId__(aid, "is_a", 1, "to"))
         for child in children:
-            child_count = self._update_step_down(child,step+1)
+            if child in in_progress:
+                # the "is_a" relations of the database contain circles
+                # (the original code did not end in this case)
+                continue
+            child_count = self._update_step_down(child,step+1,in_progress)
             this_count = this_count + child_count
+        in_progress.discard(aid)
         hash_count_dict[aid] = this_count
-        done_aid.append(aid)
+        done_aid.add(aid)
         return this_count
     def countAnnotations(self):
         count_dict = {}

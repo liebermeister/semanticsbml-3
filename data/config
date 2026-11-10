@@ -23,29 +23,10 @@ annotate_event_with = Gene Ontology,SABIO-RK EC Record,BIND,Systems Biology Onto
 annotate_model_with = Brenda Tissue Ontology,Gene Ontology,ISBN,arXiv,BioModels Database,DOI,KEGG Pathway,PRIDE,PATO,Saccharomyces genome database pathways,Unipathway,PharmGKB Disease,OMIM,JWS Online,WikiPathways,Database of Quantitative Cellular Signaling: Model,Database of Quantitative Cellular Signaling: Pathway,NeuronDB,Small Molecule Pathway Database,ModelDB,ICD,PubMed,BioModels,Reactome,NCIt,Taxonomy,Systems Biology Ontology,CTD Disease,BioSystems
 annotate_compartment_with = Gene Ontology,Brenda Tissue Ontology,NeuronDB,NCIt,Systems Biology Ontology,NeuroMorpho,FMA
 annotate_kineticlaw_with = 
+uri_style = identifiers.org
 
 [sbml2dot]
 max_number = 50
 view_names = 0
 colors = 2
-
-[fill]
-arithmeticgeometric = 0
-balancing = 0
-
-[gui]
-firststart = 0
-firststart1.9 = 0
-maximized = 0
-app_x = 138
-app_y = 70
-app_w = 1262
-app_h = 816
-i2soutfileopenpath = /home/wolfram
-i2sinfileopenpath = /home/wolfram
-copyannofileopenpath = /home/wolfram
-fileopenpath = /home/wolfram/kopien_von_isis/model_playground
-diropenpath = /home/wolfram
-k2sdiropenpath = /home/wolfram
-fileopenerrorpopup = 0
 

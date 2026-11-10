@@ -1,3 +1,4 @@
+import numpy
 import os, os.path, random, scipy, pickle, libsbml, math, scipy.misc, datetime
 from . import compareModels
 from functools import cmp_to_key
@@ -14,7 +15,7 @@ class Background(compareModels.CompareModels):
             self.model = compareModels.ComparableModel(self, sbmldoc=model)
         else:
             self.model = compareModels.ComparableModel(self, model_elements_annotations=model)
-        self.model_vector = scipy.matrix(self.model._model_elements_annotation_to_element_vector(self.model.mea)).transpose()
+        self.model_vector = numpy.matrix(self.model._model_elements_annotation_to_element_vector(self.model.mea)).transpose()
         self.directory = directory
         self.freqs = None
         self.scores = None
@@ -50,7 +51,7 @@ class Background(compareModels.CompareModels):
             freqs[j] = freqs[j] / float(len(vectors)+1)
         return freqs
     def get_random_vector(self):
-        return scipy.matrix([1. if random.random()<prob else 0. for prob in self.freqs]).transpose()
+        return numpy.matrix([1. if random.random()<prob else 0. for prob in self.freqs]).transpose()
     def write_random_matrix(self,size):
         matrix = [self.get_random_vector() for i in range(size)]
         #f=open(random_models_filename,'w')
@@ -111,7 +112,7 @@ class Background(compareModels.CompareModels):
             self.simple_binomial = [(1.-p)**a]
         k=1
         while len(self.simple_binomial) <= xmax:
-            self.simple_binomial.append( self.simple_binomial[-1] + scipy.misc.comb(a, k) * p**k * (1.-p)**(a-k) )
+            self.simple_binomial.append( self.simple_binomial[-1] + scipy.special.comb(a, k) * p**k * (1.-p)**(a-k) )
             k = k + 1
         return 1.-self.simple_binomial[xmax]
     def precalc_p_dynamic(self,max_overlap):
@@ -120,9 +121,9 @@ class Background(compareModels.CompareModels):
         m = int(self.model_vector.sum())
         this_freqs = [self.freqs[i] for i in range(len(self.freqs)) if self.model_vector[i][0] > 0.]
         # build the dynamic programming matrix
-        self.A = scipy.array([1.])
+        self.A = numpy.array([1.])
         for i in range(m):
-            self.A = scipy.signal.convolve(self.A, scipy.array([1.-this_freqs[i], this_freqs[i]]))[:bound]
+            self.A = scipy.signal.convolve(self.A, numpy.array([1.-this_freqs[i], this_freqs[i]]))[:bound]
     def get_p_dynamic(self, overlap):
         import scipy.signal
         bound = int(math.floor(overlap))
@@ -130,7 +131,7 @@ class Background(compareModels.CompareModels):
     def get_p_wolf_exp(self, sim):
         m = int(self.model_vector.sum())
         start = datetime.datetime.now()
-        matrix = scipy.eye(m+1)
+        matrix = numpy.eye(m+1)
         this_freqs = [self.freqs[i] for i in range(len(self.freqs)) if self.model_vector[i][0] > 0.]
         # build the dynamic programming matrix
         for i in range(m):
@@ -149,7 +150,7 @@ class Background(compareModels.CompareModels):
         prob_and_count.sort(key=cmp_to_key(lambda x,y:x[1]-y[1]))
         B = [1.]
         for [p, a] in prob_and_count:
-            binomial = [scipy.misc.comb(a, k) * p**k * (1.-p)**(a-k) for k in range(a+1)]
+            binomial = [scipy.special.comb(a, k) * p**k * (1.-p)**(a-k) for k in range(a+1)]
             new_B = [0.]*(len(B)+len(binomial)-1)
             for i in range(len(B)):
                 for j in range(len(binomial)):
@@ -170,7 +171,7 @@ class Background(compareModels.CompareModels):
         m = int(self.model_vector.sum())
         start = datetime.datetime.now()
         import scipy
-        matrix = scipy.eye(m+1)
+        matrix = numpy.eye(m+1)
         this_freqs = [self.freqs[i] for i in range(len(self.freqs)) if self.model_vector[i][0] > 0.]
         # build the dynamic programming matrix
         for i in range(m):

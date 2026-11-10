@@ -1,3 +1,4 @@
+import numpy
 import semanticSBML.annotate, libSBAnnotation, scipy
 from . import calc_bimatrix
 
@@ -166,13 +167,13 @@ class CompareModels:
         self.similarity_matrix = fca.similarity_matrix
         self.current_element_matrix = None
     def similarity(self, vector1, vector2):
-        len_vector1 = scipy.sqrt( (vector1.transpose()*vector1)[0,0] )
-        len_vector2 = scipy.sqrt( (vector2.transpose()*vector2)[0,0] )
+        len_vector1 = numpy.sqrt( (vector1.transpose()*vector1)[0,0] )
+        len_vector2 = numpy.sqrt( (vector2.transpose()*vector2)[0,0] )
         if len_vector1 == 0 or len_vector2 == 0:
             similarity = 0.
         else:
-            len_vector1 = scipy.sqrt( (vector1.transpose()*self.similarity_matrix*vector1)[0,0] )
-            len_vector2 = scipy.sqrt( (vector2.transpose()*self.similarity_matrix*vector2)[0,0] )
+            len_vector1 = numpy.sqrt( (vector1.transpose()*self.similarity_matrix*vector1)[0,0] )
+            len_vector2 = numpy.sqrt( (vector2.transpose()*self.similarity_matrix*vector2)[0,0] )
             similarity = (vector1.transpose()*self.similarity_matrix*vector2)[0,0] / len_vector1 / len_vector2
         return similarity
 
@@ -182,9 +183,9 @@ class CompareModels:
         matrix = []
         for i in range(len(self.comparable_model1.matrix)):
             line = []
-            vector1 = scipy.matrix(self.comparable_model1.matrix[i]).transpose()
+            vector1 = numpy.matrix(self.comparable_model1.matrix[i]).transpose()
             for j in range(len(self.comparable_model2.matrix)):
-                vector2 = scipy.matrix(self.comparable_model2.matrix[j]).transpose()
+                vector2 = numpy.matrix(self.comparable_model2.matrix[j]).transpose()
                 this_sim = self.similarity(vector1, vector2)
                 line.append(this_sim)
             matrix.append(line)

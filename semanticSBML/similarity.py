@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import numpy
 import copy, datetime, math
 import libsbml
 import scipy
@@ -7,12 +8,13 @@ import scipy.sparse.linalg
 import scipy.linalg
 import semanticSBML.annotate
 import libSBAnnotation.database_new
+import libSBAnnotation.config
 import libSBAnnotation.cofactors
 import libModelSimilarity.cluster
 import libModelSimilarity.qualifiers
 
 database_new_instance = libSBAnnotation.database_new.Meta_DB()
-qualifier_similarity_factor = libModelSimilarity.qualifiers.Qualifiers().load_from_file()
+qualifier_similarity_factor = libModelSimilarity.qualifiers.Qualifiers().load_from_file(libSBAnnotation.config.Config().getpath('resources','qualifiers'))
 
 def annotation2aid(annotation):
     return database_new_instance.database_instance.__getAbstractIdByIdDict__({annotation.db:annotation.id})
@@ -33,10 +35,10 @@ def is_int_str(s):
         return False
 
 def logit(x):
-    return scipy.log(x / (1.00001 - x))
+    return numpy.log(x / (1.00001 - x))
 
 def logistic(x):
-    return 1. / (1. + scipy.exp(-x))
+    return 1. / (1. + numpy.exp(-x))
 
 class SigmaMatrix:
     def __init__(self, SBMLDocuments, model_ids, max_distance_neighbours = 3, use_full_database=False):
@@ -75,11 +77,40 @@ class SigmaMatrix:
             new_blacklist = [aid]+blacklist
             min_height = min([self._compute_single_height(p, max_height-1, new_blacklist) for p in parents])
             return min_height + 1
+    def _parents(self, aid):
+        if aid not in self._parent_cache:
+            self._parent_cache[aid] = list(database_new_instance.database_instance.__getRelatedAbstractIdsByAbstractId__(aid, "is_a", 1, "to"))
+        return self._parent_cache[aid]
+    def _height(self, aid, max_height=30):
+        """
+        Height of an entry in its ontology: 1 + number of is_a steps on the shortest way down
+        to an entry that has no more specific entries below it.
+        Gives the same values as L{_compute_single_height} (the original, recursive
+        function, which visits every path and needs minutes for large models), but
+        searches breadth first and remembers the parents of each entry.
+        """
+        seen = set([aid])
+        level = [aid]
+        steps = 0
+        while level and steps < max_height:
+            next_level = []
+            for a in level:
+                parents = self._parents(a)
+                if not parents:
+                    return steps + 1
+                for p in parents:
+                    if p not in seen:
+                        seen.add(p)
+                        next_level.append(p)
+            level = next_level
+            steps += 1
+        return max_height + 1
     def compute_heights(self):
         self.heights = {}
+        self._parent_cache = {}
         for key in self.keys:
             if is_int_str(key):
-                self.heights[key] = self._compute_single_height(int(key))
+                self.heights[key] = self._height(int(key))
             else:
                 self.heights[key] = 1
     def expand_single_aid(self, expand):
@@ -135,7 +166,7 @@ class SigmaMatrix:
                 self.sigma[i, j] = self.sigma[i, j] ** height
         self.sigma = self.sigma.tocsr()
     def _element_annotation_to_vector(self, ea):
-        vec = scipy.zeros(len(self.keys))
+        vec = numpy.zeros(len(self.keys))
         for a in ea.getAnnotations():
             str_anno = annotation2key(a)
             index_anno = self.keys.index(str_anno)
@@ -143,7 +174,7 @@ class SigmaMatrix:
                 raise Exception('Annotation not in Sigma matrix! Maybe SigmaMatrix has not been initialized with the correct models.')
             qsm = qualifier_similarity_factor["is"][a.qualifier]
             vec[index_anno] = qsm
-        return scipy.matrix([vec])
+        return numpy.matrix([vec])
     def _sigma_multiply(self, v1, v2):
         return (v1 * self.sigma * v2.transpose())[0,0]
     def compute_similarity_sbml_elements(self, element1, element2):
@@ -153,7 +184,7 @@ class SigmaMatrix:
         if ea1.type != ea2.type:
             return 0.
         [vec1, vec2] = [self._element_annotation_to_vector(ea) for ea in [ea1, ea2]]
-        return self._sigma_multiply(vec1, vec2) / scipy.sqrt(self._sigma_multiply(vec1, vec1)) / scipy.sqrt(self._sigma_multiply(vec2, vec2))
+        return self._sigma_multiply(vec1, vec2) / numpy.sqrt(self._sigma_multiply(vec1, vec1)) / numpy.sqrt(self._sigma_multiply(vec2, vec2))
     def compute_pairwise_similarities(self):
         self.esm = ElementSimilarityMatrix()
         n = len(self.SBMLDocuments)
@@ -282,7 +313,7 @@ class GlobalSigma:
     def _make_global_vectors(self, document):
         elements = self._get_model_elements(document)
         element_ids = [x.getId() for x in elements]
-        R = scipy.zeros((len(elements), len(elements)))
+        R = numpy.zeros((len(elements), len(elements)))
         r = 0.5
         vecs = []
         for i in range(len(elements)):
@@ -296,14 +327,14 @@ class GlobalSigma:
                     R[j, i] = r
             ea = semanticSBML.annotate.ElementAnnotations(element, True)
             vecs.append( self.sigma_matrix._element_annotation_to_vector(ea).tolist()[0] )
-        I = scipy.matrix(scipy.eye(len(elements)))
-        largest_eigenvalue = float(max(scipy.linalg.eigvals(R)))
+        I = numpy.matrix(numpy.eye(len(elements)))
+        largest_eigenvalue = float(max(scipy.linalg.eigvals(R).real))
         if largest_eigenvalue != 0.:
             _lambda = 0.5 / largest_eigenvalue
         else:
             _lambda = 0.5
         #_lambda = 0.1
-        v = scipy.matrix(vecs)
+        v = numpy.matrix(vecs)
         if self.limited_propagation is None:
             pi = (I - _lambda * R).getI()
         elif self.limited_propagation == 0:
@@ -315,7 +346,7 @@ class GlobalSigma:
         p = pi * v
         global_vecs = []
         for global_vec in p.tolist():
-            global_vecs.append( scipy.matrix([global_vec]) )
+            global_vecs.append( numpy.matrix([global_vec]) )
         return global_vecs
     def get_global_esm(self):
         self.global_vector = [self._make_global_vectors(doc) for doc in self.SBMLDocuments]
@@ -328,7 +359,7 @@ class GlobalSigma:
                     for l,e2 in enumerate(self._get_model_elements(self.SBMLDocuments[j])):
                         v2 = self.global_vector[j][l]
                         if type(e1) == type(e2):
-                            sim = self.sigma_matrix._sigma_multiply(v1, v2) / scipy.sqrt(self.sigma_matrix._sigma_multiply(v1, v1)) / scipy.sqrt(self.sigma_matrix._sigma_multiply(v2, v2))
+                            sim = self.sigma_matrix._sigma_multiply(v1, v2) / numpy.sqrt(self.sigma_matrix._sigma_multiply(v1, v1)) / numpy.sqrt(self.sigma_matrix._sigma_multiply(v2, v2))
                             if sim > 0.:
                                 self.global_esm.add_similarity(self.model_ids[i], self.model_ids[j], e1.getId(), e2.getId(), sim)
         return self.global_esm
@@ -373,8 +404,8 @@ class GlobalSigmaSimProp(GlobalSigma):
                 model2 = self.model_ids[j]
                 # compute similarities for each model pair
                 #R = scipy.sparse.lil_matrix((ilen*jlen, ilen*jlen))
-                R = scipy.zeros((ilen*jlen, ilen*jlen))
-                sigma = scipy.matrix([[0.]]*(ilen*jlen))
+                R = numpy.zeros((ilen*jlen, ilen*jlen))
+                sigma = numpy.matrix([[0.]]*(ilen*jlen))
                 for k,e1 in enumerate(self._get_model_elements(self.SBMLDocuments[i])):
                     kdep = [semanticSBML.annotate.ElementAnnotations(x).id  for x in self.get_dependent_elements(self.SBMLDocuments[i], e1)]
                     for l,e2 in enumerate(self._get_model_elements(self.SBMLDocuments[j])):
@@ -399,10 +430,10 @@ class GlobalSigmaSimProp(GlobalSigma):
                 R = scipy.sparse.csc_matrix(R)
                 # rescale R
                 #largest_eigenvalue = scipy.sparse.linalg.eigen(R, k=1, which='LR').tolist()[0]
-                largest_eigenvalue = float(max(scipy.linalg.eigvals(scipy.matrix(R.toarray()))))
+                largest_eigenvalue = float(max(scipy.linalg.eigvals(R.toarray()).real))
                 # R = I - _lambda*R
                 R = (-0.5 / largest_eigenvalue) * R
-                R.setdiag(scipy.ones(ilen*jlen))
+                R.setdiag(numpy.ones(ilen*jlen))
                 # solve rho = R^{-1} * sigma
                 (rho, info) = scipy.sparse.linalg.cgs(R, sigma, x0=copy.deepcopy(sigma))
                 if info > 0:
@@ -411,7 +442,7 @@ class GlobalSigmaSimProp(GlobalSigma):
                         # does not work and will crash
                         rho = R.getI() * sigma
                 # set entries in the global_esm
-                rho = scipy.matrix(rho).transpose()
+                rho = numpy.matrix(rho).transpose()
                 i_elements = self._get_model_elements(self.SBMLDocuments[i])
                 j_elements = self._get_model_elements(self.SBMLDocuments[j])
                 # find row and column maxima

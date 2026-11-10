@@ -7,7 +7,8 @@ Command line interface of semanticSBML.
     semanticsbml search       "glucose"
     semanticsbml annotate     MODEL.xml -o OUT.xml --auto
     semanticsbml merge        A.xml B.xml -o MERGED.xml
-    semanticsbml similar      A.xml B.xml
+    semanticsbml match        A.xml B.xml
+    semanticsbml similarity   A.xml B.xml C.xml
 
 Run "semanticsbml COMMAND --help" for the options of each command.
 """
@@ -426,6 +427,131 @@ def cmd_merge(args):
 
 
 # ---------------------------------------------------------------------------
+# similarity of whole models
+# ---------------------------------------------------------------------------
+
+def _model_files(args_files, directory):
+    files = list(args_files or [])
+    if directory:
+        if not os.path.isdir(directory):
+            raise CliError('Not a directory: %s' % directory)
+        files += sorted(os.path.join(directory, f) for f in os.listdir(directory)
+                        if f.lower().endswith(('.xml', '.sbml')))
+    for f in files:
+        if not os.path.isfile(f):
+            raise CliError('File not found: %s' % f)
+    return files
+
+
+def cmd_similarity(args):
+    import warnings
+    import libModelSimilarity.api as api
+
+    files = _model_files(args.files, args.dir)
+    if args.query:
+        files = [args.query] + [f for f in files if os.path.abspath(f) != os.path.abspath(args.query)]
+    if len(files) < 2:
+        raise CliError('similarity needs at least two models')
+    for f in files:
+        read_document(f)
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        collection = api.load_models(files)
+        models = collection.model_annotations
+        names = [m.model_name for m in models]
+
+        if args.query:
+            # rank all models by their similarity to the query model
+            ranking = sorted(((models[0].similarity(m), m.model_name) for m in models[1:]), reverse=True)
+            if args.tsv:
+                print('similarity\tmodel')
+                for sim, name in ranking:
+                    print('%.4f\t%s' % (sim, name))
+            else:
+                print('Similarity to %s:' % names[0])
+                print_table([('%.3f' % sim, name) for sim, name in ranking])
+            return 0
+
+        if args.cluster and len(models) > 2:
+            order = api.cluster_order(collection)
+            models = sorted(models, key=lambda m: order.index(m.model_name))
+            names = [m.model_name for m in models]
+        matrix = [[a.similarity(b) for b in models] for a in models]
+    if args.tsv:
+        print('\t'.join([''] + names))
+        for name, row in zip(names, matrix):
+            print('\t'.join([name] + ['%.4f' % x for x in row]))
+    else:
+        width = max(len(n) for n in names)
+        for number, name in enumerate(names):
+            print('[%d] %s' % (number + 1, name))
+        print()
+        print(' ' * 5 + ''.join(('[%d]' % (i + 1)).rjust(7) for i in range(len(names))))
+        for number, row in enumerate(matrix):
+            print(('[%d]' % (number + 1)).ljust(5) + ''.join(('%.3f' % x).rjust(7) for x in row))
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# matching elements of two or more models by similarity
+# ---------------------------------------------------------------------------
+
+def match_documents(documents, minimum_similarity=0.5, propagation=True, neighbours=1):
+    """
+    find corresponding elements in several models
+    @return: list of matches (score, [(model number, element type, id, name), ...]), best first
+    """
+    import warnings
+    from . import similarity
+
+    model_ids = list(range(1, len(documents) + 1))
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')            # elements without annotation give 0/0
+        matcher = similarity.ModelMatcher(documents, model_ids, neighbours, True)
+        if not propagation:
+            matcher.pick_propagation_type('local')
+        names = {}
+        for mid, mea in zip(model_ids, matcher.meas):
+            for ea in mea.getElementAnnotations():
+                names[(mid, ea.id)] = ea.name
+        result = []
+        for match in matcher.match(minimum_similarity):
+            score = matcher.get_similarity([d['mid'] for d in match], [d['element_id'] for d in match])
+            pair_scores = []
+            for i in range(len(match)):
+                for j in range(i + 1, len(match)):
+                    pair_scores.append(matcher.global_esm.get_similarity(
+                        match[i]['mid'], match[j]['mid'], match[i]['element_id'], match[j]['element_id']))
+            elements = sorted((d['mid'], d['element_type'], d['element_id'], names.get((d['mid'], d['element_id']), ''))
+                              for d in match)
+            result.append((min(pair_scores) if pair_scores else float(score), elements))
+    result.sort(key=lambda x: (-x[0], x[1]))
+    return result
+
+
+def cmd_match(args):
+    if len(args.files) < 2:
+        raise CliError('match needs at least two models')
+    documents = [read_document(f) for f in args.files]
+    matches = match_documents(documents, args.min, not args.local, args.neighbours)
+    if args.tsv:
+        print('\t'.join(['similarity', 'type'] + ['model_%d' % (i + 1) for i in range(len(documents))]))
+        for score, elements in matches:
+            ids = dict((mid, i) for mid, t, i, n in elements)
+            print('\t'.join(['%.4f' % score, elements[0][1]] + [ids.get(i + 1, '') for i in range(len(documents))]))
+        return 0
+    for i, f in enumerate(args.files):
+        print('[%d] %s' % (i + 1, f))
+    print('\nCorresponding elements (similarity at least %s): %d\n' % (args.min, len(matches)))
+    rows = []
+    for score, elements in matches:
+        rows.append(('%.3f' % score, elements[0][1],
+                     ' = '.join('[%d] %s%s' % (mid, i, (' "%s"' % n) if n else '') for mid, t, i, n in elements)))
+    print_table(rows)
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # argument parser
 # ---------------------------------------------------------------------------
 
@@ -498,6 +624,31 @@ def build_parser():
     p.add_argument('--unmatched', action='store_true', help='also list the elements that were not matched')
     p.add_argument('-v', '--verbose', action='store_true')
     p.set_defaults(func=cmd_merge)
+
+    p = sub.add_parser('similarity', help='compare whole models by their annotations',
+                       description='Similarity (0 to 1) between annotated models. Without --query a table of all '
+                                   'pairs is printed; with --query the other models are ranked by their similarity '
+                                   'to that model. How much an annotation counts depends on how often it occurs '
+                                   'in the given set of models.')
+    p.add_argument('files', nargs='*', metavar='MODEL.xml')
+    p.add_argument('--dir', metavar='FOLDER', help='use all .xml files in this folder')
+    p.add_argument('--query', metavar='MODEL.xml', help='rank the other models by similarity to this one')
+    p.add_argument('--cluster', action='store_true', help='order the table by hierarchical clustering')
+    p.add_argument('--tsv', action='store_true', help='tab separated output')
+    p.set_defaults(func=cmd_similarity)
+
+    p = sub.add_parser('match', help='find corresponding elements of models by the similarity of their annotations',
+                       description='Find corresponding elements in two or more models. Unlike "merge", which needs '
+                                   'identical annotations, this also uses relations between database entries '
+                                   '(e.g. D-glucose is a glucose) and the neighbourhood of an element in the network.')
+    p.add_argument('files', nargs='+', metavar='MODEL.xml')
+    p.add_argument('--min', type=float, default=0.5, metavar='S', help='smallest similarity that is reported (default 0.5)')
+    p.add_argument('--local', action='store_true',
+                   help='compare only the annotations of the elements themselves, not those of their neighbours in the network')
+    p.add_argument('--neighbours', type=int, default=1, metavar='N',
+                   help='number of relation steps between database entries that are followed (default 1)')
+    p.add_argument('--tsv', action='store_true', help='tab separated output')
+    p.set_defaults(func=cmd_match)
 
     return parser
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import numpy
 import os
 import scipy
 import libsbml
@@ -32,8 +33,8 @@ class SparseVector:
         if self.l is None:
             l = 0.
             for val in list(self.d.values()):
-                l += scipy.power(val,2)
-            self.l = scipy.sqrt(l)
+                l += numpy.power(val,2)
+            self.l = numpy.sqrt(l)
         return self.l
     def angle(self, other):
         cross_prod = 0
@@ -197,7 +198,7 @@ class AnnotationLookahead:
         except KeyError:
             # maybe a model has been inserted
             return None
-        return [[aid, aid2value[aid]] for aid in aid2value if element_type in self.aid2type(aid) and not scipy.isnan(aid2value[aid])]
+        return [[aid, aid2value[aid]] for aid in aid2value if element_type in self.aid2type(aid) and not numpy.isnan(aid2value[aid])]
 
     def predict_grouped_db_id(self, element_id, element_type):
         aid_values = self.predict_aid(element_id, element_type)

@@ -7,7 +7,8 @@ class Qualifiers:
         self.qualifiers = {}
     def load_from_file(self, filename=None):
         if filename == None:
-            filename = os.path.join( os.path.expanduser('~'), '.semanticSBML', 'qualifiers.csv' )
+            import libSBAnnotation.config
+            filename = libSBAnnotation.config.Config().getpath('resources','qualifiers')
         self.qualifiers = {}
         csv_file = csv.reader(open(filename), delimiter=',')
         rows = [x for x in csv_file]

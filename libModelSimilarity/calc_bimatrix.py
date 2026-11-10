@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import numpy
 import sys, os, semanticSBML.annotate, libsbml, libSBAnnotation.database_new, scipy, scipy.sparse
 from . import cluster, fake_annotations
 
@@ -124,7 +125,7 @@ class AnnotationsInModels:
 class CompareAnnotations:
     def __init__(self, max_distance, csv=None):
         global annotation_count
-        log_total_annotation_count = scipy.log(sum(annotation_count.values())+1)
+        log_total_annotation_count = numpy.log(sum(annotation_count.values())+1)
         self.max_distance = max_distance
         if csv == None:
             self.csv = mycsv()
@@ -163,8 +164,8 @@ class CompareAnnotations:
                 else:
                     this_similarity = 0.
                 if use_semantic_density:
-                    local_semantic_density1 = 1. - (scipy.log(annotation_count[anno1])/log_total_annotation_count) if anno1 in annotation_count else 1. - (1./log_total_annotation_count)
-                    local_semantic_density2 = 1. - (scipy.log(annotation_count[anno2])/log_total_annotation_count) if anno2 in annotation_count else 1. - (1./log_total_annotation_count)
+                    local_semantic_density1 = 1. - (numpy.log(annotation_count[anno1])/log_total_annotation_count) if anno1 in annotation_count else 1. - (1./log_total_annotation_count)
+                    local_semantic_density2 = 1. - (numpy.log(annotation_count[anno2])/log_total_annotation_count) if anno2 in annotation_count else 1. - (1./log_total_annotation_count)
                     this_similarity = this_similarity * local_semantic_density1 * local_semantic_density2
                 similarity_line.append(this_similarity)
             self.similarity_matrix.append(similarity_line)
@@ -225,20 +226,20 @@ class EuklideanDistance:
         for line in self.compare_annotations.csv.matrix[1:]:
             model_name = line[0]
             vector = [float(x) for x in line[1:]]
-            vector = scipy.matrix(vector).transpose()
+            vector = numpy.matrix(vector).transpose()
             self.model_to_vector[model_name] = vector
         self.similarity_matrix = self.compare_annotations.similarity_matrix
     def similarity(self, vector1, vector2):
-        len_vector1 = scipy.sqrt( (vector1.transpose()*vector1)[0,0] )
-        len_vector2 = scipy.sqrt( (vector2.transpose()*vector2)[0,0] )
+        len_vector1 = numpy.sqrt( (vector1.transpose()*vector1)[0,0] )
+        len_vector2 = numpy.sqrt( (vector2.transpose()*vector2)[0,0] )
         if len_vector1 == 0 or len_vector2 == 0:
             similarity = 0.
         elif not use_similarity_in_euklidian:
             similarity = (vector1.transpose()*vector2)[0,0] / len_vector1 / len_vector2
         else:
             # the following lines should be commented in again in order to make the similarity measure the angle between the transformed vectors
-            len_vector1 = scipy.sqrt( (vector1.transpose()*self.similarity_matrix*vector1)[0,0] )
-            len_vector2 = scipy.sqrt( (vector2.transpose()*self.similarity_matrix*vector2)[0,0] )
+            len_vector1 = numpy.sqrt( (vector1.transpose()*self.similarity_matrix*vector1)[0,0] )
+            len_vector2 = numpy.sqrt( (vector2.transpose()*self.similarity_matrix*vector2)[0,0] )
             similarity = (vector1.transpose()*self.similarity_matrix*vector2)[0,0] / len_vector1 / len_vector2
         return similarity
     def compute_matrix(self,filename):
@@ -308,7 +309,7 @@ class DatabaseAnnotation:
             if aid in aio.annotations:
                 value = aio.annotations[aid]
             vector.append(value)
-        vector = scipy.matrix(vector).transpose()
+        vector = numpy.matrix(vector).transpose()
         model_names = self.fca.csv.primary_keys
         model_names_to_sim = {}
         for index1 in range(len(model_names)):
