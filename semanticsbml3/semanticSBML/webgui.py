@@ -101,14 +101,13 @@ class Workspace:
                 'elements': len(elements), 'unannotated': sum(1 for e in elements if not e.getAnnotations())}
 
     def state(self):
-        from libSBAnnotation import config, update
-        info = os.path.join(config.data_dir(), update.INFO_FILE)
+        from libSBAnnotation import update
         database = 'annotation database of February 2011'
-        if os.path.exists(info):
-            with open(info, encoding='utf-8') as f:
-                lines = [line.strip() for line in f if line.strip()]
-            updates = [line for line in lines if line.startswith('Updated')]
-            database = 'annotation database, %s' % updates[-1].lower() if updates else database
+        if os.path.exists(update.info_path()):
+            with open(update.info_path(), encoding='utf-8') as f:
+                lines = [line.strip() for line in f if line.startswith(('Built', 'Updated'))]
+            if lines:
+                database = 'annotation database, %s' % lines[-1].lower()
         return {'models': [self.summary(key) for key in self.order], 'database': database}
 
     def sbml(self, key):

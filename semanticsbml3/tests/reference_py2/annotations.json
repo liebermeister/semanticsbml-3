@@ -1,0 +1,1982 @@
+{
+ "BIOMD0000000061.xml": [
+  [
+   "ACA",
+   "is",
+   "ChEBI",
+   "CHEBI:15343"
+  ],
+  [
+   "ACA",
+   "is",
+   "KEGG Compound",
+   "C00084"
+  ],
+  [
+   "ACAX",
+   "is",
+   "ChEBI",
+   "CHEBI:15343"
+  ],
+  [
+   "ACAX",
+   "is",
+   "KEGG Compound",
+   "C00084"
+  ],
+  [
+   "ADP",
+   "is",
+   "ChEBI",
+   "CHEBI:16761"
+  ],
+  [
+   "ADP",
+   "is",
+   "KEGG Compound",
+   "C00008"
+  ],
+  [
+   "AMP",
+   "is",
+   "ChEBI",
+   "CHEBI:16027"
+  ],
+  [
+   "AMP",
+   "is",
+   "KEGG Compound",
+   "C00020"
+  ],
+  [
+   "ATP",
+   "is",
+   "ChEBI",
+   "CHEBI:15422"
+  ],
+  [
+   "ATP",
+   "is",
+   "KEGG Compound",
+   "C00002"
+  ],
+  [
+   "BPG",
+   "is",
+   "ChEBI",
+   "CHEBI:16001"
+  ],
+  [
+   "BPG",
+   "is",
+   "KEGG Compound",
+   "C00236"
+  ],
+  [
+   "CNX",
+   "is",
+   "ChEBI",
+   "CHEBI:17514"
+  ],
+  [
+   "CNX",
+   "is",
+   "KEGG Compound",
+   "C00177"
+  ],
+  [
+   "CNX0",
+   "is",
+   "ChEBI",
+   "CHEBI:17514"
+  ],
+  [
+   "CNX0",
+   "is",
+   "KEGG Compound",
+   "C00177"
+  ],
+  [
+   "DHAP",
+   "is",
+   "ChEBI",
+   "CHEBI:16108"
+  ],
+  [
+   "DHAP",
+   "is",
+   "KEGG Compound",
+   "C00111"
+  ],
+  [
+   "EtOH",
+   "is",
+   "ChEBI",
+   "CHEBI:16236"
+  ],
+  [
+   "EtOH",
+   "is",
+   "KEGG Compound",
+   "C00469"
+  ],
+  [
+   "EtOHX",
+   "is",
+   "ChEBI",
+   "CHEBI:16236"
+  ],
+  [
+   "EtOHX",
+   "is",
+   "KEGG Compound",
+   "C000469"
+  ],
+  [
+   "F6P",
+   "is",
+   "ChEBI",
+   "CHEBI:20935"
+  ],
+  [
+   "F6P",
+   "is",
+   "KEGG Compound",
+   "C00085"
+  ],
+  [
+   "FBP",
+   "is",
+   "ChEBI",
+   "CHEBI:16905"
+  ],
+  [
+   "FBP",
+   "is",
+   "KEGG Compound",
+   "C00354"
+  ],
+  [
+   "G6P",
+   "is",
+   "ChEBI",
+   "CHEBI:15954"
+  ],
+  [
+   "G6P",
+   "is",
+   "KEGG Compound",
+   "C00092"
+  ],
+  [
+   "GAP",
+   "is",
+   "ChEBI",
+   "CHEBI:29052"
+  ],
+  [
+   "GAP",
+   "is",
+   "KEGG Compound",
+   "C00118"
+  ],
+  [
+   "Glc",
+   "is",
+   "ChEBI",
+   "CHEBI:17234"
+  ],
+  [
+   "Glc",
+   "is",
+   "KEGG Compound",
+   "C00293"
+  ],
+  [
+   "GlcX",
+   "is",
+   "ChEBI",
+   "CHEBI:17234"
+  ],
+  [
+   "GlcX",
+   "is",
+   "KEGG Compound",
+   "C00293"
+  ],
+  [
+   "GlcX0",
+   "is",
+   "ChEBI",
+   "CHEBI:17234"
+  ],
+  [
+   "GlcX0",
+   "is",
+   "KEGG Compound",
+   "C00293"
+  ],
+  [
+   "Glyc",
+   "is",
+   "ChEBI",
+   "CHEBI:17754"
+  ],
+  [
+   "Glyc",
+   "is",
+   "KEGG Compound",
+   "C00116"
+  ],
+  [
+   "GlycX",
+   "is",
+   "ChEBI",
+   "CHEBI:17754"
+  ],
+  [
+   "GlycX",
+   "is",
+   "KEGG Compound",
+   "C00116"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "is",
+   "BioModels Database",
+   "BIOMD0000000061"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "is",
+   "BioModels Database",
+   "MODEL6624167348"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "is",
+   "KEGG Pathway",
+   "sce00010"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "is",
+   "Taxonomy",
+   "4932"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "isDescribedBy",
+   "PubMed",
+   "11744196"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1383"
+  ],
+  [
+   "Hynne2001_Glycolysis",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0006096"
+  ],
+  [
+   "NAD",
+   "is",
+   "ChEBI",
+   "CHEBI:15846"
+  ],
+  [
+   "NAD",
+   "is",
+   "KEGG Compound",
+   "C00003"
+  ],
+  [
+   "NADH",
+   "is",
+   "ChEBI",
+   "CHEBI:16908"
+  ],
+  [
+   "NADH",
+   "is",
+   "KEGG Compound",
+   "C00004"
+  ],
+  [
+   "PEP",
+   "is",
+   "ChEBI",
+   "CHEBI:18021"
+  ],
+  [
+   "PEP",
+   "is",
+   "KEGG Compound",
+   "C00074"
+  ],
+  [
+   "Pyr",
+   "is",
+   "ChEBI",
+   "CHEBI:15361"
+  ],
+  [
+   "Pyr",
+   "is",
+   "KEGG Compound",
+   "C00022"
+  ],
+  [
+   "cytosol",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005829"
+  ],
+  [
+   "extracellular",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005576"
+  ],
+  [
+   "vADH",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.1"
+  ],
+  [
+   "vADH",
+   "is",
+   "KEGG Reaction",
+   "R00754"
+  ],
+  [
+   "vADH",
+   "isHomologTo",
+   "Reactome",
+   "REACT_799"
+  ],
+  [
+   "vAK",
+   "isVersionOf",
+   "Enzyme Nomenclature",
+   "2.7.4.3"
+  ],
+  [
+   "vAK",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0004017"
+  ],
+  [
+   "vALD",
+   "is",
+   "Enzyme Nomenclature",
+   "4.1.2.13"
+  ],
+  [
+   "vALD",
+   "is",
+   "KEGG Reaction",
+   "R01070"
+  ],
+  [
+   "vGAPDH",
+   "is",
+   "Enzyme Nomenclature",
+   "1.2.1.12"
+  ],
+  [
+   "vGAPDH",
+   "is",
+   "KEGG Reaction",
+   "R01061"
+  ],
+  [
+   "vGAPDH",
+   "isHomologTo",
+   "Reactome",
+   "REACT_587"
+  ],
+  [
+   "vGlcTrans",
+   "isHomologTo",
+   "Reactome",
+   "REACT_212"
+  ],
+  [
+   "vGlcTrans",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0046323"
+  ],
+  [
+   "vHK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.2"
+  ],
+  [
+   "vHK",
+   "is",
+   "KEGG Reaction",
+   "R00299"
+  ],
+  [
+   "vHK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1318"
+  ],
+  [
+   "vPDC",
+   "is",
+   "Enzyme Nomenclature",
+   "4.1.1.1"
+  ],
+  [
+   "vPDC",
+   "is",
+   "KEGG Reaction",
+   "R00224"
+  ],
+  [
+   "vPFK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.11"
+  ],
+  [
+   "vPFK",
+   "is",
+   "KEGG Reaction",
+   "R00756"
+  ],
+  [
+   "vPFK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1840"
+  ],
+  [
+   "vPGI",
+   "is",
+   "Enzyme Nomenclature",
+   "5.3.1.9"
+  ],
+  [
+   "vPGI",
+   "is",
+   "KEGG Reaction",
+   "R00771"
+  ],
+  [
+   "vPGI",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1164"
+  ],
+  [
+   "vPK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.40"
+  ],
+  [
+   "vPK",
+   "is",
+   "KEGG Reaction",
+   "R00200"
+  ],
+  [
+   "vPK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1911"
+  ],
+  [
+   "vTIM",
+   "is",
+   "Enzyme Nomenclature",
+   "5.3.1.1"
+  ],
+  [
+   "vTIM",
+   "is",
+   "KEGG Reaction",
+   "R01015"
+  ],
+  [
+   "vTIM",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1693"
+  ],
+  [
+   "vconsum",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0006200"
+  ],
+  [
+   "vdifEtOH",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015850"
+  ],
+  [
+   "vdifGlyc",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015850"
+  ],
+  [
+   "vinGlc",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015758"
+  ],
+  [
+   "vlpGlyc",
+   "hasPart",
+   "Enzyme Nomenclature",
+   "1.1.1.6"
+  ],
+  [
+   "vlpGlyc",
+   "hasPart",
+   "Enzyme Nomenclature",
+   "2.7.1.29"
+  ],
+  [
+   "vlpGlyc",
+   "hasPart",
+   "KEGG Reaction",
+   "R01011"
+  ],
+  [
+   "vlpGlyc",
+   "hasPart",
+   "KEGG Reaction",
+   "R01034"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "Enzyme Nomenclature",
+   "2.7.2.3"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "Enzyme Nomenclature",
+   "4.2.1.11"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "Enzyme Nomenclature",
+   "5.4.2.1"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "KEGG Reaction",
+   "R00658"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "KEGG Reaction",
+   "R01512"
+  ],
+  [
+   "vlpPEP",
+   "hasPart",
+   "KEGG Reaction",
+   "R01518"
+  ],
+  [
+   "vlpPEP",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1771"
+  ],
+  [
+   "voutEtOH",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015850"
+  ],
+  [
+   "voutGlyc",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015850"
+  ],
+  [
+   "vstorage",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0043211"
+  ]
+ ],
+ "BIOMD0000000064.xml": [
+  [
+   "ACE",
+   "is",
+   "ChEBI",
+   "CHEBI:15343"
+  ],
+  [
+   "ACE",
+   "is",
+   "KEGG Compound",
+   "C00084"
+  ],
+  [
+   "ADP",
+   "is",
+   "ChEBI",
+   "CHEBI:16761"
+  ],
+  [
+   "ADP",
+   "is",
+   "KEGG Compound",
+   "C00008"
+  ],
+  [
+   "AMP",
+   "is",
+   "ChEBI",
+   "CHEBI:16027"
+  ],
+  [
+   "AMP",
+   "is",
+   "KEGG Compound",
+   "C00020"
+  ],
+  [
+   "ATP",
+   "is",
+   "ChEBI",
+   "CHEBI:15422"
+  ],
+  [
+   "ATP",
+   "is",
+   "KEGG Compound",
+   "C00002"
+  ],
+  [
+   "BPG",
+   "is",
+   "ChEBI",
+   "CHEBI:16001"
+  ],
+  [
+   "BPG",
+   "is",
+   "KEGG Compound",
+   "C00236"
+  ],
+  [
+   "CO2",
+   "is",
+   "ChEBI",
+   "CHEBI:16526"
+  ],
+  [
+   "CO2",
+   "is",
+   "KEGG Compound",
+   "C00011"
+  ],
+  [
+   "ETOH",
+   "is",
+   "ChEBI",
+   "CHEBI:16236"
+  ],
+  [
+   "ETOH",
+   "is",
+   "KEGG Compound",
+   "C00469"
+  ],
+  [
+   "F16P",
+   "is",
+   "ChEBI",
+   "CHEBI:16905"
+  ],
+  [
+   "F16P",
+   "is",
+   "KEGG Compound",
+   "C00354"
+  ],
+  [
+   "F26BP",
+   "is",
+   "ChEBI",
+   "CHEBI:28602"
+  ],
+  [
+   "F26BP",
+   "is",
+   "KEGG Compound",
+   "C00665"
+  ],
+  [
+   "F6P",
+   "is",
+   "ChEBI",
+   "CHEBI:15946"
+  ],
+  [
+   "F6P",
+   "is",
+   "KEGG Compound",
+   "C05345"
+  ],
+  [
+   "G6P",
+   "is",
+   "ChEBI",
+   "CHEBI:17665"
+  ],
+  [
+   "G6P",
+   "is",
+   "KEGG Compound",
+   "C00668"
+  ],
+  [
+   "GLCi",
+   "is",
+   "ChEBI",
+   "CHEBI:17234"
+  ],
+  [
+   "GLCi",
+   "is",
+   "KEGG Compound",
+   "C00293"
+  ],
+  [
+   "GLCo",
+   "is",
+   "ChEBI",
+   "CHEBI:17234"
+  ],
+  [
+   "GLCo",
+   "is",
+   "KEGG Compound",
+   "C00293"
+  ],
+  [
+   "GLY",
+   "is",
+   "ChEBI",
+   "CHEBI:17754"
+  ],
+  [
+   "GLY",
+   "is",
+   "KEGG Compound",
+   "C00116"
+  ],
+  [
+   "Glyc",
+   "is",
+   "ChEBI",
+   "CHEBI:28087"
+  ],
+  [
+   "Glyc",
+   "is",
+   "KEGG Compound",
+   "C00182"
+  ],
+  [
+   "NAD",
+   "is",
+   "ChEBI",
+   "CHEBI:15846"
+  ],
+  [
+   "NAD",
+   "is",
+   "KEGG Compound",
+   "C00003"
+  ],
+  [
+   "NADH",
+   "is",
+   "ChEBI",
+   "CHEBI:16908"
+  ],
+  [
+   "NADH",
+   "is",
+   "KEGG Compound",
+   "C00004"
+  ],
+  [
+   "P",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:15422"
+  ],
+  [
+   "P",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:16761"
+  ],
+  [
+   "P",
+   "hasPart",
+   "KEGG Compound",
+   "C00002"
+  ],
+  [
+   "P",
+   "hasPart",
+   "KEGG Compound",
+   "C00008"
+  ],
+  [
+   "P2G",
+   "is",
+   "ChEBI",
+   "CHEBI:17835"
+  ],
+  [
+   "P2G",
+   "is",
+   "KEGG Compound",
+   "C00631"
+  ],
+  [
+   "P3G",
+   "is",
+   "ChEBI",
+   "CHEBI:17794"
+  ],
+  [
+   "P3G",
+   "is",
+   "KEGG Compound",
+   "C00197"
+  ],
+  [
+   "PEP",
+   "is",
+   "ChEBI",
+   "CHEBI:18021"
+  ],
+  [
+   "PEP",
+   "is",
+   "KEGG Compound",
+   "C00074"
+  ],
+  [
+   "PYR",
+   "is",
+   "ChEBI",
+   "CHEBI:15361"
+  ],
+  [
+   "PYR",
+   "is",
+   "KEGG Compound",
+   "C00022"
+  ],
+  [
+   "SUCC",
+   "is",
+   "ChEBI",
+   "CHEBI:30031"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:15422"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:16027"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:16761"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "KEGG Compound",
+   "C00002"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "KEGG Compound",
+   "C00008"
+  ],
+  [
+   "SUM_P",
+   "hasPart",
+   "KEGG Compound",
+   "C00020"
+  ],
+  [
+   "TRIO",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:16108"
+  ],
+  [
+   "TRIO",
+   "hasPart",
+   "ChEBI",
+   "CHEBI:29052"
+  ],
+  [
+   "TRIO",
+   "hasPart",
+   "KEGG Compound",
+   "C00111"
+  ],
+  [
+   "TRIO",
+   "hasPart",
+   "KEGG Compound",
+   "C00118"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "is",
+   "BioModels Database",
+   "BIOMD0000000064"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "is",
+   "BioModels Database",
+   "MODEL6623915522"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "is",
+   "Gene Ontology",
+   "GO:0019642"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "is",
+   "KEGG Pathway",
+   "sce00010"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "isDescribedBy",
+   "PubMed",
+   "10951190"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "isHomologTo",
+   "Reactome",
+   "REACT_723"
+  ],
+  [
+   "Teusink2000_Glycolysis",
+   "occursIn",
+   "Taxonomy",
+   "4932"
+  ],
+  [
+   "Trh",
+   "is",
+   "ChEBI",
+   "CHEBI:27082"
+  ],
+  [
+   "Trh",
+   "is",
+   "KEGG Compound",
+   "C01083"
+  ],
+  [
+   "cytosol",
+   "is",
+   "Gene Ontology",
+   "GO:0005829"
+  ],
+  [
+   "extracellular",
+   "is",
+   "Gene Ontology",
+   "GO:0005576"
+  ],
+  [
+   "vADH",
+   "isHomologTo",
+   "Reactome",
+   "REACT_799"
+  ],
+  [
+   "vADH",
+   "isVersionOf",
+   "Enzyme Nomenclature",
+   "1.1.1.2"
+  ],
+  [
+   "vADH",
+   "isVersionOf",
+   "KEGG Reaction",
+   "R00746"
+  ],
+  [
+   "vALD",
+   "is",
+   "Enzyme Nomenclature",
+   "4.1.2.13"
+  ],
+  [
+   "vALD",
+   "is",
+   "KEGG Reaction",
+   "R01070"
+  ],
+  [
+   "vALD",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1602"
+  ],
+  [
+   "vATP",
+   "isVersionOf",
+   "Enzyme Nomenclature",
+   "3.6.1.3"
+  ],
+  [
+   "vATP",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0016887"
+  ],
+  [
+   "vENO",
+   "is",
+   "Enzyme Nomenclature",
+   "4.2.1.11"
+  ],
+  [
+   "vENO",
+   "is",
+   "KEGG Reaction",
+   "R00658"
+  ],
+  [
+   "vENO",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1400"
+  ],
+  [
+   "vG3PDH",
+   "isVersionOf",
+   "Enzyme Nomenclature",
+   "1.1.1.8"
+  ],
+  [
+   "vGAPDH",
+   "is",
+   "Enzyme Nomenclature",
+   "1.2.1.12"
+  ],
+  [
+   "vGAPDH",
+   "is",
+   "KEGG Reaction",
+   "R01061"
+  ],
+  [
+   "vGAPDH",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1847"
+  ],
+  [
+   "vGLK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.2"
+  ],
+  [
+   "vGLK",
+   "is",
+   "KEGG Reaction",
+   "R00299"
+  ],
+  [
+   "vGLK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1318"
+  ],
+  [
+   "vGLT",
+   "isHomologTo",
+   "Reactome",
+   "REACT_2092"
+  ],
+  [
+   "vGLT",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0046323"
+  ],
+  [
+   "vGLYCO",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1736"
+  ],
+  [
+   "vGLYCO",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005978"
+  ],
+  [
+   "vPDC",
+   "is",
+   "Enzyme Nomenclature",
+   "4.1.1.1"
+  ],
+  [
+   "vPDC",
+   "is",
+   "KEGG Reaction",
+   "R00224"
+  ],
+  [
+   "vPFK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.11"
+  ],
+  [
+   "vPFK",
+   "is",
+   "KEGG Reaction",
+   "R00756"
+  ],
+  [
+   "vPFK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_736"
+  ],
+  [
+   "vPGI",
+   "is",
+   "Enzyme Nomenclature",
+   "5.3.1.9"
+  ],
+  [
+   "vPGI",
+   "is",
+   "KEGG Reaction",
+   "R00771"
+  ],
+  [
+   "vPGI",
+   "isHomologTo",
+   "Reactome",
+   "REACT_116"
+  ],
+  [
+   "vPGK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.2.3"
+  ],
+  [
+   "vPGK",
+   "is",
+   "KEGG Reaction",
+   "R01512"
+  ],
+  [
+   "vPGK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1771"
+  ],
+  [
+   "vPGM",
+   "is",
+   "Enzyme Nomenclature",
+   "5.4.2.1"
+  ],
+  [
+   "vPGM",
+   "is",
+   "KEGG Reaction",
+   "R01518"
+  ],
+  [
+   "vPGM",
+   "isHomologTo",
+   "Reactome",
+   "REACT_576"
+  ],
+  [
+   "vPYK",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.40"
+  ],
+  [
+   "vPYK",
+   "is",
+   "KEGG Reaction",
+   "R00200"
+  ],
+  [
+   "vPYK",
+   "isHomologTo",
+   "Reactome",
+   "REACT_1911"
+  ],
+  [
+   "vSUC",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0006105"
+  ],
+  [
+   "vTreha",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005992"
+  ]
+ ],
+ "BIOMD0000000239.xml": [
+  [
+   "ADP",
+   "is",
+   "KEGG Compound",
+   "C0008"
+  ],
+  [
+   "ADP_cyt",
+   "is",
+   "KEGG Compound",
+   "C0008"
+  ],
+  [
+   "AMP",
+   "is",
+   "KEGG Compound",
+   "C00020"
+  ],
+  [
+   "ATP",
+   "is",
+   "KEGG Compound",
+   "C0002"
+  ],
+  [
+   "ATP_cyt",
+   "is",
+   "KEGG Compound",
+   "C0002"
+  ],
+  [
+   "Acetyl_CoA",
+   "is",
+   "KEGG Compound",
+   "C00024"
+  ],
+  [
+   "Acetyl_CoA_cyt",
+   "is",
+   "KEGG Compound",
+   "C00024"
+  ],
+  [
+   "Ala",
+   "is",
+   "KEGG Compound",
+   "C00041"
+  ],
+  [
+   "Asp",
+   "is",
+   "KEGG Compound",
+   "C00049"
+  ],
+  [
+   "Asp_cyt",
+   "is",
+   "KEGG Compound",
+   "C00049"
+  ],
+  [
+   "CO2",
+   "is",
+   "KEGG Compound",
+   "C00011"
+  ],
+  [
+   "CYTOPLASM",
+   "is",
+   "Gene Ontology",
+   "GO:0005737"
+  ],
+  [
+   "Cit",
+   "is",
+   "KEGG Compound",
+   "C00158"
+  ],
+  [
+   "Cit_cyt",
+   "is",
+   "KEGG Compound",
+   "C00158"
+  ],
+  [
+   "CoA",
+   "is",
+   "KEGG Compound",
+   "C00010"
+  ],
+  [
+   "CoA_cyt",
+   "is",
+   "KEGG Compound",
+   "C00010"
+  ],
+  [
+   "Cytc2p",
+   "is",
+   "ChEBI",
+   "CHEBI:15991"
+  ],
+  [
+   "Cytc2p",
+   "is",
+   "KEGG Compound",
+   "C00125"
+  ],
+  [
+   "Cytc3p",
+   "is",
+   "ChEBI",
+   "CHEBI:16928"
+  ],
+  [
+   "Cytc3p",
+   "is",
+   "KEGG Compound",
+   "C00126"
+  ],
+  [
+   "DHAP",
+   "is",
+   "KEGG Compound",
+   "C00111"
+  ],
+  [
+   "DPG",
+   "is",
+   "KEGG Compound",
+   "C00236"
+  ],
+  [
+   "ETFox",
+   "is",
+   "KEGG Compound",
+   "C04253"
+  ],
+  [
+   "ETFred",
+   "is",
+   "KEGG Compound",
+   "C04570"
+  ],
+  [
+   "F6P",
+   "is",
+   "KEGG Compound",
+   "C00085"
+  ],
+  [
+   "FAD",
+   "is",
+   "KEGG Compound",
+   "C00016"
+  ],
+  [
+   "FADH2",
+   "is",
+   "KEGG Compound",
+   "C01352"
+  ],
+  [
+   "FBP",
+   "is",
+   "KEGG Compound",
+   "C00354"
+  ],
+  [
+   "Fum",
+   "is",
+   "KEGG Compound",
+   "C00122"
+  ],
+  [
+   "G3P",
+   "is",
+   "KEGG Compound",
+   "C00093"
+  ],
+  [
+   "GAP",
+   "is",
+   "KEGG Compound",
+   "C00118"
+  ],
+  [
+   "GDP",
+   "is",
+   "KEGG Compound",
+   "C00035"
+  ],
+  [
+   "GLC",
+   "is",
+   "KEGG Compound",
+   "C00267"
+  ],
+  [
+   "GTP",
+   "is",
+   "KEGG Compound",
+   "C00044"
+  ],
+  [
+   "Glu",
+   "is",
+   "KEGG Compound",
+   "C00025"
+  ],
+  [
+   "Glu_cyt",
+   "is",
+   "KEGG Compound",
+   "C00025"
+  ],
+  [
+   "H2O",
+   "is",
+   "KEGG Compound",
+   "C00001"
+  ],
+  [
+   "IsoCit",
+   "is",
+   "KEGG Compound",
+   "C00311"
+  ],
+  [
+   "IsoCitcyt",
+   "is",
+   "KEGG Compound",
+   "C00311"
+  ],
+  [
+   "LAC",
+   "is",
+   "KEGG Compound",
+   "C00186"
+  ],
+  [
+   "MATRIX",
+   "is",
+   "Gene Ontology",
+   "GO:0005759"
+  ],
+  [
+   "MT_IM",
+   "is",
+   "Gene Ontology",
+   "GO:0005743"
+  ],
+  [
+   "MT_IMS",
+   "is",
+   "Gene Ontology",
+   "GO:0005758"
+  ],
+  [
+   "Mal",
+   "is",
+   "KEGG Compound",
+   "C00149"
+  ],
+  [
+   "Mal_cyt",
+   "is",
+   "KEGG Compound",
+   "C00149"
+  ],
+  [
+   "NAD",
+   "is",
+   "ChEBI",
+   "CHEBI:15846"
+  ],
+  [
+   "NAD",
+   "is",
+   "KEGG Compound",
+   "C00003"
+  ],
+  [
+   "NADH",
+   "is",
+   "KEGG Compound",
+   "C00004"
+  ],
+  [
+   "NADH_cyt",
+   "is",
+   "ChEBI",
+   "CHEBI:16908"
+  ],
+  [
+   "NADH_cyt",
+   "is",
+   "KEGG Compound",
+   "C00004"
+  ],
+  [
+   "NADPH",
+   "is",
+   "KEGG Compound",
+   "C00005"
+  ],
+  [
+   "NADPH_cyt",
+   "is",
+   "ChEBI",
+   "CHEBI:16474"
+  ],
+  [
+   "NADPH_cyt",
+   "is",
+   "KEGG Compound",
+   "C00005"
+  ],
+  [
+   "NADP_cyt",
+   "is",
+   "ChEBI",
+   "CHEBI:18009"
+  ],
+  [
+   "NADP_cyt",
+   "is",
+   "KEGG Compound",
+   "C00006"
+  ],
+  [
+   "NADP_p",
+   "is",
+   "KEGG Compound",
+   "C00006"
+  ],
+  [
+   "NAD_p",
+   "is",
+   "KEGG Compound",
+   "C00003"
+  ],
+  [
+   "OG",
+   "is",
+   "KEGG Compound",
+   "C00026"
+  ],
+  [
+   "OG_cyt",
+   "is",
+   "KEGG Compound",
+   "C00026"
+  ],
+  [
+   "OXA",
+   "is",
+   "KEGG Compound",
+   "C00036"
+  ],
+  [
+   "OXA_cyt",
+   "is",
+   "KEGG Compound",
+   "C00036"
+  ],
+  [
+   "PEP",
+   "is",
+   "KEGG Compound",
+   "C00074"
+  ],
+  [
+   "PYR_cyt",
+   "is",
+   "KEGG Compound",
+   "C00022"
+  ],
+  [
+   "Pi",
+   "is",
+   "KEGG Compound",
+   "C00009"
+  ],
+  [
+   "Pyr",
+   "is",
+   "KEGG Compound",
+   "C00022"
+  ],
+  [
+   "Q",
+   "is",
+   "ChEBI",
+   "CHEBI:16389"
+  ],
+  [
+   "Q",
+   "is",
+   "KEGG Compound",
+   "C00399"
+  ],
+  [
+   "QH2",
+   "is",
+   "ChEBI",
+   "CHEBI:17976"
+  ],
+  [
+   "QH2",
+   "is",
+   "KEGG Compound",
+   "C00390"
+  ],
+  [
+   "SCoA",
+   "is",
+   "KEGG Compound",
+   "C00091"
+  ],
+  [
+   "Suc",
+   "is",
+   "KEGG Compound",
+   "C00042"
+  ],
+  [
+   "hidden_1",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0004017"
+  ],
+  [
+   "v1",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.2"
+  ],
+  [
+   "v10",
+   "is",
+   "Enzyme Nomenclature",
+   "2.3.3.1+"
+  ],
+  [
+   "v10",
+   "is",
+   "Enzyme Nomenclature",
+   "2.3.3.3"
+  ],
+  [
+   "v11",
+   "is",
+   "Enzyme Nomenclature",
+   "4.2.1.3"
+  ],
+  [
+   "v12",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.41"
+  ],
+  [
+   "v14",
+   "is",
+   "Enzyme Nomenclature",
+   "1.2.4.2"
+  ],
+  [
+   "v15",
+   "is",
+   "Enzyme Nomenclature",
+   "6.2.1.4"
+  ],
+  [
+   "v16",
+   "is",
+   "Enzyme Nomenclature",
+   "1.3.5.1"
+  ],
+  [
+   "v17",
+   "is",
+   "Enzyme Nomenclature",
+   "4.2.1.2"
+  ],
+  [
+   "v18",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.37"
+  ],
+  [
+   "v2",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.11"
+  ],
+  [
+   "v20",
+   "is",
+   "Enzyme Nomenclature",
+   "2.6.1.2"
+  ],
+  [
+   "v21",
+   "is",
+   "Enzyme Nomenclature",
+   "2.6.1.1"
+  ],
+  [
+   "v24",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.4.6"
+  ],
+  [
+   "v25",
+   "is",
+   "Enzyme Nomenclature",
+   "1.10.2.2"
+  ],
+  [
+   "v26",
+   "is",
+   "Enzyme Nomenclature",
+   "1.9.3.1"
+  ],
+  [
+   "v27",
+   "is",
+   "Enzyme Nomenclature",
+   "2.3.3.1+"
+  ],
+  [
+   "v27",
+   "is",
+   "Enzyme Nomenclature",
+   "2.3.3.3"
+  ],
+  [
+   "v28",
+   "is",
+   "Enzyme Nomenclature",
+   "3.6.1.3"
+  ],
+  [
+   "v28",
+   "is",
+   "Enzyme Nomenclature",
+   "3.6.1.5"
+  ],
+  [
+   "v29",
+   "is",
+   "Enzyme Nomenclature",
+   "4.2.1.3"
+  ],
+  [
+   "v3",
+   "is",
+   "Enzyme Nomenclature",
+   "4.1.2.13"
+  ],
+  [
+   "v30",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015367"
+  ],
+  [
+   "v31",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.37"
+  ],
+  [
+   "v32",
+   "is",
+   "Enzyme Nomenclature",
+   "2.6.1.1"
+  ],
+  [
+   "v33",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015137"
+  ],
+  [
+   "v34",
+   "is",
+   "Enzyme Nomenclature",
+   "1.5.5.1"
+  ],
+  [
+   "v35",
+   "is",
+   "Enzyme Nomenclature",
+   "1.8.1.7"
+  ],
+  [
+   "v36",
+   "is",
+   "Enzyme Nomenclature",
+   "6.4.1.1"
+  ],
+  [
+   "v37",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.99.5"
+  ],
+  [
+   "v38",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.8"
+  ],
+  [
+   "v39",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.40"
+  ],
+  [
+   "v4",
+   "is",
+   "Enzyme Nomenclature",
+   "1.2.1.12"
+  ],
+  [
+   "v40",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0015217"
+  ],
+  [
+   "v41",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.42"
+  ],
+  [
+   "v42",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0006843"
+  ],
+  [
+   "v43",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005347"
+  ],
+  [
+   "v44",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.40"
+  ],
+  [
+   "v5",
+   "is",
+   "Enzyme Nomenclature",
+   "5.4.2.1"
+  ],
+  [
+   "v5",
+   "is",
+   "Enzyme Nomenclature",
+   "5.4.2.4"
+  ],
+  [
+   "v6",
+   "is",
+   "Enzyme Nomenclature",
+   "2.7.1.40"
+  ],
+  [
+   "v7",
+   "is",
+   "Enzyme Nomenclature",
+   "1.1.1.27"
+  ],
+  [
+   "v8",
+   "isVersionOf",
+   "Gene Ontology",
+   "GO:0005477"
+  ],
+  [
+   "v9",
+   "is",
+   "Enzyme Nomenclature",
+   "1.2.4.1"
+  ]
+ ]
+}

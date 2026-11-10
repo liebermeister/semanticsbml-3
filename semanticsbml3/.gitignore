@@ -7,4 +7,8 @@ dist/
 .pytest_cache/
 doc_file.xml
 test.dot
+# created by "semanticsbml build-database"
+data/db/
+data/db.new/
+data/db.old/
 data/downloads/

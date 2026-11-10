@@ -188,10 +188,9 @@ _known_namespaces = set(u[len('urn:miriam:'):] for u in uri2name if u.startswith
 def _read_identifiers_org_namespaces():
     """
     namespaces of the identifiers.org registry that the 2011 MIRIAM table does not have
-    (file written by 'semanticsbml update-database'); they get name, identifier pattern and link
+    (file written by 'semanticsbml build-database'); they get name, identifier pattern and link
     """
-    path = os.path.join(os.path.dirname(config.Config().getpath('resources', 'MIRIAM_resources')),
-                        'identifiers_org_namespaces.tsv')
+    path = os.path.join(config.Config().getpath('database', 'database_dir'), 'identifiers_org_namespaces.tsv')
     if not os.path.exists(path):
         return
     with open(path, encoding='utf-8') as f:

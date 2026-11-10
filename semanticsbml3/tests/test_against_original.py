@@ -1,4 +1,11 @@
-"""Compare the port with results of the original program (see tests/reference_py2/README.md)."""
+"""
+Compare the port with results of the original program (see tests/reference_py2/README.md).
+
+These results were computed with the annotation database of February 2011, which is not
+part of the repository (it contains KEGG data). With that database in a folder DATA_2011:
+
+    SEMANTICSBML_DATA=DATA_2011 python -m pytest tests/test_against_original.py
+"""
 import json
 import os
 import warnings
@@ -6,7 +13,9 @@ import warnings
 import libsbml
 import pytest
 
-from conftest import model_path
+from conftest import DATABASE_2011, model_path
+
+pytestmark = pytest.mark.skipif(not DATABASE_2011, reason='needs the annotation database of February 2011')
 
 REF = os.path.join(os.path.dirname(__file__), 'reference_py2')
 FILES = ['BIOMD0000000061.xml', 'BIOMD0000000064.xml', 'BIOMD0000000239.xml']

@@ -1,0 +1,2743 @@
+1	|	all	|		|	synonym	|
+1	|	root	|		|	scientific name	|
+2	|	Bacteria	|	Bacteria <prokaryote>	|	scientific name	|
+2	|	Monera	|	Monera <Bacteria>	|	in-part	|
+2	|	Procaryotae	|	Procaryotae <Bacteria>	|	in-part	|
+2	|	Prokaryota	|	Prokaryota <Bacteria>	|	in-part	|
+2	|	Prokaryotae	|	Prokaryotae <Bacteria>	|	in-part	|
+2	|	bacteria	|	bacteria <blast2>	|	blast name	|
+2	|	eubacteria	|		|	genbank common name	|
+2	|	not Bacteria Haeckel 1894	|		|	synonym	|
+2	|	prokaryotes	|	prokaryotes <Bacteria>	|	in-part	|
+543	|	Enterobacteraceae	|		|	synonym	|
+543	|	Enterobacteraceae (ex Lapage 1979) Lapage 1982, fam. nov., nom. rev.	|		|	synonym	|
+543	|	Enterobacteriaceae	|		|	scientific name	|
+543	|	Enterobacteriaceae (ex Rahn 1937) Ewing et al. 1980, fam. nov., nom. rev.	|		|	synonym	|
+543	|	Enterobacteriaceae Rahn 1937	|		|	synonym	|
+543	|	gamma-3 proteobacteria	|	gamma-3 proteobacteria <#1>	|	in-part	|
+561	|	Escherchia	|		|	misspelling	|
+561	|	Escherichia	|		|	scientific name	|
+561	|	Escherichia Castellani and Chalmers 1919	|		|	synonym	|
+562	|	"Bacillus coli" Migula 1895	|		|	synonym	|
+562	|	"Bacterium coli commune" Escherich 1885	|		|	synonym	|
+562	|	"Bacterium coli" (Migula 1895) Lehmann and Neumann 1896	|		|	synonym	|
+562	|	Bacillus coli	|		|	synonym	|
+562	|	Bacterium coli	|		|	synonym	|
+562	|	Bacterium coli commune	|		|	synonym	|
+562	|	Enterococcus coli	|		|	synonym	|
+562	|	Escherchia coli	|		|	misspelling	|
+562	|	Escherichia coli	|		|	scientific name	|
+562	|	Escherichia coli (Migula 1895) Castellani and Chalmers 1919	|		|	synonym	|
+562	|	Escherichia coli retron Ec107	|		|	includes	|
+562	|	Escherichia coli retron Ec67	|		|	includes	|
+562	|	Escherichia coli retron Ec79	|		|	includes	|
+562	|	Escherichia coli retron Ec86	|		|	includes	|
+562	|	Eschericia coli	|		|	misspelling	|
+1224	|	Proteobacteria	|		|	scientific name	|
+1224	|	Proteobacteria (as class) Stackebrandt et al. 1988	|		|	synonym	|
+1224	|	Proteobacteria Garrity et al. 2005	|		|	synonym	|
+1224	|	not Proteobacteria Cavalier-Smith 2002	|		|	synonym	|
+1224	|	proteobacteria	|	proteobacteria<blast1224>	|	blast name	|
+1224	|	purple bacteria	|		|	common name	|
+1224	|	purple bacteria and relatives	|		|	common name	|
+1224	|	purple non-sulfur bacteria	|		|	common name	|
+1224	|	purple photosynthetic bacteria	|		|	common name	|
+1224	|	purple photosynthetic bacteria and relatives	|		|	common name	|
+1236	|	Gammaproteobacteria	|		|	scientific name	|
+1236	|	Gammaproteobacteria Garrity et al. 2005	|		|	synonym	|
+1236	|	Proteobacteria gamma subdivision	|		|	synonym	|
+1236	|	Purple bacteria, gamma subdivision	|		|	synonym	|
+1236	|	g-proteobacteria	|	gamma proteos<blast1236>	|	blast name	|
+1236	|	gamma proteobacteria	|		|	synonym	|
+1236	|	gamma subdivision	|		|	synonym	|
+1236	|	gamma subgroup	|		|	synonym	|
+1239	|	Bacillus/Clostridium group	|		|	synonym	|
+1239	|	Clostridium group firmicutes	|		|	synonym	|
+1239	|	Firmacutes	|		|	synonym	|
+1239	|	Firmicutes	|		|	scientific name	|
+1239	|	Firmicutes corrig. Gibbons and Murray 1978	|		|	authority	|
+1239	|	Gram positive bacteria	|		|	misspelling	|
+1239	|	Gram-positive bacteria	|		|	genbank common name	|
+1239	|	Low G+C firmicutes	|		|	synonym	|
+1239	|	clostridial firmicutes	|		|	synonym	|
+1239	|	firmicutes	|	firmicutes <blast1239>	|	blast name	|
+1239	|	low G+C Gram-positive bacteria	|		|	common name	|
+1239	|	low GC Gram+	|	low GC gram-positives<blast31968>	|	common name	|
+1300	|	Streptococcaceae	|		|	scientific name	|
+1300	|	Streptococcaceae Deibel and Seeley 1974	|		|	authority	|
+1357	|	Lactococcus	|		|	scientific name	|
+1357	|	Lactococcus Schleifer et al. 1986	|		|	authority	|
+1357	|	lactic streptococci	|		|	genbank common name	|
+1358	|	"Bacterium lactis" Lister 1873	|		|	synonym	|
+1358	|	Bacterium lacti	|		|	synonym	|
+1358	|	Lactococcus lactis	|		|	scientific name	|
+1358	|	Lactococcus lactis (Lister 1873) Schleifer et al. 1986	|		|	synonym	|
+1358	|	Lactococcus lactis (Lohnis) Schleifer et al. 1986	|		|	misnomer	|
+1358	|	Streptococcus lactis	|		|	synonym	|
+1358	|	Streptococcus lactis (Lister 1873) Lohnis 1909 (Approved Lists 1980)	|		|	synonym	|
+1359	|	"Streptococcus hollandicus" Scholl 1891	|		|	synonym	|
+1359	|	"Streptococcus lactis B" Ayers et al. 1924	|		|	synonym	|
+1359	|	Lactobacillus cremoris	|		|	synonym	|
+1359	|	Lactococcus cremoris	|		|	synonym	|
+1359	|	Lactococcus lactis (SUBSP. CREMORIS)	|		|	equivalent name	|
+1359	|	Lactococcus lactis cremoris	|		|	equivalent name	|
+1359	|	Lactococcus lactis subsp. cremoris	|		|	scientific name	|
+1359	|	Lactococcus lactis subsp. cremoris (Orla-Jensen 1919) Schleifer et al. 1986	|		|	synonym	|
+1359	|	Plasmid pNZ4000	|		|	includes	|
+1359	|	Streptococcus cremoris	|		|	synonym	|
+1359	|	Streptococcus cremoris Orla-Jensen 1919 (Approved Lists 1980)	|		|	synonym	|
+1359	|	Streptococcus hollandicus	|		|	synonym	|
+1359	|	Streptococcus lactis B	|		|	synonym	|
+1359	|	Streptococcus lactis subsp. cremoris	|		|	synonym	|
+1359	|	Streptococcus lactis subsp. cremoris (Orla-Jensen 1919) Garvie and Farrow 1982	|		|	synonym	|
+1360	|	"Lactococcus lactis subsp. diacitilactis (sic)" (Garvie and Farrow 1982) Schleifer et al. 1986	|		|	synonym	|
+1360	|	"Streptococcus diacetilactis" Matuszewski et al. 1936	|		|	synonym	|
+1360	|	Lactobacillus xylosus	|		|	synonym	|
+1360	|	Lactobacillus xylosus Kitahara 1938 (Approved Lists 1980)	|		|	synonym	|
+1360	|	Lactococcus lactis (SUBSP. LACTIS)	|		|	synonym	|
+1360	|	Lactococcus lactis lactis	|		|	equivalent name	|
+1360	|	Lactococcus lactis subsp. lactis	|		|	scientific name	|
+1360	|	Lactococcus lactis subsp. lactis (Lister 1873) Schleifer et al. 1986	|		|	synonym	|
+1360	|	Streptococcus diacetilactis	|		|	synonym	|
+1360	|	Streptococcus lactis subsp. diacetilactis	|		|	synonym	|
+1360	|	Streptococcus lactis subsp. diacetilactis (ex Matuszewski et al. 1936) Garvie and Farrow 1982	|		|	synonym	|
+1360	|	Streptococcus lactis subsp. lactis	|		|	synonym	|
+1360	|	Streptococcus lactis subsp. lactis (Lister 1873) Lohnis 1909	|		|	synonym	|
+1385	|	Bacillales	|		|	scientific name	|
+1385	|	Bacillales Prevot 1953	|		|	authority	|
+1385	|	Bacillus/Staphylococcus group	|		|	synonym	|
+1386	|	Bacillus	|	Bacillus <bacterium>	|	scientific name	|
+1386	|	Bacillus Cohn 1872	|		|	authority	|
+1386	|	Bacillus rRNA group 1	|		|	synonym	|
+1423	|	"Bacillus globigii" Migula 1900	|		|	synonym	|
+1423	|	"Vibrio subtilis" Ehrenberg 1835	|		|	synonym	|
+1423	|	Bacillus globigii	|		|	synonym	|
+1423	|	Bacillus natto	|		|	synonym	|
+1423	|	Bacillus subtilis	|		|	scientific name	|
+1423	|	Bacillus subtilis (Ehrenberg 1835) Cohn 1872	|		|	synonym	|
+1423	|	Bacillus subtilis/Bacillus globigii	|		|	includes	|
+1423	|	Bacillus subtilis8	|		|	misspelling	|
+1423	|	Bacillus uniflagellatus	|		|	synonym	|
+1423	|	Vibrio subtilis	|		|	synonym	|
+1483	|	Bacillus amylosacchariticus	|		|	synonym	|
+1483	|	Bacillus subtilis subsp. amylosacchariticus	|		|	scientific name	|
+1483	|	Bacillus subtilis var. amylosacchariticus	|		|	synonym	|
+2085	|	"Borrelomycetales" Turner 1935	|		|	authority	|
+2085	|	"Mollicutales" Edward 1955	|		|	authority	|
+2085	|	"Paramycetales" Sabin 1941	|		|	authority	|
+2085	|	"Pleuropneumoniales" Tulasne and Brisou 1955	|		|	authority	|
+2085	|	Borrelomycetales	|		|	synonym	|
+2085	|	Mollicutales	|		|	synonym	|
+2085	|	Mycoplasmas	|		|	synonym	|
+2085	|	Mycoplasmatales	|		|	scientific name	|
+2085	|	Mycoplasmatales Freundt 1955 (Approved Lists 1980) emend. Tully et al. 1993	|		|	authority	|
+2085	|	Paramycetales	|		|	synonym	|
+2085	|	Pleuropneumoniales	|		|	synonym	|
+2085	|	The Mycoplasmas	|		|	synonym	|
+2092	|	"Borrelomycetaceae" Turner 1935	|		|	authority	|
+2092	|	"Parasitaceae" Sabin 1941	|		|	authority	|
+2092	|	"Pleuropneumoniaceae" Tulasne and Brisou 1955	|		|	authority	|
+2092	|	Borrelomycetaceae	|		|	synonym	|
+2092	|	Mycoplasmataceae	|		|	scientific name	|
+2092	|	Mycoplasmataceae Freundt 1955 (Approved Lists 1980) emend. Tully et al. 1993	|		|	authority	|
+2092	|	Parasitaceae	|		|	synonym	|
+2092	|	Pleuropneumoniaceae	|		|	synonym	|
+2093	|	"Asterococcus" Borrel et al. 1910	|		|	authority	|
+2093	|	"Asteromyces" Wroblewski 1931	|		|	authority	|
+2093	|	"Borrelomyces" Turner 1935	|		|	authority	|
+2093	|	"Bovimyces" Sabin 1941	|		|	authority	|
+2093	|	"Pleuropneumonia" Tulasne and Brisou 1955	|		|	authority	|
+2093	|	Asterococcus	|	Asterococcus <Mycoplasma>	|	synonym	|
+2093	|	Asteromyces	|		|	synonym	|
+2093	|	Borrelomyces	|		|	synonym	|
+2093	|	Bovimyces	|		|	synonym	|
+2093	|	Eperythrozoon	|		|	synonym	|
+2093	|	Eperythrozoon Schilling 1928	|		|	authority	|
+2093	|	Haemobartonella	|		|	synonym	|
+2093	|	Haemobartonella Tyzzer and Weinman 1939	|		|	authority	|
+2093	|	Mycoplasma	|		|	scientific name	|
+2093	|	Mycoplasma Nowak 1929	|		|	authority	|
+2093	|	Pleuropneumonia	|		|	synonym	|
+2104	|	"Filterable agent of primary atypical pneumonia" Eaton et al. 1944	|		|	synonym	|
+2104	|	"Schizoplasma pneumoniae" (Somerson et al. 1963) Furness et al. 1968	|		|	synonym	|
+2104	|	'Filterable agent of primary atypical pneumonia'	|		|	synonym	|
+2104	|	Mycoplasma pneumoniae	|		|	scientific name	|
+2104	|	Mycoplasma pneumoniae Somerson et al. 1963	|		|	synonym	|
+2104	|	Schizoplasma pneumoniae	|		|	synonym	|
+2759	|	Eucarya	|		|	synonym	|
+2759	|	Eucaryotae	|		|	synonym	|
+2759	|	Eukarya	|		|	synonym	|
+2759	|	Eukaryota	|		|	scientific name	|
+2759	|	Eukaryotae	|		|	synonym	|
+2759	|	eucaryotes	|		|	genbank common name	|
+2759	|	eukaryotes	|		|	common name	|
+2759	|	eukaryotes	|	eukaryotes<blast2759>	|	blast name	|
+3041	|	Chlorophycota	|		|	synonym	|
+3041	|	Chlorophyta	|		|	scientific name	|
+3041	|	Chlorophyta sensu Bremer 1985	|		|	synonym	|
+3041	|	algae	|	algae <Chlorophyta>	|	in-part	|
+3041	|	green algae	|		|	genbank common name	|
+3041	|	green algae	|	green algae<blast3041>	|	blast name	|
+3042	|	Chlamydomonadales	|		|	scientific name	|
+3042	|	Volvocales	|		|	synonym	|
+3042	|	Volvocida	|		|	synonym	|
+3051	|	Chlamydomonadaceae	|		|	scientific name	|
+3052	|	Chlamydomonas	|		|	scientific name	|
+3055	|	Chlamydomonas reihhardtii	|		|	misspelling	|
+3055	|	Chlamydomonas reinhardtii	|		|	scientific name	|
+3055	|	Chlamydomonas reinhardtii P.A.Dangeard	|		|	synonym	|
+3055	|	Chlamydomonas reinhardtii strain CC-1373	|		|	includes	|
+3055	|	Chlamydomonas smithii	|		|	synonym	|
+3055	|	Chlamydomonas smithii R.W.Howshaw & H.Ettl	|		|	synonym	|
+3166	|	Chlorophyceae	|		|	scientific name	|
+3193	|	Embryophyta	|		|	scientific name	|
+3193	|	higher plants	|		|	common name	|
+3193	|	land plants	|		|	common name	|
+3193	|	land plants	|	land plants<blast3193>	|	blast name	|
+3193	|	plants	|	plants<blast3193>	|	common name	|
+3398	|	Angiospermae	|		|	synonym	|
+3398	|	Magnoliophyta	|		|	scientific name	|
+3398	|	angiosperms	|		|	common name	|
+3398	|	flowering plants	|		|	genbank common name	|
+3398	|	flowering plants	|	flowering plants<blast3398>	|	blast name	|
+3699	|	Brassicales	|		|	scientific name	|
+3699	|	Capparales	|		|	synonym	|
+3700	|	Brassicaceae	|		|	scientific name	|
+3700	|	Cruciferae	|		|	synonym	|
+3700	|	mustard family	|		|	genbank common name	|
+3701	|	Arabidopsis	|		|	scientific name	|
+3701	|	Arabidopsis Heynh.	|		|	synonym	|
+3701	|	Cardaminopsis	|		|	synonym	|
+3701	|	Cardaminopsis Hayek	|		|	synonym	|
+3702	|	Arabidopsis thaliana	|		|	scientific name	|
+3702	|	Arabidopsis thaliana (L.) Heynh.	|		|	authority	|
+3702	|	Arabidopsis thaliana (thale cress)	|		|	misspelling	|
+3702	|	Arbisopsis thaliana	|		|	misspelling	|
+3702	|	mouse-ear cress	|		|	common name	|
+3702	|	thale cress	|		|	genbank common name	|
+3702	|	thale-cress	|		|	common name	|
+3703	|	Armoracia	|		|	scientific name	|
+3704	|	Armoracia lapathifolia	|		|	synonym	|
+3704	|	Armoracia laphatifolia	|		|	misspelling	|
+3704	|	Armoracia rusticana	|		|	scientific name	|
+3704	|	Armoracia rusticana P.Gaertn., B.Mey. & Scherb.	|		|	synonym	|
+3704	|	horseradish	|		|	common name	|
+4069	|	Solanales	|		|	scientific name	|
+4069	|	Solananae	|		|	synonym	|
+4070	|	Nolanaceae	|		|	includes	|
+4070	|	Solanaceae	|		|	scientific name	|
+4070	|	nightshade family	|		|	common name	|
+4085	|	Nicotiana	|		|	scientific name	|
+4097	|	American tobacco	|		|	common name	|
+4097	|	Nicotania tabacum	|		|	misspelling	|
+4097	|	Nicotiana tabacum	|		|	scientific name	|
+4097	|	common tobacco	|		|	genbank common name	|
+4097	|	tobacco	|		|	common name	|
+4447	|	Liliopsida	|		|	scientific name	|
+4447	|	Monocotyledoneae	|		|	synonym	|
+4447	|	monocots	|		|	common name	|
+4447	|	monocots	|	monocots<blast4447>	|	blast name	|
+4447	|	monocotyledons	|		|	genbank common name	|
+4479	|	Gramineae	|		|	synonym	|
+4479	|	Poaceae	|		|	scientific name	|
+4479	|	grass family	|		|	common name	|
+4527	|	Oryza	|		|	scientific name	|
+4527	|	Oryza L.	|		|	synonym	|
+4527	|	Porteresia	|		|	includes	|
+4530	|	Oryza sativa	|		|	scientific name	|
+4530	|	Oryza sativa L.	|		|	synonym	|
+4530	|	red rice	|	red rice <Oryza sativa>	|	common name	|
+4530	|	rice	|		|	genbank common name	|
+4546	|	Saccharum	|		|	scientific name	|
+4547	|	Saccharum officinarum	|		|	scientific name	|
+4547	|	Saccharum officinarum L.	|		|	synonym	|
+4547	|	noble cane	|		|	common name	|
+4547	|	sugarcane	|	sugarcane <S. officinarum>	|	common name	|
+4575	|	Euchlaena	|	Euchlaena <angiosperm>	|	synonym	|
+4575	|	Zea	|		|	scientific name	|
+4575	|	Zea L.	|		|	authority	|
+4577	|	Zea mays	|		|	scientific name	|
+4577	|	Zea mays L.	|		|	authority	|
+4577	|	Zea mays mays	|		|	misspelling	|
+4577	|	Zea mays var. japonica	|		|	synonym	|
+4577	|	maize	|	maize <Zea mays>	|	common name	|
+4579	|	Euchlaena mexicana	|		|	synonym	|
+4579	|	Mexican teosinte	|		|	common name	|
+4579	|	Zea mays subsp. mexicana	|		|	scientific name	|
+4579	|	Zea mays subsp. mexicana (Schrad.) Iltis	|		|	authority	|
+4579	|	Zea mexicana	|		|	synonym	|
+4579	|	Zea mexicana (Schrad.) Kuntze	|		|	authority	|
+4579	|	annual teosinte	|		|	common name	|
+4579	|	teosinte	|	teosinte <Z. mays subsp. mexicana>	|	common name	|
+4734	|	Commelinidae	|		|	synonym	|
+4734	|	Commeliniflorae	|		|	synonym	|
+4734	|	commelinids	|		|	scientific name	|
+4751	|	Fungi	|		|	scientific name	|
+4751	|	fungi	|	fungi<blast4751>	|	blast name	|
+4751	|	fungi	|	fungi<preferred>	|	genbank common name	|
+4753	|	Pneumocystis	|		|	scientific name	|
+4754	|	Pneumocystis carinii	|		|	scientific name	|
+4754	|	Pneumocystis carinii f. sp. carinii	|		|	synonym	|
+4754	|	Pneumocystis carinii f. sp. ratti	|		|	synonym	|
+4754	|	Pneumocystis carinii f. sp. rattus	|		|	misspelling	|
+4890	|	Ascomycota	|		|	scientific name	|
+4890	|	ascomycetes	|		|	genbank common name	|
+4890	|	ascomycetes	|	ascomycetes<blast4890>	|	blast name	|
+4890	|	sac fungi	|		|	common name	|
+4891	|	Hemiascomycetes	|		|	synonym	|
+4891	|	Saccharomycetes	|		|	scientific name	|
+4892	|	Endomycetales	|		|	synonym	|
+4892	|	Saccharomycetales	|		|	scientific name	|
+4892	|	budding yeasts	|		|	genbank common name	|
+4893	|	Eremotheciaceae	|		|	includes	|
+4893	|	Saccharomycetaceae	|		|	scientific name	|
+4894	|	Schizosaccharomycetaceae	|		|	scientific name	|
+4894	|	Schizosaccharomycetoideae	|		|	synonym	|
+4894	|	fission yeasts	|		|	genbank common name	|
+4895	|	Schizosaccharomyces	|		|	scientific name	|
+4896	|	Schizosaccharomyces malidevorans	|		|	synonym	|
+4896	|	Schizosaccharomyces pombe	|		|	scientific name	|
+4896	|	Schizosaccharomyces pombeP	|		|	misspelling	|
+4896	|	fission yeast	|		|	genbank common name	|
+4897	|	Schizosaccharomyces japonicus	|		|	scientific name	|
+4897	|	Schizosaccharomyces japonicus var. japonicus	|		|	synonym	|
+4897	|	Schizosaccharomyces japonicus var. versatilis	|		|	synonym	|
+4899	|	Schizosaccharomyces octosporus	|		|	scientific name	|
+4930	|	Pachytichospora	|		|	synonym	|
+4930	|	Saccharomyces	|		|	scientific name	|
+4932	|	Candida robusta	|		|	anamorph	|
+4932	|	Saccaromyces cerevisiae	|		|	misspelling	|
+4932	|	Saccharomyces capensis	|		|	synonym	|
+4932	|	Saccharomyces cerevisiae	|		|	scientific name	|
+4932	|	Saccharomyces italicus	|		|	synonym	|
+4932	|	Saccharomyces oviformis	|		|	synonym	|
+4932	|	Saccharomyces uvarum var. melibiosus	|		|	synonym	|
+4932	|	Saccharomyes cerevisiae	|		|	misspelling	|
+4932	|	Sccharomyces cerevisiae	|		|	misspelling	|
+4932	|	baker's yeast	|		|	genbank common name	|
+4932	|	brewer's yeast	|		|	common name	|
+4932	|	lager beer yeast	|		|	common name	|
+4932	|	yeast	|		|	common name	|
+5653	|	Kinetoplastida	|		|	scientific name	|
+5653	|	Protomonadida	|		|	synonym	|
+5653	|	kinetoplastids	|	kinetoplastids<blast5653>	|	blast name	|
+5653	|	kinetoplasts	|		|	genbank common name	|
+5654	|	Trypanosomatidae	|		|	scientific name	|
+5690	|	Trypanosoma	|		|	scientific name	|
+5691	|	Trypanosoma (Trypanozoon) brucei	|		|	synonym	|
+5691	|	Trypanosoma brucei	|		|	scientific name	|
+5691	|	Trypanosoma brucei subgroup	|		|	synonym	|
+5702	|	Trypanosoma (Trypanozoon) brucei brucei	|		|	synonym	|
+5702	|	Trypanosoma brucei brucei	|		|	scientific name	|
+5782	|	Dictyostelium	|		|	scientific name	|
+5784	|	Dictyostelium sp.	|		|	scientific name	|
+5785	|	Dictyostelium sp. (STRAIN GA11)	|		|	scientific name	|
+5786	|	Dictyostelium purpureum	|		|	scientific name	|
+5787	|	Dictyostelium giganteum	|		|	scientific name	|
+5789	|	Physarales	|		|	synonym	|
+5789	|	Physariida	|		|	scientific name	|
+5790	|	Physarum	|		|	scientific name	|
+5791	|	Physarum polycephalum	|		|	scientific name	|
+5794	|	Apicomplexa	|		|	scientific name	|
+5794	|	apicomplexans	|		|	genbank common name	|
+5794	|	apicomplexans	|	apicomplexans<blast5794>	|	blast name	|
+5819	|	Haemosporida	|		|	scientific name	|
+5819	|	Haemosporina	|		|	synonym	|
+5819	|	haemosporidians	|		|	genbank common name	|
+5820	|	Plasmodium	|	Plasmodium <genus>	|	scientific name	|
+5833	|	Plasmodium (Laverania) falciparum	|		|	synonym	|
+5833	|	Plasmodium falciparum	|		|	scientific name	|
+5833	|	malaria parasite P. falciparum	|		|	genbank common name	|
+5834	|	Plasmodium falciparum (isolate RO-33 / Ghana)	|		|	synonym	|
+5834	|	Plasmodium falciparum RO-33	|		|	scientific name	|
+5834	|	Plasmodium falciparum RO-33/Ghana	|		|	synonym	|
+5835	|	Plasmodium falciparum (isolate CAMP / Malaysia)	|		|	synonym	|
+5835	|	Plasmodium falciparum CAMP/Malaysia	|		|	scientific name	|
+5836	|	Plasmodium falciparum (isolate CDC / Honduras)	|		|	synonym	|
+5836	|	Plasmodium falciparum CDC/Honduras	|		|	scientific name	|
+5837	|	Plasmodium falciparum (isolate FC27 / Papua New Guinea)	|		|	synonym	|
+5837	|	Plasmodium falciparum FC27/Papua New Guinea	|		|	scientific name	|
+5838	|	Plasmodium falciparum (isolate FCR-3 / Gambia)	|		|	synonym	|
+5838	|	Plasmodium falciparum FCR-3/Gambia	|		|	scientific name	|
+5839	|	Plasmodium falciparum (isolate K1 / Thailand)	|		|	synonym	|
+5839	|	Plasmodium falciparum K1	|		|	scientific name	|
+5839	|	Plasmodium falciparum K1/Thailand	|		|	synonym	|
+5840	|	Plasmodium falciparum (isolate LE5)	|		|	synonym	|
+5840	|	Plasmodium falciparum LE5	|		|	scientific name	|
+5841	|	Plasmodium falciparum (isolate MAD20)	|		|	synonym	|
+5841	|	Plasmodium falciparum (isolate MAD20/PAPUA NEW GUINEA)	|		|	synonym	|
+5841	|	Plasmodium falciparum (isolate mad20 / papua new guinea)	|		|	synonym	|
+5841	|	Plasmodium falciparum MAD20	|		|	synonym	|
+5841	|	Plasmodium falciparum Mad20/Papua New Guinea	|		|	scientific name	|
+5842	|	Plasmodium falciparum (isolate NF7 / Ghana)	|		|	synonym	|
+5842	|	Plasmodium falciparum NF7/Ghana	|		|	scientific name	|
+5843	|	Plasmodium falciparum (isolate NF54)	|		|	synonym	|
+5843	|	Plasmodium falciparum NF54	|		|	scientific name	|
+5845	|	Plasmodium falciparum (isolate FCM17 / Senegal)	|		|	synonym	|
+5845	|	Plasmodium falciparum FCM17/Senegal	|		|	scientific name	|
+5846	|	Plasmodium falciparum (isolate T4 / Thailand)	|		|	synonym	|
+5846	|	Plasmodium falciparum T4/Thailand	|		|	scientific name	|
+5847	|	Plasmodium falciparum (isolate V1)	|		|	synonym	|
+5847	|	Plasmodium falciparum V1	|		|	scientific name	|
+5848	|	Plasmodium falciparum (isolate WELLCOME)	|		|	synonym	|
+5848	|	Plasmodium falciparum isolate WELLCOME	|		|	scientific name	|
+6072	|	Eumetazoa	|		|	scientific name	|
+6231	|	Nemata	|		|	synonym	|
+6231	|	Nematoda	|		|	scientific name	|
+6231	|	nematode	|	nematode <Nematoda>	|	common name	|
+6231	|	nematodes	|	nematodes <common name>	|	common name	|
+6231	|	nematodes	|	nematodes<blast6231>	|	blast name	|
+6231	|	roundworm	|		|	common name	|
+6231	|	roundworms	|		|	genbank common name	|
+6236	|	Rhabditida	|		|	scientific name	|
+6237	|	Caenorhabditis	|		|	scientific name	|
+6239	|	Caenorhabditis elegans	|		|	scientific name	|
+6239	|	Caenorhabditis elegans (Maupas, 1900)	|		|	synonym	|
+6239	|	nematode	|	nematode <Caenorhabditis elegans>	|	common name	|
+6243	|	Rhabditidae	|		|	scientific name	|
+6447	|	Mollusca	|		|	scientific name	|
+6447	|	molluscs	|		|	common name	|
+6447	|	molluscs	|	molluscs<blast6447>	|	blast name	|
+6447	|	mollusks	|		|	genbank common name	|
+6605	|	Cephalopoda	|		|	scientific name	|
+6605	|	cephalopods	|		|	genbank common name	|
+6605	|	cephalopods	|	cephalopods <blast6605>	|	blast name	|
+6606	|	Coleoidea	|		|	scientific name	|
+6606	|	Dibranchiata	|		|	synonym	|
+6615	|	Loliginidae	|		|	scientific name	|
+6616	|	Loligo	|		|	scientific name	|
+6618	|	Loligo forbesi	|		|	scientific name	|
+6618	|	northern European squid	|		|	genbank common name	|
+6960	|	Atelocerata	|	Atelocerata <Hexapoda>	|	in-part	|
+6960	|	Hexapoda	|		|	scientific name	|
+6960	|	Tracheata	|	Tracheata <Hexapoda>	|	in-part	|
+6960	|	Uniramia	|	Uniramia <Hexapoda>	|	in-part	|
+6960	|	insects	|		|	genbank common name	|
+6960	|	insects	|	insects<blast6960>	|	blast name	|
+7147	|	Diptera	|		|	scientific name	|
+7147	|	flies	|		|	genbank common name	|
+7147	|	flies	|	flies<blast7147>	|	blast name	|
+7203	|	Brachycera	|		|	scientific name	|
+7214	|	Drosophilidae	|		|	scientific name	|
+7214	|	pomace flies	|		|	genbank common name	|
+7215	|	Drosophila	|	Drosophila <fruit fly, genus>	|	scientific name	|
+7215	|	Drosophila Fallen, 1823	|		|	synonym	|
+7215	|	fruit flies	|	fruit flies <Drosophila>	|	genbank common name	|
+7216	|	Drosophila ambigua	|		|	scientific name	|
+7217	|	Drosophila ananassae	|		|	scientific name	|
+7217	|	Drosophila annanassae	|		|	synonym	|
+7218	|	Drosophila bifasciata	|		|	scientific name	|
+7219	|	Drosophila differens	|		|	scientific name	|
+7219	|	Idiomyia differens	|		|	synonym	|
+7220	|	Drosophila erecta	|		|	scientific name	|
+7221	|	Drosophila funebris	|		|	scientific name	|
+7222	|	Drosophila grimshawi	|		|	scientific name	|
+7222	|	Idiomyia grimshawi	|		|	synonym	|
+7224	|	Drosophila hydei	|		|	scientific name	|
+7224	|	Drosophila hydei Sturtevant, 1921	|		|	synonym	|
+7226	|	Drosophila mauritiana	|		|	scientific name	|
+7227	|	Drosophila melangaster	|		|	misspelling	|
+7227	|	Drosophila melanogaster	|		|	scientific name	|
+7227	|	fruit fly	|		|	genbank common name	|
+7228	|	Drosophila mettleri	|		|	scientific name	|
+7229	|	Drosophila miranda	|		|	scientific name	|
+7230	|	Drosophila mohavensis	|		|	synonym	|
+7230	|	Drosophila mojavensis	|		|	scientific name	|
+7231	|	Drosophila mulleri	|		|	scientific name	|
+7232	|	Drosophila navojoa	|		|	scientific name	|
+7233	|	Drosophila orena	|		|	scientific name	|
+7234	|	Drosophila persimilis	|		|	scientific name	|
+7235	|	Drosophila picticornis	|		|	scientific name	|
+7235	|	Idiomyia picticornis	|		|	synonym	|
+7236	|	Drosophila planitibia	|		|	scientific name	|
+7236	|	Idiomyia planitibia	|		|	synonym	|
+7237	|	Drosophila pseudoobscura	|		|	scientific name	|
+7237	|	Drosophila pseudoobscura Frolova & Astaurov, 1929	|		|	authority	|
+7238	|	Drosophila sechellia	|		|	scientific name	|
+7238	|	Drosophila sechellia Tsacas and Bachli, 1981	|		|	synonym	|
+7239	|	Drosophila subsilvestris	|		|	scientific name	|
+7240	|	Drosophila simulans	|		|	scientific name	|
+7241	|	Drosophila subobscura	|		|	scientific name	|
+7242	|	Drosophila sp.	|		|	scientific name	|
+7243	|	Drosophila teisseri	|		|	misspelling	|
+7243	|	Drosophila teissieri	|		|	scientific name	|
+7243	|	Drosophila teissieri Tsacas, 1971	|		|	synonym	|
+7244	|	Drosophila irilis	|		|	misspelling	|
+7244	|	Drosophila virilis	|		|	scientific name	|
+7244	|	Drosophila virilis Sturtevant, 1916	|		|	synonym	|
+7245	|	Drosophila yakuba	|		|	scientific name	|
+7246	|	Drosophila affinis	|		|	scientific name	|
+7247	|	Drosophila algonquin	|		|	scientific name	|
+7248	|	Drosophila athabasca	|		|	scientific name	|
+7249	|	Drosophila azteca	|		|	scientific name	|
+7250	|	Drosophila immigrans	|		|	scientific name	|
+7251	|	Drosophila lowei	|		|	scientific name	|
+7252	|	Drosophila melanica	|		|	scientific name	|
+7253	|	Drosophila mercatorum	|		|	scientific name	|
+7254	|	Drosophila narragansett	|		|	scientific name	|
+7256	|	Drosophila pinicola	|		|	scientific name	|
+7257	|	Drosophila robusta	|		|	scientific name	|
+7258	|	Drosophila stonei	|		|	scientific name	|
+7259	|	Drosophila tolteca	|		|	scientific name	|
+7260	|	Drosophila willistoni	|		|	scientific name	|
+7261	|	Drosophila adiastola	|		|	scientific name	|
+7261	|	Idiomyia adiastola	|		|	synonym	|
+7262	|	Drosophila affinidisjuncta	|		|	scientific name	|
+7262	|	Idiomyia affinidisjuncta	|		|	synonym	|
+7263	|	Drosophila arizona	|		|	synonym	|
+7263	|	Drosophila arizonae	|		|	scientific name	|
+7264	|	Drosophila buzzati	|		|	synonym	|
+7264	|	Drosophila buzzatii	|		|	scientific name	|
+7266	|	Drosophila guanche	|		|	scientific name	|
+7267	|	Drosophila gymnobasis	|		|	scientific name	|
+7267	|	Idiomyia gymnobasis	|		|	synonym	|
+7268	|	Drosophila mayaguana	|		|	scientific name	|
+7269	|	Drosophila crocina	|		|	synonym	|
+7269	|	Drosophila mediostriata	|		|	scientific name	|
+7270	|	Drosophila mimica	|		|	scientific name	|
+7270	|	Idiomyia mimica	|		|	synonym	|
+7271	|	Drosophila nebulosa	|		|	scientific name	|
+7272	|	Drosophila nigra	|		|	scientific name	|
+7272	|	Idiomyia nigra	|		|	synonym	|
+7273	|	Drosophila saltans	|		|	scientific name	|
+7274	|	Drosophila serrata	|		|	scientific name	|
+7274	|	Drosophila serrata Malloch, 1927	|		|	synonym	|
+7275	|	Drosophila silvarentis	|		|	scientific name	|
+7275	|	Idiomyia silvarentis	|		|	synonym	|
+7277	|	Drosophila wheeleri	|		|	scientific name	|
+7278	|	Drosophila bromeliae	|		|	scientific name	|
+7279	|	Drosophila falleni	|		|	scientific name	|
+7280	|	Drosophila kitumensis	|		|	scientific name	|
+7281	|	Drosophila microlabis	|		|	scientific name	|
+7282	|	Drosophila obscura	|		|	scientific name	|
+7283	|	Drosophila phalerata	|		|	scientific name	|
+7284	|	Drosophila tristis	|		|	scientific name	|
+7287	|	Drosophila cilifemorata	|		|	scientific name	|
+7287	|	Idiomyia cilifemorata	|		|	synonym	|
+7289	|	Drosophila sproati	|		|	scientific name	|
+7289	|	Idiomyia sproati	|		|	synonym	|
+7290	|	Drosophila stigma	|		|	scientific name	|
+7290	|	Idiomyia stigma	|		|	synonym	|
+7291	|	Drosophila albomicans	|		|	scientific name	|
+7291	|	Drosophila nasuta albomican	|		|	synonym	|
+7496	|	Pterygota	|	Pterygota <winged insects>	|	scientific name	|
+7496	|	winged insects	|		|	genbank common name	|
+7711	|	Chordata	|		|	scientific name	|
+7711	|	chordates	|		|	genbank common name	|
+7711	|	chordates	|	chordates<blast7711>	|	blast name	|
+7742	|	Vertebrata	|		|	scientific name	|
+7742	|	vertebrates	|		|	genbank common name	|
+7742	|	vertebrates	|	vertebrates<blast7742>	|	blast name	|
+7776	|	Gnathostomata	|	Gnathostomata <vertebrate>	|	scientific name	|
+7776	|	jawed vertebrates	|		|	genbank common name	|
+7777	|	Chondrichthyes	|		|	scientific name	|
+7777	|	cartilaginous fishes	|		|	genbank common name	|
+7777	|	cartilaginous fishes	|	cartilaginous fishes <blast7777>	|	blast name	|
+7777	|	fishes	|	fishes <chondrichthyan>	|	in-part	|
+7777	|	sharks	|		|	misnomer	|
+7778	|	Elasmobranchii	|		|	scientific name	|
+7778	|	elasmobranchs	|		|	genbank common name	|
+7778	|	sharks and rays	|	sharks and rays<blast7778>	|	blast name	|
+7786	|	Torpedo	|		|	scientific name	|
+7787	|	Pacific electric ray	|		|	genbank common name	|
+7787	|	Torpedo californica	|		|	scientific name	|
+7787	|	Torpedo californica Ayres, 1855	|		|	synonym	|
+7787	|	Torpedo californiensis	|		|	misnomer	|
+7898	|	Actinopterygii	|		|	scientific name	|
+7898	|	Osteichthyes	|	Osteichthyes <actinopterygian>	|	in-part	|
+7898	|	bony fishes	|	bony fish<blast7898>	|	blast name	|
+7898	|	fishes	|	fishes <actinopterygian>	|	in-part	|
+7898	|	ray-finned fishes	|		|	genbank common name	|
+7952	|	Cypriniformes	|		|	scientific name	|
+7953	|	Cyprinidae	|		|	scientific name	|
+7954	|	Brachydanio	|		|	synonym	|
+7954	|	Celestichthys	|		|	synonym	|
+7954	|	Danio	|		|	scientific name	|
+7955	|	Brachidanio rerio	|		|	misspelling	|
+7955	|	Brachydanio rerio	|		|	synonym	|
+7955	|	Cyprinus rerio	|		|	synonym	|
+7955	|	Cyprinus rerio Hamilton, 1822	|		|	synonym	|
+7955	|	Danio rerio	|		|	scientific name	|
+7955	|	Danio rerio (Hamilton, 1822)	|		|	synonym	|
+7955	|	leopard danio	|	leopard danio <Danio rerio>	|	common name	|
+7955	|	zebra danio	|		|	common name	|
+7955	|	zebra fish	|	zebra fish <Danio rerio>	|	common name	|
+7955	|	zebrafish	|		|	genbank common name	|
+8287	|	Sarcopterygii	|		|	scientific name	|
+8292	|	Amphibia	|		|	scientific name	|
+8292	|	Lissamphibia	|		|	includes	|
+8292	|	amphibians	|		|	genbank common name	|
+8292	|	amphibians	|	amphibians<blast8292>	|	blast name	|
+8342	|	Anura	|		|	scientific name	|
+8342	|	Salientia	|		|	synonym	|
+8342	|	anurans	|		|	common name	|
+8342	|	frogs	|		|	common name	|
+8342	|	frogs & toads	|		|	blast name	|
+8342	|	frogs and toads	|		|	genbank common name	|
+8352	|	Pipidae	|		|	scientific name	|
+8352	|	pipid frogs	|		|	common name	|
+8352	|	tongueless frogs	|		|	genbank common name	|
+8353	|	Xenopus	|	Xenopus <genus>	|	scientific name	|
+8355	|	African clawed frog	|		|	genbank common name	|
+8355	|	Bufo laevis	|		|	synonym	|
+8355	|	Xenopus laevis	|		|	scientific name	|
+8355	|	Xenopus laevis (Daudin, 1802)	|		|	synonym	|
+8355	|	Xenopus leavis	|		|	misspelling	|
+8355	|	clawed frog	|	clawed frog <Xenopus laevis>	|	common name	|
+8355	|	common platanna	|		|	common name	|
+8355	|	platanna	|		|	common name	|
+8360	|	Siluraninae	|		|	synonym	|
+8360	|	Xenopodinae	|		|	scientific name	|
+9347	|	Eutheria	|		|	scientific name	|
+9347	|	Placentalia	|		|	synonym	|
+9347	|	eutherian mammals	|		|	common name	|
+9347	|	placental mammals	|		|	common name	|
+9347	|	placentals	|		|	genbank common name	|
+9347	|	placentals	|	placentals <blast9347>	|	blast name	|
+9443	|	Primata	|		|	synonym	|
+9443	|	Primates	|		|	scientific name	|
+9443	|	primate	|		|	equivalent name	|
+9443	|	primates	|	primates <blast9443>	|	blast name	|
+9526	|	Catarrhini	|		|	scientific name	|
+9604	|	Hominidae	|		|	scientific name	|
+9604	|	Pongidae	|		|	synonym	|
+9604	|	great apes	|		|	common name	|
+9605	|	Homo	|		|	scientific name	|
+9606	|	Homo sapiens	|		|	scientific name	|
+9606	|	human	|		|	genbank common name	|
+9606	|	man	|		|	common name	|
+9845	|	Artiodactyla	|	Artiodactyla <Ruminantia>	|	in-part	|
+9845	|	Ruminantia	|		|	scientific name	|
+9895	|	Bovidae	|		|	scientific name	|
+9903	|	Bos	|		|	scientific name	|
+9903	|	oxen, cattle	|		|	genbank common name	|
+9913	|	Bos Tauurus	|		|	misspelling	|
+9913	|	Bos bovis	|		|	synonym	|
+9913	|	Bos primigenius taurus	|		|	synonym	|
+9913	|	Bos taurus	|		|	scientific name	|
+9913	|	Bovidae sp. Adi Nefas	|		|	includes	|
+9913	|	bovine	|		|	common name	|
+9913	|	cattle	|		|	genbank common name	|
+9913	|	cow	|		|	common name	|
+9913	|	domestic cattle	|		|	common name	|
+9913	|	domestic cow	|		|	common name	|
+9975	|	Lagomorpha	|		|	scientific name	|
+9975	|	rabbits & hares	|		|	blast name	|
+9979	|	Leporidae	|		|	scientific name	|
+9979	|	rabbits and hares	|		|	genbank common name	|
+9984	|	Oryctolagus	|		|	scientific name	|
+9986	|	European rabbit	|		|	common name	|
+9986	|	Japanese white rabbit	|		|	common name	|
+9986	|	Lepus cuniculus	|		|	misnomer	|
+9986	|	New Zealand rabbit	|		|	includes	|
+9986	|	Oryctolagus cuniculus	|		|	scientific name	|
+9986	|	domestic rabbit	|		|	common name	|
+9986	|	rabbit	|		|	genbank common name	|
+9986	|	rabbits	|		|	common name	|
+9989	|	Rodentia	|		|	scientific name	|
+9989	|	rodents	|		|	genbank common name	|
+9989	|	rodents	|	rodents <blast9989>	|	blast name	|
+10026	|	Cricetinae	|		|	scientific name	|
+10026	|	hamsters	|		|	genbank common name	|
+10028	|	Cricetulus	|		|	scientific name	|
+10029	|	CHO cell lines	|		|	includes	|
+10029	|	Chinese hamster	|		|	genbank common name	|
+10029	|	Chinese hamsters	|		|	common name	|
+10029	|	Cricetulus aureus	|		|	equivalent name	|
+10029	|	Cricetulus griseus	|		|	scientific name	|
+10029	|	Cricetus griseus	|		|	misnomer	|
+10030	|	Cricetulus longicaudatus	|		|	scientific name	|
+10030	|	lesser long-tailed hamster	|		|	common name	|
+10030	|	long-tailed dwarf hamster	|		|	common name	|
+10030	|	long-tailed hamster	|		|	genbank common name	|
+10031	|	Cricetulus sp.	|		|	scientific name	|
+10032	|	Armenian hamster	|		|	genbank common name	|
+10032	|	Cricetulus migratorius	|		|	scientific name	|
+10032	|	gray dwarf hamster	|		|	common name	|
+10032	|	grey hamster	|		|	common name	|
+10033	|	Cricetus	|		|	scientific name	|
+10034	|	Cricetus cricetus	|		|	scientific name	|
+10034	|	black-bellied hamster	|		|	genbank common name	|
+10034	|	common hamster	|		|	common name	|
+10035	|	Mesocricetus	|		|	scientific name	|
+10036	|	Golden hamsters	|		|	synonym	|
+10036	|	Mesocricetus auratus	|		|	scientific name	|
+10036	|	Microcricetus aureus	|		|	misnomer	|
+10036	|	Syrian golden hamster	|		|	common name	|
+10036	|	Syrian golden hamsters	|		|	common name	|
+10036	|	Syrian hamster	|		|	common name	|
+10036	|	Syrian hamsters	|		|	synonym	|
+10036	|	golden hamster	|		|	genbank common name	|
+10037	|	Brandt's hamster	|		|	common name	|
+10037	|	Mesocricetus brandti	|		|	scientific name	|
+10037	|	Turkish hamster	|		|	genbank common name	|
+10038	|	Mesocricetus sp.	|		|	scientific name	|
+10043	|	Phodopus	|		|	scientific name	|
+10044	|	Djungarian hamster	|	Djungarian hamster <Phodopus sungorus>	|	common name	|
+10044	|	Djungarian hamster also in use for Phodopus campbelli	|		|	equivalent name	|
+10044	|	Dzhungarian hamster	|		|	common name	|
+10044	|	Phodopus sungorus	|		|	scientific name	|
+10044	|	Siberian hamster	|		|	common name	|
+10044	|	striped hairy-footed hamster	|		|	common name	|
+10066	|	Muridae	|		|	scientific name	|
+10088	|	Mus	|		|	scientific name	|
+10088	|	Nannomys	|		|	synonym	|
+10088	|	mice	|	mice <genus Mus>	|	common name	|
+10090	|	LK3 transgenic mice	|		|	includes	|
+10090	|	Mus muscaris	|		|	misnomer	|
+10090	|	Mus musculus	|		|	scientific name	|
+10090	|	Mus sp. 129SV	|		|	includes	|
+10090	|	house mouse	|		|	genbank common name	|
+10090	|	mice C57BL/6xCBA/CaJ hybrid	|		|	misspelling	|
+10090	|	mouse	|		|	common name	|
+10090	|	nude mice	|		|	includes	|
+10090	|	transgenic mice	|		|	includes	|
+10091	|	Mus castaneus	|		|	synonym	|
+10091	|	Mus casteneus	|		|	misspelling	|
+10091	|	Mus musculus castaneus	|		|	scientific name	|
+10091	|	Mus musculus castenus	|		|	misspelling	|
+10091	|	southeastern Asian house mouse	|		|	genbank common name	|
+10092	|	Mus domesticus	|		|	synonym	|
+10092	|	Mus musculus domesticus	|		|	scientific name	|
+10092	|	Mus musculus praetextus	|		|	synonym	|
+10092	|	Mus praetextus	|		|	synonym	|
+10092	|	western European house mouse	|		|	genbank common name	|
+10114	|	Rattus	|		|	scientific name	|
+10114	|	rat	|	rat <genus rat>	|	common name	|
+10114	|	rats	|	rats <genus rat>	|	common name	|
+10115	|	Cape York rat	|		|	common name	|
+10115	|	Rattus leucopus	|		|	scientific name	|
+10115	|	mottle-tailed rat	|		|	genbank common name	|
+10116	|	Buffalo rat	|		|	includes	|
+10116	|	Gunn rats	|		|	misnomer	|
+10116	|	Norway rat	|		|	genbank common name	|
+10116	|	Rattus PC12 clone IS	|		|	includes	|
+10116	|	Rattus norvegicus	|		|	scientific name	|
+10116	|	Rattus norvegicus8	|		|	misspelling	|
+10116	|	Rattus norwegicus	|		|	misspelling	|
+10116	|	Rattus rattiscus	|		|	misnomer	|
+10116	|	Rattus sp. strain Wistar	|		|	equivalent name	|
+10116	|	Sprague-Dawley rat	|		|	includes	|
+10116	|	Wistar rats	|		|	includes	|
+10116	|	brown rat	|		|	common name	|
+10116	|	laboratory rat	|		|	includes	|
+10116	|	rat	|	rat <Rattus norvegicus>	|	common name	|
+10116	|	rats	|	rats <Rattus norvegicus>	|	common name	|
+10116	|	zitter rats	|		|	includes	|
+10117	|	Rattus rattoides	|	Rattus rattoides <(Pictet & Pictet, 1844)>	|	synonym	|
+10117	|	Rattus rattoides (Pictet & Pictet, 1844)	|		|	authority	|
+10117	|	Rattus rattus	|		|	scientific name	|
+10117	|	Rattus rattus (Linnaeus, 1758)	|		|	authority	|
+10117	|	black rat	|		|	genbank common name	|
+10117	|	house rat	|		|	common name	|
+10117	|	roof rat	|		|	common name	|
+10118	|	Rattus sp.	|		|	scientific name	|
+10118	|	rats	|	rats <Rattus sp.>	|	common name	|
+10119	|	Rattus fuscipes	|		|	scientific name	|
+10119	|	bush rat	|		|	genbank common name	|
+10120	|	Australian dusky field rat	|		|	genbank common name	|
+10120	|	Rattus sordidus	|		|	scientific name	|
+10120	|	dusky field rat	|		|	common name	|
+10121	|	Rattus tunneyi	|		|	scientific name	|
+10121	|	Tunney's rat	|		|	genbank common name	|
+10121	|	pale field rat	|		|	common name	|
+10122	|	Rattus sordidus villosissimus	|		|	synonym	|
+10122	|	Rattus villosissimus	|		|	scientific name	|
+10122	|	long-haired rat	|		|	genbank common name	|
+10139	|	Caviidae	|		|	scientific name	|
+10139	|	cavies	|		|	genbank common name	|
+10140	|	Cavia	|		|	scientific name	|
+10140	|	guinea pigs	|		|	genbank common name	|
+10140	|	guinea-pigs	|		|	common name	|
+10141	|	Cavia aperea porcellus	|		|	synonym	|
+10141	|	Cavia cobaya	|		|	synonym	|
+10141	|	Cavia cobya	|		|	misnomer	|
+10141	|	Cavia porcellus	|		|	scientific name	|
+10141	|	domestic guinea pig	|		|	genbank common name	|
+10141	|	guinea pig	|		|	common name	|
+10239	|	Vira	|		|	synonym	|
+10239	|	Viridae	|		|	synonym	|
+10239	|	Viruses	|		|	scientific name	|
+10239	|	viruses	|	viruses<blast10239>	|	blast name	|
+11050	|	Flaviviridae	|		|	scientific name	|
+11050	|	Flavivirus (arbovirus group B)	|		|	synonym	|
+11102	|	Hepacivirus	|		|	scientific name	|
+11102	|	Hepatitis C virus group	|		|	synonym	|
+11102	|	Hepatitis C viruses	|		|	synonym	|
+11102	|	Hepatitis C-like viruses	|		|	synonym	|
+11103	|	HCV	|		|	acronym	|
+11103	|	Hepatitis C	|		|	misnomer	|
+11103	|	Hepatitis C virus	|		|	scientific name	|
+11103	|	hepatitis C virus HCV	|		|	synonym	|
+11103	|	human hepatitis C virus	|		|	synonym	|
+11103	|	human hepatitis C virus HCV	|		|	synonym	|
+11103	|	human hepatitis virus C HCV	|		|	synonym	|
+11103	|	human hepatitis virus HCV	|		|	misnomer	|
+11103	|	post-transfusion hepatitis non A non B virus	|		|	synonym	|
+11104	|	Hepatitis C virus (isolate 1)	|		|	scientific name	|
+11105	|	Hepatitis C virus (isolate BK)	|		|	scientific name	|
+11106	|	Hepatitis C virus (isolate EC10)	|		|	scientific name	|
+11107	|	Hepatitis C virus (isolate EC1)	|		|	scientific name	|
+11108	|	HCV-H	|		|	acronym	|
+11108	|	Hepatitis C virus (isolate H)	|		|	scientific name	|
+11108	|	Hepatitis C virus isolate H	|		|	synonym	|
+11109	|	Hepatitis C virus (isolate HCT27)	|		|	scientific name	|
+11110	|	Hepatitis C virus (isolate HCT18)	|		|	scientific name	|
+11111	|	Hepatitis C virus (isolate HC-J2)	|		|	scientific name	|
+11112	|	Hepatitis C virus (isolate HC-J5)	|		|	scientific name	|
+11113	|	Hepatitis C virus (isolate HC-J6)	|		|	synonym	|
+11113	|	Hepatitis C virus isolate HC-J6	|		|	scientific name	|
+11114	|	Hepatitis C virus (isolate HC-J7)	|		|	scientific name	|
+11115	|	Hepatitis C virus (isolate HC-J8)	|		|	synonym	|
+11115	|	Hepatitis C virus isolate HC-J8	|		|	scientific name	|
+11116	|	Hepatitis C virus (isolate Japanese)	|		|	scientific name	|
+11117	|	Hepatitis C virus (isolate TH)	|		|	scientific name	|
+27592	|	Bovinae	|		|	scientific name	|
+28584	|	Drosophila suzukii	|		|	scientific name	|
+29029	|	Drosophila eugracilis	|		|	scientific name	|
+29030	|	Drosophila takahashii	|		|	scientific name	|
+29726	|	Arabidopsis sp.	|		|	scientific name	|
+30013	|	Drosophila madeirensis	|		|	scientific name	|
+30013	|	Drosophila maderiensis	|		|	misspelling	|
+30014	|	Drosophila peninsularis	|		|	scientific name	|
+30016	|	Drosophila aracataca	|		|	scientific name	|
+30016	|	Drosophila aracatacas	|		|	synonym	|
+30017	|	Drosophila arawakana	|		|	scientific name	|
+30018	|	Drosophila bakoue	|		|	scientific name	|
+30019	|	Drosophila busckii	|		|	scientific name	|
+30020	|	Drosophila camargoi	|		|	scientific name	|
+30023	|	Drosophila elegans	|		|	scientific name	|
+30024	|	Drosophila emarginata	|		|	scientific name	|
+30025	|	Drosophila ficusphila	|		|	scientific name	|
+30026	|	Drosophila fima	|		|	scientific name	|
+30027	|	Drosophila fraburu	|		|	scientific name	|
+30028	|	Drosophila gaucha	|		|	scientific name	|
+30029	|	Drosophila gibberosa	|		|	scientific name	|
+30030	|	Drosophila guaramunu	|		|	synonym	|
+30030	|	Drosophila maculifrons	|		|	scientific name	|
+30031	|	Drosophila guarani	|		|	synonym	|
+30031	|	Drosophila ornatifrons	|		|	scientific name	|
+30032	|	Drosophila iri	|		|	scientific name	|
+30033	|	Drosophila kikkawai	|		|	scientific name	|
+30035	|	Drosophila malagassya	|		|	scientific name	|
+30036	|	Drosophila malerkotliana	|		|	scientific name	|
+30037	|	Drosophila mediopictoides	|		|	scientific name	|
+30038	|	Drosophila mimetica	|		|	scientific name	|
+30039	|	Drosophila neocordata	|		|	scientific name	|
+30040	|	Drosophila pallidipenis	|		|	misspelling	|
+30040	|	Drosophila pallidipennis	|		|	scientific name	|
+30040	|	Drosophila pallidipennis Dobzhansky & Pavan, 1943	|		|	synonym	|
+30041	|	Drosophila polychaeta	|		|	scientific name	|
+30041	|	Drosophila polychaeta Patterson and Wheeler, 1942	|		|	synonym	|
+30042	|	Drosophila prosaltans	|		|	scientific name	|
+30043	|	Drosophila repleta	|		|	scientific name	|
+30044	|	Drosophila rubida	|		|	scientific name	|
+30046	|	Drosophila sternopleuralis	|		|	scientific name	|
+30047	|	Drosophila sturtevanti	|		|	scientific name	|
+30048	|	Drosophila talamancana	|		|	scientific name	|
+30049	|	Drosophila vallismaia	|		|	scientific name	|
+30050	|	Drosophila varians	|		|	scientific name	|
+30314	|	Mesobatrachia	|		|	scientific name	|
+30319	|	Pipoidea	|		|	scientific name	|
+30480	|	Torpedinidae	|		|	scientific name	|
+30480	|	electric rays	|		|	genbank common name	|
+30727	|	Cyprinoidea	|		|	scientific name	|
+30727	|	Cyprinoidei	|		|	synonym	|
+31022	|	Tetraodontiformes	|		|	scientific name	|
+31028	|	Tetraodontoidei	|		|	scientific name	|
+31031	|	Tetraodontidae	|		|	scientific name	|
+31031	|	puffer fishes	|		|	common name	|
+31031	|	puffers	|		|	genbank common name	|
+31032	|	Fugu	|		|	synonym	|
+31032	|	Takifugu	|		|	scientific name	|
+31033	|	Fugu rubripes	|		|	genbank synonym	|
+31033	|	Sphaeroides rubripes	|		|	synonym	|
+31033	|	Takifugu rubripes	|		|	scientific name	|
+31033	|	Takifugu rubripes (Temminck & Schlegel, 1850)	|		|	synonym	|
+31033	|	Tetraodon rubripes	|		|	synonym	|
+31033	|	tiger puffer	|		|	common name	|
+31033	|	torafugu	|		|	genbank common name	|
+31285	|	Trypanosoma (Trypanozoon) brucei gambiense	|		|	synonym	|
+31285	|	Trypanosoma brucei gambiense	|		|	scientific name	|
+31285	|	Trypanosoma gambiense	|		|	synonym	|
+31286	|	Trypanosoma (Trypanozoon) brucei rhodesiense	|		|	synonym	|
+31286	|	Trypanosoma brucei rhodesiense	|		|	scientific name	|
+31287	|	Dictyostelium mucoroides	|		|	scientific name	|
+31642	|	Hepatitis C virus (isolate HC-JT)	|		|	scientific name	|
+31643	|	Hepatitis C virus (isolate HCV-476)	|		|	scientific name	|
+31644	|	Hepatitis C virus (isolate HCV-KF)	|		|	scientific name	|
+31645	|	Hepatitis C virus (isolate Taiwan)	|		|	scientific name	|
+31646	|	Hepatitis C virus subtype 1a	|		|	scientific name	|
+31646	|	Hepatitis C virus type 1a	|		|	synonym	|
+31647	|	Hepatitis C virus subtype 1b	|		|	scientific name	|
+31647	|	Hepatitis C virus type 1b	|		|	synonym	|
+31647	|	hepatitis C virus type 1b HCV-1b	|		|	synonym	|
+31648	|	Hepatitis C virus subtype 1c	|		|	scientific name	|
+31648	|	Hepatitis C virus type 1c	|		|	synonym	|
+31649	|	Hepatitis C virus subtype 2a	|		|	scientific name	|
+31649	|	Hepatitis C virus type 2a	|		|	synonym	|
+31650	|	Hepatitis C virus subtype 2b	|		|	scientific name	|
+31650	|	Hepatitis C virus type 2b	|		|	synonym	|
+31651	|	Hepatitis C virus subtype 2c	|		|	scientific name	|
+31651	|	Hepatitis C virus type 2c	|		|	synonym	|
+31653	|	Hepatitis C virus subtype 4a	|		|	scientific name	|
+31653	|	Hepatitis C virus type 4a	|		|	synonym	|
+31654	|	Hepatitis C virus subtype 5a	|		|	scientific name	|
+31654	|	Hepatitis C virus type 5a	|		|	synonym	|
+31655	|	Hepatitis C virus 6a	|		|	synonym	|
+31655	|	Hepatitis C virus subtype 6a	|		|	scientific name	|
+31655	|	Hepatitis C virus type 6a	|		|	synonym	|
+31969	|	"Paramycetes" Sabin 1941	|		|	authority	|
+31969	|	Mollicutes	|		|	scientific name	|
+31969	|	Mollicutes Edward and Freundt 1967	|		|	authority	|
+31969	|	Mycoplasmas and walled relatives	|		|	synonym	|
+31969	|	Paramycetes	|		|	synonym	|
+31969	|	mycoplasmas	|	mycoplasmas<blast31969>	|	blast name	|
+32280	|	(Dorsilopha)	|		|	synonym	|
+32280	|	Dorsilopha	|		|	scientific name	|
+32281	|	Drosophila	|	Drosophila <fruit fly, subgenus>	|	scientific name	|
+32283	|	annulimana group	|		|	scientific name	|
+32286	|	bromeliae group	|		|	scientific name	|
+32290	|	cardini group	|		|	scientific name	|
+32291	|	dunni subgroup	|		|	scientific name	|
+32294	|	dreyfusi group	|		|	scientific name	|
+32297	|	funebris group	|		|	scientific name	|
+32299	|	guarani group	|		|	scientific name	|
+32300	|	guaramunu subgroup	|		|	scientific name	|
+32301	|	guarani subgroup	|		|	scientific name	|
+32303	|	histrio group	|		|	scientific name	|
+32304	|	immigrans group	|		|	scientific name	|
+32305	|	hypocausta subgroup	|		|	scientific name	|
+32306	|	immigrans subgroup	|		|	scientific name	|
+32307	|	nasuta subgroup	|		|	scientific name	|
+32310	|	melanica group	|		|	scientific name	|
+32311	|	mesophragmatica group	|		|	scientific name	|
+32314	|	pallidipenis group	|		|	scientific name	|
+32317	|	pinicola group	|		|	scientific name	|
+32318	|	polychaeta group	|		|	scientific name	|
+32320	|	quinaria group	|		|	scientific name	|
+32321	|	repleta group	|		|	scientific name	|
+32323	|	mercatorum subgroup	|		|	scientific name	|
+32324	|	mulleri subgroup	|		|	scientific name	|
+32325	|	repleta subgroup	|		|	scientific name	|
+32326	|	robusta group	|		|	scientific name	|
+32331	|	testacea group	|		|	scientific name	|
+32332	|	tripunctata group	|		|	scientific name	|
+32335	|	virilis group	|		|	scientific name	|
+32341	|	Sophophora	|		|	scientific name	|
+32345	|	fima group	|		|	scientific name	|
+32346	|	melanogaster group	|		|	scientific name	|
+32347	|	ananassae subgroup	|		|	scientific name	|
+32348	|	elegans subgroup	|	elegans subgroup <Drosophila>	|	scientific name	|
+32349	|	eugracilis subgroup	|		|	scientific name	|
+32350	|	ficusphila subgroup	|		|	scientific name	|
+32350	|	fiscusphila subgroup	|		|	misspelling	|
+32351	|	melanogaster subgroup	|		|	scientific name	|
+32352	|	montium subgroup	|		|	scientific name	|
+32353	|	suzukii subgroup	|		|	scientific name	|
+32354	|	takahashii subgroup	|		|	scientific name	|
+32355	|	obscura group	|		|	scientific name	|
+32356	|	affinis subgroup	|		|	scientific name	|
+32357	|	obscura subgroup	|		|	scientific name	|
+32358	|	pseudoobscura subgroup	|		|	scientific name	|
+32360	|	saltans group	|		|	scientific name	|
+32361	|	cordata subgroup	|		|	scientific name	|
+32362	|	elliptica subgroup	|		|	scientific name	|
+32363	|	saltans subgroup	|		|	scientific name	|
+32364	|	sturtevanti subgroup	|		|	scientific name	|
+32365	|	willistoni group	|		|	scientific name	|
+32366	|	bocainensis subgroup	|		|	scientific name	|
+32367	|	willistoni subgroup	|		|	scientific name	|
+32369	|	(Antopocerus)	|		|	synonym	|
+32369	|	Antopocerus	|		|	synonym	|
+32369	|	Idiomyia	|	Idiomyia <antopocerus group>	|	in-part	|
+32369	|	antopocerus group	|		|	scientific name	|
+32370	|	villosa group	|		|	synonym	|
+32370	|	villosa subgroup	|		|	scientific name	|
+32371	|	apicalis complex	|		|	scientific name	|
+32371	|	apicalis subgroup	|		|	synonym	|
+32374	|	Idiomyia	|	Idiomyia <modified mouthparts group>	|	in-part	|
+32374	|	modified mouthparts group	|		|	scientific name	|
+32375	|	mimica subgroup	|		|	scientific name	|
+32377	|	adiastola subgroup	|		|	scientific name	|
+32378	|	grimshawi subgroup	|		|	scientific name	|
+32379	|	hawaiiensis subgroup	|		|	scientific name	|
+32380	|	engyochracea subgroup	|		|	synonym	|
+32380	|	orphnopeza subgroup	|		|	scientific name	|
+32381	|	planitibia subgroup	|		|	scientific name	|
+32382	|	Drosophila heteroneura	|		|	scientific name	|
+32382	|	Idiomyia heteroneura	|		|	synonym	|
+32443	|	Teleostei	|		|	scientific name	|
+32443	|	teleost fishes	|		|	genbank common name	|
+32447	|	Euteleostei	|		|	scientific name	|
+32455	|	Acanthopterygii	|		|	scientific name	|
+32485	|	Percomorpha	|		|	scientific name	|
+32517	|	Tetradontoidea	|		|	scientific name	|
+32519	|	Ostariophysi	|		|	scientific name	|
+32523	|	Tetrapoda	|		|	scientific name	|
+32523	|	tetrapods	|		|	genbank common name	|
+32524	|	Amniota	|		|	scientific name	|
+32524	|	amniotes	|		|	genbank common name	|
+32525	|	Theria	|		|	scientific name	|
+33083	|	Dictyostelia	|		|	synonym	|
+33083	|	Dictyosteliales	|		|	synonym	|
+33083	|	Dictyostelida	|		|	synonym	|
+33083	|	Dictyosteliida	|		|	scientific name	|
+33083	|	cellular slime molds	|		|	blast name	|
+33083	|	dictyostelid cellular slime molds	|		|	genbank common name	|
+33090	|	Chlorobionta	|		|	synonym	|
+33090	|	Chlorobionta Bremer 1985	|		|	synonym	|
+33090	|	Chlorophyta/Embryophyta group	|		|	synonym	|
+33090	|	Viridiplantae	|		|	scientific name	|
+33090	|	Viridiplantae Cavalier-Smith 1981	|		|	synonym	|
+33090	|	chlorophyte/embryophyte group	|		|	synonym	|
+33090	|	green plants	|		|	common name	|
+33090	|	green plants	|	green plants<blast33090>	|	blast name	|
+33154	|	Fungi/Metazoa group	|		|	scientific name	|
+33154	|	Opisthokonta	|		|	synonym	|
+33154	|	opisthokonts	|		|	synonym	|
+33208	|	Animalia	|		|	synonym	|
+33208	|	Metazoa	|		|	scientific name	|
+33208	|	animals	|		|	blast name	|
+33208	|	metazoans	|		|	genbank common name	|
+33208	|	multicellular animals	|		|	common name	|
+33213	|	Bilateria	|		|	scientific name	|
+33217	|	Pseudocoelomata	|		|	scientific name	|
+33316	|	Coelomata	|		|	scientific name	|
+33317	|	Protostomia	|		|	scientific name	|
+33340	|	Neoptera	|		|	scientific name	|
+33392	|	Endopterygota	|		|	scientific name	|
+33392	|	Holometabola	|		|	synonym	|
+33511	|	Deuterostomia	|		|	scientific name	|
+33550	|	Hystricognathi	|		|	scientific name	|
+33550	|	Hystricomorpha	|		|	synonym	|
+33553	|	Myomorpha	|		|	includes	|
+33553	|	Sciurognathi	|		|	scientific name	|
+33553	|	Sciuromorpha	|		|	includes	|
+33630	|	Alveolata	|		|	scientific name	|
+33630	|	alveolates	|		|	genbank common name	|
+33631	|	Plasmodium falciparum (isolate FCBR / Columbia)	|		|	synonym	|
+33631	|	Plasmodium falciparum FCBR/Columbia	|		|	scientific name	|
+33680	|	Myxogastria	|		|	scientific name	|
+33680	|	Myxomycetes	|		|	synonym	|
+33680	|	Myxomycota	|		|	synonym	|
+33680	|	plasmodial slime molds	|		|	genbank common name	|
+33680	|	plasmodial slime molds	|	plasmodial slime molds <blast33680>	|	blast name	|
+33682	|	Euglenozoa	|		|	scientific name	|
+33682	|	Euglenozoans	|		|	synonym	|
+33745	|	Hepatitis C virus 4	|		|	synonym	|
+33745	|	Hepatitis C virus genotype 4	|		|	scientific name	|
+33745	|	Hepatitis C virus type 4	|		|	synonym	|
+33746	|	Hepatitis C virus genotype 5	|		|	scientific name	|
+33746	|	Hepatitis C virus type 5	|		|	synonym	|
+34346	|	Schizosaccharomycetales	|		|	scientific name	|
+34677	|	Drosophila tsacasi	|		|	scientific name	|
+34854	|	Polynesian rat	|		|	genbank common name	|
+34854	|	Rattus exulans	|		|	scientific name	|
+35219	|	Dictyostelium minutum	|		|	scientific name	|
+35278	|	ssRNA positive-strand viruses, no DNA stage	|		|	scientific name	|
+35493	|	Streptophyta	|		|	scientific name	|
+35493	|	Streptophyta Bremer 1985	|		|	synonym	|
+35500	|	Pecora	|		|	scientific name	|
+35531	|	Mus bactrianus	|		|	synonym	|
+35531	|	Mus musculus bactrianus	|		|	scientific name	|
+35531	|	southwestern Asian house mouse	|		|	genbank common name	|
+35732	|	Rattus tanezumi	|		|	scientific name	|
+35732	|	Tanezumi rat	|		|	genbank common name	|
+36329	|	PLASMODIUM FALCIPARUM (ISOLATE 3D7).	|		|	misspelling	|
+36329	|	Plasmodium falciparum (isolate 3D7)	|		|	synonym	|
+36329	|	Plasmodium falciparum 3D7	|		|	scientific name	|
+36390	|	HCV-Hun	|		|	acronym	|
+36390	|	Hepatitis C virus (isolate Hunan)	|		|	scientific name	|
+36390	|	hepatitis C virus-Hunan HCV-Hun	|		|	synonym	|
+36483	|	Cricetidae gen. sp.	|		|	synonym	|
+36483	|	Cricetidae sp.	|		|	misspelling	|
+36483	|	Cricetinae gen. sp.	|		|	scientific name	|
+36483	|	Hamster sp.	|		|	synonym	|
+37762	|	Escherichia coli (strain B)	|		|	synonym	|
+37762	|	Escherichia coli B	|		|	scientific name	|
+37987	|	Pneumocystidales	|		|	scientific name	|
+38785	|	Arabidopsis arenosa	|		|	scientific name	|
+38785	|	Arabidopsis arenosa (L.) Lawalree	|		|	authority	|
+38785	|	Arabis arenosa	|		|	synonym	|
+38785	|	Arabis arenosa (L.) Scop.	|		|	authority	|
+38785	|	Cardaminopsis arenosa	|		|	synonym	|
+38785	|	Cardaminopsis arenosa (L.) Hayek.	|		|	authority	|
+38820	|	Cyperales	|		|	includes	|
+38820	|	Poales	|		|	scientific name	|
+38820	|	Typhales	|		|	includes	|
+38838	|	Drosophila testacea	|		|	scientific name	|
+38839	|	Drosophila neotestacea	|		|	scientific name	|
+38840	|	Drosophila putrida	|		|	scientific name	|
+39107	|	Murinae	|		|	scientific name	|
+39107	|	Otomyinae	|		|	includes	|
+39442	|	Mus musculus hortulanus	|		|	synonym	|
+39442	|	Mus musculus musculus	|		|	scientific name	|
+39442	|	eastern European house mouse	|		|	genbank common name	|
+39700	|	Trypanozoon	|		|	scientific name	|
+39946	|	Indian rice	|		|	common name	|
+39946	|	Oryza sativa (indica cultivar-group)	|		|	synonym	|
+39946	|	Oryza sativa (indica group)	|		|	synonym	|
+39946	|	Oryza sativa Aus Group	|		|	includes	|
+39946	|	Oryza sativa Indica Group	|		|	scientific name	|
+39946	|	Oryza sativa aus cultivar-group	|		|	synonym	|
+39946	|	Oryza sativa indica	|		|	misnomer	|
+39946	|	Oryza sativa subsp. indica	|		|	synonym	|
+39946	|	Oryza sativa subsp. indica Kato	|		|	synonym	|
+39946	|	Oryza sp. Poi-6	|		|	includes	|
+39947	|	Japanese rice	|		|	common name	|
+39947	|	Oryza sativa (japonica culticar-group)	|		|	misspelling	|
+39947	|	Oryza sativa (japonica cultivar-group)	|		|	synonym	|
+39947	|	Oryza sativa (javanica cultivar-group)	|		|	includes	|
+39947	|	Oryza sativa Aromatic Japonica Group	|		|	includes	|
+39947	|	Oryza sativa Japonica Group	|		|	scientific name	|
+39947	|	Oryza sativa Temperate Japonica Group	|		|	includes	|
+39947	|	Oryza sativa Tropical Japonica Group	|		|	includes	|
+39947	|	Oryza sativa aromatic cultivar-group	|		|	synonym	|
+39947	|	Oryza sativa japonica	|		|	misnomer	|
+39947	|	Oryza sativa subsp. japonica	|		|	synonym	|
+39947	|	Oryza sativa temperate japonica cultivar-group	|		|	synonym	|
+39947	|	Oryza sativa tropical japonica cultivar-group	|		|	synonym	|
+39947	|	Oryza sativa var. javanica	|		|	includes	|
+39947	|	Oryza sativa var. javanica Koern.	|		|	includes	|
+40271	|	Hepatitis C virus II	|		|	synonym	|
+40271	|	Hepatitis C virus genotype 2	|		|	scientific name	|
+40271	|	Hepatitis C virus type 2	|		|	synonym	|
+40271	|	human hepatitis C virus II HCV-II	|		|	synonym	|
+40360	|	Hepatitis C virus subtype 1d	|		|	scientific name	|
+40360	|	Hepatitis C virus type 1d	|		|	synonym	|
+40361	|	Hepatitis C virus subtype 2d	|		|	scientific name	|
+40361	|	Hepatitis C virus type 2d	|		|	synonym	|
+40364	|	hydei subgroup	|		|	scientific name	|
+40366	|	Drosophila americana	|		|	scientific name	|
+40367	|	Drosophila flavomontana	|		|	scientific name	|
+40368	|	Drosophila borealis	|		|	scientific name	|
+40369	|	Drosophila lacicola	|		|	scientific name	|
+40370	|	Drosophila montana	|		|	scientific name	|
+40371	|	Drosophila lummei	|		|	scientific name	|
+40372	|	Drosophila americana texana	|		|	scientific name	|
+40372	|	Drosophila texana	|		|	synonym	|
+40659	|	Torpedinoidei	|		|	scientific name	|
+40674	|	Mammalia	|		|	scientific name	|
+40674	|	mammals	|		|	genbank common name	|
+40674	|	mammals	|	mammals<blast40674>	|	blast name	|
+41375	|	Drosophila koepferae	|		|	scientific name	|
+41665	|	Neopterygii	|		|	scientific name	|
+41666	|	Batrachia	|		|	scientific name	|
+41856	|	Hepatitis C virus 1	|		|	synonym	|
+41856	|	Hepatitis C virus genotype 1	|		|	scientific name	|
+41856	|	Hepatitis C virus type 1	|		|	synonym	|
+41856	|	hepatitis C virus 1 HCV 1	|		|	synonym	|
+41870	|	Saccharomyces cerevisiae var. diastaticus	|		|	scientific name	|
+41870	|	Saccharomyces diastaticus	|		|	synonym	|
+42026	|	Drosophila bipectinata	|		|	scientific name	|
+42027	|	Drosophila kuntzei	|		|	scientific name	|
+42028	|	Drosophila limbata	|		|	scientific name	|
+42062	|	Drosophila nasuta	|		|	scientific name	|
+42063	|	Drosophila ercepeae	|		|	scientific name	|
+42069	|	Pneumocystis carinii f. sp. mustelae	|		|	scientific name	|
+42069	|	Pneumocystis carinii mustelae	|		|	misnomer	|
+42182	|	Hepatitis C virus genotype 6	|		|	scientific name	|
+42182	|	Hepatitis C virus type 6	|		|	synonym	|
+42791	|	Hepatitis C virus subtype 3b	|		|	scientific name	|
+42791	|	Hepatitis C virus type 3b	|		|	synonym	|
+42792	|	Hepatitis C virus subtype 3g	|		|	scientific name	|
+42792	|	Hepatitis C virus type 3g	|		|	synonym	|
+43679	|	Drosophila niveifrons	|		|	scientific name	|
+43733	|	Asilomorpha	|		|	synonym	|
+43733	|	Muscomorpha	|		|	scientific name	|
+43738	|	Schizophora	|		|	scientific name	|
+43741	|	Acalyptratae	|		|	scientific name	|
+43746	|	Ephydroidea	|		|	scientific name	|
+43845	|	Drosophilinae	|		|	scientific name	|
+44005	|	funebris subgroup	|		|	scientific name	|
+44019	|	Hepatitis C virus subtype 1e	|		|	scientific name	|
+44019	|	Hepatitis C virus type 1e	|		|	synonym	|
+44020	|	Hepatitis C virus subtype 1f	|		|	scientific name	|
+44020	|	Hepatitis C virus type 1f	|		|	synonym	|
+44021	|	Hepatitis C virus subtype 2f	|		|	scientific name	|
+44021	|	Hepatitis C virus type 2f	|		|	synonym	|
+44022	|	Hepatitis C virus 4c	|		|	synonym	|
+44022	|	Hepatitis C virus subtype 4c	|		|	scientific name	|
+44022	|	Hepatitis C virus type 4c	|		|	synonym	|
+44023	|	Hepatitis C virus subtype 4f	|		|	scientific name	|
+44023	|	Hepatitis C virus type 4f	|		|	synonym	|
+44281	|	Pneumocystidaceae	|		|	scientific name	|
+44481	|	Drosophila imaii	|		|	scientific name	|
+44688	|	Lactococcus lactis biovar diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis bv. diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis lactis biovar diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis lactis bv. diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis subsp. lactis biovar diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis subsp. lactis bv. diacetylactis	|		|	scientific name	|
+44688	|	Lactococcus lactis var. diacetylactis	|		|	synonym	|
+44688	|	Lactococcus lactis var. diacetylactis strain=UK12922	|		|	includes	|
+44689	|	Dictyostelium discoideum	|		|	scientific name	|
+45249	|	Arabidopsis suecica	|		|	scientific name	|
+45249	|	Arabidopsis suecica (Fries) Norrl.	|		|	synonym	|
+45249	|	Arabis suecica	|		|	synonym	|
+45249	|	Arabis suecica Fries.	|		|	synonym	|
+45249	|	Cardaminopsis suecica	|		|	synonym	|
+45249	|	Cardaminopsis suecica (Fries) Hiitonen	|		|	synonym	|
+45249	|	Hylandra suecica	|		|	synonym	|
+45249	|	Hylandra suecica A.Love	|		|	synonym	|
+45251	|	Arabidopsis neglecta	|		|	scientific name	|
+45251	|	Arabidopsis neglecta (Schult.) O'Kane & Al-Shehbaz	|		|	synonym	|
+45251	|	Arabis neglecta	|		|	synonym	|
+45251	|	Arabis neglecta Schult.	|		|	synonym	|
+45251	|	Cardaminopsis neglecta	|		|	synonym	|
+45251	|	Cardaminopsis neglecta (Schultes) Hayek	|		|	synonym	|
+46244	|	Drosophila bogotana	|		|	synonym	|
+46244	|	Drosophila pseudoobscura bogotana	|		|	scientific name	|
+46244	|	Drosophila pseudoobscura bogotana Ayala & Dobzhansky, 1974	|		|	authority	|
+46245	|	Drosophila pseudoobscura pseudoobscura	|		|	scientific name	|
+46435	|	Drosophila hawaiiensis	|		|	scientific name	|
+46456	|	Mus musculus wagneri	|		|	scientific name	|
+46456	|	Mus wagneri	|		|	synonym	|
+46790	|	Drosophila equinoxialis	|		|	scientific name	|
+46791	|	Drosophila sucinea	|		|	scientific name	|
+46792	|	Drosophila insularis	|		|	scientific name	|
+46793	|	Drosophila paulistorum	|		|	scientific name	|
+46794	|	Drosophila tropicalis	|		|	scientific name	|
+46794	|	Drosophila tropicalis Burla & da Cunha, 1949	|		|	synonym	|
+46795	|	Drosophila pavlovskiana	|		|	scientific name	|
+46796	|	Drosophila disjuncta	|		|	scientific name	|
+46796	|	Idiomyia disjuncta	|		|	synonym	|
+46797	|	Drosophila engyochracea	|		|	scientific name	|
+46797	|	Idiomyia engyochracea	|		|	synonym	|
+46799	|	Drosophila heedi	|		|	scientific name	|
+46799	|	Idiomyia heedi	|		|	synonym	|
+46800	|	Drosophila hemipeza	|		|	scientific name	|
+46800	|	Idiomyia hemipeza	|		|	synonym	|
+46802	|	Drosophila lineosetae	|		|	scientific name	|
+46802	|	Idiomyia lineosetae	|		|	synonym	|
+46804	|	Drosophila melanocephala	|		|	scientific name	|
+46804	|	Idiomyia melanocephala	|		|	synonym	|
+46807	|	Drosophila mulli	|		|	scientific name	|
+46807	|	Idiomyia mulli	|		|	synonym	|
+46808	|	Drosophila oahuensis	|		|	scientific name	|
+46808	|	Idiomyia oahuensis	|		|	synonym	|
+46809	|	Drosophila infuscata	|		|	scientific name	|
+46809	|	Idiomyia infuscata	|		|	synonym	|
+46811	|	Drosophila macrothrix	|		|	scientific name	|
+46811	|	Idiomyia macrothrix	|		|	synonym	|
+46813	|	Drosophila ornata	|		|	scientific name	|
+46813	|	Idiomyia ornata	|		|	synonym	|
+46814	|	Drosophila primaeva	|		|	scientific name	|
+46814	|	Idiomyia primaeva	|		|	synonym	|
+46815	|	punalua subgroup	|		|	scientific name	|
+46816	|	Drosophila punalua	|		|	scientific name	|
+46816	|	Idiomyia punalua	|		|	synonym	|
+46817	|	Drosophila setosimentum	|		|	scientific name	|
+46817	|	Idiomyia setosimentum	|		|	synonym	|
+46818	|	Drosophila substenoptera	|		|	scientific name	|
+46818	|	Idiomyia substenoptera	|		|	synonym	|
+46819	|	Drosophila obscuripes	|		|	scientific name	|
+46819	|	Idiomyia obscuripes	|		|	synonym	|
+46820	|	Drosophila nigribasis	|		|	scientific name	|
+46820	|	Idiomyia nigribasis	|		|	synonym	|
+46821	|	Drosophila pullipes	|		|	scientific name	|
+46821	|	Idiomyia pullipes	|		|	synonym	|
+46822	|	Drosophila crucigera	|		|	scientific name	|
+46822	|	Idiomyia crucigera	|		|	synonym	|
+46823	|	Drosophila fasciculisetae	|		|	scientific name	|
+46823	|	Idiomyia fasciculisetae	|		|	synonym	|
+46824	|	Drosophila pilimana	|		|	scientific name	|
+46824	|	Idiomyia pilimana	|		|	synonym	|
+46826	|	diamphidiopoda group	|		|	synonym	|
+46826	|	diamphidiopoda subgroup	|		|	scientific name	|
+46827	|	Drosophila tanythrix	|		|	scientific name	|
+46827	|	Idiomyia tanythrix	|		|	synonym	|
+46828	|	Drosophila yooni	|		|	scientific name	|
+46828	|	Idiomyia yooni	|		|	synonym	|
+46829	|	Drosophila birchii	|		|	scientific name	|
+46829	|	Drosophila birchii Dobzhansky & Mather, 1961	|		|	synonym	|
+46830	|	Drosophila setosifrons	|		|	scientific name	|
+46830	|	Idiomyia setosifrons	|		|	synonym	|
+46831	|	Drosophila truncipenna	|		|	scientific name	|
+46831	|	Idiomyia truncipenna	|		|	synonym	|
+46833	|	Drosophila spectabilis	|		|	scientific name	|
+46833	|	Idiomyia spectabilis	|		|	synonym	|
+46834	|	Drosophila quasianomalipes	|		|	scientific name	|
+46834	|	Idiomyia quasianomalipes	|		|	synonym	|
+46840	|	Drosophila capricorni	|		|	scientific name	|
+46874	|	Idiomyia	|	Idiomyia <modified tarsi group>	|	in-part	|
+46874	|	modified tarsi group	|		|	scientific name	|
+46874	|	modified tarsus group	|		|	synonym	|
+46875	|	Idiomyia	|	Idiomyia <spoon tarsi subgroup>	|	in-part	|
+46875	|	spoon tarsi group	|		|	synonym	|
+46875	|	spoon tarsi subgroup	|		|	scientific name	|
+46877	|	Drosophilini	|		|	scientific name	|
+46879	|	Drosophilina	|		|	scientific name	|
+46892	|	adunca group	|		|	synonym	|
+46892	|	adunca subgroup	|		|	scientific name	|
+46893	|	Drosophila adunca	|		|	scientific name	|
+46893	|	Idiomyia adunca	|		|	synonym	|
+46894	|	Drosophila bostrycha	|		|	scientific name	|
+46894	|	Idiomyia bostrycha	|		|	synonym	|
+46895	|	Drosophila cyrtoloma	|		|	scientific name	|
+46895	|	Idiomyia cyrtoloma	|		|	synonym	|
+46999	|	primaeva subgroup	|		|	scientific name	|
+47003	|	tripunctata subgroup I	|		|	scientific name	|
+47004	|	tripunctata subgroup II	|		|	scientific name	|
+47005	|	tripunctata subgroup III	|		|	scientific name	|
+47006	|	tripunctata subgroup IV	|		|	scientific name	|
+47010	|	Drosophila silvestris	|		|	scientific name	|
+47010	|	Idiomyia silvestris	|		|	synonym	|
+47048	|	Drosophila neopicta	|		|	scientific name	|
+47048	|	Idiomyia neopicta	|		|	synonym	|
+47313	|	Drosophila ezoana	|		|	scientific name	|
+47314	|	Drosophila novamexicana	|		|	scientific name	|
+47315	|	Drosophila auraria	|		|	scientific name	|
+47316	|	Drosophila littoralis	|		|	scientific name	|
+47663	|	Fugu rubripes rubripes	|		|	synonym	|
+47663	|	Takifugu rubripes rubripes	|		|	scientific name	|
+47665	|	Campbell's desert hamster	|		|	genbank common name	|
+47665	|	Campbell's hamster	|		|	common name	|
+47665	|	Djungarian hamster	|	Djungarian hamster <Phodopus campbelli>	|	common name	|
+47665	|	Phodopus campbelli	|		|	scientific name	|
+47665	|	Phodopus campbelli (Thomas, 1905)	|		|	authority	|
+48294	|	Idiomyia	|	Idiomyia <anomalipes group>	|	in-part	|
+48294	|	anomalipes group	|		|	scientific name	|
+48298	|	primaeva group	|		|	scientific name	|
+48299	|	adiastola group	|		|	scientific name	|
+48300	|	planitibia group	|		|	scientific name	|
+48301	|	grimshawi clade	|		|	scientific name	|
+48302	|	grimshawi group	|		|	scientific name	|
+48303	|	glabriapex group	|		|	scientific name	|
+48305	|	truncipenna subgroup	|		|	scientific name	|
+48306	|	Drosophila hamifera	|		|	scientific name	|
+48309	|	Drosophila cilifera	|		|	scientific name	|
+48317	|	cyrtoloma subgroup	|		|	scientific name	|
+48318	|	picticornis subgroup	|		|	scientific name	|
+48319	|	Drosophila ingens	|		|	scientific name	|
+48319	|	Idiomyia ingens	|		|	synonym	|
+48320	|	Drosophila neoperkinsi	|		|	scientific name	|
+48321	|	Drosophila hanaulae	|		|	scientific name	|
+48327	|	Drosophila ochracea	|		|	scientific name	|
+48347	|	glabriapex subgroup	|		|	scientific name	|
+48348	|	Drosophila glabriapex	|		|	scientific name	|
+48357	|	vesciseta subgroup	|		|	scientific name	|
+48358	|	conspicua subgroup	|		|	scientific name	|
+48374	|	Drosophila micromyia	|		|	scientific name	|
+48384	|	Idiomyia	|	Idiomyia <picture wing clade>	|	in-part	|
+48384	|	picture wing clade	|		|	scientific name	|
+48384	|	picture wing group	|		|	synonym	|
+50033	|	Drosophila kanekoi	|		|	scientific name	|
+50557	|	Insecta	|		|	scientific name	|
+50557	|	true insects	|		|	genbank common name	|
+51159	|	Drosophila lutescens	|		|	scientific name	|
+51165	|	nannoptera group	|		|	scientific name	|
+51166	|	Drosophila acanthoptera	|		|	scientific name	|
+54075	|	Drosophila eohydei	|		|	scientific name	|
+55879	|	Rhabditoidea	|		|	scientific name	|
+55885	|	Peloderinae	|		|	scientific name	|
+55945	|	Drosophila euronotus	|		|	scientific name	|
+55946	|	Drosophila recens	|		|	scientific name	|
+55947	|	lacertosa subgroup	|		|	scientific name	|
+55948	|	okadai subgroup	|		|	scientific name	|
+55949	|	robusta subgroup	|		|	scientific name	|
+55950	|	Drosophila sordidula	|		|	scientific name	|
+57265	|	Plasmodium falciparum (isolate 311)	|		|	synonym	|
+57265	|	Plasmodium falciparum 311	|		|	scientific name	|
+57266	|	Plasmodium falciparum (isolate 7G8)	|		|	synonym	|
+57266	|	Plasmodium falciparum 7G8	|		|	scientific name	|
+57267	|	Plasmodium falciparum (isolate DD2)	|		|	synonym	|
+57267	|	Plasmodium falciparum Dd2	|		|	scientific name	|
+57268	|	Plasmodium falciparum (isolate IMR143)	|		|	synonym	|
+57268	|	Plasmodium falciparum IMR143	|		|	scientific name	|
+57269	|	Plasmodium falciparum (isolate KF1916)	|		|	synonym	|
+57269	|	Plasmodium falciparum KF1916	|		|	scientific name	|
+57270	|	Plasmodium falciparum (isolate PALO ALTO / UGANDA)	|		|	synonym	|
+57270	|	Plasmodium falciparum (isolate Palo Alto)	|		|	synonym	|
+57270	|	Plasmodium falciparum Palo Alto/Uganda	|		|	scientific name	|
+57276	|	Plasmodium falciparum (isolate TAK 9)	|		|	synonym	|
+57276	|	Plasmodium falciparum TAK 9	|		|	scientific name	|
+57486	|	Japanese wild mouse	|		|	genbank common name	|
+57486	|	Mus molossinus	|		|	synonym	|
+57486	|	Mus musculus molosinus	|		|	misspelling	|
+57486	|	Mus musculus molossinus	|		|	scientific name	|
+57873	|	Drosophila hubeiensis	|		|	scientific name	|
+57874	|	Drosophila sinobscura	|		|	scientific name	|
+57910	|	Drosophila nigrospiracula	|		|	scientific name	|
+58023	|	Tracheophyta	|		|	scientific name	|
+58023	|	vascular plants	|		|	common name	|
+58023	|	vascular plants	|	vascular plants<blast58023>	|	blast name	|
+58024	|	Spermatophyta	|		|	scientific name	|
+58024	|	seed plants	|		|	common name	|
+58024	|	seed plants	|	seed plants<blast58024>	|	blast name	|
+58306	|	split tarsi subgroup	|		|	scientific name	|
+58306	|	split tarsus subgroup	|		|	synonym	|
+58307	|	bristle tarsi subgroup	|		|	scientific name	|
+58307	|	bristle tarsus subgroup	|		|	synonym	|
+58308	|	Drosophila dascnemia	|		|	misspelling	|
+58308	|	Drosophila dasycnemia	|		|	scientific name	|
+58308	|	Idiomyia dasycnemia	|		|	synonym	|
+58309	|	Drosophila petalopeza	|		|	scientific name	|
+58309	|	Idiomyia petalopeza	|		|	synonym	|
+58310	|	Drosophila soonae	|		|	scientific name	|
+58310	|	Idiomyia soonae	|		|	synonym	|
+58311	|	Drosophila iki	|		|	scientific name	|
+58311	|	Drosophila nigra var. iki	|		|	synonym	|
+58311	|	Idiomyia iki	|		|	synonym	|
+58312	|	unclassified Drosophila	|	unclassified Drosophila <genus>	|	scientific name	|
+59689	|	Arabidopsis lyrata	|		|	scientific name	|
+59689	|	Arabidopsis lyrata (L.) O'Kane & Al-Shehbaz	|		|	synonym	|
+59689	|	lyrate rockcress	|		|	common name	|
+59690	|	Arabidopsis lyrata subsp. kamchatica	|		|	scientific name	|
+59690	|	Arabidopsis lyrata subsp. kamchatica (Fisch. ex DC.) O'Kane & Al-Shehbaz	|		|	authority	|
+59690	|	Arabis kamchatica	|		|	synonym	|
+59690	|	Arabis kamchatica (Fisch. ex DC.) Ledeb.	|		|	authority	|
+59690	|	Arabis lyrata var. kamchatica	|		|	synonym	|
+59690	|	Arabis lyrata var. kamchatica Fisch. ex DC.	|		|	authority	|
+59690	|	Cardaminopsis kamchatica	|		|	synonym	|
+59690	|	Cardaminopsis kamchatica (Fisch. ex DC.) O.E.Schulz	|		|	authority	|
+59691	|	Arabidopsis lyrata subsp. petraea	|		|	scientific name	|
+59691	|	Arabidopsis lyrata subsp. petraea (L.) O'Kane & Al-Shehbaz	|		|	synonym	|
+59691	|	Arabidopsis petraea	|		|	synonym	|
+59691	|	Arabidopsis petraea (L.) V.I.Dorof.	|		|	synonym	|
+59691	|	Cardaminopsis petraea	|		|	synonym	|
+59691	|	Cardaminopsis petraea (L.) Hiitonen	|		|	synonym	|
+60556	|	Oryctolagus sp.	|		|	scientific name	|
+60715	|	Drosophila atripex	|		|	scientific name	|
+60716	|	Drosophila dossoui	|		|	scientific name	|
+60717	|	Drosophila punjabiensis	|		|	scientific name	|
+61426	|	Drosophila diplacantha	|		|	scientific name	|
+63221	|	Homo neanderthalensis	|		|	synonym	|
+63221	|	Homo sapiens neanderthalensis	|		|	scientific name	|
+63221	|	Neandertal	|		|	common name	|
+63221	|	Neandertal man	|		|	common name	|
+63221	|	Neanderthal	|		|	common name	|
+63221	|	Neanderthal man	|		|	common name	|
+63677	|	Arabidopsis halleri subsp. gemmifera	|		|	scientific name	|
+63677	|	Arabidopsis halleri subsp. gemmifera (Matsum.) O'Kane & Al-Shehbaz	|		|	synonym	|
+63677	|	Arabis gemmifera	|		|	synonym	|
+63677	|	Arabis gemmifera (Matsum.) Makino	|		|	synonym	|
+63677	|	Cardamine gemmifera	|		|	synonym	|
+63677	|	Cardamine gemmifera Matsum.	|		|	synonym	|
+63677	|	Cardaminopsis gemmifera	|		|	synonym	|
+63677	|	Cardaminopsis gemmifera (Matsum.) Berkut.	|		|	synonym	|
+63680	|	Arabidopsis kawasakiana	|		|	scientific name	|
+63680	|	Arabidopsis lyrata subsp. kawasakiana	|		|	synonym	|
+63680	|	Arabis kawasakiana	|		|	synonym	|
+63680	|	Arabis kawasakiana Makino	|		|	synonym	|
+63680	|	Arabis lyrata subsp. kawasakiana	|		|	synonym	|
+63746	|	Hepatitis C virus (isolate H77)	|		|	scientific name	|
+63746	|	Hepatitis C virus strain H77	|		|	synonym	|
+64960	|	Drosophila mercatorum maercatorum	|		|	synonym	|
+64960	|	Drosophila mercatorum mercatorum	|		|	scientific name	|
+65156	|	Drosophila davidi	|		|	scientific name	|
+65962	|	rhopaloa subgroup	|		|	scientific name	|
+65963	|	Drosophila fuyamai	|		|	scientific name	|
+65964	|	Drosophila pseudoananassae	|		|	scientific name	|
+65965	|	Drosophila pseudoananassae pseudoananassae	|		|	scientific name	|
+65966	|	Drosophila tsigana	|		|	scientific name	|
+65966	|	Drosophila tsigana Burla and Gloor, 1952	|		|	synonym	|
+66367	|	guttifera group	|		|	scientific name	|
+66368	|	Drosophila guttifera	|		|	scientific name	|
+67531	|	Drosophila lacteicornis	|		|	scientific name	|
+67532	|	Drosophila quadraria	|		|	scientific name	|
+67533	|	Drosophila rufa	|		|	scientific name	|
+67534	|	Drosophila triauraria	|		|	scientific name	|
+68896	|	Rattus sp. T-612	|		|	scientific name	|
+69074	|	Rattus flavipectus	|		|	scientific name	|
+69074	|	Rattus tanezumi flavipectus	|		|	synonym	|
+69075	|	Rattus losea	|		|	scientific name	|
+69075	|	lesser rice-field rat	|		|	genbank common name	|
+69076	|	Rattus rattus satarae	|		|	synonym	|
+69076	|	Rattus satarae	|		|	scientific name	|
+69077	|	Rattus sikkimensis	|		|	scientific name	|
+69077	|	Sikkim rat	|		|	genbank common name	|
+69217	|	Drosophila pallidosa	|		|	scientific name	|
+70150	|	Plasmodium falciparum (isolate NIG32/NIGERIA)	|		|	synonym	|
+70150	|	Plasmodium falciparum (isolate nig32 / nigeria)	|		|	synonym	|
+70150	|	Plasmodium falciparum Nig32/Nigeria	|		|	scientific name	|
+70151	|	Plasmodium falciparum (isolate THTN/Thailand)	|		|	synonym	|
+70151	|	Plasmodium falciparum (isolate thtn / thailand)	|		|	synonym	|
+70151	|	Plasmodium falciparum THTN/Thailand	|		|	scientific name	|
+70152	|	Plasmodium falciparum (isolate FID3/India)	|		|	synonym	|
+70152	|	Plasmodium falciparum (isolate fid3 / india)	|		|	synonym	|
+70152	|	Plasmodium falciparum Fid3/India	|		|	scientific name	|
+70154	|	Plasmodium falciparum (isolate MAD71/PAPUA NEW GUINEA)	|		|	synonym	|
+70154	|	Plasmodium falciparum (isolate mad71 / papua new guinea)	|		|	synonym	|
+70154	|	Plasmodium falciparum Mad71/Papua New Guinea	|		|	scientific name	|
+70831	|	Rattus evereti	|		|	misspelling	|
+70831	|	Rattus everetti	|		|	scientific name	|
+71240	|	Dicotyledoneae	|		|	in-part	|
+71240	|	Magnoliopsida	|		|	in-part	|
+71240	|	dicots	|		|	in-part	|
+71240	|	dicotyledons	|		|	in-part	|
+71240	|	eudicots	|	eudicots<blast71240>	|	blast name	|
+71240	|	eudicotyledons	|		|	scientific name	|
+71274	|	Asteridae	|		|	equivalent name	|
+71274	|	asterids	|		|	scientific name	|
+71275	|	Rosidae	|		|	in-part	|
+71275	|	rosids	|		|	scientific name	|
+71422	|	Rattus colletti	|		|	scientific name	|
+71422	|	dusky rat	|		|	genbank common name	|
+71813	|	Rattus sp. 71813	|		|	scientific name	|
+72469	|	Drosophila austrosaltans	|		|	scientific name	|
+72470	|	Drosophila lusaltans	|		|	scientific name	|
+72471	|	Drosophila milleri	|		|	scientific name	|
+72472	|	parasaltans subgroup	|		|	scientific name	|
+72474	|	Drosophila subsaltans	|		|	scientific name	|
+73155	|	Drosophila biauraria	|		|	scientific name	|
+73156	|	Drosophila lucipennis	|		|	scientific name	|
+73157	|	Drosophila nikananu	|		|	scientific name	|
+73917	|	Drosophila seguyi	|		|	scientific name	|
+74549	|	Drosophila bocqueti	|		|	scientific name	|
+74550	|	Drosophila lini	|		|	scientific name	|
+76912	|	Balsas teosinte	|		|	common name	|
+76912	|	Zea mays parviglumis	|		|	misspelling	|
+76912	|	Zea mays subsp. parviglumis	|		|	scientific name	|
+76912	|	Zea mays subsp. parviglumis Iltis & Doebley	|		|	authority	|
+76912	|	teosinte	|	teosinte <Z. mays subsp. parviglumis>	|	common name	|
+77128	|	Drosophila eskoi	|		|	scientific name	|
+77129	|	Drosophila helvetica	|		|	scientific name	|
+77130	|	Drosophila tsukubaensis	|		|	scientific name	|
+77772	|	Drosophila bifurca	|		|	scientific name	|
+77773	|	Drosophila nigrodumosa	|		|	scientific name	|
+77774	|	Drosophila limensis	|		|	scientific name	|
+78536	|	Euphyllophyta	|		|	scientific name	|
+79012	|	Dictyostelium firmibasis	|		|	scientific name	|
+80274	|	Mus musculus gentilulus	|		|	scientific name	|
+80761	|	Drosophila alpina	|		|	scientific name	|
+81970	|	Arabidopsis halleri	|		|	scientific name	|
+81970	|	Arabidopsis halleri (L.) O'Kane & Al-Shehbaz	|		|	synonym	|
+81971	|	Arabidopsis halleri subsp. halleri	|		|	scientific name	|
+81971	|	Arabis halleri	|		|	synonym	|
+81971	|	Cardaminopsis halleri	|		|	synonym	|
+81972	|	Arabidopsis lyrata subsp. lyrata	|		|	scientific name	|
+81972	|	Arabis lyrata	|		|	synonym	|
+81972	|	Arabis lyrata subsp. lyrata	|		|	synonym	|
+81972	|	Cardaminopsis lyrata	|		|	synonym	|
+83333	|	Escherichia coli K-12	|		|	scientific name	|
+83333	|	Escherichia coli K12	|		|	equivalent name	|
+83334	|	Escherichia coli 0157:H7	|		|	misspelling	|
+83334	|	Escherichia coli O157:H7	|		|	scientific name	|
+83752	|	Rattus argentiventer	|		|	scientific name	|
+83752	|	rice-field rat	|		|	genbank common name	|
+83753	|	Rattus baluensis	|		|	scientific name	|
+83753	|	summit rat	|		|	genbank common name	|
+83754	|	Rattus moluccarius	|		|	scientific name	|
+83754	|	Rattus rattus moluccarius	|		|	synonym	|
+83754	|	Rattus tanezumi moluccarius	|		|	synonym	|
+83755	|	Malayan field rat	|		|	genbank common name	|
+83755	|	Rattus tiomanicus	|		|	scientific name	|
+85512	|	Dicondylia	|		|	scientific name	|
+86029	|	Bacillus subtilis subsp. natto	|		|	scientific name	|
+86029	|	Bacillus subtilis var. natto	|		|	equivalent name	|
+88882	|	Drosophila kepulauana	|		|	scientific name	|
+88882	|	Drosophila nasuta kepulauana	|		|	synonym	|
+88883	|	Drosophila kohkoa	|		|	scientific name	|
+88884	|	Drosophila pallidifrons	|		|	scientific name	|
+88885	|	Drosophila pulaua	|		|	scientific name	|
+88886	|	Drosophila sulfurigaster	|		|	scientific name	|
+88887	|	Drosophila nasuta F	|		|	scientific name	|
+88888	|	Drosophila nasuta I	|		|	scientific name	|
+88889	|	Drosophila nasuta J	|		|	scientific name	|
+89593	|	Craniata	|	Craniata <chordata>	|	scientific name	|
+89809	|	Rattus fuscipes greyii	|		|	scientific name	|
+89887	|	Drosophila albostrigata	|		|	synonym	|
+89887	|	Drosophila sulfurigaster albostrigata	|		|	scientific name	|
+89888	|	Drosophila sulfurigaster bilimbata	|		|	scientific name	|
+89890	|	Drosophila sulfurigaster sulfurigaster	|		|	scientific name	|
+91061	|	'Bacilli'	|		|	synonym	|
+91061	|	Bacilli	|		|	scientific name	|
+91061	|	Bacillus/Lactobacillus/Streptococcus group	|		|	synonym	|
+91347	|	'Enterobacteriales'	|		|	synonym	|
+91347	|	Enterobacteriaceae and related endosymbionts	|		|	synonym	|
+91347	|	Enterobacteriaceae group	|		|	synonym	|
+91347	|	Enterobacteriales	|		|	scientific name	|
+91347	|	enterobacteria	|	enterobacteria<blast91347>	|	blast name	|
+91347	|	gamma-3 proteobacteria	|	gamma-3 proteobacteria <#5>	|	in-part	|
+91561	|	Cetartiodactyla	|		|	scientific name	|
+91561	|	even-toed ungulates	|		|	blast name	|
+91561	|	whales, hippos, ruminants, pigs, camels etc.	|		|	genbank common name	|
+91827	|	core eudicots	|		|	synonym	|
+91827	|	core eudicotyledons	|		|	scientific name	|
+91836	|	eurosids II	|		|	scientific name	|
+91888	|	Gentiananae	|		|	includes	|
+91888	|	euasterids I	|		|	synonym	|
+91888	|	lamiids	|		|	scientific name	|
+94109	|	Drosophila watanabei	|		|	scientific name	|
+94110	|	Drosophila trapezifrons	|		|	scientific name	|
+94111	|	Drosophila prostipennis	|		|	scientific name	|
+94112	|	Drosophila constricta	|		|	scientific name	|
+94114	|	Drosophila trilutea	|		|	scientific name	|
+95109	|	Drosophila americana americana	|		|	scientific name	|
+95450	|	Drosophila nigrohydei	|		|	scientific name	|
+95451	|	Drosophila borborema	|		|	scientific name	|
+95452	|	Drosophila hamatofila	|		|	scientific name	|
+95453	|	Drosophila martensis	|		|	scientific name	|
+95454	|	Drosophila richardsoni	|		|	scientific name	|
+95455	|	Drosophila serido	|		|	scientific name	|
+95456	|	Drosophila stalkeri	|		|	scientific name	|
+95457	|	Drosophila starmeri	|		|	scientific name	|
+95458	|	Drosophila venezolana	|		|	scientific name	|
+95531	|	Rattus fuscipes coracius	|		|	scientific name	|
+95532	|	Rattus fuscipes fuscipes	|		|	scientific name	|
+95533	|	Rattus leucopus cooktownensis	|		|	scientific name	|
+95534	|	Rattus tunneyi culmorum	|		|	scientific name	|
+95623	|	Drosophila palustris	|		|	scientific name	|
+95624	|	Drosophila quinaria	|		|	scientific name	|
+95625	|	Drosophila subpalustris	|		|	scientific name	|
+95725	|	Rattus fuscipes assimilis	|		|	scientific name	|
+95726	|	Rattus leucopus leucopus	|		|	scientific name	|
+95727	|	Rattus tunneyi tunneyi	|		|	scientific name	|
+95728	|	Rattus sp. 95728	|		|	scientific name	|
+96241	|	Bacillus subtilis subsp. spizizenii	|		|	scientific name	|
+96241	|	Bacillus subtilis subsp. spizizenii Nakamura et al. 1999	|		|	authority	|
+97979	|	Arabidopsis cebennensis	|		|	scientific name	|
+97979	|	Arabidopsis cebennensis (DC.) O'Kane & Al-Shehbaz	|		|	synonym	|
+97980	|	Arabidopsis croatica	|		|	scientific name	|
+97980	|	Arabidopsis croatica (Schott) O'Kane & Al-Shehbaz	|		|	synonym	|
+97980	|	Cardaminopsis croatica	|		|	genbank synonym	|
+97980	|	Cardaminopsis croatica Javorka	|		|	synonym	|
+97982	|	Arabidopsis halleri subsp. ovirensis	|		|	scientific name	|
+97982	|	Arabidopsis halleri subsp. ovirensis (Wulf.) O'Kane & Al-Shehbaz	|		|	synonym	|
+98362	|	Drosophila ruberrima	|		|	scientific name	|
+103765	|	Drosophila bocki	|		|	scientific name	|
+103775	|	Drosophila gunungcola	|		|	scientific name	|
+103844	|	Drosophila hexastigma	|		|	scientific name	|
+103845	|	Drosophila nannoptera	|		|	scientific name	|
+103846	|	Drosophila pachea	|		|	scientific name	|
+103847	|	Drosophila wassermani	|		|	scientific name	|
+106246	|	Drosophila brachynephros	|		|	scientific name	|
+107829	|	Drosophila moriwakii	|		|	scientific name	|
+109356	|	Drosophila leontia	|		|	scientific name	|
+109678	|	Phodopus roborovskii	|		|	scientific name	|
+109678	|	Phodopus roborowski	|		|	misspelling	|
+109678	|	desert hamster	|		|	genbank common name	|
+111875	|	Drosophila jambulina	|		|	scientific name	|
+112001	|	San Antonio Huista teosinte	|		|	common name	|
+112001	|	Zea mays subsp. huehuetenangensis	|		|	scientific name	|
+112001	|	Zea mays subsp. huehuetenangensis (Iltis & Doebley) Doebley	|		|	authority	|
+112001	|	teosinte	|	teosinte <Z. mays subsp. huehuetenangensis>	|	common name	|
+112146	|	Drosophila bicornuta	|		|	scientific name	|
+112250	|	Pneumocystis carinii f. sp. macaca	|		|	synonym	|
+112250	|	Pneumocystis carinii f. sp. macacae	|		|	scientific name	|
+112251	|	Pneumocystis carinii f. sp. suis	|		|	scientific name	|
+114631	|	Drosophila greeni	|		|	scientific name	|
+115075	|	Drosophila uniseta	|		|	scientific name	|
+116058	|	Mus musculus brevirostris	|		|	scientific name	|
+117570	|	Teleostomi	|		|	scientific name	|
+117571	|	Euteleostomi	|		|	scientific name	|
+117571	|	bony vertebrates	|		|	genbank common name	|
+117888	|	Torpediniformes	|		|	scientific name	|
+117893	|	Batoidea	|		|	scientific name	|
+117895	|	Pristiorajea	|		|	scientific name	|
+117896	|	Hypnosqualea	|		|	scientific name	|
+118040	|	Squalea	|		|	scientific name	|
+118965	|	Bacillus subtilis subsp. chungkookjang	|		|	scientific name	|
+118965	|	Bacillus subtilis var. chungkookjang	|		|	equivalent name	|
+119089	|	Adenophorea	|		|	synonym	|
+119089	|	Chromadorea	|		|	scientific name	|
+119203	|	Neoselachii	|		|	scientific name	|
+119223	|	Drosophila orientacea	|		|	scientific name	|
+119604	|	Drosophila lacertosa	|		|	scientific name	|
+119604	|	Drosophila lacertosa Okada, 1956	|		|	synonym	|
+123365	|	Neoteleostei	|		|	scientific name	|
+123366	|	Eurypterygii	|		|	scientific name	|
+123367	|	Ctenosquamata	|		|	scientific name	|
+123368	|	Acanthomorpha	|		|	scientific name	|
+123369	|	Euacanthomorpha	|		|	scientific name	|
+123370	|	Holacanthopterygii	|		|	scientific name	|
+125945	|	Drosophila biarmipes	|		|	scientific name	|
+126477	|	Drosophila fumipennis	|		|	scientific name	|
+126591	|	Drosophila curvispina	|		|	scientific name	|
+128819	|	Hepatitis C virus subtype 4d	|		|	scientific name	|
+128819	|	Hepatitis C virus type 4d	|		|	synonym	|
+128820	|	Hepatitis C virus subtype 4k	|		|	scientific name	|
+128820	|	Hepatitis C virus type 4k	|		|	synonym	|
+128821	|	Hepatitis C virus subtype 4h	|		|	scientific name	|
+128821	|	Hepatitis C virus type 4h	|		|	synonym	|
+129105	|	Drosophila santomea	|		|	scientific name	|
+129248	|	Drosophila mediodiffusa	|		|	scientific name	|
+129947	|	Euacanthopterygii	|		|	scientific name	|
+131221	|	Charophyta/Embryophyta group	|		|	synonym	|
+131221	|	Streptophytina	|		|	scientific name	|
+131221	|	charophyte/embryophyte group	|		|	synonym	|
+131567	|	biota	|		|	synonym	|
+131567	|	cellular organisms	|		|	scientific name	|
+132243	|	Drosophila vulcana	|		|	scientific name	|
+132243	|	Drosophila vulkana	|		|	misspelling	|
+132416	|	Plasmodium falciparum (isolate FCH-5)	|		|	synonym	|
+132416	|	Plasmodium falciparum FCH-5	|		|	scientific name	|
+133974	|	Drosophila caribiana	|		|	scientific name	|
+133975	|	Drosophila nigrodunni	|		|	scientific name	|
+133976	|	Drosophila similis	|		|	scientific name	|
+133977	|	cardini subgroup	|		|	scientific name	|
+133978	|	Drosophila acutilabella	|		|	scientific name	|
+133979	|	Drosophila dunni	|		|	scientific name	|
+133980	|	Drosophila dunni dunni	|		|	scientific name	|
+133981	|	Drosophila cardini	|		|	scientific name	|
+133982	|	Drosophila arawakana arawakana	|		|	scientific name	|
+133983	|	Drosophila dunni thomasensis	|		|	scientific name	|
+133984	|	Drosophila antillea	|		|	scientific name	|
+133990	|	Drosophila parthenogenetica	|		|	scientific name	|
+133990	|	Drosophila parthogenetica	|		|	synonym	|
+133991	|	Drosophila polymorpha	|		|	scientific name	|
+133992	|	Drosophila neocardini	|		|	scientific name	|
+133993	|	Drosophila belladunni	|		|	scientific name	|
+133994	|	Drosophila procardinoides	|		|	scientific name	|
+133995	|	calloptera group	|		|	scientific name	|
+133996	|	Drosophila ornatipenis	|		|	misspelling	|
+133996	|	Drosophila ornatipennis	|		|	scientific name	|
+133996	|	Drosophila ornatipennis Williston, 1896	|		|	synonym	|
+133997	|	Drosophila unipunctata	|		|	scientific name	|
+133998	|	Drosophila arawakana dominicensis	|		|	scientific name	|
+133999	|	Drosophila neomorpha	|		|	scientific name	|
+134000	|	Drosophila cardinoides	|		|	scientific name	|
+134001	|	Drosophila similis grenadensis	|		|	scientific name	|
+134002	|	Drosophila similis similis	|		|	scientific name	|
+135461	|	Bacillus subtilis subsp. subtilis	|		|	scientific name	|
+135461	|	Bacillus subtilis subsp. subtilis (Ehrenberg 1835) Cohn 1872	|		|	synonym	|
+137001	|	mitchelli subgroup	|		|	scientific name	|
+137002	|	Drosophila biseriata	|		|	scientific name	|
+137068	|	Drosophila subauraria	|		|	scientific name	|
+137069	|	Drosophila khaoyana	|		|	scientific name	|
+137070	|	Drosophila tani	|		|	scientific name	|
+137071	|	Plasmodium falciparum (isolate hb3)	|		|	synonym	|
+137071	|	Plasmodium falciparum HB3	|		|	scientific name	|
+137072	|	Drosophila kanapiae	|		|	scientific name	|
+137073	|	Drosophila cf. lini 'light form'	|		|	scientific name	|
+137073	|	Drosophila lini-like, light form	|		|	synonym	|
+137074	|	Drosophila mayri	|		|	scientific name	|
+137075	|	Drosophila nagarholensis	|		|	scientific name	|
+137076	|	Drosophila orosa	|		|	scientific name	|
+137077	|	Drosophila parvula	|		|	scientific name	|
+137078	|	Drosophila truncata	|		|	scientific name	|
+137079	|	Drosophila bocqueti-like, light form	|		|	synonym	|
+137079	|	Drosophila cf. bocqueti 'light form'	|		|	scientific name	|
+137079	|	Drosophila vouidibioi	|		|	synonym	|
+137353	|	Drosophila baimaii	|		|	scientific name	|
+137354	|	Drosophila barbarae	|		|	scientific name	|
+137355	|	Drosophila burlai	|		|	scientific name	|
+137356	|	Drosophila cauverii	|		|	scientific name	|
+137627	|	Myxogastromycetidae	|		|	scientific name	|
+139975	|	Drosophila canadiana	|		|	scientific name	|
+141215	|	canalinea group	|		|	scientific name	|
+141216	|	Drosophila canalinea	|		|	scientific name	|
+141217	|	Drosophila tripunctata	|		|	scientific name	|
+142051	|	Pneumocystis carinii f. sp. rattus-secundi	|		|	scientific name	|
+142052	|	Pneumocystis carinii f. sp. rattus-tertii	|		|	scientific name	|
+142053	|	Pneumocystis carinii f. sp. rattus-quarti	|		|	scientific name	|
+142796	|	Mycetozoa	|		|	scientific name	|
+142796	|	mycetozoans	|		|	synonym	|
+142829	|	Dictyostelium aureo-stipes	|		|	synonym	|
+142829	|	Dictyostelium aureostipes	|		|	scientific name	|
+142830	|	Dictyostelium dimigraformum	|		|	scientific name	|
+142831	|	Dictyostelium polycephalum	|		|	scientific name	|
+147367	|	Ehrhartoideae	|		|	scientific name	|
+147369	|	Panicoideae	|		|	scientific name	|
+147370	|	PACC clade	|		|	includes	|
+147370	|	PACCAD clade	|		|	scientific name	|
+147380	|	Oryzeae	|		|	scientific name	|
+147429	|	Andropogoneae	|		|	scientific name	|
+147537	|	Saccharomycotina	|		|	scientific name	|
+147553	|	Archiascomycota	|	Archiascomycota <2>	|	in-part	|
+147553	|	Pneumocystidomycetes	|		|	scientific name	|
+147554	|	Archiascomycota	|	Archiascomycota <3>	|	in-part	|
+147554	|	Schizosaccharomycetes	|		|	scientific name	|
+154130	|	Drosophila neonasuta	|		|	scientific name	|
+154130	|	Drosophila sulfurigaster neonasuta	|		|	synonym	|
+154831	|	Drosophila monieri	|		|	scientific name	|
+154832	|	Drosophila asahinai	|		|	scientific name	|
+154833	|	Drosophila chauvacae	|		|	scientific name	|
+155864	|	Escherichia coli 0157:H7 EDL933	|		|	misspelling	|
+155864	|	Escherichia coli O157:H7 EDL933	|		|	scientific name	|
+157052	|	quadrilineata subgroup	|		|	scientific name	|
+157053	|	Drosophila annulipes	|		|	scientific name	|
+157054	|	curviceps subgroup	|		|	scientific name	|
+157055	|	Drosophila curviceps	|		|	scientific name	|
+157056	|	Drosophila formosana	|		|	scientific name	|
+157057	|	Drosophila neohypocausta	|		|	scientific name	|
+157058	|	Drosophila oritisa	|		|	scientific name	|
+157059	|	Drosophila siamana	|		|	scientific name	|
+157293	|	Drosophila hypocausta	|		|	scientific name	|
+161732	|	Drosophila mediopunctata	|		|	scientific name	|
+167442	|	Dictyostelium sphaerocephalum	|		|	scientific name	|
+168807	|	Escherichia coli 0127:H6	|		|	misspelling	|
+168807	|	Escherichia coli O127:H6	|		|	scientific name	|
+168927	|	Escherichia coli 0111:H-	|		|	misspelling	|
+168927	|	Escherichia coli O111:H-	|		|	scientific name	|
+169138	|	Drosophila aldrichi	|		|	scientific name	|
+170944	|	buzzatii species complex	|		|	scientific name	|
+170945	|	martensis species complex	|		|	scientific name	|
+170946	|	mulleri species complex	|		|	scientific name	|
+170947	|	stalkeri species complex	|		|	scientific name	|
+170948	|	Drosophila canapalpa	|		|	scientific name	|
+170949	|	fasciola subgroup	|		|	scientific name	|
+170950	|	Drosophila ellisoni	|		|	scientific name	|
+170951	|	tumiditarsus group	|		|	scientific name	|
+170952	|	Drosophila repletoides	|		|	scientific name	|
+177298	|	Drosophila engyochracea x hawaiiensis	|		|	scientific name	|
+179238	|	Mus musculus homourus	|		|	scientific name	|
+183192	|	Escherichia coli O157:H-	|		|	scientific name	|
+185431	|	Trypanosoma brucei TREU927	|		|	scientific name	|
+185431	|	Trypanosoma brucei strain TREU927	|		|	synonym	|
+186282	|	bipectinata species complex	|		|	scientific name	|
+186283	|	Drosophila parabipectinata	|		|	scientific name	|
+186284	|	Drosophila paralutea	|		|	scientific name	|
+186285	|	Drosophiliti	|		|	scientific name	|
+186379	|	'Bacillus subtilis subsp. endophyticus'	|		|	synonym	|
+186379	|	Bacillus subtilis subsp. endophyticus	|		|	scientific name	|
+186623	|	Actinopteri	|		|	scientific name	|
+186624	|	Elopocephala	|		|	scientific name	|
+186625	|	Clupeocephala	|		|	scientific name	|
+186626	|	Otophysi	|		|	scientific name	|
+186627	|	Cypriniphysi	|		|	scientific name	|
+186634	|	Otocephala	|		|	scientific name	|
+186763	|	Plasmodium falciparum (isolate FcB1 / Columbia)	|		|	synonym	|
+186763	|	Plasmodium falciparum FcB1/Columbia	|		|	scientific name	|
+186817	|	Bacillaceae	|		|	scientific name	|
+186817	|	Bacillaceae Fischer 1895	|		|	authority	|
+186826	|	'Lactobacillales'	|		|	synonym	|
+186826	|	Lactobacillales	|		|	scientific name	|
+186839	|	Neognathi	|		|	scientific name	|
+187394	|	Drosophila pulchrella	|		|	scientific name	|
+188274	|	Siphlodora	|		|	scientific name	|
+188275	|	Drosophila flexa	|		|	scientific name	|
+188276	|	rubrifrons group	|		|	scientific name	|
+188277	|	Drosophila rubifrons	|		|	misspelling	|
+188277	|	Drosophila rubrifrons	|		|	scientific name	|
+188281	|	bizonata group	|		|	scientific name	|
+188282	|	Drosophila bizonata	|		|	scientific name	|
+188283	|	macroptera group	|		|	scientific name	|
+188284	|	Drosophila macroptera	|		|	scientific name	|
+189256	|	Drosophila calloptera	|		|	scientific name	|
+189257	|	Drosophila griseolineata	|		|	scientific name	|
+189258	|	Drosophila micromelanica	|		|	scientific name	|
+192847	|	Drosophila rajasekari	|		|	scientific name	|
+192847	|	Drosophila rajasekhari	|		|	synonym	|
+193234	|	Drosophila pseudotakahashii	|		|	scientific name	|
+193351	|	Drosophila transversa	|		|	scientific name	|
+193352	|	Drosophila unispina	|		|	scientific name	|
+195057	|	Drosophila malerkotliana malerkotliana	|		|	scientific name	|
+195712	|	Drosophila phaeopleura	|		|	scientific name	|
+197562	|	Pancrustacea	|		|	scientific name	|
+198036	|	Drosophila antonietae	|		|	scientific name	|
+198037	|	mojavensis species complex	|		|	scientific name	|
+198716	|	Drosophila deflecta	|		|	scientific name	|
+198718	|	Drosophila histrio	|		|	scientific name	|
+198719	|	Drosophila innubila	|		|	scientific name	|
+198720	|	Drosophila munda	|		|	scientific name	|
+198721	|	Drosophila nigromaculata	|		|	scientific name	|
+198722	|	Drosophila occidentalis	|		|	scientific name	|
+198723	|	Drosophila suboccidentalis	|		|	scientific name	|
+198724	|	transversa species complex	|		|	scientific name	|
+198725	|	Drosophila subquinaria	|		|	scientific name	|
+199310	|	Escherichia coli CFT073	|		|	scientific name	|
+199310	|	Escherichia coli str. CFT073	|		|	equivalent name	|
+199310	|	Escherichia coli strain CFT073	|		|	equivalent name	|
+201951	|	Drosophila arawakana kittensis	|		|	scientific name	|
+203404	|	"Lactobacillus hordniae" Latorre-Guzman et al. 1977	|		|	synonym	|
+203404	|	Lactobacillus hordniae	|		|	synonym	|
+203404	|	Lactococcus lactis subsp. hordniae	|		|	scientific name	|
+203404	|	Lactococcus lactis subsp. hordniae (ex Latorre-Guzman et al. 1977) Schleifer et al. 1986	|		|	synonym	|
+204045	|	Schizosaccharomyces kambucha	|		|	scientific name	|
+207598	|	Homininae	|		|	scientific name	|
+207598	|	Homo/Pan/Gorilla group	|		|	synonym	|
+207654	|	Drosophila guaru	|		|	scientific name	|
+207655	|	Drosophila levii	|		|	scientific name	|
+209067	|	Drosophila eremophila	|		|	scientific name	|
+209068	|	Drosophila leonis	|		|	scientific name	|
+209069	|	Drosophila spenceri	|		|	scientific name	|
+212811	|	Drosophila prolongata	|		|	scientific name	|
+212812	|	Drosophila liui	|		|	scientific name	|
+213644	|	Drosophila annulimana	|		|	scientific name	|
+213645	|	Drosophila bandeirantorum	|		|	scientific name	|
+213646	|	Drosophila mediopicta	|		|	scientific name	|
+213647	|	Drosophila mediosignata	|		|	scientific name	|
+213648	|	Drosophila zottii	|		|	scientific name	|
+214822	|	Drosophila parisiena	|		|	scientific name	|
+214823	|	Drosophila straubae	|		|	scientific name	|
+214832	|	mayaguana subcluster	|		|	scientific name	|
+215449	|	Neocoleoidea	|		|	scientific name	|
+215450	|	Decapodiformes	|		|	scientific name	|
+216592	|	Escherichia coli 042	|		|	scientific name	|
+216592	|	Escherichia coli str. 042	|		|	synonym	|
+217135	|	Dictyostelium exiguum	|		|	scientific name	|
+217136	|	Drosophila cuaso	|		|	scientific name	|
+217992	|	Escherichia coli O6	|		|	scientific name	|
+218677	|	Drosophila atrata	|		|	scientific name	|
+218678	|	Drosophila schildi	|		|	scientific name	|
+218678	|	Drosophila shildi	|		|	misspelling	|
+218679	|	Drosophila paraguayensis	|		|	scientific name	|
+218680	|	Drosophila metzii	|		|	scientific name	|
+218681	|	Drosophila medioimpressa	|		|	scientific name	|
+218682	|	Drosophila paramediostriata	|		|	scientific name	|
+218699	|	Drosophila angustibucca	|		|	scientific name	|
+218699	|	Drosophila angustibucca Duda, 1925	|		|	synonym	|
+218700	|	Drosophila aff. angustibucca JAF-324	|		|	equivalent name	|
+218700	|	Drosophila nappae	|		|	scientific name	|
+218700	|	Drosophila nappae Vilela, Valente and Basso-da-Silva, 2004	|		|	synonym	|
+224308	|	Bacillus subtilis subsp. subtilis 168	|		|	synonym	|
+224308	|	Bacillus subtilis subsp. subtilis str. 168	|		|	scientific name	|
+224308	|	Bacillus subtilis subsp. subtilis str. BGSC 1A700	|		|	synonym	|
+230741	|	Oryctolagus cuniculus algirus	|		|	scientific name	|
+233251	|	Drosophila madikerii	|		|	scientific name	|
+236985	|	Dictyostelium clavatum	|		|	scientific name	|
+239728	|	Malayan black rat	|		|	genbank common name	|
+239728	|	Rattus rattus diardii	|		|	scientific name	|
+242880	|	Drosophila guayllabambae	|		|	scientific name	|
+244254	|	Drosophila bunnanda	|		|	scientific name	|
+244254	|	Drosophila bunnanda Schiffer & McEvey, 2006	|		|	synonym	|
+244254	|	Drosophila cf. serrata MS-2004	|		|	equivalent name	|
+244314	|	Escherichia coli O157:H45	|		|	scientific name	|
+244315	|	Escherichia coli O55:H51	|		|	scientific name	|
+244316	|	Escherichia coli OUT:H45	|		|	scientific name	|
+244317	|	Escherichia coli O128:H2	|		|	scientific name	|
+244318	|	Escherichia coli OUT:HNM	|		|	scientific name	|
+244319	|	Escherichia coli O26:H11	|		|	scientific name	|
+244320	|	Escherichia coli O55:H7	|		|	scientific name	|
+244321	|	Escherichia coli O63:H6	|		|	scientific name	|
+244322	|	Escherichia coli O124:H40	|		|	scientific name	|
+244323	|	Escherichia coli O153:H21	|		|	scientific name	|
+244324	|	Escherichia coli OUT:H7	|		|	scientific name	|
+244325	|	Escherichia coli O153:H7	|		|	scientific name	|
+244326	|	Escherichia coli O103:HNM	|		|	scientific name	|
+246923	|	Drosophila cf. serrata MK-2003	|		|	scientific name	|
+251442	|	Idiomyia	|	Idiomyia <haleakalae group>	|	in-part	|
+251442	|	fungus feeder group	|		|	synonym	|
+251442	|	haleakalae group	|		|	scientific name	|
+251442	|	white tip group	|		|	synonym	|
+251444	|	anthrax subgroup	|		|	scientific name	|
+251447	|	Drosophila melanoloma	|		|	scientific name	|
+251448	|	cilifemorata subgroup	|		|	scientific name	|
+251450	|	Drosophila longipedis	|		|	synonym	|
+251450	|	Drosophila longiperda	|		|	scientific name	|
+251450	|	Drosophila sp. 'white tip scutellum'	|		|	synonym	|
+251452	|	scitula subgroup	|		|	scientific name	|
+251453	|	Drosophila fulgida	|		|	scientific name	|
+251456	|	haleakalae subgroup	|		|	scientific name	|
+251457	|	Drosophila ochropleura	|		|	scientific name	|
+251458	|	polita subgroup	|		|	scientific name	|
+251459	|	Drosophila canipolita	|		|	scientific name	|
+251460	|	Drosophila bipolita	|		|	scientific name	|
+251461	|	Drosophila scitula	|		|	scientific name	|
+251463	|	Drosophila dolichotarsis	|		|	scientific name	|
+251464	|	fungiperda subgroup	|		|	scientific name	|
+251465	|	Drosophila fungiperda	|		|	scientific name	|
+251466	|	Drosophila melanosoma	|		|	scientific name	|
+251467	|	Drosophila haleakalae	|		|	scientific name	|
+251468	|	Drosophila polita	|		|	scientific name	|
+251469	|	Drosophila multiciliata	|		|	scientific name	|
+252912	|	Drosophila quasiexpansa	|		|	scientific name	|
+252916	|	Drosophila nigella	|		|	scientific name	|
+252917	|	Drosophila paraanthrax	|		|	scientific name	|
+252918	|	Drosophila insignita	|		|	scientific name	|
+252922	|	Drosophila waddingtoni	|		|	scientific name	|
+261055	|	Drosophila huaylasi	|		|	scientific name	|
+261658	|	Dictyostelium fasciculatum	|		|	scientific name	|
+262014	|	Xenopus	|	Xenopus <subgenus>	|	scientific name	|
+271083	|	Drosophila paranaensis	|		|	scientific name	|
+271509	|	Drosophila seriema	|		|	scientific name	|
+271510	|	longicornis species complex	|		|	scientific name	|
+271511	|	Drosophila longicornis	|		|	scientific name	|
+271512	|	Drosophila huichole	|		|	scientific name	|
+271513	|	Drosophila huckinsi	|		|	scientific name	|
+271514	|	Drosophila nigricruria	|		|	scientific name	|
+271515	|	Drosophila propachuca	|		|	scientific name	|
+271516	|	Drosophila gouveai	|		|	scientific name	|
+272622	|	Lactobacillus cremoris SK11	|		|	synonym	|
+272622	|	Lactococcus lactis subsp. cremoris SK11	|		|	scientific name	|
+272622	|	Lactococcus lactis subsp. cremoris str. SK11	|		|	equivalent name	|
+272622	|	Lactococcus lactis subsp. cremoris strain SK11	|		|	equivalent name	|
+272623	|	Lactococcus lactis subsp. lactis Il1403	|		|	scientific name	|
+272623	|	Lactococcus lactis subsp. lactis str. Il1403	|		|	equivalent name	|
+272623	|	Lactococcus lactis subsp. lactis strain Il1403	|		|	equivalent name	|
+272634	|	Mycoplasma pneumoniae ATCC 29342	|		|	synonym	|
+272634	|	Mycoplasma pneumoniae M129	|		|	scientific name	|
+272634	|	Mycoplasma pneumoniae str. M129	|		|	equivalent name	|
+272634	|	Mycoplasma pneumoniae strain M129	|		|	equivalent name	|
+278131	|	Schizosaccharomyces versatilis	|		|	scientific name	|
+284812	|	Schizosaccharomyces pombe 972h-	|		|	scientific name	|
+285006	|	Saccharomyces cerevisiae RM11-1a	|		|	scientific name	|
+286192	|	Saccharum officinarum complex	|		|	scientific name	|
+286192	|	cultivated sugarcanes	|		|	common name	|
+288554	|	Xenopus laevis subsp. sudanensis	|		|	synonym	|
+288554	|	Xenopus laevis sudanensis	|		|	scientific name	|
+288554	|	Xenopus laevis sudanensis Perret, 1966	|		|	synonym	|
+296643	|	Drosophila pseudoananassae nigrens	|		|	scientific name	|
+296644	|	Drosophila malerkotliana pallens	|		|	scientific name	|
+300357	|	Drosophila merina	|		|	scientific name	|
+300358	|	ercepeae species complex	|		|	scientific name	|
+302447	|	Drosophila pachuca	|		|	scientific name	|
+302447	|	Drosophila pachuca Wasserman, 1962	|		|	synonym	|
+302448	|	Drosophila anceps	|		|	scientific name	|
+302448	|	Drosophila anceps Patterson and Mainland, 1944	|		|	synonym	|
+302551	|	Arabidopsis petrogena	|		|	scientific name	|
+302551	|	Arabidopsis petrogena (A.Kern.) V.I.Dorof.	|		|	synonym	|
+302551	|	Cardaminopsis petrogena	|		|	genbank synonym	|
+302551	|	Cardaminopsis petrogena (A.Kern.) Mesicek	|		|	synonym	|
+306026	|	Dictyostelium rosarium	|		|	scientific name	|
+306027	|	Drosophila brncici	|		|	scientific name	|
+306028	|	Drosophila gasici	|		|	scientific name	|
+306029	|	Drosophila mesophragmatica	|		|	scientific name	|
+306030	|	Drosophila viracochi	|		|	scientific name	|
+306031	|	Drosophila pavani	|		|	scientific name	|
+306032	|	flavopilosa group	|		|	scientific name	|
+306033	|	Drosophila cestri	|		|	scientific name	|
+306033	|	Drosophila cestri Brncic, 1978	|		|	synonym	|
+306034	|	nesiota subgroup	|		|	scientific name	|
+306035	|	Drosophila incompta	|		|	scientific name	|
+306035	|	Drosophila incompta Wheeler and Takada, in Wheeler et al., 1962	|		|	synonym	|
+306036	|	Drosophila subbadia	|		|	scientific name	|
+306904	|	Drosophila novemaristata	|		|	scientific name	|
+306904	|	Drosophila novemaristata Dobzhansky and Pavan, 1943	|		|	synonym	|
+307242	|	Drosophila ohnishii	|		|	scientific name	|
+307242	|	Drosophila ohnishii Zannat and Toda, 2002	|		|	synonym	|
+307244	|	Drosophila ogumai	|		|	scientific name	|
+307244	|	Drosophila ogumai Zannat and Toda, 2002	|		|	synonym	|
+307796	|	Saccharomyces cerevisiae YJM789	|		|	scientific name	|
+309917	|	Drosophila lachaisei	|		|	scientific name	|
+309918	|	Drosophila ochrogaster	|		|	scientific name	|
+309919	|	Drosophila cf. papuensis JLDL-2005	|		|	scientific name	|
+309921	|	Drosophila subelegans	|		|	scientific name	|
+309924	|	Drosophila trilimbata	|		|	scientific name	|
+309933	|	Drosophila adamsi	|		|	scientific name	|
+309934	|	Drosophila angularis	|		|	scientific name	|
+309935	|	Drosophila aracea	|		|	scientific name	|
+309936	|	Drosophila daruma	|		|	scientific name	|
+309937	|	Drosophila hydeoides	|		|	scientific name	|
+309938	|	Drosophila latifshahi	|		|	scientific name	|
+309939	|	Drosophila ustulata	|		|	scientific name	|
+310056	|	Drosophila albirostris	|		|	scientific name	|
+310057	|	Drosophila ararama	|		|	scientific name	|
+310058	|	flavohirta subgroup	|		|	scientific name	|
+310059	|	Drosophila flavohirta	|		|	scientific name	|
+311474	|	Drosophila longiserrata	|		|	scientific name	|
+311474	|	Drosophila longiserrata Toda, 1988	|		|	synonym	|
+311475	|	Drosophila yunnanensis	|		|	scientific name	|
+311475	|	Drosophila yunnanensis Watabe and Liang, in Watabe et al., 1990	|		|	synonym	|
+311476	|	Drosophila neokadai	|		|	scientific name	|
+311476	|	Drosophila neokadai Kaneko and Takada, 1966	|		|	synonym	|
+311477	|	Drosophila paramelanica	|		|	scientific name	|
+311478	|	Drosophila bai	|		|	scientific name	|
+311479	|	Drosophila gani	|		|	scientific name	|
+311479	|	Drosophila gani Liang and Zhang, in Watabe et al., 1990	|		|	synonym	|
+311480	|	Drosophila medioconstricta	|		|	scientific name	|
+311480	|	Drosophila medioconstricta Watabe, Zhang and Gan, in Watabe et al., 1990	|		|	synonym	|
+311481	|	Drosophila okadai	|		|	scientific name	|
+311482	|	Drosophila pseudosordidula	|		|	scientific name	|
+311483	|	Drosophila unimaculata	|		|	scientific name	|
+312270	|	Drosophila pruinosa	|		|	scientific name	|
+314145	|	Laurasiatheria	|		|	scientific name	|
+314146	|	Euarchontoglires	|		|	scientific name	|
+314147	|	Glires	|		|	scientific name	|
+314147	|	Rodents and rabbits	|		|	genbank common name	|
+314293	|	Anthropoidea	|		|	synonym	|
+314293	|	Simiiformes	|		|	scientific name	|
+314295	|	Hominoidea	|		|	scientific name	|
+314295	|	ape	|	ape <Hominoidea>	|	common name	|
+314295	|	apes	|		|	common name	|
+316385	|	Escherichia coli DH10B	|		|	equivalent name	|
+316385	|	Escherichia coli str. K-12 substr. DH10B	|		|	scientific name	|
+316385	|	Escherichia coli str. K12 substr. DH10B	|		|	equivalent name	|
+316385	|	Escherichia coli strain K12 substrain DH10B	|		|	equivalent name	|
+316397	|	Escherichia coli EAEC 042	|		|	scientific name	|
+316397	|	Escherichia coli str. EAEC 042	|		|	equivalent name	|
+316397	|	Escherichia coli strain EAEC 042	|		|	equivalent name	|
+316401	|	Escherichia coli ETEC H10407	|		|	scientific name	|
+316401	|	Escherichia coli ETEC str. H10407	|		|	equivalent name	|
+316401	|	Escherichia coli ETEC strain H10407	|		|	equivalent name	|
+316407	|	Escherichia coli W3110	|		|	synonym	|
+316407	|	Escherichia coli str. K-12 substr. W3110	|		|	scientific name	|
+316407	|	Escherichia coli str. K12 substr. W3110	|		|	equivalent name	|
+316407	|	Escherichia coli str. W3110	|		|	equivalent name	|
+316407	|	Escherichia coli strain W3110	|		|	equivalent name	|
+316435	|	Escherichia coli Nissle 1917	|		|	scientific name	|
+316435	|	Escherichia coli str. Nissle 1917	|		|	equivalent name	|
+316435	|	Escherichia coli strain Nissle 1917	|		|	equivalent name	|
+320758	|	Drosophila obscuroides	|		|	scientific name	|
+320762	|	Drosophila chayu	|		|	scientific name	|
+320764	|	Drosophila curveadeagus	|		|	scientific name	|
+329389	|	Hepatitis C virus (isolate Glasgow)	|		|	scientific name	|
+329621	|	Ciscaucasian hamster	|		|	genbank common name	|
+329621	|	Mesocricetus raddei	|		|	scientific name	|
+329622	|	Mesocricetus raddei nigriculus	|		|	scientific name	|
+329623	|	Mesocricetus raddei avaricus	|		|	scientific name	|
+329624	|	Mesocricetus newtoni	|		|	scientific name	|
+329624	|	Romanian hanster	|		|	genbank common name	|
+329625	|	Cricetulus lama	|		|	scientific name	|
+329625	|	Urocricetus lama	|		|	synonym	|
+329626	|	Tscherskia	|		|	scientific name	|
+329627	|	Cricetulus triton	|		|	synonym	|
+329627	|	Tscherskia triton	|		|	scientific name	|
+329627	|	greater long-tailed hamster	|		|	common name	|
+329629	|	Cricetulus barabensis	|		|	scientific name	|
+329629	|	Cricetulus barabensis griseus	|		|	synonym	|
+329629	|	Striped dwarf hamster	|		|	genbank common name	|
+329630	|	Cricetulus barabensis ferrugineus	|		|	scientific name	|
+329631	|	Cricetulus barabensis tuvinicus	|		|	scientific name	|
+329632	|	Cricetulus barabensis pseudogriseus	|		|	scientific name	|
+329632	|	Cricetulus pseudogriseus	|		|	synonym	|
+329633	|	Allocricetulus	|		|	scientific name	|
+329634	|	Allocricetulus eversmanni	|		|	scientific name	|
+329634	|	Eversmann's hamster	|		|	genbank common name	|
+329635	|	Cricetulus migratorius phaeus	|		|	scientific name	|
+329636	|	Cricetulus migratorius migratorius	|		|	scientific name	|
+329637	|	Cricetulus sokolovi	|		|	scientific name	|
+329637	|	Sokolov's dwarf hamster	|		|	genbank common name	|
+331111	|	Escherichia coli E24377A	|		|	scientific name	|
+331111	|	Escherichia coli str. E24377A	|		|	equivalent name	|
+331111	|	Escherichia coli strain E24377A	|		|	equivalent name	|
+331112	|	Escherichia coli HS	|		|	scientific name	|
+331112	|	Escherichia coli str. HS	|		|	equivalent name	|
+331112	|	Escherichia coli strain HS	|		|	equivalent name	|
+333284	|	Hepatitis C virus (isolate Con1)	|		|	scientific name	|
+334825	|	Zea mays subsp. mays x Zea mays subsp. parviglumis	|		|	scientific name	|
+337076	|	Drosophila nasutoides	|		|	scientific name	|
+337076	|	Drosophila nasutoides Okada, 1964	|		|	synonym	|
+337677	|	Cricetidae	|		|	scientific name	|
+337687	|	Muroidea	|		|	scientific name	|
+340184	|	Escherichia coli B7A	|		|	scientific name	|
+340184	|	Escherichia coli str. B7A	|		|	equivalent name	|
+340184	|	Escherichia coli strain B7A	|		|	equivalent name	|
+340185	|	Escherichia coli E22	|		|	scientific name	|
+340185	|	Escherichia coli str. E22	|		|	equivalent name	|
+340185	|	Escherichia coli strain E22	|		|	equivalent name	|
+340186	|	Escherichia coli E110019	|		|	scientific name	|
+340186	|	Escherichia coli str. E110019	|		|	equivalent name	|
+340186	|	Escherichia coli strain E110019	|		|	equivalent name	|
+340197	|	Escherichia coli F11	|		|	scientific name	|
+340197	|	Escherichia coli str. F11	|		|	equivalent name	|
+340197	|	Escherichia coli strain F11	|		|	equivalent name	|
+341037	|	Escherichia coli O63:HNM	|		|	scientific name	|
+344601	|	Escherichia coli B171	|		|	scientific name	|
+344601	|	Escherichia coli str. B171	|		|	equivalent name	|
+344601	|	Escherichia coli strain B171	|		|	equivalent name	|
+344610	|	Escherichia coli 53638	|		|	scientific name	|
+347883	|	Arabidopsis arenicola	|		|	scientific name	|
+347883	|	Arabis arenicola	|		|	synonym	|
+347883	|	Arabis arenicola (Richardson) Gelert	|		|	synonym	|
+347884	|	Arabidopsis arenicola var. arenicola	|		|	scientific name	|
+347884	|	Arabis arenicola var. arenicola	|		|	synonym	|
+347885	|	Arabis arenicola var. pubescens	|		|	scientific name	|
+347885	|	Arabis arenicola var. pubescens (S.Watson) Gelert	|		|	synonym	|
+348012	|	Drosophila mainlandi	|		|	scientific name	|
+348012	|	Drosophila mainlandi Patterson, 1943	|		|	synonym	|
+348016	|	meridiana species complex	|		|	scientific name	|
+348017	|	Drosophila meridiana	|		|	scientific name	|
+348017	|	Drosophila meridiana Patterrson & Wheeler, 1942	|		|	synonym	|
+348019	|	Drosophila neorepleta	|		|	scientific name	|
+348019	|	Drosophila neorepleta Patterson & Wheeler, 1942	|		|	synonym	|
+348020	|	ritae species complex	|		|	scientific name	|
+348021	|	Drosophila ritae	|		|	scientific name	|
+348021	|	Drosophila ritae Patterson & Wheeler, 1942	|		|	synonym	|
+348022	|	Drosophila sp. AMCC 102345	|		|	equivalent name	|
+348022	|	Drosophila sp. AMCC 102346	|		|	equivalent name	|
+348022	|	Drosophila sp. from Sonora	|		|	scientific name	|
+348027	|	Drosophila meridionalis	|		|	scientific name	|
+348027	|	Drosophila meridionalis Wasserman, 1962	|		|	synonym	|
+349711	|	Rattus praetor	|		|	scientific name	|
+349711	|	Rattus praetor (Thomas, 1888)	|		|	authority	|
+349711	|	large New Guinea spiny rat	|		|	genbank common name	|
+352472	|	Dictyostelium discoideum AX4	|		|	scientific name	|
+352472	|	Dictyostelium discoideum strain AX4	|		|	synonym	|
+356113	|	unclassified Hepatitis C virus	|		|	scientific name	|
+356114	|	Hepatitis C virus 3	|		|	synonym	|
+356114	|	Hepatitis C virus genotype 3	|		|	scientific name	|
+356114	|	Hepatitis C virus type 3	|		|	synonym	|
+356115	|	Hepatitis C virus subtype 3k	|		|	scientific name	|
+356116	|	Hepatitis C virus (isolate n196)	|		|	misnomer	|
+356116	|	Hepatitis C virus (isolate nl96)	|		|	scientific name	|
+356386	|	Hepatitis C virus (isolate India)	|		|	scientific name	|
+356387	|	Hepatitis C virus subtype 2i	|		|	scientific name	|
+356388	|	Hepatitis C virus (isolate D54)	|		|	scientific name	|
+356390	|	Hepatitis C virus (isolate SA13)	|		|	synonym	|
+356390	|	Hepatitis C virus SA13	|		|	scientific name	|
+356391	|	Hepatitis C virus (isolate 6a33)	|		|	scientific name	|
+356410	|	Hepatitis C virus (isolate HC-G9)	|		|	scientific name	|
+356411	|	Hepatitis C virus (isolate JFH-1)	|		|	synonym	|
+356411	|	Hepatitis C virus JFH-1	|		|	scientific name	|
+356412	|	Hepatitis C virus (isolate JPUT971017)	|		|	scientific name	|
+356413	|	Hepatitis C virus (isolate BEBE1)	|		|	scientific name	|
+356414	|	Hepatitis C virus (isolate VAT96)	|		|	scientific name	|
+356415	|	Hepatitis C virus (isolate NZL1)	|		|	scientific name	|
+356416	|	Hepatitis C virus (isolate HCV-K3a/650)	|		|	scientific name	|
+356417	|	Hepatitis C virus (isolate JK049)	|		|	scientific name	|
+356418	|	Hepatitis C virus (isolate ED43)	|		|	scientific name	|
+356419	|	Hepatitis C virus (isolate EUH1480)	|		|	scientific name	|
+356420	|	Hepatitis C virus (isolate EUHK2)	|		|	scientific name	|
+356421	|	Hepatitis C virus (isolate Th580)	|		|	scientific name	|
+356422	|	Hepatitis C virus (isolate VN235)	|		|	scientific name	|
+356423	|	Hepatitis C virus (isolate JK046)	|		|	scientific name	|
+356424	|	Hepatitis C virus (isolate VN004)	|		|	scientific name	|
+356425	|	Hepatitis C virus (isolate VN405)	|		|	scientific name	|
+356426	|	Hepatitis C virus subtype 3a	|		|	scientific name	|
+356426	|	Hepatitis C virus type 3a	|		|	synonym	|
+356426	|	hepatitis C virus type 3a HCV-3a	|		|	synonym	|
+356427	|	Hepatitis C virus subtype 6g	|		|	scientific name	|
+356465	|	Hepatitis C virus subtype 6b	|		|	scientific name	|
+356466	|	Hepatitis C virus subtype 2k	|		|	scientific name	|
+356467	|	Hepatitis C virus subtype 6h	|		|	scientific name	|
+356468	|	Hepatitis C virus subtype 6d	|		|	scientific name	|
+356469	|	Hepatitis C virus subtype 6k	|		|	scientific name	|
+357355	|	Hepatitis C virus (isolate Tr Kj)	|		|	scientific name	|
+357985	|	Hepatitis C virus (isolate VT204)	|		|	scientific name	|
+357986	|	Hepatitis C virus (isolate VT316)	|		|	scientific name	|
+357987	|	Hepatitis C virus (isolate VT886)	|		|	scientific name	|
+357988	|	Hepatitis C virus (isolate VT887)	|		|	scientific name	|
+357989	|	Hepatitis C virus (isolate VT897)	|		|	scientific name	|
+357990	|	Hepatitis C virus (isolate VT898)	|		|	scientific name	|
+357991	|	Hepatitis C virus (isolate VT681)	|		|	scientific name	|
+358709	|	Escherichia coli 101-1	|		|	scientific name	|
+358709	|	Escherichia coli str. 101-1	|		|	equivalent name	|
+358709	|	Escherichia coli strain 101-1	|		|	equivalent name	|
+359160	|	BEP clade	|		|	scientific name	|
+359927	|	Drosophila pectinifera	|		|	scientific name	|
+359927	|	Drosophila pectinifera Wheeler and Takada, 1964	|		|	synonym	|
+360674	|	Dictyostelium auroecephalum	|		|	scientific name	|
+361067	|	Dictyostelium aureum	|		|	scientific name	|
+361068	|	Dictyostelium australe	|		|	scientific name	|
+361069	|	Dictyostelium brefeldianum	|		|	scientific name	|
+361070	|	Dictyostelium brunneum	|		|	scientific name	|
+361071	|	Dictyostelium capitatum	|		|	scientific name	|
+361072	|	Dictyostelium citrinum	|		|	scientific name	|
+361073	|	Dictyostelium coeruleo-stipes	|		|	scientific name	|
+361074	|	Dictyostelium crassicaule	|		|	scientific name	|
+361075	|	Dictyostelium implicatum	|		|	scientific name	|
+361076	|	Dictyostelium intermedium	|		|	scientific name	|
+361077	|	Dictyostelium lacteum	|		|	scientific name	|
+361078	|	Dictyostelium laterosorum	|		|	scientific name	|
+361079	|	Dictyostelium lavandulum	|		|	scientific name	|
+361080	|	Dictyostelium longosporum	|		|	scientific name	|
+361081	|	Dictyostelium macrocephalum	|		|	scientific name	|
+361082	|	Dictyostelium medium	|		|	scientific name	|
+361083	|	Dictyostelium monochasioides	|		|	scientific name	|
+361084	|	Dictyostelium mucoroides var. stoloniferum	|		|	scientific name	|
+361085	|	Dictyostelium polycarpum	|		|	scientific name	|
+361086	|	Dictyostelium pseudobrefeldianum	|		|	scientific name	|
+361087	|	Dictyostelium vinaceo-fuscum	|		|	scientific name	|
+361088	|	Dictyostelium rhizopodium	|		|	scientific name	|
+361089	|	Dictyostelium robustum	|		|	scientific name	|
+361090	|	Dictyostelium septentrionalis	|		|	scientific name	|
+361091	|	Dictyostelium potamoides	|		|	scientific name	|
+361092	|	Dictyostelium multi-stipes	|		|	scientific name	|
+361093	|	Dictyostelium granulophorum	|		|	scientific name	|
+361094	|	Dictyostelium gloeosporum	|		|	scientific name	|
+361095	|	Dictyostelium tenue	|		|	scientific name	|
+361096	|	Dictyostelium caveatum	|		|	scientific name	|
+361097	|	Dictyostelium gracile	|		|	scientific name	|
+361098	|	Dictyostelium oculare	|		|	scientific name	|
+361114	|	Dictyostelium bifurcatum	|		|	scientific name	|
+361117	|	Dictyostelium medusoides	|		|	scientific name	|
+361118	|	Dictyostelium mexicanum	|		|	scientific name	|
+361120	|	Dictyostelium microsporum	|		|	scientific name	|
+361122	|	Dictyostelium parvisporum	|		|	scientific name	|
+361123	|	Dictyostelium deminutivum	|		|	scientific name	|
+361124	|	Dictyostelium delicatum	|		|	scientific name	|
+361127	|	Dictyostelium aureo-stipes var. helvetium	|		|	synonym	|
+361127	|	Dictyostelium aureostipes var. helvetium	|		|	scientific name	|
+361158	|	Dictyostelium sp. menorah	|		|	scientific name	|
+361159	|	Dictyostelium sp. antarticum	|		|	scientific name	|
+361162	|	Dictyostelium sp. stellarum	|		|	scientific name	|
+362663	|	Escherichia coli 536	|		|	scientific name	|
+362663	|	Escherichia coli str. 536	|		|	equivalent name	|
+362663	|	Escherichia coli strain 536	|		|	equivalent name	|
+364106	|	Escherichia coli UTI89	|		|	scientific name	|
+364106	|	Escherichia coli str. UTI89	|		|	equivalent name	|
+364106	|	Escherichia coli strain UTI89	|		|	equivalent name	|
+366501	|	Dictyostelium discoideum AX2	|		|	scientific name	|
+366836	|	Escherichia coli O119:UT	|		|	scientific name	|
+366837	|	Escherichia coli O55:H6	|		|	scientific name	|
+366838	|	Escherichia coli OUT:NM	|		|	scientific name	|
+366839	|	Escherichia coli O15:NM	|		|	scientific name	|
+373045	|	Escherichia coli O111:NM	|		|	scientific name	|
+376724	|	Escherichia coli O26:H-	|		|	scientific name	|
+376725	|	Escherichia coli O103:H2	|		|	scientific name	|
+376913	|	Haplorrhini	|		|	scientific name	|
+377586	|	Drosophila mojavensis mojavensis	|		|	scientific name	|
+377587	|	Drosophila mojavensis baja	|		|	scientific name	|
+378006	|	Arabidopsis arenosa x Arabidopsis thaliana	|		|	scientific name	|
+378506	|	Hepatitis C virus subtype 6n	|		|	scientific name	|
+378507	|	Hepatitis C virus subtype 6m	|		|	scientific name	|
+380737	|	Drosophila sechellia x Drosophila simulans	|		|	scientific name	|
+381124	|	Indian corn	|		|	common name	|
+381124	|	Zea mays subsp. amylacea	|		|	synonym	|
+381124	|	Zea mays subsp. amylacea (Sturtev.) Zhuk.	|		|	synonym	|
+381124	|	Zea mays subsp. ceratina	|		|	synonym	|
+381124	|	Zea mays subsp. ceratina (Kuelshov) Zhuk.	|		|	synonym	|
+381124	|	Zea mays subsp. everta	|		|	synonym	|
+381124	|	Zea mays subsp. everta (Sturtev.) Zhuk.	|		|	synonym	|
+381124	|	Zea mays subsp. indurata	|		|	synonym	|
+381124	|	Zea mays subsp. indurata (Sturtev.) Zhuk.	|		|	synonym	|
+381124	|	Zea mays subsp. mays	|		|	scientific name	|
+381124	|	Zea mays subsp. ramosa	|		|	synonym	|
+381124	|	Zea mays subsp. ramosa Gernert	|		|	synonym	|
+381124	|	Zea mays subsp. sacharata	|		|	synonym	|
+381124	|	Zea mays subsp. sacharata (Sturtev.) Zhuk.	|		|	synonym	|
+381124	|	Zea mays subsp. tunicata	|		|	synonym	|
+381124	|	Zea mays subsp. tunicata Sturtev.	|		|	synonym	|
+381124	|	Zea ramosa	|		|	synonym	|
+381124	|	corn	|		|	common name	|
+381124	|	maize	|		|	genbank common name	|
+381447	|	angor group	|		|	scientific name	|
+381448	|	Drosophila angor	|		|	scientific name	|
+381448	|	Drosophila angor Lin and Ting, 1971	|		|	synonym	|
+381449	|	Drosophila asper	|		|	scientific name	|
+381449	|	Drosophila asper Lin and Tseng, 1971	|		|	synonym	|
+381451	|	quadrisetata group	|		|	scientific name	|
+381452	|	Drosophila barutani	|		|	scientific name	|
+381452	|	Drosophila barutani Watabe and Liang, in Watabe et al., 1990	|		|	synonym	|
+381453	|	Drosophila beppui	|		|	scientific name	|
+381453	|	Drosophila beppui Toda and Peng, 1989	|		|	synonym	|
+381454	|	Drosophila bipatita	|		|	scientific name	|
+381455	|	Drosophila borusta	|		|	scientific name	|
+381457	|	Drosophila cf. cheda BCW-2006	|		|	scientific name	|
+381458	|	Drosophila clefta	|		|	scientific name	|
+381459	|	Drosophila cf. clefta BCW-2006	|		|	scientific name	|
+381460	|	Drosophila fluvialis	|		|	scientific name	|
+381460	|	Drosophila fluvialis Toda and Peng, 1989	|		|	synonym	|
+381462	|	Drosophila hei	|		|	scientific name	|
+381462	|	Drosophila hei Watabe and Peng, 1991	|		|	synonym	|
+381463	|	Drosophila hirtipes	|		|	scientific name	|
+381463	|	Drosophila hirtipes Lamb, 1914	|		|	synonym	|
+381466	|	Drosophila karakasa	|		|	scientific name	|
+381466	|	Drosophila karakasa Watabe and Liang, in Watabe et al., 1990	|		|	synonym	|
+381467	|	Drosophila multidentata	|		|	scientific name	|
+381467	|	Drosophila multidentata Watabe and Zhang, in Watabe et al., 1990	|		|	synonym	|
+381468	|	Drosophila perlucida	|		|	scientific name	|
+381468	|	Drosophila perlucida Zhang and Liang, 1995	|		|	synonym	|
+381469	|	Drosophila pilosa	|		|	scientific name	|
+381469	|	Drosophila pilosa Watabe and Peng, 1991	|		|	synonym	|
+381470	|	Drosophila potamophila	|		|	scientific name	|
+381470	|	Drosophila potamophila Toda and Peng, 1989	|		|	synonym	|
+381471	|	Drosophila quadrisetata	|		|	scientific name	|
+381471	|	Drosophila quadrisetata Takada, Beppu and Toda, 1979	|		|	synonym	|
+381472	|	Drosophila sp. IZU	|		|	scientific name	|
+381473	|	Drosophila sp. T	|		|	scientific name	|
+381474	|	Drosophila sp. ng188	|		|	scientific name	|
+381475	|	Drosophila velox	|		|	scientific name	|
+381475	|	Drosophila velox Watabe and Peng, 1991	|		|	synonym	|
+383693	|	Drosophila magnaquinaria	|		|	scientific name	|
+383693	|	Drosophila magnaquinaria Wheeler, 1954	|		|	synonym	|
+386585	|	Escherichia coli O157:H7 str. Sakai	|		|	scientific name	|
+386585	|	Escherichia coli O157:H7 strain Sakai	|		|	equivalent name	|
+387621	|	Drosophila quadrilineata	|		|	scientific name	|
+387621	|	Drosophila quadrilineata de Meijere, 1911	|		|	synonym	|
+387622	|	Drosophila maculinotata	|		|	scientific name	|
+387622	|	Drosophila maculinotata Okada, 1956	|		|	synonym	|
+395843	|	Arabidopsis arenosa subsp. arenosa	|		|	scientific name	|
+397447	|	Escherichia coli O127a:H6	|		|	scientific name	|
+397448	|	Escherichia coli O119:H6	|		|	scientific name	|
+397449	|	Escherichia coli OUT:H12	|		|	scientific name	|
+397450	|	Escherichia coli OUT:H6	|		|	scientific name	|
+397451	|	Escherichia coli O86a:H40	|		|	scientific name	|
+397452	|	Escherichia coli O86a:H34	|		|	scientific name	|
+397453	|	Escherichia coli O111:H2	|		|	scientific name	|
+397454	|	Escherichia coli O142:H6	|		|	scientific name	|
+402676	|	Schizosaccharomyces japonicus yFS275	|		|	scientific name	|
+404387	|	Escherichia coli O51:H-	|		|	scientific name	|
+404388	|	Escherichia coli O41:H-	|		|	scientific name	|
+404389	|	Escherichia coli O154:H9	|		|	scientific name	|
+404390	|	Escherichia coli NT:H19	|		|	scientific name	|
+404391	|	Escherichia coli NT:H40	|		|	scientific name	|
+404392	|	Escherichia coli O13:H11	|		|	scientific name	|
+404393	|	Escherichia coli O109:H9	|		|	scientific name	|
+404394	|	Escherichia coli O26:NM	|		|	scientific name	|
+404395	|	Escherichia coli O111:H19	|		|	scientific name	|
+404396	|	Escherichia coli O103:K+	|		|	scientific name	|
+404397	|	Escherichia coli O115:K+	|		|	scientific name	|
+404398	|	Escherichia coli O26:H11:K60	|		|	scientific name	|
+404399	|	Escherichia coli O26	|		|	scientific name	|
+404400	|	Escherichia coli O104:H12	|		|	scientific name	|
+405955	|	Escherichia coli APEC O1	|		|	scientific name	|
+405955	|	Escherichia coli str. APEC O1	|		|	equivalent name	|
+405955	|	Escherichia coli strain APEC O1	|		|	equivalent name	|
+409438	|	Escherichia coli SE11	|		|	scientific name	|
+409438	|	Escherichia coli str. SE11	|		|	equivalent name	|
+409438	|	Escherichia coli strain SE11	|		|	equivalent name	|
+410290	|	Escherichia coli O157:H7 GZ-021210/cattle	|		|	equivalent name	|
+410290	|	Escherichia coli O157:H7 str. GZ-021210/cattle	|		|	scientific name	|
+410290	|	Escherichia coli O157:H7 strain GZ-021210/cattle	|		|	equivalent name	|
+412662	|	Arabidopsis pedemontana	|		|	scientific name	|
+412662	|	Arabidopsis pedemontana (Boiss.) O'Kane & Al-Shehbaz	|		|	synonym	|
+413255	|	Hepatitis C virus subtype 6e	|		|	scientific name	|
+413256	|	Hepatitis C virus subtype 6l	|		|	scientific name	|
+413257	|	Hepatitis C virus subtype 6o	|		|	scientific name	|
+413997	|	Escherichia coli B (REL606 strain)	|		|	equivalent name	|
+413997	|	Escherichia coli B str. Bc251	|		|	synonym	|
+413997	|	Escherichia coli B str. REL606	|		|	scientific name	|
+413997	|	Escherichia coli B strain REL606	|		|	equivalent name	|
+413997	|	Escherichia coli str. B substr. REL606	|		|	equivalent name	|
+416870	|	Lactococcus lactis subsp. cremoris MG1363	|		|	scientific name	|
+416870	|	Lactococcus lactis subsp. cremoris str. MG1363	|		|	equivalent name	|
+416870	|	Lactococcus lactis subsp. cremoris strain MG1363	|		|	equivalent name	|
+418107	|	Laverania	|		|	synonym	|
+418107	|	Plasmodium (Laverania)	|		|	scientific name	|
+420174	|	Hepatitis C virus genotype 1b (strain HC-J4)	|		|	synonym	|
+420174	|	Hepatitis C virus isolate HC-J4	|		|	scientific name	|
+421877	|	Hepatitis C virus genotype 1b (isolate HC-J1)	|		|	synonym	|
+421877	|	Hepatitis C virus isolate HC-J1	|		|	scientific name	|
+421879	|	Hepatitis C virus genotype 1b (isolate HCR6)	|		|	synonym	|
+421879	|	Hepatitis C virus isolate HCR6	|		|	scientific name	|
+422676	|	Aconoidasida	|		|	scientific name	|
+424554	|	Nicotianoideae	|		|	scientific name	|
+424562	|	Nicotianeae	|		|	scientific name	|
+426741	|	Drosophila luguensis	|		|	scientific name	|
+426741	|	Drosophila luguensis Gao & Toda, 2003	|		|	synonym	|
+426742	|	Drosophila dianensis	|		|	scientific name	|
+426742	|	Drosophila dianensis Gao & Watabe, 2003	|		|	synonym	|
+426743	|	Drosophila limingi	|		|	scientific name	|
+426743	|	Drosophila limingi Gao & Watabe, 2003	|		|	synonym	|
+434061	|	macrospina subgroup	|		|	scientific name	|
+434062	|	Drosophila macrospina	|		|	scientific name	|
+434062	|	Drosophila macrospina Stalker & Spencer, 1939	|		|	synonym	|
+434063	|	Drosophila macrospina limpiensis	|		|	scientific name	|
+434063	|	Drosophila macrospina limpiensis Mainland, 1941	|		|	synonym	|
+435406	|	Hoffmann's Sulawesi rat	|		|	genbank common name	|
+435406	|	Rattus hoffmanni	|		|	scientific name	|
+435433	|	unclassified Rattus	|		|	scientific name	|
+435434	|	Rattus sp. ABTC	|		|	scientific name	|
+435435	|	Rattus sp. ABTC 42503	|		|	scientific name	|
+435436	|	Rattus sp. ABTC 42808	|		|	scientific name	|
+435437	|	Rattus sp. ABTC 43216	|		|	scientific name	|
+435438	|	Rattus sp. ABTC 43510	|		|	scientific name	|
+435439	|	Rattus sp. ABTC 43874	|		|	scientific name	|
+435440	|	Rattus sp. ABTC 43906	|		|	scientific name	|
+435441	|	Rattus sp. ABTC 44036	|		|	scientific name	|
+435442	|	Rattus sp. ABTC 44037	|		|	scientific name	|
+435443	|	Rattus sp. ABTC 44058	|		|	scientific name	|
+435444	|	Rattus sp. ABTC 44065	|		|	scientific name	|
+435445	|	Rattus sp. ABTC 44179	|		|	scientific name	|
+435446	|	Rattus sp. ABTC 44796	|		|	scientific name	|
+435447	|	Rattus sp. ABTC 44797	|		|	scientific name	|
+435448	|	Rattus sp. ABTC 44857	|		|	scientific name	|
+435449	|	Rattus sp. ABTC 44858	|		|	scientific name	|
+435450	|	Rattus sp. ABTC 45161	|		|	scientific name	|
+435451	|	Rattus sp. ABTC 45409	|		|	scientific name	|
+435452	|	Rattus sp. ABTC 45756	|		|	scientific name	|
+435453	|	Rattus sp. ABTC 45966	|		|	scientific name	|
+435454	|	Rattus sp. ABTC 47145	|		|	scientific name	|
+435455	|	Rattus sp. ABTC 47224	|		|	scientific name	|
+435456	|	Rattus sp. ABTC 47232	|		|	scientific name	|
+435457	|	Rattus sp. ABTC 47271	|		|	scientific name	|
+435458	|	Rattus sp. ABTC 47273	|		|	scientific name	|
+435459	|	Rattus sp. ABTC 47307	|		|	scientific name	|
+435460	|	Rattus sp. ABTC 47343	|		|	scientific name	|
+435461	|	Rattus sp. ABTC 47988	|		|	scientific name	|
+435462	|	Rattus sp. ABTC 47992	|		|	scientific name	|
+435463	|	Rattus sp. ABTC 47994	|		|	scientific name	|
+435464	|	Rattus sp. ABTC 47995	|		|	scientific name	|
+435465	|	Rattus sp. ABTC 47996	|		|	scientific name	|
+435466	|	Rattus sp. ABTC 47997	|		|	scientific name	|
+435467	|	Rattus sp. ABTC 47998	|		|	scientific name	|
+435468	|	Rattus sp. ABTC 47999	|		|	scientific name	|
+435469	|	Rattus sp. ABTC 48000	|		|	scientific name	|
+435470	|	Rattus sp. ABTC 48004	|		|	scientific name	|
+435471	|	Rattus sp. ABTC 48005	|		|	scientific name	|
+435472	|	Rattus sp. ABTC 48962	|		|	scientific name	|
+435473	|	Rattus sp. ABTC 48963	|		|	scientific name	|
+435474	|	Rattus sp. ABTC 49035	|		|	scientific name	|
+435475	|	Rattus sp. ABTC 49242	|		|	scientific name	|
+435476	|	Rattus sp. ABTC 49292	|		|	scientific name	|
+435477	|	Rattus sp. ABTC 49306	|		|	scientific name	|
+435478	|	Rattus sp. ABTC 64906	|		|	scientific name	|
+435479	|	Rattus sp. ABTC 64907	|		|	scientific name	|
+435480	|	Rattus sp. ABTC 64908	|		|	scientific name	|
+435481	|	Rattus sp. ABTC 64909	|		|	scientific name	|
+435482	|	Rattus sp. ABTC 64910	|		|	scientific name	|
+435483	|	Rattus sp. ABTC 8529	|		|	scientific name	|
+435484	|	Rattus sp. ABTC 8536	|		|	scientific name	|
+435485	|	Rattus sp. ABTC 8540	|		|	scientific name	|
+436673	|	Drosophila sp. X NET-2007	|		|	scientific name	|
+438880	|	Hepatitis C virus subtype 6c	|		|	scientific name	|
+438881	|	Hepatitis C virus subtype 6p	|		|	scientific name	|
+439184	|	Escherichia coli RS218	|		|	scientific name	|
+439184	|	Escherichia coli str. RS218	|		|	equivalent name	|
+439184	|	Escherichia coli strain RS218	|		|	equivalent name	|
+439488	|	ssRNA viruses	|		|	scientific name	|
+439855	|	Escherichia coli SECEC SMS-3-5	|		|	misspelling	|
+439855	|	Escherichia coli SMS-3-5	|		|	scientific name	|
+439855	|	Escherichia coli str. SMS-3-5	|		|	equivalent name	|
+439855	|	Escherichia coli strain SMS-3-5	|		|	equivalent name	|
+443911	|	Papua New Guinea rat	|		|	genbank common name	|
+443911	|	Rattus novaeguineae	|		|	scientific name	|
+443947	|	Xenopus laevis laevis	|		|	scientific name	|
+443947	|	Xenopus laevis laevis (Daudin, 1802)	|		|	synonym	|
+444447	|	Escherichia coli O157:H7 str. EC4206	|		|	scientific name	|
+444448	|	Escherichia coli O157:H7 str. EC4045	|		|	scientific name	|
+444449	|	Escherichia coli O157:H7 str. EC4042	|		|	scientific name	|
+444450	|	Escherichia coli O157:H7 str. EC4115	|		|	scientific name	|
+444451	|	Escherichia coli O157:H7 str. EC4196	|		|	scientific name	|
+444452	|	Escherichia coli O157:H7 str. EC4113	|		|	scientific name	|
+444453	|	Escherichia coli O157:H7 str. EC4076	|		|	scientific name	|
+444454	|	Escherichia coli O157:H7 str. EC4024	|		|	scientific name	|
+446045	|	Drosophila serrata species complex	|		|	scientific name	|
+448958	|	Bacillus subtilis subsp. lactipan	|		|	scientific name	|
+448958	|	Bacillus subtilis var. lactipan	|		|	equivalent name	|
+451864	|	Dikarya	|		|	scientific name	|
+451866	|	Taphrinomycotina	|		|	scientific name	|
+459613	|	Drosophila cf. polychaeta SM-2007	|		|	scientific name	|
+459650	|	'Bacillus subtilis subsp. sadata'	|		|	synonym	|
+459650	|	Bacillus subtilis subsp. sadata	|		|	scientific name	|
+463103	|	Drosophila bifilum	|		|	scientific name	|
+463103	|	Drosophila bifilum Frota-Pessoa, 1954	|		|	synonym	|
+463104	|	Drosophila frotapessoai	|		|	scientific name	|
+463104	|	Drosophila frotapessoai Vilela & Baechli, 1990	|		|	synonym	|
+463105	|	Drosophila guaraja	|		|	scientific name	|
+463105	|	Drosophila guaraja King, 1947	|		|	synonym	|
+463106	|	Drosophila neoguaramunu	|		|	scientific name	|
+463106	|	Drosophila neoguaramunu Frydenberg, 1956	|		|	synonym	|
+463107	|	Drosophila nigricincta	|		|	scientific name	|
+463107	|	Drosophila nigricincta Frota-Pessoa, 1954	|		|	synonym	|
+463108	|	Drosophila roehrae	|		|	scientific name	|
+463108	|	Drosophila roehrae Pipkin & Heed, 1964	|		|	synonym	|
+463109	|	Drosophila sp. JAG162	|		|	scientific name	|
+463110	|	sticta group	|		|	scientific name	|
+463111	|	Drosophila sticta	|		|	scientific name	|
+463111	|	Drosophila sticta Wheeler, 1957	|		|	synonym	|
+463112	|	Drosophila trifilum	|		|	scientific name	|
+463112	|	Drosophila trifilum Frota-Pessoa, 1954	|		|	synonym	|
+463113	|	Drosophila setula	|		|	scientific name	|
+463113	|	Drosophila setula Heed & Wheeler, 1957	|		|	synonym	|
+463114	|	Drosophila trapeza	|		|	scientific name	|
+463114	|	Drosophila trapeza Heed & Wheeler, 1957	|		|	synonym	|
+467337	|	Hepatitis C virus subtype 6i	|		|	scientific name	|
+467338	|	Hepatitis C virus subtype 6j	|		|	scientific name	|
+467339	|	Hepatitis C virus subtype 6q	|		|	scientific name	|
+467354	|	Hepatitis C virus subtype 6f	|		|	scientific name	|
+469008	|	Escherichia coli BL21(DE3)	|		|	scientific name	|
+469008	|	Escherichia coli str. BL21(DE3)	|		|	equivalent name	|
+469008	|	Escherichia coli strain BL21(DE3)	|		|	equivalent name	|
+472760	|	Australian swamp rat	|		|	genbank common name	|
+472760	|	Rattus lutreolus	|		|	scientific name	|
+472761	|	Eastern New Guinea rat	|		|	genbank common name	|
+472761	|	Rattus mordax	|		|	scientific name	|
+472762	|	Eastern New Guinea mountain rat	|		|	genbank common name	|
+472762	|	Rattus niobe	|		|	scientific name	|
+472763	|	Rattus steini	|		|	scientific name	|
+472763	|	Stein's New Guinea rat	|		|	genbank common name	|
+472764	|	New Guinea slender rat	|		|	genbank common name	|
+472764	|	Rattus verecundus	|		|	scientific name	|
+475609	|	Escherichia coli c7122	|		|	scientific name	|
+475609	|	Escherichia coli str. c7122	|		|	equivalent name	|
+475609	|	Escherichia coli strain c7122	|		|	equivalent name	|
+477815	|	Mus musculus musculus x M. m. domesticus	|		|	scientific name	|
+477816	|	Mus musculus musculus x M. m. castaneus	|		|	scientific name	|
+477950	|	flavopilosa subgroup	|		|	scientific name	|
+477951	|	Drosophila flavopilosa	|		|	scientific name	|
+477951	|	Drosophila flavopilosa Frey, 1919	|		|	synonym	|
+477952	|	Drosophila cordeiroi	|		|	scientific name	|
+477952	|	Drosophila cordeiroi Brncic, 1978	|		|	synonym	|
+478004	|	Escherichia coli O157:H7 str. EC4401	|		|	scientific name	|
+478005	|	Escherichia coli O157:H7 str. EC4486	|		|	scientific name	|
+478006	|	Escherichia coli O157:H7 str. EC4501	|		|	scientific name	|
+478007	|	Escherichia coli O157:H7 str. EC508	|		|	scientific name	|
+478008	|	Escherichia coli O157:H7 str. EC869	|		|	scientific name	|
+478859	|	Plasmodium falciparum Santa Lucia	|		|	scientific name	|
+478860	|	Plasmodium falciparum D6	|		|	scientific name	|
+478861	|	Plasmodium falciparum D10	|		|	scientific name	|
+478862	|	Plasmodium falciparum FCC-2	|		|	synonym	|
+478862	|	Plasmodium falciparum FCC-2/Hainan	|		|	scientific name	|
+478863	|	Plasmodium falciparum Senegal_V34.04	|		|	scientific name	|
+478864	|	Plasmodium falciparum VS/1	|		|	scientific name	|
+480117	|	Cyclorrhapha	|		|	scientific name	|
+480118	|	Eremoneura	|		|	scientific name	|
+481805	|	Escherichia coli ATCC 8739	|		|	scientific name	|
+481805	|	Escherichia coli C (ATCC 8739)	|		|	synonym	|
+481805	|	Escherichia coli C str. ATCC 8739	|		|	synonym	|
+481805	|	Escherichia coli str. ATCC 8739	|		|	equivalent name	|
+481805	|	Escherichia coli strain ATCC 8739	|		|	equivalent name	|
+483257	|	'Bacillus subtilis subsp. qingdao'	|		|	synonym	|
+483257	|	Bacillus subtilis subsp. qingdao	|		|	scientific name	|
+483514	|	Schizosaccharomyces octosporus yFS286	|		|	scientific name	|
+484894	|	Hepatitis C virus subtype 1g	|		|	scientific name	|
+487624	|	Recombinant Hepatitis C virus S52/JFH1	|		|	scientific name	|
+488477	|	Escherichia coli F18+	|		|	scientific name	|
+488477	|	Escherichia coli str. F18+	|		|	equivalent name	|
+488477	|	Escherichia coli strain F18+	|		|	equivalent name	|
+490373	|	Rattus sp. RIL2R	|		|	scientific name	|
+498388	|	Escherichia coli C	|		|	scientific name	|
+499226	|	Drosophila colorata	|		|	scientific name	|
+499226	|	Drosophila colorata Walker, 1849	|		|	synonym	|
+499227	|	Drosophila nigromelanica	|		|	scientific name	|
+499227	|	Drosophila nigromelanica Patterson & Wheeler, 1942	|		|	synonym	|
+502346	|	Escherichia coli O157:H7 str. TW14588	|		|	scientific name	|
+502869	|	Saccharomyces cerevisiae YJM451	|		|	scientific name	|
+504493	|	Hawaiian Drosophila	|		|	scientific name	|
+504570	|	Drosophila aethostoma	|		|	scientific name	|
+504570	|	Drosophila aethostoma (Hardy & Kaneshiro, 1968)	|		|	synonym	|
+504574	|	Drosophila ambochila	|		|	scientific name	|
+504574	|	Drosophila ambochila Hardy & Kaneshiro, 1971	|		|	synonym	|
+504575	|	unclassified Hawaiian Drosophila	|		|	scientific name	|
+504576	|	Drosophila anomalipes	|		|	scientific name	|
+504576	|	Drosophila anomalipes (Grimshaw, 1901)	|		|	synonym	|
+504577	|	vesciseta group	|		|	scientific name	|
+504578	|	Drosophila comatifemora	|		|	scientific name	|
+504578	|	Drosophila comatifemora (Hardy, 1965)	|		|	synonym	|
+504579	|	Drosophila conformis	|		|	scientific name	|
+504579	|	Drosophila conformis (Hardy, 1965)	|		|	synonym	|
+504581	|	Drosophila eurypeza	|		|	scientific name	|
+504581	|	Drosophila eurypeza (Hardy, 1965)	|		|	synonym	|
+504582	|	Drosophila flavibasis	|		|	scientific name	|
+504582	|	Drosophila flavibasis (Hardy, 1965)	|		|	synonym	|
+504583	|	Drosophila hirtitibia	|		|	scientific name	|
+504583	|	Drosophila hirtitibia (Hardy, 1965)	|		|	synonym	|
+504584	|	Drosophila hystricosa	|		|	scientific name	|
+504584	|	Drosophila hystricosa (Hardy & Kaneshiro, 1969)	|		|	synonym	|
+504585	|	unclassified modified tarsi group	|		|	scientific name	|
+504586	|	Drosophila imparisetae	|		|	scientific name	|
+504586	|	Drosophila imparisetae (Hardy, 1965)	|		|	synonym	|
+504587	|	Drosophila kambysellisi	|		|	scientific name	|
+504587	|	Drosophila kambysellisi (Hardy & Kaneshiro, 1969)	|		|	synonym	|
+504588	|	Drosophila pararubida	|		|	scientific name	|
+504588	|	Drosophila pararubida Mather, 1961	|		|	synonym	|
+504589	|	Drosophila pectinitarsus	|		|	scientific name	|
+504589	|	Drosophila pectinitarsus (Hardy, 1965)	|		|	synonym	|
+504590	|	Drosophila percnosoma	|		|	scientific name	|
+504590	|	Drosophila percnosoma (Hardy, 1965)	|		|	synonym	|
+504591	|	unclassified Drosophila	|	unclassified Drosophila <subgenus>	|	scientific name	|
+504592	|	Drosophila punctatonervosa	|		|	scientific name	|
+504592	|	Drosophila punctatonervosa Frey, 1954	|		|	synonym	|
+504593	|	Drosophila signata	|		|	scientific name	|
+504593	|	Spinulophila signata (Duda, 1923)	|		|	synonym	|
+504604	|	Drosophila calloptera group sp. PMO-2008	|		|	scientific name	|
+508692	|	Drosophila endobranchia	|		|	scientific name	|
+508692	|	Drosophila endobranchia Carson & Wheeler, 1968	|		|	synonym	|
+511145	|	Escherichia coli MG1655	|		|	synonym	|
+511145	|	Escherichia coli str. K-12 substr. MG1655	|		|	scientific name	|
+511145	|	Escherichia coli str. K12 substr. MG1655	|		|	equivalent name	|
+511145	|	Escherichia coli str. MG1655	|		|	equivalent name	|
+511145	|	Escherichia coli strain MG1655	|		|	equivalent name	|
+511693	|	Escherichia coli BL21	|		|	scientific name	|
+511693	|	Escherichia coli str. BL21	|		|	equivalent name	|
+511693	|	Escherichia coli strain BL21	|		|	equivalent name	|
+525281	|	Escherichia coli 83972	|		|	scientific name	|
+525281	|	Escherichia coli str. 83972	|		|	equivalent name	|
+525281	|	Escherichia coli strain 83972	|		|	equivalent name	|
+526563	|	Escherichia coli 1520	|		|	scientific name	|
+526563	|	Escherichia coli str. 1520	|		|	equivalent name	|
+526563	|	Escherichia coli strain 1520	|		|	equivalent name	|
+527799	|	Escherichia coli LW1655F+	|		|	scientific name	|
+527799	|	Escherichia coli str. LW1655F+	|		|	equivalent name	|
+527799	|	Escherichia coli strain LW1655F+	|		|	equivalent name	|
+531853	|	Escherichia coli NC-7	|		|	scientific name	|
+531853	|	Escherichia coli str. NC-7	|		|	equivalent name	|
+531853	|	Escherichia coli strain NC-7	|		|	equivalent name	|
+535024	|	Bacillus subtilis subsp. subtilis str. BGSC 1A775	|		|	synonym	|
+535024	|	Bacillus subtilis subsp. subtilis str. SMY	|		|	scientific name	|
+535025	|	Bacillus subtilis subsp. subtilis str. BGSC 1A96	|		|	synonym	|
+535025	|	Bacillus subtilis subsp. subtilis str. JH642	|		|	scientific name	|
+535026	|	Bacillus subtilis subsp. subtilis str. BGSC 3A1	|		|	synonym	|
+535026	|	Bacillus subtilis subsp. subtilis str. NCIB 3610	|		|	scientific name	|
+536056	|	Escherichia coli ATCC 33849	|		|	synonym	|
+536056	|	Escherichia coli DH1	|		|	scientific name	|
+536056	|	Escherichia coli str. DH1	|		|	equivalent name	|
+536056	|	Escherichia coli strain DH1	|		|	equivalent name	|
+536088	|	Bacillus subtilis subsp. subtilis L170	|		|	equivalent name	|
+536088	|	Bacillus subtilis subsp. subtilis str. L170	|		|	scientific name	|
+536088	|	Bacillus subtilis subsp. subtilis strain L170	|		|	equivalent name	|
+536089	|	Bacillus subtilis subsp. subtilis N170	|		|	equivalent name	|
+536089	|	Bacillus subtilis subsp. subtilis str. N170	|		|	scientific name	|
+536089	|	Bacillus subtilis subsp. subtilis strain N170	|		|	equivalent name	|
+538975	|	Saccharomyces cerevisiae M22	|		|	scientific name	|
+538976	|	Saccharomyces cerevisiae YPS163	|		|	scientific name	|
+543946	|	Drosophila micromettleri	|		|	scientific name	|
+543946	|	Drosophila micromettleri Heed, 1989	|		|	authority	|
+544404	|	Escherichia coli O157:H7 str. TW14359	|		|	scientific name	|
+544404	|	Escherichia coli O157:H7 strain TW14359	|		|	equivalent name	|
+544448	|	Tenericutes	|		|	scientific name	|
+544448	|	Tenericutes Murray 1984	|		|	authority	|
+544483	|	Drosophila sp. Taxon-K	|		|	scientific name	|
+545124	|	Saccharomyces cerevisiae AWRI1631	|		|	scientific name	|
+545632	|	ananassae species complex	|		|	scientific name	|
+545637	|	Drosophila sp. pallidosa-like-Wau	|		|	scientific name	|
+545638	|	Drosophila sp. pallidosa-like	|		|	scientific name	|
+545639	|	Drosophila sp. papuensis-like	|		|	scientific name	|
+551290	|	Teuthida	|		|	scientific name	|
+551347	|	Myopsina	|		|	scientific name	|
+551539	|	Dictyostelium sp. MR-2008	|		|	scientific name	|
+554915	|	Amoebozoa	|		|	scientific name	|
+554915	|	Amoebozoa Luehe 1913, emend. Cavalier-Smith 1998, 2004	|		|	authority	|
+559292	|	Saccharomyces cerevisiae S288c	|		|	scientific name	|
+564286	|	Bacillus subtilis str. 10	|		|	scientific name	|
+564286	|	Bacillus subtilis subsp. ramadan	|		|	unpublished name	|
+565143	|	Bacillus subtilis subsp. subtilis AUSI98	|		|	equivalent name	|
+565143	|	Bacillus subtilis subsp. subtilis str. AUSI98	|		|	scientific name	|
+565143	|	Bacillus subtilis subsp. subtilis strain AUSI98	|		|	equivalent name	|
+568996	|	Oryctolagus cuniculus cuniculus	|		|	scientific name	|
+569579	|	Escherichia coli NU14	|		|	scientific name	|
+569579	|	Escherichia coli str. NU14	|		|	equivalent name	|
+569579	|	Escherichia coli strain NU14	|		|	equivalent name	|
+569610	|	Hepatitis C virus subtype 6v	|		|	scientific name	|
+570414	|	Maclear's Christmas island rat	|		|	genbank common name	|
+570414	|	Rattus macleari	|		|	scientific name	|
+570415	|	Christmas island rat	|		|	genbank common name	|
+570415	|	Rattus nativitatis	|		|	scientific name	|
+570506	|	Escherichia coli O157:H7 str. FRIK966	|		|	scientific name	|
+570506	|	Escherichia coli O157:H7 strain FRIK966	|		|	equivalent name	|
+573235	|	Escherichia coli O26:H11 11368	|		|	equivalent name	|
+573235	|	Escherichia coli O26:H11 str. 11368	|		|	scientific name	|
+573235	|	Escherichia coli O26:H11 strain 11368	|		|	equivalent name	|
+574249	|	Schizosaccharomyces sp. F75-4	|		|	scientific name	|
+574521	|	Escherichia coli 0127:H6 str. E2348/69	|		|	misspelling	|
+574521	|	Escherichia coli O127:H6 E2348/69	|		|	equivalent name	|
+574521	|	Escherichia coli O127:H6 str. E2348/69	|		|	scientific name	|
+574521	|	Escherichia coli O127:H6 strain E2348/69	|		|	equivalent name	|
+574961	|	Saccharomyces cerevisiae JAY291	|		|	scientific name	|
+578303	|	Recombinant Hepatitis C Virus SA13/JFH1	|		|	scientific name	|
+578306	|	Recombinant Hepatitis C virus H77C/JFH1	|		|	scientific name	|
+578319	|	Recombinant HCV viruses	|		|	scientific name	|
+580058	|	Plasmodium falciparum RAJ116	|		|	scientific name	|
+580059	|	Plasmodium falciparum IGH-CR14	|		|	scientific name	|
+580239	|	Saccharomyces cerevisiae SK1	|		|	scientific name	|
+580240	|	Saccharomyces cerevisiae W303	|		|	scientific name	|
+585034	|	Escherichia coli IAI1	|		|	scientific name	|
+585034	|	Escherichia coli str. IAI1	|		|	equivalent name	|
+585034	|	Escherichia coli strain IAI1	|		|	equivalent name	|
+585035	|	Escherichia coli S88	|		|	scientific name	|
+585035	|	Escherichia coli str. S88	|		|	equivalent name	|
+585035	|	Escherichia coli strain S88	|		|	equivalent name	|
+585055	|	Escherichia coli 55989	|		|	scientific name	|
+585056	|	Escherichia coli UMN026	|		|	scientific name	|
+585057	|	Escherichia coli IAI39	|		|	scientific name	|
+585397	|	Escherichia coli ED1a	|		|	scientific name	|
+585397	|	Escherichia coli str. ED1a	|		|	equivalent name	|
+585397	|	Escherichia coli strain ED1a	|		|	equivalent name	|
+591946	|	Escherichia coli LF82	|		|	scientific name	|
+591946	|	Escherichia coli str. LF82	|		|	equivalent name	|
+591946	|	Escherichia coli strain LF82	|		|	equivalent name	|
+595495	|	Escherichia coli ATCC 55124	|		|	synonym	|
+595495	|	Escherichia coli KO11	|		|	scientific name	|
+595495	|	Escherichia coli str. KO11	|		|	equivalent name	|
+595495	|	Escherichia coli strain KO11	|		|	equivalent name	|
+595496	|	Escherichia coli BW2952	|		|	scientific name	|
+595496	|	Escherichia coli str. BW2952	|		|	equivalent name	|
+595496	|	Escherichia coli strain BW2952	|		|	equivalent name	|
+595609	|	Recombinant Hepatitis C virus HK6a/JFH1	|		|	scientific name	|
+595610	|	Recombinant Hepatitis C virus J4/JFH1	|		|	scientific name	|
+595611	|	Recombinant Hepatitis C virus J8/JFH1	|		|	scientific name	|
+595612	|	Recombinant Hepatitis C virus QC69/JFH1	|		|	scientific name	|
+614664	|	Saccharomyces cerevisiae KRY8	|		|	scientific name	|
+614665	|	Saccharomyces cerevisiae MMY112	|		|	scientific name	|
+614666	|	Schizosaccharomyces pombe DM3650	|		|	scientific name	|
+614667	|	Schizosaccharomyces pombe DM3755	|		|	scientific name	|
+614668	|	Schizosaccharomyces pombe DM3757	|		|	scientific name	|
+630223	|	Drosophila parapallidosa	|		|	unpublished name	|
+630223	|	Drosophila sp. AK-2009	|		|	scientific name	|
+630700	|	Trypanosoma brucei equiperdum	|		|	scientific name	|
+634468	|	Escherichia coli HB101	|		|	scientific name	|
+634468	|	Escherichia coli str. HB101	|		|	equivalent name	|
+634468	|	Escherichia coli strain HB101	|		|	equivalent name	|
+634469	|	Escherichia coli HT115	|		|	scientific name	|
+634469	|	Escherichia coli str. HT115	|		|	equivalent name	|
+634469	|	Escherichia coli strain HT115	|		|	equivalent name	|
+637388	|	Escherichia coli O157:H7 FRIK2000	|		|	equivalent name	|
+637388	|	Escherichia coli O157:H7 str. FRIK2000	|		|	scientific name	|
+637388	|	Escherichia coli O157:H7 strain FRIK2000	|		|	equivalent name	|
+637912	|	Escherichia coli OP50	|		|	scientific name	|
+637912	|	Escherichia coli str. OP50	|		|	equivalent name	|
+637912	|	Escherichia coli strain OP50	|		|	equivalent name	|
+643680	|	Saccharomyces cerevisiae EC1118	|		|	scientific name	|
+645657	|	Bacillus subtilis subsp. natto BEST195	|		|	scientific name	|
+645657	|	Bacillus subtilis subsp. natto str. BEST195	|		|	equivalent name	|
+645657	|	Bacillus subtilis subsp. natto strain BEST195	|		|	equivalent name	|
+649473	|	Drosophila navajoa	|		|	scientific name	|
+649473	|	Drosophila navojoa Ruiz, Heed & Wasserman, 1990	|		|	authority	|
+649908	|	Schizosaccharomyces pombe OY26	|		|	scientific name	|

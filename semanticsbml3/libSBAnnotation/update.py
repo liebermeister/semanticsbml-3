@@ -1,24 +1,30 @@
 """
-Bring the annotation database up to date (added in the Python 3 port).
+Build the annotation database from current online resources (added in the Python 3 port).
 
 The original program built its database from files that are no longer offered
-(KEGG ftp server, MIRIAM XML export ...).  This module does not rebuild the
-database; it takes the existing tables and
+(KEGG ftp server, MIRIAM XML export ...).  This module builds it from
 
-- replaces names and relations of ChEBI, Gene Ontology and SBO by those of the
-  current ontology files and adds the entries that are new,
-- adds KEGG compounds and reactions that are new, from the name lists of the
-  KEGG web service (two requests; KEGG data are free for academic use only),
-- writes the list of identifiers.org namespaces (successor of MIRIAM).
+- ChEBI (chemical entities: names, synonyms, relations, formulas),
+- the Gene Ontology,
+- the Systems Biology Ontology (SBO),
+- the identifiers.org registry (successor of MIRIAM),
+- a small extract of the NCBI taxonomy that comes with the program (data/ncbi_taxonomy_small_*.dmp,
+  made by the original semanticSBML project in 2009).
 
-Links between databases that were made in 2011 (e.g. ChEBI <-> KEGG) are kept
-as they are; new entries are linked only where this cannot disturb old links.
+KEGG identifiers appear only as cross references given by ChEBI and the Gene Ontology;
+no data are taken from KEGG unless asked for with with_kegg=True (KEGG is free for
+academic use only).
 
     from libSBAnnotation import update
-    update.run()                # downloads into <data>/downloads and updates <data>/db
+    update.build()              # downloads into <data>/downloads and writes <data>/db
+
+update.build(update_existing=True) applies the same sources to an existing database
+instead (this is how the database of February 2011 was brought up to date).
 """
 
+import contextlib
 import gzip
+import io
 import json
 import os
 import re
@@ -33,6 +39,7 @@ SOURCES = {
     'go': 'https://purl.obolibrary.org/obo/go/go-basic.obo',
     'sbo': 'https://raw.githubusercontent.com/EBI-BioModels/SBO/master/SBO_OBO.obo',
     'registry': 'https://registry.api.identifiers.org/resolutionApi/getResolverDataset',
+    # only with with_kegg=True
     'kegg_compound': 'https://rest.kegg.jp/list/compound',
     'kegg_reaction': 'https://rest.kegg.jp/list/reaction',
 }
@@ -41,8 +48,24 @@ FILENAMES = {
     'registry': 'identifiers_org_registry.json',
     'kegg_compound': 'kegg_compound_list.txt', 'kegg_reaction': 'kegg_reaction_list.txt',
 }
+TAXONOMY_FILES = ('ncbi_taxonomy_small_nodes.dmp', 'ncbi_taxonomy_small_names.dmp')
+# files written into the database folder besides the tables
 NAMESPACE_FILE = 'identifiers_org_namespaces.tsv'
 INFO_FILE = 'database_sources.txt'
+SBO_FILE = 'SBO_OBO.obo'
+
+
+def database_dir():
+    return config.Config().getpath('database', 'database_dir')
+
+
+def info_path():
+    """file describing the sources of the database in use"""
+    return os.path.join(database_dir(), INFO_FILE)
+
+
+def database_exists():
+    return os.path.exists(os.path.join(database_dir(), 'internal_db.main'))
 
 # relations of ChEBI are given by identifiers of the Relation Ontology today
 CHEBI_RELATIONS = {
@@ -166,11 +189,14 @@ def parse_obo(path):
 # ---------------------------------------------------------------------------
 
 class Updater:
-    def __init__(self, status=print):
-        from . import database_new
+    def __init__(self, db=None, status=print):
+        """db: a (new, empty) database.Database; default: load the existing database"""
         self.status = status
-        self.status('loading the annotation database')
-        self.db = database_new.Meta_DB().database_instance
+        if db is None:
+            from . import database_new
+            self.status('loading the annotation database')
+            db = database_new.Meta_DB().database_instance
+        self.db = db
         self.report = []
 
     # -- helpers ------------------------------------------------------------
@@ -209,7 +235,7 @@ class Updater:
         """
         May a new entry of database `source` be put on the abstract item of target_id?
         Only if the target is unknown, or known and not yet linked to an entry of `source`
-        (otherwise links made in 2011 would be rearranged).
+        (otherwise links made earlier would be rearranged).
         """
         rows = self._table(target_db).global_index['data_id'].get(target_id)
         if not rows:
@@ -302,13 +328,23 @@ class Updater:
         terms = [t for t in terms if not t['obsolete'] and t['name']]
         known = self._table('chebi').global_index['data_id']
         if not all_entries:
-            # manually curated entries, entries with a KEGG identifier and entries known already
-            terms = [t for t in terms if '3:STAR' in t['subsets'] or known.get(t['id'])
-                     or any(p == 'kegg.compound' for p, i in t['xrefs'])]
+            # manually curated entries ("3 star"), entries that ChEBI links to a KEGG compound
+            # (so that annotations with KEGG identifiers are understood), entries known already,
+            # and all their more general entries (is_a), so that the hierarchy is complete
+            by_id = dict((t['id'], t) for t in terms)
+            chosen = set(t['id'] for t in terms if '3:STAR' in t['subsets'] or known.get(t['id'])
+                         or any(p == 'kegg.compound' for p, i in t['xrefs']))
+            todo = list(chosen)
+            while todo:
+                for parent in by_id[todo.pop()]['is_a']:
+                    if parent in by_id and parent not in chosen:
+                        chosen.add(parent)
+                        todo.append(parent)
+            terms = [t for t in terms if t['id'] in chosen]
         n_known = sum(1 for t in terms if known.get(t['id']))
         self.status('ChEBI: %d entries, %d of them new' % (len(terms), len(terms) - n_known))
         dropped = self._begin('chebi')
-        formulas = self._table('kegg_formula')
+        formulas = self._table('formula')
         n_linked = n_formula = 0
         for n, term in enumerate(terms):
             if n % 20000 == 0 and n:
@@ -325,15 +361,15 @@ class Updater:
                     and self._aid('kegg_compound', kegg[0]) is None:
                 self._table('kegg_compound').insertRow([kegg[0], aid, False])
                 n_linked += 1
-            if term['formula'] and not self._has_link('kegg_formula', aid):
+            if term['formula'] and not self._has_link('formula', aid):
                 formulas.insertRow([term['formula'], aid, False])
                 n_formula += 1
         n_old = self._old_identifiers('chebi', terms, obsolete, lambda i: 'species')
         added = self._relations('chebi', terms, CHEBI_RELATIONS)
         self._end('chebi')
         version = 'release %s (%s)' % (header.get('data-version', '?'), header.get('date', '?'))
-        self.report.append('ChEBI %s: %d entries (%d new), %d relations (before: %d), %d new links to KEGG '
-                           'Compound, %d formulas added, %d former identifiers'
+        self.report.append('ChEBI %s: %d entries (%d new), %d relations (before: %d), %d links to KEGG '
+                           'Compound identifiers (given by ChEBI), %d formulas, %d former identifiers'
                            % (version, len(terms), len(terms) - n_known, added, dropped, n_linked, n_formula, n_old))
 
     # -- Gene Ontology ------------------------------------------------------
@@ -358,12 +394,17 @@ class Updater:
             if not known.get(term['id']) and len(ec) == 1 and self._safe_to_link('go', 'ec', ec[0]):
                 database2id['ec'] = ec[0]
                 n_linked += 1
+            reaction = sorted(set(i for p, i in term['xrefs'] if p == 'KEGG_REACTION'))
+            if not known.get(term['id']) and len(reaction) == 1 \
+                    and self._safe_to_link('go', 'kegg_reaction', reaction[0]):
+                database2id['kegg_reaction'] = reaction[0]
+                n_linked += 1
             self._add(database2id, names, term['namespace'], 'go')
         n_old = self._old_identifiers('go', terms, obsolete, lambda i: namespace.get(i, 'biological_process'))
         added = self._relations('go', terms)
         self._end('go')
         self.report.append('Gene Ontology %s: %d entries (%d new), %d relations (before: %d), %d new links to '
-                           'EC numbers, %d former identifiers'
+                           'EC numbers and KEGG reaction identifiers (given by GO), %d former identifiers'
                            % (header.get('data-version', '?'), len(terms), len(terms) - n_known, added, dropped,
                               n_linked, n_old))
 
@@ -382,16 +423,30 @@ class Updater:
         added = self._relations('sbo', terms)
         self._end('sbo')
         # the ontology file itself is used by libSBAnnotation/sbo.py
-        cfg = config.Config()
-        for target in (cfg.getpath('resources', 'SBO_resources'),
-                       os.path.join(os.path.dirname(cfg.getpath('resources', 'MIRIAM_resources')), 'SBO_OBO.obo')):
-            if os.path.abspath(target) != os.path.abspath(path):
-                shutil.copyfile(path, target)
+        target = os.path.join(database_dir(), SBO_FILE)
+        if os.path.abspath(target) != os.path.abspath(path):
+            shutil.copyfile(path, target)
         self.report.append('SBO %s: %d entries (%d new), %d relations (before: %d)'
                            % (header.get('data-version', header.get('date', '?')), len(terms),
                               len(terms) - n_known, added, dropped))
 
-    # -- KEGG ---------------------------------------------------------------
+    # -- NCBI taxonomy (small extract shipped with the program) ---------------
+    def add_taxonomy(self, folder):
+        from . import buildDB
+        paths = [os.path.join(folder, name) for name in TAXONOMY_FILES]
+        for path in paths:
+            if not os.path.exists(path):
+                raise UpdateError('%s is missing (it comes with the program)' % path)
+        before = len(self.db.abstract_item.rows)
+        with contextlib.redirect_stdout(io.StringIO()):
+            for path, reader in zip(paths, (buildDB.NcbiTaxonomyNodesRead, buildDB.NcbiTaxonomyNamesRead)):
+                with open(path, encoding='utf-8', errors='replace') as f:
+                    reader(self.db, f.read())
+        self.db.abstract_id_to_annotation_object.clear()
+        self.report.append('NCBI Taxonomy: small extract of 2009 made by the original semanticSBML project, '
+                           '%d entries' % (len(self.db.abstract_item.rows) - before))
+
+    # -- KEGG (only on request) ------------------------------------------------
     _stoichiometry = re.compile(r'^(\d+|\d*n|\d*m|\((?:\d*[nm])?[+-]?\d*[nm]?\))\s+(.+)$')
 
     def update_kegg(self, compound_path, reaction_path):
@@ -492,7 +547,7 @@ class Updater:
             namespaces = json.load(f)['payload']['namespaces']
         if len(namespaces) < 300:
             raise UpdateError('%s does not look like the identifiers.org registry' % path)
-        target = os.path.join(os.path.dirname(config.Config().getpath('resources', 'MIRIAM_resources')), NAMESPACE_FILE)
+        target = os.path.join(database_dir(), NAMESPACE_FILE)
         with open(target, 'w', encoding='utf-8') as out:
             out.write('#prefix\tname\tpattern\tdeprecated\n')
             for ns in sorted(namespaces, key=lambda n: n['prefix']):
@@ -506,49 +561,76 @@ class Updater:
         self.db.dump()
 
 
-def run(download_dir=None, use_existing=False, kegg=True, all_chebi=False, only=None, status=print):
+def _fetch(keys, download_dir, use_existing, status):
+    files = {}
+    for key in keys:
+        files[key] = os.path.join(download_dir, FILENAMES[key])
+        if not (use_existing and os.path.exists(files[key])):
+            try:
+                download(SOURCES[key], files[key], status)
+            except UpdateError:
+                raise
+            except Exception as e:
+                raise UpdateError('Could not download %s (%s). Nothing was changed.' % (SOURCES[key], e))
+    return files
+
+
+def build(download_dir=None, use_existing=False, with_kegg=False, all_chebi=False, update_existing=False,
+          status=print):
     """
-    update the database in the data folder
+    build the annotation database in <data>/db from the online resources
     @param download_dir: where the source files are kept (default: <data>/downloads)
     @param use_existing: do not download files that are in download_dir already
-    @param kegg: also fetch the KEGG name lists (KEGG is free for academic use only)
-    @param only: list of parts to update (chebi, go, sbo, kegg, registry); default all
+    @param with_kegg: also fetch the KEGG name lists (KEGG is free for academic use only)
+    @param all_chebi: take all ChEBI entries, not only the curated ones and those linked to KEGG compounds
+    @param update_existing: apply the sources to the existing database instead of building a new one
     @return: list of report lines
     """
-    data = os.path.dirname(config.Config().getpath('resources', 'MIRIAM_resources'))
+    from . import database
+    data = config.data_dir()
     download_dir = download_dir or os.path.join(data, 'downloads')
     os.makedirs(download_dir, exist_ok=True)
-    parts = list(only) if only else ['chebi', 'go', 'sbo', 'kegg', 'registry']
-    if not kegg and 'kegg' in parts:
-        parts.remove('kegg')
-    unknown = [p for p in parts if p not in ('chebi', 'go', 'sbo', 'kegg', 'registry')]
-    if unknown:
-        raise UpdateError('unknown part of the database: %s' % ', '.join(unknown))
-    files = {}
-    for part in parts:
-        for key in (['kegg_compound', 'kegg_reaction'] if part == 'kegg' else [part]):
-            files[key] = os.path.join(download_dir, FILENAMES[key])
-            if not (use_existing and os.path.exists(files[key])):
-                try:
-                    download(SOURCES[key], files[key], status)
-                except UpdateError:
-                    raise
-                except Exception as e:
-                    raise UpdateError('Could not download %s (%s). Nothing was changed.' % (SOURCES[key], e))
-    updater = Updater(status)
-    if 'chebi' in parts:
-        updater.update_chebi(files['chebi'], all_chebi)
-    if 'go' in parts:
-        updater.update_go(files['go'])
-    if 'sbo' in parts:
+    keys = ['chebi', 'go', 'sbo', 'registry'] + (['kegg_compound', 'kegg_reaction'] if with_kegg else [])
+    files = _fetch(keys, download_dir, use_existing, status)
+
+    cfg = config.Config()
+    target = database_dir().rstrip(os.sep)
+    if update_existing:
+        if not database_exists():
+            raise UpdateError('There is no database in %s to update.' % target)
+        workdir = target
+        updater = Updater(None, status)
+    else:
+        workdir = target + '.new'
+        shutil.rmtree(workdir, ignore_errors=True)
+        os.makedirs(workdir)
+        cfg.set('database', 'database_dir', workdir + os.sep)     # the tables are written where the config says
+    try:
+        if not update_existing:
+            updater = Updater(database.Database(), status)
+            updater.add_taxonomy(data)
         updater.update_sbo(files['sbo'])
-    if 'kegg' in parts:
-        updater.update_kegg(files['kegg_compound'], files['kegg_reaction'])
-    if 'registry' in parts:
+        updater.update_chebi(files['chebi'], all_chebi)
+        updater.update_go(files['go'])
+        if with_kegg:
+            updater.update_kegg(files['kegg_compound'], files['kegg_reaction'])
         updater.update_registry(files['registry'])
-    updater.save()
-    with open(os.path.join(data, INFO_FILE), 'a', encoding='utf-8') as out:
-        out.write('Updated %s\n' % time.strftime('%Y-%m-%d'))
-        for line in updater.report:
-            out.write('  ' + line + '\n')
+        updater.save()
+        with open(os.path.join(workdir, INFO_FILE), 'a' if update_existing else 'w', encoding='utf-8') as out:
+            out.write('%s %s\n' % ('Updated' if update_existing else 'Built', time.strftime('%Y-%m-%d')))
+            for line in updater.report:
+                out.write('  ' + line + '\n')
+    except BaseException:
+        if not update_existing:
+            shutil.rmtree(workdir, ignore_errors=True)
+        raise
+    finally:
+        cfg.set('database', 'database_dir', target + os.sep)
+    if not update_existing:
+        old = target + '.old'
+        shutil.rmtree(old, ignore_errors=True)
+        if os.path.exists(target):
+            os.replace(target, old)
+        os.replace(workdir, target)
+        shutil.rmtree(old, ignore_errors=True)
     return updater.report

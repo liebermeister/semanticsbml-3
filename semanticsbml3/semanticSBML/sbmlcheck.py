@@ -252,17 +252,20 @@ class Checker:
                     species = self.model.getSpecies(part.getSpecies())
                     if species == None:
                         continue
-                    kegglink=None
+                    # (port) the original took formulas only from KEGG Compound annotations;
+                    # ChEBI annotations are used as well now, formulas come from KEGG (database of
+                    # 2011) or from ChEBI (database built today)
                     ae=annotate.ElementAnnotations(species,True)
-                    for a in ae.getAnnotations():
-                        if a.db == 'KEGG' or a.db == 'KEGG Compound':
-                            kegglink=a.id
-                    if not kegglink:
-                        everyElementHasKeggId = False
-                        continue
-                    try:
-                        elem_formula = self.database.database_instance.getAnnotationObjectByIdDict({"kegg_compound":kegglink}).dictionary["kegg_formula"]
-                    except:
+                    links = [("kegg_compound", a.id) for a in ae.getAnnotations() if a.db in ('KEGG', 'KEGG Compound')]
+                    links += [("chebi", a.id) for a in ae.getAnnotations() if a.db == 'ChEBI']
+                    elem_formula = None
+                    for internal_name, identifier in links:
+                        entry = self.database.database_instance.getAnnotationObjectByIdDict({internal_name: identifier})
+                        if entry is not None:
+                            elem_formula = entry.dictionary.get("kegg_formula") or entry.dictionary.get("formula")
+                        if elem_formula:
+                            break
+                    if not elem_formula:
                         everyElementHasKeggId = False
                         continue
                         

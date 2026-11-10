@@ -557,11 +557,11 @@ def cmd_match(args):
 # database
 # ---------------------------------------------------------------------------
 
-def cmd_update_database(args):
+def cmd_build_database(args):
     from libSBAnnotation import update
     try:
-        report = update.run(download_dir=args.download_dir, use_existing=args.use_existing,
-                            kegg=not args.no_kegg, all_chebi=args.all_chebi, only=args.only)
+        report = update.build(download_dir=args.download_dir, use_existing=args.use_existing,
+                              with_kegg=args.with_kegg, all_chebi=args.all_chebi, update_existing=args.update)
     except update.UpdateError as e:
         raise CliError(str(e))
     print()
@@ -582,14 +582,15 @@ def cmd_gui(args):
 
 def cmd_database(args):
     from libSBAnnotation import config, update
-    data = config.data_dir()
-    print('data folder: %s' % data)
-    info = os.path.join(data, update.INFO_FILE)
-    if os.path.exists(info):
-        with open(info, encoding='utf-8') as f:
+    print('data folder: %s' % config.data_dir())
+    if not update.database_exists():
+        print('No annotation database yet. Build it with:  semanticsbml build-database')
+        return 1
+    if os.path.exists(update.info_path()):
+        with open(update.info_path(), encoding='utf-8') as f:
             print(f.read().rstrip())
     else:
-        print('annotation database of February 2011 (never updated)')
+        print('annotation database of the original semanticSBML (February 2011)')
     return 0
 
 
@@ -701,22 +702,21 @@ def build_parser():
     p = sub.add_parser('database', help='show which version of the annotation database is in use')
     p.set_defaults(func=cmd_database)
 
-    p = sub.add_parser('update-database', help='download current ChEBI, Gene Ontology, SBO, KEGG names and '
-                                               'identifiers.org namespaces and update the annotation database',
-                       description='Updates the annotation database in the data folder (about 100 MB of downloads, '
-                                   'several minutes). Names and relations of ChEBI, Gene Ontology and SBO are '
-                                   'replaced by the current ones and new entries are added. From KEGG only the '
-                                   'lists of compound and reaction names are fetched (two requests); KEGG is free '
-                                   'for academic use only, use --no-kegg otherwise.')
-    p.add_argument('--no-kegg', action='store_true', help='do not contact the KEGG web service')
+    p = sub.add_parser('build-database', help='build the annotation database from ChEBI, Gene Ontology, SBO and '
+                                              'identifiers.org (needed once, before the first use)',
+                       description='Downloads the current ChEBI, Gene Ontology and SBO files and the identifiers.org '
+                                   'registry (about 90 MB) and builds the annotation database in the data folder '
+                                   '(a few minutes). Run it again to bring the database up to date.')
     p.add_argument('--all-chebi', action='store_true',
-                   help='take over all ChEBI entries (about 220000) instead of the manually curated ones and those '
-                        'with a KEGG identifier; makes every command slower to start')
-    p.add_argument('--only', nargs='+', metavar='PART', choices=['chebi', 'go', 'sbo', 'kegg', 'registry'],
-                   help='update only these parts: chebi go sbo kegg registry')
+                   help='take all ChEBI entries (about 220000) instead of the manually curated ones, those linked to '
+                        'KEGG compounds and their parents (about 75000); makes every command slower to start')
+    p.add_argument('--with-kegg', action='store_true',
+                   help='also fetch the lists of KEGG compound and reaction names (KEGG is free for academic use only)')
+    p.add_argument('--update', action='store_true',
+                   help='apply the current files to the existing database instead of building a new one')
     p.add_argument('--download-dir', metavar='DIR', help='folder for the downloaded files (default: data/downloads)')
     p.add_argument('--use-existing', action='store_true', help='use files in the download folder instead of downloading again')
-    p.set_defaults(func=cmd_update_database)
+    p.set_defaults(func=cmd_build_database)
 
     return parser
 

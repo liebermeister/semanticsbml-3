@@ -1,37 +1,36 @@
-"""The updated annotation database (folder data), used through the command line tool."""
+"""The annotation database built from ChEBI, Gene Ontology, SBO (semanticsbml build-database)."""
 import os
 import subprocess
 import sys
 
 import pytest
 
-from conftest import ROOT, model_path
+from conftest import DATA, DATABASE_2011, ROOT, model_path
 
-DATA = os.path.join(ROOT, 'data')
-pytestmark = pytest.mark.skipif(not os.path.exists(os.path.join(DATA, 'database_sources.txt')),
-                                reason='database in data/ was never updated')
+built = pytest.mark.skipif(DATABASE_2011, reason='tests for a database built with build-database')
 
 
 def run(*args):
-    env = dict(os.environ, SEMANTICSBML_DATA=DATA)
-    result = subprocess.run([sys.executable, '-m', 'semanticSBML.cli'] + list(args), env=env, cwd=ROOT,
-                            capture_output=True, text=True)
+    result = subprocess.run([sys.executable, '-m', 'semanticSBML.cli'] + list(args), cwd=ROOT,
+                            env=dict(os.environ, SEMANTICSBML_DATA=DATA), capture_output=True, text=True)
     assert result.returncode in (0, 1), result.stderr
     return result.stdout
 
 
+@built
 def test_database_command_names_sources():
     out = run('database')
     assert 'ChEBI release' in out and 'Gene Ontology' in out
 
 
+@built
 def test_entry_added_after_2011_is_known():
     assert 'CHEBI:456216' in run('search', 'ADP(3-)', '--exact')        # ADP(3-), not in the 2011 database
 
 
-def test_old_entries_and_links_are_kept():
+def test_kegg_identifiers_understood_through_chebi():
     out = run('search', 'glucose', '--exact')
-    assert 'CHEBI:17234' in out and 'C00293' in out                      # ChEBI and KEGG still joined
+    assert 'CHEBI:17234' in out and 'C00293' in out                      # ChEBI names the KEGG compound
 
 
 def test_merge_and_similarity_with_current_database(tmp_path):
@@ -46,6 +45,23 @@ def test_merge_and_similarity_with_current_database(tmp_path):
     assert 0.5 < value < 0.7
 
 
+@built
+def test_no_kegg_data():
+    """without --with-kegg nothing comes from KEGG: KEGG identifiers only as links of ChEBI and GO entries"""
+    from libSBAnnotation import update
+    with open(update.info_path(), encoding='utf-8') as f:
+        assert 'KEGG Compound: ' not in f.read()
+    folder = os.path.join(DATA, 'db')
+    with open(os.path.join(folder, 'internal_db.version_1.8.external_item_kegg_formula')) as f:
+        assert f.read().strip() == ''
+    with open(os.path.join(folder, 'internal_db.version_1.8.takes_part')) as f:
+        assert f.read().strip() == ''                                     # no reaction equations
+    with open(os.path.join(folder, 'internal_db.version_1.8.string_repr_from_database')) as f:
+        sources = set(line.split('\t')[2] for line in f if line.strip())
+    assert sources <= {'chebi', 'go', 'sbo', 'taxonomy'}
+
+
+@pytest.mark.nodb
 def test_parse_obo(tmp_path):
     from libSBAnnotation import update
     path = tmp_path / 'x.obo'

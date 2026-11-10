@@ -102,9 +102,9 @@ def test_automatic_annotation_by_name():
     element.addAnnotationAutomatic()
     assert ('ChEBI', 'CHEBI:16236') in [(a.db, a.id) for a in element.getAnnotations()]
 
-    # "pyruvate" has two entries in the database (the anion and the acid): no automatic choice
+    # "metabolite" is the name of two entries (in ChEBI and in SBO): no automatic choice
     species.unsetCVTerms()
-    species.setName('Pyruvate')
+    species.setName('Metabolite')
     element = annotate.ElementAnnotations(species)
     with pytest.raises(annotate.AnnotationError):
         element.addAnnotationAutomatic()

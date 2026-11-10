@@ -5,7 +5,7 @@ from functools import cmp_to_key
 table_list = "abstract_item string_repr abstract_item_relation takes_part localisation".split()
 ext_db_names = [
     ["KEGG Compound","kegg_compound"],["KEGG Reaction","kegg_reaction"],
-    ["KEGG Formula","kegg_formula"],
+    ["KEGG Formula","kegg_formula"],["Formula","formula"],   # formula: from ChEBI (added in the port)
     ["ChEBI","chebi"],["3DMET","3dmet"],["CAS","cas"],
     ["PDB-CCD","pdb_ccd"],["PubChem","pubchem_substance"],
     ["PubChem-substance","pubchem_substance"],

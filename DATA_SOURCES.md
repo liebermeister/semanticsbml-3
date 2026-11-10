@@ -1,29 +1,31 @@
-# Bundled data and their sources
+# Data sources
 
-The repository contains the annotation database that the program needs
-(`semanticsbml3/data`, about 100 MB; `semanticsbml3/data_2011`, about 54 MB) and
-some test models. These are **not** covered by the GPL of the program code; each
-part keeps the terms of its source. The licences below are stated to the best of
-our knowledge — **check them before making this repository public**, in
-particular KEGG.
+## Built on your computer (not in the repository)
 
-| Data | Source | Terms (as we understand them) |
+`semanticsbml build-database` downloads the following files into
+`semanticsbml3/data/downloads` and builds the annotation database in
+`semanticsbml3/data/db`. Neither folder is part of the repository; each user
+fetches the data from the providers. The terms below are stated to the best of
+our knowledge; check them at the source.
+
+| Data | Source | Terms |
 |---|---|---|
-| ChEBI names, relations, formulas | EMBL-EBI, `chebi.obo` (release 257 in `data/`, 2011 state in `data_2011/`) | CC BY 4.0 |
-| Gene Ontology | geneontology.org, `go-basic.obo` (2026-07-26 / 2011) | CC BY 4.0 |
-| Systems Biology Ontology | github.com/EBI-BioModels/SBO | Artistic License 2.0 |
-| identifiers.org namespaces | registry.identifiers.org | CC0 |
-| MIRIAM registry (2011 export) | EMBL-EBI | predecessor of identifiers.org |
-| KEGG Compound and Reaction: identifiers, names, formulas, reaction participants (2011), names of newer entries | KEGG ftp server (2011), KEGG web service name lists (2026) | **KEGG is free for academic use only; redistribution is restricted.** A public repository should probably not contain these tables. |
-| NCBI Taxonomy (small subset, 2011) | NCBI | public domain |
-| InterPro (2011) | EMBL-EBI | CC0 today |
-| SGD cross references (2011) | Saccharomyces Genome Database | CC BY 4.0 today |
-| Test models `BIOMD0000000061`, `…64`, `…239` | BioModels | CC0 |
+| ChEBI (names, synonyms, relations, formulas, cross references) | EMBL-EBI, `https://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi.obo.gz` | CC BY 4.0 |
+| Gene Ontology | `https://purl.obolibrary.org/obo/go/go-basic.obo` | CC BY 4.0 |
+| Systems Biology Ontology | `https://github.com/EBI-BioModels/SBO` | Artistic License 2.0 |
+| identifiers.org registry | `https://registry.api.identifiers.org/resolutionApi/getResolverDataset` | CC0 |
 
-The tables in `data/db` mix these sources (one entry can carry a ChEBI and a KEGG
-identifier), so they cannot simply be separated by file. `data/database_sources.txt`
-records what the last update brought in. `semanticsbml update-database --no-kegg`
-updates without contacting KEGG.
+KEGG identifiers occur in the database only as cross references published by ChEBI
+and the Gene Ontology. Nothing is downloaded from KEGG unless `--with-kegg` is given;
+KEGG data are free for academic use only and may not be redistributed.
 
-Files in `semanticsbml3/tests/reference_py2/` are outputs of the original
-program, kept for comparison.
+## In the repository
+
+| Data | Source | Terms |
+|---|---|---|
+| `data/ncbi_taxonomy_small_*.dmp`: 1500 organisms of the NCBI taxonomy | extract made by the original semanticSBML project (2009) | NCBI data are public domain |
+| `data/MIRIAM_resources.xml`: MIRIAM registry, export of February 2011 | EMBL-EBI | predecessor of identifiers.org |
+| `data/listofresources.xml`, `libsbmlresources.xml`, `elementscore.txt`, `qualifiers.csv`, `config` | original semanticSBML project | GPL 3, like the code |
+| `data/bimatrix.csv`, `simmatrix.csv`, `biomodels_probabilities`: statistics of the annotations in BioModels (2010–2011), used only by library functions not reachable from the command line | original semanticSBML project | GPL 3 |
+| Test models `tests/models/*.xml` | BioModels | CC0 |
+| `tests/reference_py2/`: outputs of the original program, kept for comparison | this port | GPL 3 |

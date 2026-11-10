@@ -6,7 +6,8 @@ Check, annotate, merge and compare SBML models using their semantic
 This is a port to current Python (3.10 or newer) of the core of semanticSBML,
 developed 2005–2011 at the Max Planck Institute for Molecular Genetics and
 Humboldt University Berlin (Falko Krause, Marvin Schulz, Jannis Uhlendorf,
-Wolfram Liebermeister, Anselm Helbig, Timo Lubitz, Stefan Stiller). It is based
+Wolfram Liebermeister, Anselm Helbig, Timo Lubitz, Stefan Stiller, Gady Goldsobel,
+Claudia Beck). It is based
 on the last state of the SourceForge repository (trunk, revision 3402, version 1.1.0).
 
 Licence: GPL 3 (see `COPYING`).
@@ -17,9 +18,11 @@ Licence: GPL 3 (see `COPYING`).
 cd semanticsbml3
 python3 -m venv .venv
 .venv/bin/pip install -e .
+.venv/bin/semanticsbml build-database
 ```
 
-This installs the command `semanticsbml` into `.venv/bin`. The pictures of
+This installs the command `semanticsbml` into `.venv/bin` and builds the annotation
+database (see below; needs an internet connection, a few minutes). The pictures of
 `semanticsbml view` need [Graphviz](https://graphviz.org) (`sudo apt install graphviz`).
 
 ## Usage
@@ -75,27 +78,38 @@ neighbourhood of an element in the network. It only reports, it does not merge.
 
 ## The annotation database
 
-The folder `data/` holds the annotation database: names and relations from ChEBI,
-KEGG Compound, KEGG Reaction, Gene Ontology, NCBI Taxonomy (small), SBO, InterPro
-and SGD, and the list of databases known to MIRIAM / identifiers.org. It is needed
-for names, for `search`, `--auto`, `check` (atom balance), `match` and `similarity`.
+The annotation database holds the names of database entries, the links between
+databases (a ChEBI entry and the KEGG compound it corresponds to) and the relations
+between entries (D-glucose *is a* glucose). It is needed for names, for `search`,
+`--auto`, `check`, `match` and `similarity`, and for merging. It is not part of the
+repository; it is built on your computer from current public resources:
 
 ```
+semanticsbml build-database     # download the sources and build data/db
 semanticsbml database           # which versions are in use
-semanticsbml update-database    # fetch current ChEBI, Gene Ontology, SBO, KEGG names, identifiers.org
 ```
 
-`update-database` downloads about 100 MB into `data/downloads` and takes a few
-minutes. It keeps the existing tables and replaces the names and relations of
-ChEBI, Gene Ontology and SBO by the current ones; new entries are added. From
-KEGG only the two lists of names are fetched (KEGG is free for academic use only;
-`--no-kegg` leaves it out). Taxonomy, InterPro and SGD stay as they were in 2011.
-What an update cannot bring back: chemical formulas and reaction equations of KEGG
-entries added after 2011 are taken from ChEBI and from the reaction names where possible.
+`build-database` downloads about 90 MB into `data/downloads` and builds the
+database in `data/db` (about 65 MB; the build itself takes less than a minute).
+Run it again to get newer versions. Sources:
 
-`data_2011/` is the last database of the original tool (February 2011), untouched.
-The tests use it, and `semanticsbml --data data_2011 ...` works with it.
-Another data folder can also be chosen with the environment variable `SEMANTICSBML_DATA`.
+| source | what is taken |
+|---|---|
+| [ChEBI](https://www.ebi.ac.uk/chebi/) | chemical entities: names, synonyms, relations, formulas, links to KEGG compound identifiers; the manually curated entries, those linked to KEGG compounds and their parents (about 70 000; `--all-chebi` takes all 220 000) |
+| [Gene Ontology](https://geneontology.org) | terms, synonyms, relations, links to EC numbers and KEGG reaction identifiers |
+| [SBO](https://github.com/EBI-BioModels/SBO) | Systems Biology Ontology |
+| [identifiers.org](https://identifiers.org) | names of the databases that annotations point to |
+| NCBI Taxonomy | small extract (1500 organisms) made by the original project in 2009, in `data/` |
+
+Nothing is taken from KEGG. Annotations with KEGG identifiers are understood through
+the links that ChEBI and the Gene Ontology give (C00293 is CHEBI:17234, glucose);
+KEGG reaction equations are not known. `--with-kegg` additionally fetches the
+lists of KEGG compound and reaction names (KEGG is free for academic use only).
+
+The original program used a database built in 2011 from KEGG, ChEBI, Gene Ontology,
+InterPro, SGD and others; it can still be used with `semanticsbml --data FOLDER ...`,
+but is not distributed with this repository. Another data folder can also be chosen
+with the environment variable `SEMANTICSBML_DATA`.
 
 ## Tests
 
@@ -104,6 +118,10 @@ Another data folder can also be chosen with the environment variable `SEMANTICSB
 .venv/bin/python -m pytest
 ```
 
+Most tests need the annotation database and are skipped without it.
+`tests/test_against_original.py` compares with results of the original program and
+needs its database of 2011 (see `tests/reference_py2/README.md`).
+
 ## Layout
 
 | folder | content |
@@ -111,8 +129,7 @@ Another data folder can also be chosen with the environment variable `SEMANTICSB
 | `semanticSBML/` | check, annotate, merge, view, similarity of elements; `cli.py` is the command line tool, `webgui.py` + `webgui.html` the browser interface |
 | `libSBAnnotation/` | annotation database, MIRIAM resources, SBO |
 | `libModelSimilarity/` | similarity and clustering of whole models |
-| `data/` | annotation database (updated) and resource files |
-| `data_2011/` | annotation database as of February 2011 |
+| `data/` | resource files; `data/db` (the annotation database) and `data/downloads` are created by `build-database` |
 | `tests/` | tests and example models (BioModels 61, 64, 239) |
 
 See `CHANGES.md` for what differs from the original program.

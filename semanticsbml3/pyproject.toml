@@ -12,7 +12,7 @@ requires-python = ">=3.10"
 authors = [
   { name = "Falko Krause" }, { name = "Marvin Schulz" }, { name = "Jannis Uhlendorf" },
   { name = "Wolfram Liebermeister" }, { name = "Anselm Helbig" }, { name = "Timo Lubitz" },
-  { name = "Stefan Stiller" },
+  { name = "Stefan Stiller" }, { name = "Gady Goldsobel" }, { name = "Claudia Beck" },
 ]
 dependencies = ["python-libsbml>=5.19", "numpy", "scipy"]
 

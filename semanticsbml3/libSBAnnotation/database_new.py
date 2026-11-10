@@ -210,7 +210,9 @@ class Meta_DB(object):
                 # the internet; most of those sources no longer exist, so we stop.
                 self.database_instance = preliminary_database_instance
                 if not suppress_build:
-                    raise DatabaseError('Annotation database not found in %s' % self.base_dir)
+                    raise DatabaseError('No annotation database found in %s. Build it with the command\n'
+                                        '    semanticsbml build-database\n'
+                                        '(downloads about 90 MB from EBI and geneontology.org, takes a few minutes).' % self.base_dir)
             self.__updateRelationFunctions__()
             #---------------------------------------------------
             # caches
