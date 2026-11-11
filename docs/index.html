@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>semanticSBML 3</title>
+<meta name="description" content="semanticSBML 3: check, annotate, merge and compare SBML models using their semantic annotations.">
+<link rel="icon" type="image/png" href="semanticsbml-logo.png">
+<style>
+body   { margin: 0; background: #ffffff; color: #1c2330;
+         font: 16px/1.5 Helvetica, Arial, sans-serif; }
+.page  { max-width: 1000px; margin: auto; }
+.head  { display: flex; align-items: center; background: #1ccaff; color: #052a38; }
+.head .logo { background: #ffffff; padding: 6px 10px; margin: 10px 30px 10px 30px; }
+.head .logo img { height: 90px; display: block; }
+.head h1 { font-size: 40px; margin: 0; }
+.content { margin: 0 10px 40px 10px; }
+h3     { font-size: 24px; margin: 36px 0 12px; }
+a      { color: #f779a1; }
+a:hover { color: #1ccaff; }
+table  { border-collapse: collapse; }
+td     { padding: 3px 18px 3px 0; vertical-align: top; }
+pre    { background: #e0f7ff; padding: 10px; overflow-x: auto; font-size: 14px; }
+hr     { border: 0; border-top: 1px solid #1ccaff; margin: 30px 0; }
+.small { font-size: 14px; color: #5d6878; }
+@media screen and (max-width: 600px) {
+  .head .logo { margin: 8px 14px; }
+  .head .logo img { height: 56px; }
+  .head h1 { font-size: 24px; }
+  h3 { font-size: 18px; margin-top: 24px; }
+  td { display: block; padding: 0; }
+  td:first-child { margin-top: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="head">
+  <div class="logo"><img src="semanticsbml-logo.png" alt="semanticSBML logo"></div>
+  <h1>semanticSBML 3</h1>
+</div>
+
+<div class="content">
+
+<p style="margin-top:24px">
+Check, annotate, merge and compare SBML models using their semantic
+(MIRIAM / identifiers.org) annotations &ndash; from the command line or in the browser.
+</p>
+
+<p>
+<a href="https://github.com/liebermeister/semanticsbml-3">Source code on GitHub</a>
+</p>
+
+<h3>What it does</h3>
+<table>
+<tr><td><b>Annotate</b></td><td>list, search, add and remove annotations; annotate elements automatically by name</td></tr>
+<tr><td><b>Check</b></td><td>missing and duplicate annotations, atom balance of reactions</td></tr>
+<tr><td><b>Merge</b></td><td>join models: elements with the same annotations become one, with a report of all differences</td></tr>
+<tr><td><b>Match</b></td><td>find corresponding elements of two models, using relations between database entries</td></tr>
+<tr><td><b>Similarity</b></td><td>compare whole models by their annotations</td></tr>
+<tr><td><b>View</b></td><td>picture of the reaction network</td></tr>
+</table>
+
+<h3>Installation</h3>
+<p>Needs Python 3.10 or newer; for network pictures also <a href="https://graphviz.org">Graphviz</a>.</p>
+<pre>git clone https://github.com/liebermeister/semanticsbml-3.git
+cd semanticsbml-3/semanticsbml3
+python3 -m venv .venv
+.venv/bin/pip install -e .
+.venv/bin/semanticsbml build-database             # once: builds the annotation database
+
+.venv/bin/semanticsbml gui                          # browser interface
+.venv/bin/semanticsbml merge A.xml B.xml -o AB.xml  # command line
+.venv/bin/semanticsbml --help</pre>
+<p>
+<code>build-database</code> downloads current versions of ChEBI, the Gene Ontology, SBO
+and the identifiers.org registry (about 90 MB). Details on all commands are in the
+<a href="https://github.com/liebermeister/semanticsbml-3/blob/main/semanticsbml3/README.md">manual</a>.
+</p>
+
+<h3>History</h3>
+<p>
+semanticSBML was developed 2005&ndash;2011 at the Max Planck Institute for Molecular
+Genetics and Humboldt University Berlin (Falko Krause, Marvin Schulz, Jannis Uhlendorf,
+Wolfram Liebermeister, Anselm Helbig, Timo Lubitz, Stefan Stiller, Gady Goldsobel,
+Claudia Beck). semanticSBML 3 is a port of its core to current Python, made in 2026.
+The program is in an alpha state.
+</p>
+
+<h3>References</h3>
+<ol>
+<li>Krause F., Uhlendorf J., Lubitz T., Schulz M., Klipp E., Liebermeister W. (2010).
+Annotation and merging of SBML models with semanticSBML.
+<i>Bioinformatics</i> 26(3), 421&ndash;422.
+<a href="https://doi.org/10.1093/bioinformatics/btp642">[Article]</a></li>
+<li style="margin-top:10px">Schulz M., Krause F., Le Nov&egrave;re N., Klipp E., Liebermeister W. (2011).
+Retrieval, alignment, and clustering of computational models based on semantic annotations.
+<i>Molecular Systems Biology</i> 7, 512.
+<a href="https://doi.org/10.1038/msb.2011.41">[Article]</a></li>
+</ol>
+
+<hr>
+<p class="small">
+semanticSBML 3 is free software under the
+<a href="https://github.com/liebermeister/semanticsbml-3/blob/main/LICENSE">GNU General Public License, version 3</a>.
+</p>
+
+</div>
+</div>
+</body>
+</html>
